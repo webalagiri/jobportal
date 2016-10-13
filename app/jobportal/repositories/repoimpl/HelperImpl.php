@@ -19,7 +19,7 @@ use Exception;
 
 class HelperImpl implements HelperInterface
 {
-    /* Get master data by group Id
+    /* Get list entity by group Id
      * @params $groupId
      * @throws HelperException
      * @return array | null
@@ -32,7 +32,13 @@ class HelperImpl implements HelperInterface
 
         try
         {
-
+            $query = DB::table('ri_list_entities as rle')->join('ri_list_group as rlg', 'rlg.id', '=', 'rle.list_group_id');
+            $query->where('rle.delete_status', '=', 1);
+            $query->select('rle.id as entityId', 'rle.list_entity_name as listEntityName',
+                'rlg.id as listGroupId', 'rlg.list_group_name as listGroupName');
+            $query->where('rle.list_group_id', '=', $groupId);
+            $query->orderBy('rle.id', 'ASC');
+            $listEntities = $query->get();
         }
         catch(QueryException $queryExc)
         {
@@ -74,4 +80,38 @@ class HelperImpl implements HelperInterface
 
         return $listGroups;
     }
+
+    /* Get all list entities
+    * @params none
+    * @throws HelperException
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getListEntities()
+    {
+        $listEntities = null;
+
+        try
+        {
+            $query = DB::table('ri_list_entities as rle')->join('ri_list_group as rlg', 'rlg.id', '=', 'rle.list_group_id');
+            $query->where('rle.delete_status', '=', 1);
+            $query->select('rle.id as entityId', 'rle.list_entity_name as listEntityName',
+                    'rlg.id as listGroupId', 'rlg.list_group_name as listGroupName');
+            $query->orderBy('rle.id', 'ASC');
+            $listEntities = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new HelperException(null, ErrorEnum::LIST_ENTITY_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::LIST_ENTITY_ERROR, $exc);
+        }
+
+        return $listEntities;
+    }
+
+
 }

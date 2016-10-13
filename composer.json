@@ -23,16 +23,14 @@
   "autoload": {
     "classmap": [
       "app/jobportal/common",
-      "app/jobportal/facades",
-      "app/jobportal/mapper",
       "app/jobportal/model/entities",
       "app/jobportal/repositories/repoimpl",
       "app/jobportal/repositories/repointerface",
       "app/jobportal/serviceproviders/reposerviceprovider",
-      "app/jobportal/serviceproviders/servicesserviceprovider",
       "app/jobportal/services",
       "app/jobportal/utilities",
       "app/jobportal/utilities/Exception",
+      "app/jobportal/utilities/ErrorEnum",
       "database"
     ],
     "psr-4": {

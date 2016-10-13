@@ -25,5 +25,7 @@ class PortalRepoServiceProvider extends ServiceProvider
     {
         $this->app->bind('App\jobportal\repositories\repointerface\HelperInterface',
             'App\jobportal\repositories\repoimpl\HelperImpl');
+        $this->app->bind('App\jobportal\repositories\repointerface\CompanyInterface',
+            'App\jobportal\repositories\repoimpl\CompanyImpl');
     }
 }

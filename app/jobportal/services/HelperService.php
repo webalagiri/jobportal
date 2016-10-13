@@ -23,7 +23,7 @@ class HelperService
         $this->helperRepo = $helperRepo;
     }
 
-    /* Get master data by group Id
+    /* Get list entity data by group Id
      * @params $groupId
      * @throws HelperException
      * @return array | null
@@ -75,5 +75,32 @@ class HelperService
         }
 
         return $listGroups;
+    }
+
+    /* Get all list entities
+    * @params none
+    * @throws HelperException
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getListEntities()
+    {
+        $listEntities = null;
+
+        try
+        {
+            $listEntities = $this->helperRepo->getListEntities();
+        }
+        catch(HelperException $helperExc)
+        {
+            throw $helperExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::LIST_ENTITY_ERROR, $exc);
+        }
+
+        return $listEntities;
     }
 }
