@@ -9,8 +9,12 @@
 namespace App\jobportal\repositories\repointerface;
 
 
+use App\Http\ViewModels\CompanyViewModel;
+
 interface CompanyInterface {
 
     public function getCompanyList();
+    public function getCompanyDetails($companyId);
+    public function saveCompanyProfile(CompanyViewModel $companyProfileVM);
 
 }

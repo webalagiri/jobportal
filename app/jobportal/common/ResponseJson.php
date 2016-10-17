@@ -10,6 +10,9 @@ namespace App\jobportal\common;
 
 //use Illuminate\Support\Facades\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use App\jobportal\utilities\Exception\BaseException;
+use App\jobportal\utilities\Exception\AppendMessage;
+use Log;
 
 //class ResponseJSON extends Response {
 class ResponseJson extends JsonResponse {
@@ -116,9 +119,21 @@ class ResponseJson extends JsonResponse {
         parent::__construct($data, $this::HTTP_SUCCESS_STATUS);
     }
 
-    public function sendErrorResponse()
+    public function sendErrorResponse(BaseException $exc)
     {
         $data = array(
+            'isSuccess' => $this->result,
+            'message' => $this->getMessage(),
+            'status' => $this::HTTP_SUCCESS_STATUS,
+        );
+        //dd('Inside send error response');
+        $errorMsg = $exc->getMessageForCode();
+        $msg = AppendMessage::appendMessage($exc);
+        Log::error($msg);
+
+        parent::__construct($data, $this::HTTP_SUCCESS_STATUS);
+
+        /*$data = array(
             'isSuccess' => $this->result,
             'result' => $this->obj
         );
@@ -130,7 +145,7 @@ class ResponseJson extends JsonResponse {
         catch(\Exception $exc)
         {
             dd($exc);
-        }
+        }*/
 
         //dd($data);
 

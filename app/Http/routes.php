@@ -28,7 +28,24 @@ Route::group(['prefix' => 'company'], function()
 {
     Route::group(['namespace' => 'Company'], function(){
         Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
-        Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
-        Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
+        Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
+        Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
+        Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));
+        Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
+
+        Route::post('rest/api/jobprofile', array('as' => 'company.jobprofile', 'uses' => 'JobController@saveJobProfile'));
     });
 });
+
+Route::group(['prefix' => 'candidate'], function()
+{
+    Route::group(['namespace' => 'Candidate'], function(){
+        Route::get('rest/api/candidates', array('as' => 'candidate.candidates', 'uses' => 'CandidateController@getCandidates'));
+        Route::get('rest/api/{candidateId}/details', array('as' => 'candidate.candidatedetails', 'uses' => 'CandidateController@getCandidateDetails'));
+        /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
+        Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
+        Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/
+    });
+});
+
+

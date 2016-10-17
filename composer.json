@@ -23,6 +23,7 @@
   "autoload": {
     "classmap": [
       "app/jobportal/common",
+      "app/jobportal/mapper",
       "app/jobportal/model/entities",
       "app/jobportal/repositories/repoimpl",
       "app/jobportal/repositories/repointerface",

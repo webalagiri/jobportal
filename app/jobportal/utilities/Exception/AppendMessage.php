@@ -6,9 +6,9 @@
  * Time: 1:27 PM
  */
 
-namespace App\prescription\utilities\Exception;
+namespace App\jobportal\utilities\Exception;
 use Exception;
-use App\prescription\utilities\Exception\BaseException;
+use App\jobportal\utilities\Exception\BaseException;
 
 class AppendMessage {
 
