@@ -172,4 +172,38 @@ class CompanyImpl implements CompanyInterface
 
         return $user;
     }
+
+    /* Delete a company
+     * @params $companyId
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function deleteCompany($companyId)
+    {
+        $status = true;
+
+        try
+        {
+            $company = User::find($companyId);
+            if(!is_null($company))
+            {
+                $company->delete_status = 0;
+                $company->save();
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_DELETE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_DELETE_ERROR, $exc);
+        }
+
+        return $status;
+    }
 }

@@ -111,4 +111,37 @@ class JobService
 
         return $status;
     }
+
+    /* Delete job
+     * @params $jobId
+     * @throws $jobException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteJob($jobId)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($jobId, &$status)
+            {
+                $status = $this->jobRepo->deleteJob($jobId);
+            });
+
+        }
+        catch(JobException $jobExc)
+        {
+            $status = false;
+            throw $jobExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new JobException(null, ErrorEnum::JOB_PROFILE_DELETE_ERROR, $ex);
+        }
+
+        return $status;
+    }
 }

@@ -26,6 +26,8 @@ class ErrorEnum extends Enum{
     const COMPANY_DETAILS_SUCCESS = 134;
     const COMPANY_PROFILE_SAVE_ERROR = 135;
     const COMPANY_PROFILE_SAVE_SUCCESS = 136;
+    const COMPANY_PROFILE_DELETE_ERROR = 137;
+    const COMPANY_PROFILE_DELETE_SUCCESS = 138;
     //const NEW_COMPANY_SAVE_ERROR = 137;
     //const NEW_COMPANY_SAVE_SUCCESS = 138;
 
@@ -38,6 +40,8 @@ class ErrorEnum extends Enum{
     const NO_JOB_DETAILS_FOUND = 181;
     const JOB_PROFILE_SAVE_ERROR = 182;
     const JOB_PROFILE_SAVE_SUCCESS = 183;
+    const JOB_PROFILE_DELETE_ERROR = 184;
+    const JOB_PROFILE_DELETE_SUCCESS = 185;
 
     //Candidate constants 201 to 240
     const CANDIDATE_LIST_ERROR = 201;

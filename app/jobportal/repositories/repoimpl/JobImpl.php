@@ -149,15 +149,49 @@ class JobImpl implements JobInterface
         }
         catch(QueryException $queryExc)
         {
-            dd($queryExc);
+            //dd($queryExc);
             $status = false;
             throw new JobException(null, ErrorEnum::JOB_PROFILE_SAVE_ERROR, $queryExc);
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $status = false;
             throw new JobException(null, ErrorEnum::JOB_PROFILE_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    /* Delete job
+     * @params $jobId
+     * @throws $jobException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteJob($jobId)
+    {
+        $status = true;
+
+        try
+        {
+            $job = JobProfile::find($jobId);
+            if(!is_null($job))
+            {
+                $job->job_status = 0;
+                $job->save();
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new JobException(null, ErrorEnum::JOB_PROFILE_DELETE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            $status = false;
+            throw new JobException(null, ErrorEnum::JOB_PROFILE_DELETE_ERROR, $exc);
         }
 
         return $status;

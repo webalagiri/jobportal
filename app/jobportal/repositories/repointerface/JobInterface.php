@@ -16,4 +16,5 @@ interface JobInterface
     public function getJobList();
     public function getJobDetails($jobId);
     public function saveJobProfile(JobViewModel $jobVM);
+    public function deleteJob($jobId);
 }

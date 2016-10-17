@@ -154,4 +154,42 @@ class JobController extends Controller
 
         return $jsonResponse;
     }
+
+    /* Delete job
+     * @params $jobRequest
+     * @throws $jobException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteJob(Request $jobRequest)
+    {
+        $jobId = null;
+        $jsonResponse = null;
+
+        try
+        {
+            $jobId = $jobRequest->get('jobId');
+            $status = $this->jobService->deleteJob($jobId);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_PROFILE_DELETE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(JobException $companyExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::JOB_PROFILE_DELETE_ERROR));
+            $jsonResponse->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
 }

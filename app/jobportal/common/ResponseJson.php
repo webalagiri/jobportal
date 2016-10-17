@@ -109,12 +109,42 @@ class ResponseJson extends JsonResponse {
 
     public function sendSuccessResponse()
     {
-        $data = array(
-            'isSuccess' => $this->result,
-            'message' => $this->getMessage(),
-            'status' => $this::HTTP_SUCCESS_STATUS,
-            'result' => $this->obj
-        );
+        $data = null;
+
+        if(!is_null($this->obj))
+        {
+            $data = array(
+                'isSuccess' => $this->result,
+                'message' => $this->getMessage(),
+                'status' => $this::HTTP_SUCCESS_STATUS,
+                'result' => $this->obj
+            );
+        }
+        else
+        {
+            $data = array(
+                'isSuccess' => $this->result,
+                'message' => $this->getMessage(),
+                'status' => $this::HTTP_SUCCESS_STATUS,
+            );
+        }
+        /*if(!isEmpty($this->obj))
+        {
+            $data = array(
+                'isSuccess' => $this->result,
+                'message' => $this->getMessage(),
+                'status' => $this::HTTP_SUCCESS_STATUS,
+                'result' => $this->obj
+            );
+        }
+        else
+        {
+            $data = array(
+                'isSuccess' => $this->result,
+                'message' => $this->getMessage(),
+                'status' => $this::HTTP_SUCCESS_STATUS,
+            );
+        }*/
 
         parent::__construct($data, $this::HTTP_SUCCESS_STATUS);
     }

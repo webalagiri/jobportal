@@ -16,5 +16,6 @@ interface CompanyInterface {
     public function getCompanyList();
     public function getCompanyDetails($companyId);
     public function saveCompanyProfile(CompanyViewModel $companyProfileVM);
+    public function deleteCompany($companyId);
 
 }

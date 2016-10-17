@@ -144,4 +144,44 @@ class CompanyController extends Controller
 
         return $jsonResponse;
     }
+
+    /* Delete a company
+     * @params $companyRequest
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function deleteCompany(Request $companyRequest)
+    {
+        //$status = true;
+        $companyId = null;
+        $jsonResponse = null;
+
+        try
+        {
+            $companyId = $companyRequest->get('companyId');
+            $status = $this->companyService->deleteCompany($companyId);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_PROFILE_DELETE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+
+        }
+        catch(CompanyException $companyExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_PROFILE_DELETE_ERROR));
+            $jsonResponse->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
 }

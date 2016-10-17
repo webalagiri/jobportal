@@ -113,4 +113,37 @@ class CompanyService
         return $status;
     }
 
+    /* Delete a company
+     * @params $companyId
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function deleteCompany($companyId)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($companyId, &$status)
+            {
+                $status = $this->companyRepo->deleteCompany($companyId);
+            });
+
+        }
+        catch(CompanyException $oompanyExc)
+        {
+            $status = false;
+            throw $oompanyExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_DELETE_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
 }
