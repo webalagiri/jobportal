@@ -176,7 +176,7 @@ class CompanyImpl implements CompanyInterface
     /* Delete a company
      * @params $companyId
      * @throws $companyExc
-     * @return array | null
+     * @return true | false
      * @author Baskar
      */
 

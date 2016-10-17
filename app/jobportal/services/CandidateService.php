@@ -12,6 +12,7 @@ use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\Exception\CandidateException;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 
+use Illuminate\Support\Facades\DB;
 use Exception;
 
 class CandidateService
@@ -75,6 +76,39 @@ class CandidateService
         }
 
         return $candidateDetails;
+    }
+
+    /* Delete a candidate
+     * @params $candidateId
+     * @throws $candidateException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteCandidate($candidateId)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateId, &$status)
+            {
+                $status = $this->candidateRepo->deleteCandidate($candidateId);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_DELETE_ERROR, $ex);
+        }
+
+        return $status;
     }
 
 }

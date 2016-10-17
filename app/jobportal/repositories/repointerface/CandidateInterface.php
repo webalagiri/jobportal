@@ -13,4 +13,5 @@ interface CandidateInterface
 {
     public function getCandidates();
     public function getCandidateDetails($candidateId);
+    public function deleteCandidate($candidateId);
 }

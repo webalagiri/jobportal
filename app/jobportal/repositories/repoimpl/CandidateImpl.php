@@ -13,7 +13,7 @@ use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\CandidateException;
 
-
+use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
 use Exception;
@@ -96,5 +96,39 @@ class CandidateImpl implements CandidateInterface
         }
 
         return $candidateDetails;
+    }
+
+    /* Delete a candidate
+     * @params $candidateId
+     * @throws $candidateException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteCandidate($candidateId)
+    {
+        $status = true;
+
+        try
+        {
+            $candidate = User::find($candidateId);
+            if(!is_null($candidate))
+            {
+                $candidate->delete_status = 0;
+                $candidate->save();
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::COMPANY_PROFILE_DELETE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::COMPANY_PROFILE_DELETE_ERROR, $exc);
+        }
+
+        return $status;
     }
 }

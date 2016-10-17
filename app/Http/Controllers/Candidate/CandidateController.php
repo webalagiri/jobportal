@@ -62,9 +62,12 @@ class CandidateController extends Controller
         {
             //dd($candidateExc);
 
-            $errorMsg = $candidateExc->getMessageForCode();
+            /*$errorMsg = $candidateExc->getMessageForCode();
             $msg = AppendMessage::appendMessage($candidateExc);
-            Log::error($msg);
+            Log::error($msg);*/
+
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_LIST_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
         }
         catch(Exception $exc)
         {
@@ -121,5 +124,44 @@ class CandidateController extends Controller
         }
 
         return $responseJson;
+    }
+
+    /* Delete a candidate
+     * @params $candidateId
+     * @throws $candidateException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteCandidate(Request $candidateRequest)
+    {
+        $candidateId = null;
+        $jsonResponse = null;
+
+        try
+        {
+            $candidateId = $candidateRequest->get('candidateId');
+            $status = $this->candidateService->deleteCandidate($candidateId);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_PROFILE_DELETE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_PROFILE_DELETE_ERROR));
+            $jsonResponse->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
     }
 }

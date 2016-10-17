@@ -44,6 +44,7 @@ Route::group(['prefix' => 'candidate'], function()
     Route::group(['namespace' => 'Candidate'], function(){
         Route::get('rest/api/candidates', array('as' => 'candidate.candidates', 'uses' => 'CandidateController@getCandidates'));
         Route::get('rest/api/{candidateId}/details', array('as' => 'candidate.candidatedetails', 'uses' => 'CandidateController@getCandidateDetails'));
+        Route::delete('rest/api/candidate', array('as' => 'candidate.deletecandidate', 'uses' => 'CandidateController@deleteCandidate'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/

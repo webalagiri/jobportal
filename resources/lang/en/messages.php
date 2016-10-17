@@ -40,5 +40,7 @@
         "204" => "Unable to retrieve candidate details",
         "205" => "Successfully retrieved candidate details",
         "206" => "No candidate details available",
+        "207" => "Unable to delete candidate",
+        "208" => "Successfully deleted candidate profile",
 
     ];
