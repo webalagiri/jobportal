@@ -17,12 +17,14 @@ class CreateCandidatePersonalProfileTable extends Migration
             Schema::create('ri_candidate_personal_profile', function (Blueprint $table) {
                 $table->increments('id')->unsigned();
                 $table->integer('candidate_id')->unsigned();
-                $table->string('candidate_name', 500);
+                $table->string('first_name', 255);
+                $table->string('last_name', 255);
                 $table->string('email', 255)->nullable();
                 $table->string('phone', 255)->nullable();
                 $table->string('mobile', 255)->nullable();
                 $table->string('location', 1000)->nullable();
                 $table->text('address');
+                $table->string('alternate_mobile', 255)->nullable();
                 $table->integer('city')->unsigned();
                 $table->integer('country')->unsigned();
                 $table->string('pincode', 255);

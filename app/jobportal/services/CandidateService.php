@@ -78,6 +78,39 @@ class CandidateService
         return $candidateDetails;
     }
 
+    /* Save candidate profile
+     * @params $candidateProfileVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateProfile($candidateProfileVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateProfileVM, &$status)
+            {
+                $status = $this->candidateRepo->saveCandidateProfile($candidateProfileVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
     /* Delete a candidate
      * @params $candidateId
      * @throws $candidateException

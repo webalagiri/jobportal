@@ -22,6 +22,7 @@ class JobMapper
         //$userName = Session::get('DisplayName');
         $userName = 'Admin';
 
+        $jobVM->setJobId($job->jobId);
         $jobVM->setCompanyId($job->companyId);
         $jobVM->setJobPostName($job->jobPostName);
         $jobVM->setJobDescription($job->jobDescription);

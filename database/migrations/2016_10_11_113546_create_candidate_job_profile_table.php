@@ -17,12 +17,16 @@ class CreateCandidateJobProfileTable extends Migration
             Schema::create('ri_candidate_job_profile', function (Blueprint $table) {
                 $table->increments('id')->unsigned();
                 $table->integer('candidate_id')->unsigned();
-                $table->string('profile_name', 255);
+                $table->string('profile_name', 255)->nullable();
                 $table->text('profile_details')->nullable();
                 $table->double('current_salary', 12, 2)->nullable();
                 $table->double('expected_salary', 12, 2)->nullable();
+                $table->string('job_title', 1000)->nullable();
                 $table->text('skills')->nullable();
-                $table->integer('total_experience')->nullable();
+                $table->integer('total_experience_years')->nullable();
+                $table->integer('total_experience_months')->nullable();
+                $table->string('current_location', 255)->nullable();
+                $table->string('preferred_location', 255)->nullable();
                 $table->text('resume')->nullable();
                 $table->string('created_by', 255);
                 $table->string('updated_by', 255);

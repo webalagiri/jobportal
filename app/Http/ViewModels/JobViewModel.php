@@ -11,6 +11,7 @@ namespace App\Http\ViewModels;
 
 class JobViewModel
 {
+    private $jobId;
     private $companyId;
     private $jobPostName;
     private $jobDescription;
@@ -29,6 +30,22 @@ class JobViewModel
     private $updatedBy;
     private $createdAt;
     private $updatedAt;
+
+    /**
+     * @return mixed
+     */
+    public function getJobId()
+    {
+        return $this->jobId;
+    }
+
+    /**
+     * @param mixed $jobId
+     */
+    public function setJobId($jobId)
+    {
+        $this->jobId = $jobId;
+    }
 
     /**
      * @return mixed

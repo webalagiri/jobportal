@@ -9,9 +9,12 @@
 namespace App\jobportal\repositories\repointerface;
 
 
+use App\Http\ViewModels\CandidateViewModel;
+
 interface CandidateInterface
 {
     public function getCandidates();
     public function getCandidateDetails($candidateId);
+    public function saveCandidateProfile(CandidateViewModel $candidateVM);
     public function deleteCandidate($candidateId);
 }

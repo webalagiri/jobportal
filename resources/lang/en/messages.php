@@ -42,5 +42,7 @@
         "206" => "No candidate details available",
         "207" => "Unable to delete candidate",
         "208" => "Successfully deleted candidate profile",
+        "209" => "Unable to save candidate profile",
+        "210" => "Successfully saved candidate profile",
 
     ];

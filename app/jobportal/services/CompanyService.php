@@ -81,7 +81,7 @@ class CompanyService
     }
 
     /* Save company profile
-     * @params $companyRequest
+     * @params $companyProfileVM
      * @throws $companyExc
      * @return true | false
      * @author Baskar

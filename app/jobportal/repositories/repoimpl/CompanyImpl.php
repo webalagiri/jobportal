@@ -97,16 +97,39 @@ class CompanyImpl implements CompanyInterface
         return $companyDetails;
     }
 
+    /* Save company profile
+     * @params $companyProfileVM
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+
     public function saveCompanyProfile(CompanyViewModel $companyProfileVM)
     {
         $status = true;
-        $companyProfile = null;
+        $company = null;
         $companyId = null;
+        $user = null;
 
         try
         {
-            $user = $this->createCompanyUser($companyProfileVM);
-            $company = new Company();
+            $companyId = $companyProfileVM->getCompanyId();
+            if($companyId == 0)
+            {
+                $user = $this->processCompanyUser($companyProfileVM);
+                $this->attachCompanyRole($user);
+                $company = new Company();
+            }
+            else
+            {
+                $company = Company::where('company_id', '=', $companyId)->first();
+                if(!is_null($company))
+                {
+                    //$user = User::find($companyId);
+                    $user = $this->processCompanyUser($companyProfileVM);
+                }
+            }
+
             $company->company_name = $companyProfileVM->getCompanyName();
             $company->description = $companyProfileVM->getDescription();
             $company->company_type = $companyProfileVM->getCompanyType();
@@ -144,33 +167,49 @@ class CompanyImpl implements CompanyInterface
         return $status;
     }
 
-    private function createCompanyUser(CompanyViewModel $companyProfileVM)
+    private function processCompanyUser(CompanyViewModel $companyProfileVM)
     {
-        $companyId = null;
+       //$companyId = null;
         $user = null;
         $companyId = $companyProfileVM->getCompanyId();
 
         if($companyId == 0)
         {
             $user = new User();
-            $user->name = $companyProfileVM->getCompanyName();
+        }
+        else
+        {
+            $user = User::find($companyId);
+            /*$user->name = $companyProfileVM->getCompanyName();
             $user->email = $companyProfileVM->getEmail();
             $user->password = $companyProfileVM->getCompanyName();
             $user->delete_status = 1;
             $user->created_at = $companyProfileVM->getCreatedAt();
             $user->updated_at = $companyProfileVM->getUpdatedAt();
 
-            $user->save();
-
-            $role = Role::find(UserType::USERTYPE_CLIENT);
-
-            if (!is_null($role))
-            {
-                $user->attachRole($role);
-            }
+            $user->save();*/
         }
 
+        $user->name = $companyProfileVM->getCompanyName();
+        $user->email = $companyProfileVM->getEmail();
+        $user->password = $companyProfileVM->getCompanyName();
+        $user->delete_status = 1;
+        $user->created_at = $companyProfileVM->getCreatedAt();
+        $user->updated_at = $companyProfileVM->getUpdatedAt();
+
+        $user->save();
+
         return $user;
+    }
+
+    private function attachCompanyRole(User $user)
+    {
+        $role = Role::find(UserType::USERTYPE_CLIENT);
+
+        if (!is_null($role))
+        {
+            $user->attachRole($role);
+        }
     }
 
     /* Delete a company

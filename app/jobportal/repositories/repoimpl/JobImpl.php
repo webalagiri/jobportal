@@ -116,15 +116,23 @@ class JobImpl implements JobInterface
     {
         $status = true;
         $jobProfile = null;
-        $companyId = null;
+        $jobId = null;
 
         try
         {
             $companyUser = User::find($jobVM->getCompanyId());
+            $jobId = $jobVM->getJobId();
 
             if(!is_null($companyUser))
             {
-                $jobProfile = new JobProfile();
+                if($jobId == 0)
+                {
+                    $jobProfile = new JobProfile();
+                }
+                else
+                {
+                    $jobProfile = JobProfile::find($jobId);
+                }
 
                 $jobProfile->job_post_name = $jobVM->getJobPostName();
                 $jobProfile->job_description = $jobVM->getJobDescription();

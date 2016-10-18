@@ -9,10 +9,14 @@
 namespace App\jobportal\repositories\repoimpl;
 
 
+use App\Http\ViewModels\CandidateViewModel;
+use App\jobportal\model\entities\CandidatePersonalProfile;
 use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\CandidateException;
 
+use App\jobportal\utilities\UserType;
+use App\Role;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
@@ -39,11 +43,14 @@ class CandidateImpl implements CandidateInterface
             $query->join('ri_candidate_job_profile as rcjp', 'rcjp.candidate_id', '=', 'usr.id');
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rcpp.city');
             $query->where('usr.delete_status', '=', 1);
-            $query->select('rcpp.id as Id', 'rcpp.candidate_id as candidateId', 'rcpp.candidate_name as candidateName',
-                'rcpp.email as email', 'rcpp.phone as phone', 'rle.list_entity_name as city', 'rcpp.gender as gender',
+            $query->select('rcpp.id as Id', 'rcpp.candidate_id as candidateId', 'rcpp.first_name as firstName',
+                'rcpp.last_name as lastName', 'rcpp.email as email', 'rcpp.phone as phone', 'rle.list_entity_name as city',
+                'rcpp.gender as gender',
                 'rcjp.profile_name as profileName', 'rcjp.profile_details as profileDetails',
-                'rcjp.skills as skills', 'rcjp.total_experience as totalExperience');
-            $query->orderBy('rcpp.candidate_name', 'ASC');
+                'rcjp.skills as skills', 'rcjp.total_experience_years as totalExperience');
+            $query->orderBy('rcpp.last_name', 'ASC');
+
+            //dd($query->toSql());
 
             $candidates = $query->get();
         }
@@ -79,10 +86,13 @@ class CandidateImpl implements CandidateInterface
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rcpp.city');
             $query->where('rcpp.candidate_id', '=', $candidateId);
             $query->where('usr.delete_status', '=', 1);
-            $query->select('rcpp.id as Id', 'rcpp.candidate_id as candidateId', 'rcpp.candidate_name as candidateName',
-                'rcpp.email as email', 'rcpp.phone as phone', 'rle.city as city', 'rcpp.gender as gender',
+            $query->select('rcpp.id as Id', 'rcpp.candidate_id as candidateId', 'rcpp.first_name as firstName',
+                'rcpp.last_name as lastName', 'rcpp.email as email', 'rcpp.phone as phone', 'rle.list_entity_name as city',
+                'rcpp.gender as gender',
                 'rcjp.profile_name as profileName', 'rcjp.profile_details as profileDetails',
-                'rcjp.skills as skills', 'rcjp.total_experience as totalExperience');
+                'rcjp.skills as skills', 'rcjp.total_experience_years as totalExperience');
+
+            dd($query->toSqyl());
 
             $candidateDetails = $query->get();
         }
@@ -97,6 +107,141 @@ class CandidateImpl implements CandidateInterface
 
         return $candidateDetails;
     }
+
+    /* Save candidate profile
+     * @params $candidateProfileVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateProfile(CandidateViewModel $candidateProfileVM)
+    {
+        $status = true;
+        $candidate = null;
+        $candidateId = null;
+        $user = null;
+
+        try
+        {
+            $candidateId = $candidateProfileVM->getCandidateId();
+            $user = $this->processCandidateUser($candidateProfileVM);
+            if($candidateId == 0)
+            {
+                //$user = $this->processCandidateUser($candidateProfileVM);
+                $this->attachCompanyRole($user);
+                $candidate = new CandidatePersonalProfile();
+                $this->addOrUpdatePersonalProfile($candidate, $candidateProfileVM, $user);
+            }
+            else
+            {
+                $candidate = CandidatePersonalProfile::where('candidate_id', '=', $candidateId)->first();
+                $this->addOrUpdatePersonalProfile($candidate, $candidateProfileVM, $user);
+            }
+
+            /*$company->company_name = $companyProfileVM->getCompanyName();
+            $company->description = $companyProfileVM->getDescription();
+            $company->company_type = $companyProfileVM->getCompanyType();
+            $company->email = $companyProfileVM->getEmail();
+            $company->phone = $companyProfileVM->getPhone();
+            $company->location = $companyProfileVM->getLocation();
+            $company->address = $companyProfileVM->getAddress();
+            $company->city = $companyProfileVM->getCity();
+            $company->country = $companyProfileVM->getCountry();
+            $company->pincode = $companyProfileVM->getPincode();
+            $company->company_logo = $companyProfileVM->getCompanyLogo();
+            $company->contact_person = $companyProfileVM->getContactPerson();
+            $company->contact_person_mobile = $companyProfileVM->getContactPersonMobile();
+            $company->created_by = $companyProfileVM->getCreatedBy();
+            $company->created_at = $companyProfileVM->getCreatedAt();
+            $company->updated_by = $companyProfileVM->getUpdatedBy();
+            $company->updated_at = $companyProfileVM->getUpdatedAt();
+
+            $user->company()->save($company);*/
+        }
+        catch(QueryException $queryExc)
+        {
+            dd($queryExc);
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR, $queryExc);
+
+        }
+        catch(Exception $exc)
+        {
+            dd($exc);
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    private function processCandidateUser(CandidateViewModel $candidateProfileVM)
+    {
+        //$candidateId = null;
+        $user = null;
+        $candidateId = $candidateProfileVM->getCandidateId();
+
+        if($candidateId == 0)
+        {
+            $user = new User();
+        }
+        else
+        {
+            $user = User::find($candidateId);
+        }
+
+        $user->name = $candidateProfileVM->getFirstName()." ".$candidateProfileVM->getLastName();
+        $user->email = $candidateProfileVM->getEmail();
+        $user->password = $candidateProfileVM->getFirstName();
+        $user->delete_status = 1;
+        $user->created_at = $candidateProfileVM->getCreatedAt();
+        $user->updated_at = $candidateProfileVM->getUpdatedAt();
+
+        $user->save();
+
+        return $user;
+    }
+
+    private function attachCompanyRole(User $user)
+    {
+        $role = Role::find(UserType::USERTYPE_CANDIDATE);
+
+        if (!is_null($role))
+        {
+            $user->attachRole($role);
+        }
+    }
+
+    private function addOrUpdatePersonalProfile(CandidatePersonalProfile $personalProfile, CandidateViewModel $candidateProfileVM, User $user)
+    {
+        $personalProfile->first_name = $candidateProfileVM->getFirstName();
+        $personalProfile->last_name = $candidateProfileVM->getLastName();
+        $personalProfile->email = $candidateProfileVM->getEmail();
+        $personalProfile->phone = $candidateProfileVM->getPhone();
+        $personalProfile->mobile = $candidateProfileVM->getMobile();
+        $personalProfile->location = $candidateProfileVM->getLocation();
+        $personalProfile->address = $candidateProfileVM->getAddress();
+        $personalProfile->alternate_mobile = $candidateProfileVM->getAlternateMobile();
+        $personalProfile->city = $candidateProfileVM->getCity();
+        $personalProfile->country = $candidateProfileVM->getCountry();
+        $personalProfile->pincode = $candidateProfileVM->getPincode();
+        $personalProfile->gender = $candidateProfileVM->getGender();
+        $personalProfile->date_of_birth = $candidateProfileVM->getDateOfBirth();
+        $personalProfile->marital_status = $candidateProfileVM->getMaritalStatus();
+        $personalProfile->physically_challenged = $candidateProfileVM->getPhysicallyChallenged();
+        $personalProfile->photo = $candidateProfileVM->getPhoto();
+        $personalProfile->created_by = $candidateProfileVM->getCreatedBy();
+        $personalProfile->created_at = $candidateProfileVM->getCreatedAt();
+        $personalProfile->updated_by = $candidateProfileVM->getUpdatedBy();
+        $personalProfile->updated_at = $candidateProfileVM->getUpdatedAt();
+
+        $user->candidatepersonalprofile()->save($personalProfile);
+
+        //return $personalProfile;
+    }
+
+
 
     /* Delete a candidate
      * @params $candidateId
