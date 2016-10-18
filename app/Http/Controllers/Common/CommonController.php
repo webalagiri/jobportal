@@ -6,7 +6,7 @@ use App\jobportal\common\ResponseJson;
 use App\jobportal\services\HelperService;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\HelperException;
-use App\prescription\utilities\Exception\AppendMessage;
+use App\jobportal\utilities\Exception\AppendMessage;
 
 use Illuminate\Http\Request;
 

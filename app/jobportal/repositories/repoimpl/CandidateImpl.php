@@ -92,7 +92,6 @@ class CandidateImpl implements CandidateInterface
                 'rcjp.profile_name as profileName', 'rcjp.profile_details as profileDetails',
                 'rcjp.skills as skills', 'rcjp.total_experience_years as totalExperience');
 
-            dd($query->toSqyl());
 
             $candidateDetails = $query->get();
         }
