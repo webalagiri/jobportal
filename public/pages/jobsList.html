@@ -1,0 +1,460 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Jobs List</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li class="active">Jobs List</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="button" class="btn blue no-margin" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i class="fa fa-plus"></i> Add Job</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid" ng-show="showDiv">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Create Job</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Job Company Name</label>
+                                        <select class="form-control" ng-disabled="{companyDisable}" ng-model="selectedCompany">
+                                            <option value="">Select</option>
+                                            <option value="1">Company Name 1</option>
+                                            <option value="2">Company Name 2</option>
+                                            <option value="3">Company Name 3</option>
+                                            <option value="4">Company Name 4</option>
+                                            <option value="5">Company Name 5</option>
+                                            <option value="6">Company Name 6</option>
+                                            <option value="7">Company Name 7</option>
+                                            <option value="8">Company Name 8</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Job Title</label>
+                                        <select class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="1">Title 1</option>
+                                            <option value="2">Title 2</option>
+                                            <option value="3">Title 3</option>
+                                            <option value="4">Title 4</option>
+                                            <option value="5">Title 5</option>
+                                            <option value="6">Title 6</option>
+                                            <option value="7">Title 7</option>
+                                            <option value="8">Title 8</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Job Details</label>
+                                        <textarea class="form-control" rows="1" placeholder="Enter Job Details"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Type</label>
+                                        <select class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="1">Full Time</option>
+                                            <option value="2">Part Time</option>
+                                            <option value="3">Internship</option>
+                                            <option value="4">Third Party</option>
+                                            <option value="5">Contract</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Experience <span><span ng-bind="experience.minValue">1.5</span> - <span ng-bind="experience.maxValue">5.5</span> Years</span>
+                                        </label>
+                                        <rzslider rz-slider-model="experience.minValue" rz-slider-high="experience.maxValue" rz-slider-options="experience.options"></rzslider>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job CTC <span>Rs.<span ng-bind="salary.minValue">1.5</span> Lakhs - Rs.<span ng-bind="salary.maxValue">5.5</span> Lakhs</span>
+                                        </label>
+                                        <rzslider rz-slider-model="salary.minValue" rz-slider-high="salary.maxValue" rz-slider-options="salary.options"></rzslider>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Industry</label>
+                                        <select class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="1">Accounts/Finance</option>
+                                            <option value="2">Admin / Secretarial / Front Office</option>
+                                            <option value="3">Advertising / Entertainment / Media</option>
+                                            <option value="4">Advertising, Media &amp; PR</option>
+                                            <option value="5">Agriculture/Dairy</option>
+                                            <option value="6">Animation</option>
+                                            <option value="7">Any</option>
+                                            <option value="8">Architecture/Interior Design</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Functional Area</label>
+                                        <select class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="1">Accounts/Finance</option>
+                                            <option value="2">Admin / Secretarial / Front Office</option>
+                                            <option value="3">Advertising / Entertainment / Media</option>
+                                            <option value="4">Advertising, Media &amp; PR</option>
+                                            <option value="5">Agriculture/Dairy</option>
+                                            <option value="6">Animation</option>
+                                            <option value="7">Any</option>
+                                            <option value="8">Architecture/Interior Design</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Status</label>
+                                        <div class="radio">
+
+                                            <label for="radio1">
+                                                <input type="radio" id="radio1" class="css-checkbox" name="jobStatus" checked="checked" /> Active</label>
+                                            <label for="radio2">
+                                                <input type="radio" id="radio2" class="css-checkbox" name="jobStatus" /> Inactive</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Job Skills</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Skills">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Number of Vacancy</label>
+                                        <input type="text" class="form-control" placeholder="Enter Number of Vacancy">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Active From Date</label>
+                                        <div class="input-group datepicker">
+                                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" placeholder="Enter Job Active From Date" />
+                                            <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Active End Date</label>
+                                        <div class="input-group datepicker">
+                                            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup2.opened" datepicker-options="dateOptions" close-text="Close" alt-input-formats="altInputFormats" placeholder="Enter Job End From Date" />
+                                            <span class="input-group-btn">
+                                                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showDiv = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Save Job
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <th>Job Details</th>
+                            <th>Company Details</th>
+                            <th>Skills</th>
+                            <th>Post Date</th>
+                            <th>Expire Date</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>AngularJS Developer</h4>
+                                    <p>4 - 8 Years</p>
+                                </td>
+                                <td>
+                                    <h4>Tech Company</h4>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>Java, JS, Angular</p>
+                                </td>
+                                <td>
+                                    <p>17-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Software Developer</h4>
+                                    <p>4 - 8 Years</p>
+                                </td>
+                                <td>
+                                    <h4>Staffing Solutions</h4>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>C++ Developer</p>
+                                </td>
+                                <td>
+                                    <p>17-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Sr.Executive Manager</h4>
+                                    <p>3 - 6 Years</p>
+                                </td>
+                                <td>
+                                    <h4>Crystal Hiring</h4>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>B2B Sales</p>
+                                </td>
+                                <td>
+                                    <p>17-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Customer Care Executive</h4>
+                                    <p>0 - 4 Years</p>
+                                </td>
+                                <td>
+                                    <h4>Allsec Technologies</h4>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>Any Graduation</p>
+                                </td>
+                                <td>
+                                    <p>17-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Mainframe Developer</h4>
+                                    <p>3 - 10 Years</p>
+                                </td>
+                                <td>
+                                    <h4>Tekflair Consultants</h4>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>Mainframe</p>
+                                </td>
+                                <td>
+                                    <p>17-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="container-fluid pagination-wrap">
+                        <div class="row no-padding">
+                            <div class="col-md-6">
+                                <p class="entry-count">Showing 1 to 5 of 25 entries</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="pagination pull-right">
+                                    <li class="disabled"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#/">1</a></li>
+                                    <li class="waves-effect"><a href="#/">2</a></li>
+                                    <li class="waves-effect"><a href="#/">3</a></li>
+                                    <li class="waves-effect"><a href="#/">4</a></li>
+                                    <li class="waves-effect"><a href="#/">5</a></li>
+                                    <li class="waves-effect"><a href="#/"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="jobView.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Job Details</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Company Name</label>
+                    <p>SK Group Company</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Name</label>
+                    <p>Angular Js Developer</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Details</label>
+                    <p>We need angular js developer with 5 year experience. </p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Type</label>
+                    <p>Full Time</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Experience</label>
+                    <p>5 Years</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Salary</label>
+                    <p>6 LPA</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Industry</label>
+                    <p>Software</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Functional Area</label>
+                    <p>Development</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Skills</label>
+                    <p>Java, Javascipr, Angular Js</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Number of Vacancy</label>
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Active From Date</label>
+                    <p>19-Sep-2016</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Active End Date</label>
+                    <p>31-Sep-2016</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Status</label>
+                    <p>Active</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn red no-margin" type="button" ng-click="closeModal()">Discard</button>
+    </div>
+</script>

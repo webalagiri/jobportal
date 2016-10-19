@@ -1,0 +1,617 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Search Resume</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li class="active">Search Resume</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="button" class="btn blue no-margin" ng-click="goAdvaced()"><i class="fa fa-search"></i> Advanced Search</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Keywords</label>
+                                        <input type="text" class="form-control" placeholder="Search in full resume">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <select class="form-control">
+                                            <option value="-1">Select</option>
+                                            <optgroup class="optGrp" label="------INDIA------"></optgroup>
+                                            <option value="01">Anywhere in India</option>
+                                            <option value="02">Anywhere in North India</option>
+                                            <option value="03">Anywhere in East India</option>
+                                            <option value="04">Anywhere in West India</option>
+                                            <option value="05">Anywhere in South India</option>
+                                            <optgroup class="optGrp" label="------Top Metropolitan Cities------"></optgroup>
+                                            <option value="2">Ahmedabad</option>
+                                            <option value="3">Bengaluru / Bangalore</option>
+                                            <option value="4">Chandigarh</option>
+                                            <option value="5">Chennai</option>
+                                            <option value="6">Delhi</option>
+                                            <option value="7">Gurgaon</option>
+                                            <option value="8">Hyderabad / Secunderabad</option>
+                                            <option value="9">Kolkata</option>
+                                            <option value="10">Mumbai</option>
+                                            <option value="11">Noida</option>
+                                            <option value="12">Pune</option>
+                                            <optgroup class="optGrp" label="------Andhra Pradesh------"></optgroup>
+                                            <option value="14">Anantapur</option>
+                                            <option value="362">Chitoor</option>
+                                            <option value="360">Eluru</option>
+                                            <option value="359">Gannavaram</option>
+                                            <option value="15">Guntakal</option>
+                                            <option value="16">Guntur</option>
+                                            <option value="265">Kadapa/Cuddapah</option>
+                                            <option value="18">Kakinada</option>
+                                            <option value="19">Kurnool</option>
+                                            <option value="358">Machilipatnam</option>
+                                            <option value="363">Nandyal</option>
+                                            <option value="20">Nellore</option>
+                                            <option value="364">Ongole</option>
+                                            <option value="22">Rajahmundry</option>
+                                            <option value="365">Tada</option>
+                                            <option value="24">Tirupati</option>
+                                            <option value="25">Vijayawada</option>
+                                            <option value="26">Visakhapatnam</option>
+                                            <option value="361">Vizianagaram</option>
+                                            <option value="28">Andhra Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Arunachal Pradesh------"></optgroup>
+                                            <option value="30">Itanagar</option>
+                                            <option value="31">Arunachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Assam------"></optgroup>
+                                            <option value="331">Dibrugarh</option>
+                                            <option value="33">Guwahati</option>
+                                            <option value="34">Silchar</option>
+                                            <option value="35">Assam - Other</option>
+                                            <optgroup class="optGrp" label="------Bihar------"></optgroup>
+                                            <option value="37">Bhagalpur</option>
+                                            <option value="38">Patna</option>
+                                            <option value="39">Bihar - Other</option>
+                                            <optgroup class="optGrp" label="------Chhattisgarh------"></optgroup>
+                                            <option value="41">Bhillai</option>
+                                            <option value="42">Bilaspur</option>
+                                            <option value="334">Korba</option>
+                                            <option value="43">Raipur</option>
+                                            <option value="247">Raigarh</option>
+                                            <option value="44">Chhattisgarh - Other</option>
+                                            <optgroup class="optGrp" label="------Goa------"></optgroup>
+                                            <option value="46">Panjim / Panaji</option>
+                                            <option value="48">Vasco Da Gama</option>
+                                            <option value="49">Goa - Other</option>
+                                            <optgroup class="optGrp" label="------Gujarat------"></optgroup>
+                                            <option value="51">Ahmedabad</option>
+                                            <option value="52">Anand</option>
+                                            <option value="53">Ankleshwar</option>
+                                            <option value="55">Bharuch</option>
+                                            <option value="56">Bhavnagar</option>
+                                            <option value="57">Bhuj</option>
+                                            <option value="330">Dahej</option>
+                                            <option value="332">Gandhidham</option>
+                                            <option value="58">Gandhinagar</option>
+                                            <option value="59">Gir</option>
+                                            <option value="60">Jamnagar</option>
+                                            <option value="61">Kandla</option>
+                                            <option value="62">Porbandar</option>
+                                            <option value="342">Mehsana</option>
+                                            <option value="63">Rajkot</option>
+                                            <option value="64">Surat</option>
+                                            <option value="65">Vadodara / Baroda</option>
+                                            <option value="66">Valsad</option>
+                                            <option value="67">Vapi</option>
+                                            <option value="68">Gujarat - Other</option>
+                                            <optgroup class="optGrp" label="------Haryana------"></optgroup>
+                                            <option value="70">Ambala</option>
+                                            <option value="71">Chandigarh</option>
+                                            <option value="72">Faridabad</option>
+                                            <option value="73">Gurgaon</option>
+                                            <option value="74">Hisar</option>
+                                            <option value="75">Karnal</option>
+                                            <option value="76">Kurukshetra</option>
+                                            <option value="77">Panipat</option>
+                                            <option value="78">Rohtak</option>
+                                            <option value="79">Haryana - Other</option>
+                                            <optgroup class="optGrp" label="------Himachal Pradesh------"></optgroup>
+                                            <option value="239">Baddi</option>
+                                            <option value="81">Dalhousie</option>
+                                            <option value="82">Dharmasala</option>
+                                            <option value="83">Kulu/Manali</option>
+                                            <option value="84">Shimla</option>
+                                            <option value="85">Himachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Jammu &amp; Kashmir------"></optgroup>
+                                            <option value="87">Jammu</option>
+                                            <option value="88">Srinagar</option>
+                                            <option value="89">Jammu and Kashmir - Other</option>
+                                            <optgroup class="optGrp" label="------Jharkhand------"></optgroup>
+                                            <option value="91">Bokaro</option>
+                                            <option value="92">Dhanbad</option>
+                                            <option value="93">Jamshedpur</option>
+                                            <option value="94">Ranchi</option>
+                                            <option value="95">Jharkhand - Other</option>
+                                            <optgroup class="optGrp" label="------Karnataka------"></optgroup>
+                                            <option value="97">Bengaluru / Bangalore</option>
+                                            <option value="98">Belgaum</option>
+                                            <option value="99">Bellary</option>
+                                            <option value="100">Bidar</option>
+                                            <option value="348">Davangere</option>
+                                            <option value="101">Dharwad</option>
+                                            <option value="102">Gulbarga</option>
+                                            <option value="103">Hubli</option>
+                                            <option value="104">Kolar</option>
+                                            <option value="105">Mangalore</option>
+                                            <option value="106">Mysoru / Mysore</option>
+                                            <option value="107">Karnataka - Other</option>
+                                            <optgroup class="optGrp" label="------Kerala------"></optgroup>
+                                            <option value="109">Calicut</option>
+                                            <option value="110">Cochin</option>
+                                            <option value="111">Ernakulam</option>
+                                            <option value="241">Idukki</option>
+                                            <option value="112">Kannur</option>
+                                            <option value="242">Kasargode</option>
+                                            <option value="113">Kochi</option>
+                                            <option value="114">Kollam</option>
+                                            <option value="115">Kottayam</option>
+                                            <option value="116">Kozhikode</option>
+                                            <option value="244">Malappuram</option>
+                                            <option value="117">Palakkad</option>
+                                            <option value="118">Palghat</option>
+                                            <option value="245">Pathanamthitta</option>
+                                            <option value="119">Thrissur</option>
+                                            <option value="120">Trivandrum</option>
+                                            <option value="248">Wayanad</option>
+                                            <option value="121">Kerala - Other</option>
+                                            <optgroup class="optGrp" label="------Madhya Pradesh------"></optgroup>
+                                            <option value="123">Bhopal</option>
+                                            <option value="124">Gwalior</option>
+                                            <option value="125">Indore</option>
+                                            <option value="126">Jabalpur</option>
+                                            <option value="335">Katni</option>
+                                            <option value="127">Ujjain</option>
+                                            <option value="128">Madhya Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Maharashtra------"></optgroup>
+                                            <option value="130">Ahmednagar</option>
+                                            <option value="131">Aurangabad</option>
+                                            <option value="341">Chandrapur</option>
+                                            <option value="132">Jalgaon</option>
+                                            <option value="133">Kolhapur</option>
+                                            <option value="349">Khopoli</option>
+                                            <option value="134">Mumbai</option>
+                                            <option value="135">Mumbai Suburbs</option>
+                                            <option value="136">Nagpur</option>
+                                            <option value="137">Nasik</option>
+                                            <option value="138">Navi Mumbai</option>
+                                            <option value="139">Pune</option>
+                                            <option value="346">Ratnagiri</option>
+                                            <option value="140">Solapur</option>
+                                            <option value="344">Vasai</option>
+                                            <option value="141">Maharashtra - Other</option>
+                                            <optgroup class="optGrp" label="------Manipur------"></optgroup>
+                                            <option value="143">Imphal</option>
+                                            <option value="144">Manipur - Other</option>
+                                            <optgroup class="optGrp" label="------Meghalaya------"></optgroup>
+                                            <option value="146">Shillong</option>
+                                            <option value="147">Meghalaya - Other</option>
+                                            <optgroup class="optGrp" label="------Mizoram------"></optgroup>
+                                            <option value="149">Aizawl</option>
+                                            <option value="150">Mizoram - Other</option>
+                                            <optgroup class="optGrp" label="------Nagaland------"></optgroup>
+                                            <option value="152">Dimapur</option>
+                                            <option value="153">Nagaland - Other</option>
+                                            <optgroup class="optGrp" label="------Orissa------"></optgroup>
+                                            <option value="155">Bhubaneshwar</option>
+                                            <option value="156">Cuttack</option>
+                                            <option value="338">Jharsuguda</option>
+                                            <option value="157">Paradeep</option>
+                                            <option value="158">Puri</option>
+                                            <option value="159">Rourkela</option>
+                                            <option value="337">Sambalpur</option>
+                                            <option value="160">Orissa - Other</option>
+                                            <optgroup class="optGrp" label="------Punjab------"></optgroup>
+                                            <option value="162">Amritsar</option>
+                                            <option value="163">Bathinda</option>
+                                            <option value="164">Chandigarh</option>
+                                            <option value="165">Jalandhar</option>
+                                            <option value="166">Ludhiana</option>
+                                            <option value="167">Mohali</option>
+                                            <option value="168">Pathankot</option>
+                                            <option value="169">Patiala</option>
+                                            <option value="170">Punjab - Other</option>
+                                            <optgroup class="optGrp" label="------Rajasthan------"></optgroup>
+                                            <option value="172">Ajmer</option>
+                                            <option value="345">Barmer</option>
+                                            <option value="240">Bhilwara</option>
+                                            <option value="173">Jaipur</option>
+                                            <option value="174">Jaisalmer</option>
+                                            <option value="175">Jodhpur</option>
+                                            <option value="176">Kota</option>
+                                            <option value="339">Neemrana</option>
+                                            <option value="177">Udaipur</option>
+                                            <option value="178">Rajasthan - Other</option>
+                                            <optgroup class="optGrp" label="------Sikkim------"></optgroup>
+                                            <option value="180">Gangtok</option>
+                                            <option value="181">Sikkim - Other</option>
+                                            <optgroup class="optGrp" label="------Tamil Nadu------"></optgroup>
+                                            <option value="183">Chennai</option>
+                                            <option value="184">Coimbatore</option>
+                                            <option value="185">Cuddalore</option>
+                                            <option value="186">Erode</option>
+                                            <option value="187">Hosur</option>
+                                            <option value="188">Madurai</option>
+                                            <option value="189">Nagercoil</option>
+                                            <option value="190">Ooty</option>
+                                            <option value="191">Salem</option>
+                                            <option value="192">Thanjavur</option>
+                                            <option value="193">Tirunelveli</option>
+                                            <option value="194">Trichy</option>
+                                            <option value="195">Tuticorin</option>
+                                            <option value="196">Vellore</option>
+                                            <option value="197">Tamil Nadu - Other</option>
+                                            <optgroup class="optGrp" label="------Telangana------"></optgroup>
+                                            <option value="249">Adilabad</option>
+                                            <option value="368">Bhadrachalam</option>
+                                            <option value="369">Godavarikhani</option>
+                                            <option value="370">Hanumakonda</option>
+                                            <option value="17">Hyderabad / Secunderabad</option>
+                                            <option value="286">Karimnagar</option>
+                                            <option value="288">Khammam</option>
+                                            <option value="371">Kodad</option>
+                                            <option value="372">Kothagudem</option>
+                                            <option value="373">Mahaboobnagar/Mahabubnagar</option>
+                                            <option value="374">Mancherial</option>
+                                            <option value="353">Medak</option>
+                                            <option value="355">Nalgonda</option>
+                                            <option value="21">Nizamabad</option>
+                                            <option value="354">Rangareddy</option>
+                                            <option value="357">Razole</option>
+                                            <option value="375">Sangareddy</option>
+                                            <option value="376">Siddipet</option>
+                                            <option value="377">Suryapet</option>
+                                            <option value="356">Tuni</option>
+                                            <option value="27">Warangal</option>
+                                            <option value="366">Telangana - Other</option>
+                                            <optgroup class="optGrp" label="------Tripura------"></optgroup>
+                                            <option value="199">Agartala</option>
+                                            <option value="200">Tripura - Other</option>
+                                            <optgroup class="optGrp" label="------Union Territories------"></optgroup>
+                                            <option value="202">Chandigarh</option>
+                                            <option value="203">Dadra &amp; Nagar Haveli - Silvassa
+                                            </option>
+                                            <option value="204">Daman &amp; Diu</option>
+                                            <option value="205">Delhi</option>
+                                            <option value="243">Lakshadweep</option>
+                                            <option value="206">Pondicherry</option>
+                                            <optgroup class="optGrp" label="------Uttar Pradesh------"></optgroup>
+                                            <option value="208">Agra</option>
+                                            <option value="209">Aligarh</option>
+                                            <option value="210">Allahabad</option>
+                                            <option value="211">Bareilly</option>
+                                            <option value="340">Bijnor</option>
+                                            <option value="212">Faizabad</option>
+                                            <option value="213">Ghaziabad</option>
+                                            <option value="214">Gorakhpur</option>
+                                            <option value="350">Greater Noida</option>
+                                            <option value="215">Kanpur</option>
+                                            <option value="216">Lucknow</option>
+                                            <option value="217">Mathura</option>
+                                            <option value="218">Meerut</option>
+                                            <option value="219">Moradabad</option>
+                                            <option value="220">Noida</option>
+                                            <option value="333">Saharanpur</option>
+                                            <option value="221">Varanasi / Banaras</option>
+                                            <option value="222">Uttar Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Uttaranchal------"></optgroup>
+                                            <option value="224">Dehradun</option>
+                                            <option value="336">Haldwani</option>
+                                            <option value="343">Kashipur</option>
+                                            <option value="225">Roorkee</option>
+                                            <option value="226">Uttaranchal - Other</option>
+                                            <optgroup class="optGrp" label="------West Bengal------"></optgroup>
+                                            <option value="228">Asansol</option>
+                                            <option value="347">Burdwan</option>
+                                            <option value="229">Durgapur</option>
+                                            <option value="230">Haldia</option>
+                                            <option value="231">Kharagpur</option>
+                                            <option value="232">Kolkata</option>
+                                            <option value="233">Siliguri</option>
+                                            <option value="234">West Bengal - Other</option>
+                                            <optgroup class="optGrp" label="------Other------"></optgroup>
+                                            <option value="9999">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Skills</label>
+                                        <oi-select oi-options="key as value for (key, value) in skillsList" ng-model="skillDetails" multiple placeholder="Enter Skills"></oi-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Experience <span><span ng-bind="experience.minValue">1.5</span> - <span ng-bind="experience.maxValue">5.5</span> Years</span>
+                                        </label>
+                                        <rzslider rz-slider-model="experience.minValue" rz-slider-high="experience.maxValue" rz-slider-options="experience.options"></rzslider>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Salary <span>Rs.<span ng-bind="salary.minValue">1.5</span> Lakhs - Rs.<span ng-bind="salary.maxValue">5.5</span> Lakhs</span>
+                                        </label>
+                                        <rzslider rz-slider-model="salary.minValue" rz-slider-high="salary.maxValue" rz-slider-options="salary.options"></rzslider>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="action-group text-right mj_toppadder20">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showDiv = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Search
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 profile-list">
+                <div class="worker-header profile-item">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="img/p1.png" class="worker-mid-pic" alt="">
+                        </div>
+                        <div class="col-sm-5">
+                            <h3 class="profile-name">S C Rajendran</h3>
+                            <h5>Graphic and webdesigner at <a href="#">Creativedesign.com</a></h5>
+                            <p><i class="fa fa-map-marker"></i> Chennai, India</p>
+                            <a href="#" class="tag">Design</a>
+                            <a href="#" class="tag">Development</a>
+                            <a href="#" class="tag">Seo</a>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Salary</h6>
+                                    <h4>6.5 Lacs/Year</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Experience</h6>
+                                    <h4>4 Years</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 action-group text-right">
+                                    <a href="#" class="btn red circle" title="Download Resume"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn green circle" title="Apply for Job"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn blue circle" title="More Details"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="worker-header profile-item">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="img/p2.png" class="worker-mid-pic" alt="">
+                        </div>
+                        <div class="col-sm-5">
+                            <h3 class="profile-name">Prakash BP</h3>
+                            <h5>UI designer at <a href="#">kreativesolutions.com</a></h5>
+                            <p><i class="fa fa-map-marker"></i> Chennai, India</p>
+                            <a href="#" class="tag">Photoshop</a>
+                            <a href="#" class="tag">Design</a>
+                            <a href="#" class="tag">Development</a>
+
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Salary</h6>
+                                    <h4>3.5 Lacs/Year</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Experience</h6>
+                                    <h4>2 Years</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 action-group text-right">
+                                    <a href="#" class="btn red circle" title="Download Resume"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn green circle" title="Apply for Job"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn blue circle" title="More Details"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="worker-header profile-item">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="img/profilepic4.jpg" class="worker-mid-pic" alt="">
+                        </div>
+                        <div class="col-sm-5">
+                            <h3 class="profile-name">Mounika S</h3>
+                            <h5>Mobile Developer at <a href="#">infosys.com</a></h5>
+                            <p><i class="fa fa-map-marker"></i> Chennai, India</p>
+                            <a href="#" class="tag">IONIC</a>
+                            <a href="#" class="tag">Hybrid Mobile</a>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Salary</h6>
+                                    <h4>3.5 Lacs/Year</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Experience</h6>
+                                    <h4>2 Years</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 action-group text-right">
+                                    <a href="#" class="btn red circle" title="Download Resume"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn green circle" title="Apply for Job"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn blue circle" title="More Details"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="worker-header profile-item">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img src="img/testimonial1.jpg" class="worker-mid-pic" alt="">
+                        </div>
+                        <div class="col-sm-5">
+                            <h3 class="profile-name">Manju K</h3>
+                            <h5>JAVA Deveoper at <a href="#">infosystems.com</a></h5>
+                            <p><i class="fa fa-map-marker"></i> Chennai, India</p>
+                            <a href="#" class="tag">JAVA</a>
+                            <a href="#" class="tag">J2EE</a>
+                            <a href="#" class="tag">Spring</a>
+                        </div>
+                        <div class="col-sm-5">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Salary</h6>
+                                    <h4>4.3 Lacs/Year</h4>
+                                </div>
+                                <div class="col-sm-5">
+                                    <h6 class="alt">Experience</h6>
+                                    <h4>3 Years</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 action-group text-right">
+                                    <a href="#" class="btn red circle" title="Download Resume"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn green circle" title="Apply for Job"><i class="fa fa-check-square-o" aria-hidden="true"></i></a>
+                                    <a href="#" class="btn blue circle" title="More Details"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="profile-filter" ng-class="{'active': isActive}">
+    <h4 class="filter-title">Search Filter <a href class="close" ng-click="hideFilter()">&times;</a></h4>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Experience </label>
+                <div class="row">
+                    <div class="col-md-6 to-after">
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <label>Salary</label>
+                <div class="row">
+                    <div class="col-md-6 to-after">
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">1 Lac</option>
+                            <option value="2">2 Lac</option>
+                            <option value="3">3 Lac</option>
+                            <option value="4">4 Lac</option>
+                            <option value="5">5 Lac</option>
+                            <option value="6">6 Lac</option>
+                            <option value="7">7 Lac</option>
+                            <option value="8">8 Lac</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <select class="form-control">
+                            <option value="">Select</option>
+                            <option value="1">1 Lac</option>
+                            <option value="2">2 Lac</option>
+                            <option value="3">3 Lac</option>
+                            <option value="4">4 Lac</option>
+                            <option value="5">5 Lac</option>
+                            <option value="6">6 Lac</option>
+                            <option value="7">7 Lac</option>
+                            <option value="8">8 Lac</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label>Skills</label>
+            <div class="checks">
+                <input type="checkbox" id="checkbox1" class="css-checkbox" checked="checked" />
+                <label for="checkbox1">JAVA</label>
+
+                <input type="checkbox" id="checkbox2" class="css-checkbox" />
+                <label for="checkbox2">Javascript</label>
+
+                <input type="checkbox" id="checkbox3" class="css-checkbox" checked="checked" />
+                <label for="checkbox3">Angular</label>
+
+                <input type="checkbox" id="checkbox4" class="css-checkbox" />
+                <label for="checkbox4">ASP.NET</label>
+
+                <input type="checkbox" id="checkbox5" class="css-checkbox" />
+                <label for="checkbox5">NodeJS</label>
+            </div>
+        </div>
+        <div class="col-md-12 text-right">
+            <button type="submit" class="btn red btn-block done-btn" ng-click="hideFilter()">
+                Done
+            </button>
+        </div>
+    </div>
+</div>
+<button type="button" class="filter-btn" ng-click="showFilterSection()"><i aria-hidden="true" class="fa fa-filter"></i></button>

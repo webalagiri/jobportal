@@ -1,0 +1,946 @@
+[
+  {
+    "id": 1,
+    "industry": "Agrochemicals,Fertilizers, Pesticides"
+  },
+  {
+    "id": 2,
+    "industry": "Dairy, Dairy Products"
+  },
+  {
+    "id": 3,
+    "industry": "Fishing,Hunting and Trapping"
+  },
+  {
+    "id": 4,
+    "industry": "Forestry"
+  },
+  {
+    "id": 5,
+    "industry": "Lumber &Wood products"
+  },
+  {
+    "id": 6,
+    "industry": "Sugar"
+  },
+  {
+    "id": 7,
+    "industry": "Tea, Coffee"
+  },
+  {
+    "id": 8,
+    "industry": "Tobacco,Cigarettes, Biris"
+  },
+  {
+    "id": 9,
+    "industry": "Paper &Pulp"
+  },
+  {
+    "id": 10,
+    "industry": "Other Agriculture, Dairy, Agro Based Manufacturing"
+  },
+  {
+    "id": 11,
+    "industry": "Airline/Aerospace/ Aviation Equipment & Components"
+  },
+  {
+    "id": 12,
+    "industry": "Auto - 2/3 Wheelers"
+  },
+  {
+    "id": 13,
+    "industry": "Auto -Commercial Vehicles"
+  },
+  {
+    "id": 14,
+    "industry": "Auto -Passenger Cars, SUVs"
+  },
+  {
+    "id": 15,
+    "industry": "Auto -Tractors"
+  },
+  {
+    "id": 16,
+    "industry": "Auto Parts,Auto Components, Auto Ancillaries"
+  },
+  {
+    "id": 17,
+    "industry": "Railroad Equipment"
+  },
+  {
+    "id": 18,
+    "industry": "Tyres"
+  },
+  {
+    "id": 19,
+    "industry": "Transportation Equipment Manufacturing"
+  },
+  {
+    "id": 20,
+    "industry": "Agrochemicals,Fertilizers, Pesticides"
+  },
+  {
+    "id": 21,
+    "industry": "Industrial Chemicals"
+  },
+  {
+    "id": 22,
+    "industry": "Paints &Emulsions"
+  },
+  {
+    "id": 23,
+    "industry": "Soap,Detergents & Cleaning Preparations"
+  },
+  {
+    "id": 24,
+    "industry": "Oil/Gas Refining, Petroleum Refining"
+  },
+  {
+    "id": 25,
+    "industry": "Rubbers,Plastics, Polymers"
+  },
+  {
+    "id": 26,
+    "industry": "Pharmaceuticals,Biopharmaceuticals, Bulk Drugs"
+  },
+  {
+    "id": 27,
+    "industry": "Other Chemicals, Paints, Fertilizers Manufacturing"
+  },
+  {
+    "id": 28,
+    "industry": "Building Materials"
+  },
+  {
+    "id": 29,
+    "industry": "Cement,Cement Products"
+  },
+  {
+    "id": 30,
+    "industry": "Construction/Mining Equipment"
+  },
+  {
+    "id": 31,
+    "industry": "Oil/ Gas Field Equipment"
+  },
+  {
+    "id": 32,
+    "industry": "Paints &Emulsions"
+  },
+  {
+    "id": 33,
+    "industry": "Other Building Material, Construction Equipment Manufacturing"
+  },
+  {
+    "id": 34,
+    "industry": "Auto - 2/3 Wheelers"
+  },
+  {
+    "id": 35,
+    "industry": "Auto -Passenger Cars, SUVs"
+  },
+  {
+    "id": 36,
+    "industry": "Computer Hardware & Peripherals"
+  },
+  {
+    "id": 37,
+    "industry": "Home Appliances, Consumer Electronics"
+  },
+  {
+    "id": 38,
+    "industry": "Telecom Equipment - Consumer"
+  },
+  {
+    "id": 39,
+    "industry": "Other Consumer Durables Manufacturing"
+  },
+  {
+    "id": 40,
+    "industry": "Bakery Products"
+  },
+  {
+    "id": 41,
+    "industry": "Breweries,Distilleries, Liquor"
+  },
+  {
+    "id": 42,
+    "industry": "Dairy, Dairy Products"
+  },
+  {
+    "id": 43,
+    "industry": "Meat Products"
+  },
+  {
+    "id": 44,
+    "industry": "Personal Care, Home Care Products"
+  },
+  {
+    "id": 45,
+    "industry": "Processed Foods & Beverages"
+  },
+  {
+    "id": 46,
+    "industry": "Tea, Coffee"
+  },
+  {
+    "id": 47,
+    "industry": "Tobacco,Cigarettes, Biris"
+  },
+  {
+    "id": 48,
+    "industry": "Other FMCG Manufacturing"
+  },
+  {
+    "id": 49,
+    "industry": "Bath/ Kitchen Fittings & Fixtures"
+  },
+  {
+    "id": 50,
+    "industry": "Electricals-Lighting, Wires, Switches, Fans"
+  },
+  {
+    "id": 51,
+    "industry": "Office Automation Equipment, Office Equipment"
+  },
+  {
+    "id": 52,
+    "industry": "Leather,Leather Goods"
+  },
+  {
+    "id": 53,
+    "industry": "Stationery,Gifts & Toys"
+  },
+  {
+    "id": 54,
+    "industry": "Other Consumer Goods Manufacturing"
+  },
+  {
+    "id": 55,
+    "industry": "Medical Equipments & Supplies"
+  },
+  {
+    "id": 56,
+    "industry": "Pharmaceuticals,Biopharmaceuticals, Bulk Drugs"
+  },
+  {
+    "id": 57,
+    "industry": "Other Healthcare Equipments & Supplies Manufacturing"
+  },
+  {
+    "id": 58,
+    "industry": "Airline/Aerospace/ Aviation Equipment & Components"
+  },
+  {
+    "id": 59,
+    "industry": "Auto Parts,Auto Components, Auto Ancillaries"
+  },
+  {
+    "id": 60,
+    "industry": "Castings,Forgings, Bearings & Other Components"
+  },
+  {
+    "id": 61,
+    "industry": "Construction/Mining Equipment"
+  },
+  {
+    "id": 62,
+    "industry": "Engines &Turbines"
+  },
+  {
+    "id": 63,
+    "industry": "Marine Vessels & Components"
+  },
+  {
+    "id": 64,
+    "industry": "Medical Equipments & Supplies"
+  },
+  {
+    "id": 65,
+    "industry": "Metalworking Machinery & Equipment"
+  },
+  {
+    "id": 66,
+    "industry": "Oil/ Gas Field Equipment"
+  },
+  {
+    "id": 67,
+    "industry": "Power Equipment, Cables, EPC"
+  },
+  {
+    "id": 68,
+    "industry": "Pumps,Motors, Generators"
+  },
+  {
+    "id": 69,
+    "industry": "Railroad Equipment"
+  },
+  {
+    "id": 70,
+    "industry": "Telecom Equipment, Cables - Industrial"
+  },
+  {
+    "id": 71,
+    "industry": "Other Heavy Machinery/Capital Goods & Industrial Supplies"
+  },
+  {
+    "id": 72,
+    "industry": "Aluminium,Copper & Zinc"
+  },
+  {
+    "id": 73,
+    "industry": "Coal Mining"
+  },
+  {
+    "id": 74,
+    "industry": "Gems &Precious Stones"
+  },
+  {
+    "id": 75,
+    "industry": "Iron &Steel , Iron & Steel Products"
+  },
+  {
+    "id": 76,
+    "industry": "Metal Alloys"
+  },
+  {
+    "id": 77,
+    "industry": "Other Mining, Minerals, Metals"
+  },
+  {
+    "id": 78,
+    "industry": "Oil/Gas Exploration & Production"
+  },
+  {
+    "id": 79,
+    "industry": "Oil/Gas Refining, Petroleum Refining"
+  },
+  {
+    "id": 80,
+    "industry": "Oil/ Gas Field Equipment"
+  },
+  {
+    "id": 81,
+    "industry": "Power Equipment, Cables, EPC"
+  },
+  {
+    "id": 82,
+    "industry": "Other Oil, Gas & Power Manufacturing"
+  },
+  {
+    "id": 83,
+    "industry": "Packaging Material Manufacturers"
+  },
+  {
+    "id": 84,
+    "industry": "Other Packaging"
+  },
+  {
+    "id": 85,
+    "industry": "ComputerHardware & Peripherals"
+  },
+  {
+    "id": 86,
+    "industry": "Semiconductors & Microelectronics"
+  },
+  {
+    "id": 87,
+    "industry": "Telecom/Power Equipment, Cables, EPC"
+  },
+  {
+    "id": 88,
+    "industry": "Other Technology Equipment/ Products"
+  },
+  {
+    "id": 89,
+    "industry": "E-commerce,Dot coms, Web Solutions"
+  },
+  {
+    "id": 90,
+    "industry": "Managed IT Services (MSPs)"
+  },
+  {
+    "id": 91,
+    "industry": "Software Products Companies"
+  },
+  {
+    "id": 92,
+    "industry": "Software Consulting, Software Services Companies"
+  },
+  {
+    "id": 93,
+    "industry": "TelecomSoftware Solutions"
+  },
+  {
+    "id": 94,
+    "industry": "Telecom Services - Mobile, Fixed Line, Internet"
+  },
+  {
+    "id": 95,
+    "industry": "Telecom Services - Network Management Services"
+  },
+  {
+    "id": 96,
+    "industry": "Other Technology Services"
+  },
+  {
+    "id": 97,
+    "industry": "Textiles Mill Products"
+  },
+  {
+    "id": 98,
+    "industry": "Garments/Apparels/ Accessories"
+  },
+  {
+    "id": 99,
+    "industry": "Other Textiles, Fashion, Accessories Manufacturing"
+  },
+  {
+    "id": 100,
+    "industry": "OtherManufacturing/ Production"
+  },
+  {
+    "id": 101,
+    "industry": "Glass/Glassware industry"
+  },
+  {
+    "id": 102,
+    "industry": "Glass/Glassware industry"
+  },
+  {
+    "id": 103,
+    "industry": "Exporters/Importers - Agro Products, Foods, Spices"
+  },
+  {
+    "id": 104,
+    "industry": "Exporters/Importers - Textiles, Garments, Linens"
+  },
+  {
+    "id": 105,
+    "industry": "OtherExporters/ Importers"
+  },
+  {
+    "id": 106,
+    "industry": "Distributors/Wholesale Traders - Consumer Goods"
+  },
+  {
+    "id": 107,
+    "industry": "Distributors/Wholesale Traders - Industrial Products & Supplies"
+  },
+  {
+    "id": 108,
+    "industry": "Distributors/Wholesale Traders - IT Products"
+  },
+  {
+    "id": 109,
+    "industry": "OtherDistributors/ Wholesale Traders"
+  },
+  {
+    "id": 110,
+    "industry": "Agri Retail"
+  },
+  {
+    "id": 111,
+    "industry": "Auto Dealers,Service Stations, Gasoline Service Stations"
+  },
+  {
+    "id": 112,
+    "industry": "Beauty/Fitness Centres/ Spas"
+  },
+  {
+    "id": 113,
+    "industry": "Books, Music,Stationery Retail"
+  },
+  {
+    "id": 114,
+    "industry": "CyberCafes"
+  },
+  {
+    "id": 115,
+    "industry": "Fashion,Apparel, Accessories Retail"
+  },
+  {
+    "id": 116,
+    "industry": "HomeFurniture, Furnishings & Equipment Stores"
+  },
+  {
+    "id": 117,
+    "industry": "HomeAppliance/ Consumer Electronics Dealers, Service Centres"
+  },
+  {
+    "id": 118,
+    "industry": "Luxury Brands Retail"
+  },
+  {
+    "id": 119,
+    "industry": "Malls, Mall Management"
+  },
+  {
+    "id": 120,
+    "industry": "Supermarkets,Hypermarkets, Food & Grocery Retail"
+  },
+  {
+    "id": 121,
+    "industry": "Other Retail, Shops, Malls"
+  },
+  {
+    "id": 122,
+    "industry": "BPO (BusinessProcess Outsourcing)"
+  },
+  {
+    "id": 123,
+    "industry": "Clinical Research, Drug Discovery & Development Services"
+  },
+  {
+    "id": 124,
+    "industry": "Medical Transcription, Medical Billing, Medical Coding"
+  },
+  {
+    "id": 125,
+    "industry": "Financial Process Outsourcing"
+  },
+  {
+    "id": 126,
+    "industry": "Managed IT Services (MSPs)"
+  },
+  {
+    "id": 127,
+    "industry": "KPO(Knowledge Process Outsourcing)"
+  },
+  {
+    "id": 128,
+    "industry": "LPO (Legal Process Outsourcing)"
+  },
+  {
+    "id": 129,
+    "industry": "Publishing Outsourcing Services"
+  },
+  {
+    "id": 130,
+    "industry": "Other BPOs, KPOs, LPOs, ITES, Transcription"
+  },
+  {
+    "id": 131,
+    "industry": "Architecture,Interior Designing"
+  },
+  {
+    "id": 132,
+    "industry": "Infrastructure/Industrial Construction, EPC Firms"
+  },
+  {
+    "id": 133,
+    "industry": "Real Estate Developers/ Builders"
+  },
+  {
+    "id": 134,
+    "industry": "Real Estate Agents/ Property Dealers"
+  },
+  {
+    "id": 135,
+    "industry": "Other Construction, Interiors, Real Estate Services"
+  },
+  {
+    "id": 136,
+    "industry": "Advertising Agencies"
+  },
+  {
+    "id": 137,
+    "industry": "Event Management/ Public Relations Agencies"
+  },
+  {
+    "id": 138,
+    "industry": "Management/Business Consulting"
+  },
+  {
+    "id": 139,
+    "industry": "Market Research, Media Research Firms"
+  },
+  {
+    "id": 140,
+    "industry": "Recruitment Consulting/ Staffing Services"
+  },
+  {
+    "id": 141,
+    "industry": "Engineering Design Consultancies"
+  },
+  {
+    "id": 142,
+    "industry": "Other Consultancy Services"
+  },
+  {
+    "id": 143,
+    "industry": "Army,Navy,Airforce"
+  },
+  {
+    "id": 144,
+    "industry": "Law Enforcement Agencies"
+  },
+  {
+    "id": 145,
+    "industry": "Other Defence, Law Enforcement"
+  },
+  {
+    "id": 146,
+    "industry": "Schools"
+  },
+  {
+    "id": 147,
+    "industry": "Colleges, PG Institutes, Universities"
+  },
+  {
+    "id": 148,
+    "industry": "Entrance Coaching Centres"
+  },
+  {
+    "id": 149,
+    "industry": "Libraries"
+  },
+  {
+    "id": 150,
+    "industry": "Teaching/Learning Material & Products"
+  },
+  {
+    "id": 151,
+    "industry": "Vocational Training Centres, Diploma Centres"
+  },
+  {
+    "id": 152,
+    "industry": "Other Education, Training Institutes & Academic Research"
+  },
+  {
+    "id": 153,
+    "industry": "Accounting Firms"
+  },
+  {
+    "id": 154,
+    "industry": "Banking -Retail, Corporate, Co-operative"
+  },
+  {
+    "id": 155,
+    "industry": "Financial Process Outsourcing"
+  },
+  {
+    "id": 156,
+    "industry": "Insurance -General Insurance"
+  },
+  {
+    "id": 157,
+    "industry": "Insurance -Life Insurance"
+  },
+  {
+    "id": 158,
+    "industry": "Investment Banking/ Merchant Banking & Corporate Finance"
+  },
+  {
+    "id": 159,
+    "industry": "Mutual Funds/Financial Asset/ Wealth Management"
+  },
+  {
+    "id": 160,
+    "industry": "Consumer Finance, Non Banking Financial Companies"
+  },
+  {
+    "id": 161,
+    "industry": "Stock Broking Services, Commodity Trading Firms"
+  },
+  {
+    "id": 162,
+    "industry": "Other Banking, Financial Services & Insurance"
+  },
+  {
+    "id": 163,
+    "industry": "Clinical Research, Drug Discovery & Development Services"
+  },
+  {
+    "id": 164,
+    "industry": "Medical Transcription, Medical Billing, Medical Coding"
+  },
+  {
+    "id": 165,
+    "industry": "Hospitals,Health Care Providers"
+  },
+  {
+    "id": 166,
+    "industry": "Path Labs,Diagnostic Centres"
+  },
+  {
+    "id": 167,
+    "industry": "Other Healthcare Services"
+  },
+  {
+    "id": 168,
+    "industry": "Airline Services"
+  },
+  {
+    "id": 169,
+    "industry": "Caterers"
+  },
+  {
+    "id": 170,
+    "industry": "Cruise Liners, Luxury Travel"
+  },
+  {
+    "id": 171,
+    "industry": "Hotels/Resorts"
+  },
+  {
+    "id": 172,
+    "industry": "Housekeeping/Facililities Mgmt Services"
+  },
+  {
+    "id": 173,
+    "industry": "Railways/Metro Rail"
+  },
+  {
+    "id": 174,
+    "industry": "Restaurants/Bars"
+  },
+  {
+    "id": 175,
+    "industry": "Travel Agencies, Tour Operators"
+  },
+  {
+    "id": 176,
+    "industry": "Other Hospitality & Tourism"
+  },
+  {
+    "id": 177,
+    "industry": "Airports"
+  },
+  {
+    "id": 178,
+    "industry": "Ports &Waterways"
+  },
+  {
+    "id": 179,
+    "industry": "Road, Rail& Urban Infrastructure Development"
+  },
+  {
+    "id": 180,
+    "industry": "Special Economic Zones (SEZs)"
+  },
+  {
+    "id": 181,
+    "industry": "Power Generation, Transmission & Distribution"
+  },
+  {
+    "id": 182,
+    "industry": "Telecom Services - Mobile, Fixed Line, Internet"
+  },
+  {
+    "id": 183,
+    "industry": "Other Infrastructure Services"
+  },
+  {
+    "id": 184,
+    "industry": "Courts"
+  },
+  {
+    "id": 185,
+    "industry": "Private Law Firms"
+  },
+  {
+    "id": 186,
+    "industry": "LPO (Legal Process Outsourcing)"
+  },
+  {
+    "id": 187,
+    "industry": "Other Legal/ Law"
+  },
+  {
+    "id": 188,
+    "industry": "Advertising Agencies"
+  },
+  {
+    "id": 189,
+    "industry": "Event Management/ Public Relations Agencies"
+  },
+  {
+    "id": 190,
+    "industry": "Market Research, Media Research Firms"
+  },
+  {
+    "id": 191,
+    "industry": "Film Production, Animation, Digital Studios"
+  },
+  {
+    "id": 192,
+    "industry": "Music"
+  },
+  {
+    "id": 193,
+    "industry": "Movie Theatres/ Cineplexes/ Multiplexes"
+  },
+  {
+    "id": 194,
+    "industry": "Media -Print/Publishing/ E-publishing"
+  },
+  {
+    "id": 195,
+    "industry": "Media - Radio"
+  },
+  {
+    "id": 196,
+    "industry": "Media -Television"
+  },
+  {
+    "id": 197,
+    "industry": "PrintingFirms"
+  },
+  {
+    "id": 198,
+    "industry": "PublishingOutsourcing Services"
+  },
+  {
+    "id": 199,
+    "industry": "Satellite TV/Radio, DTH"
+  },
+  {
+    "id": 200,
+    "industry": "OtherMedia, Entertainment & Advertising"
+  },
+  {
+    "id": 201,
+    "industry": "UN Agencies/Donor Organisations"
+  },
+  {
+    "id": 202,
+    "industry": "CharitableTrusts/ Foundations"
+  },
+  {
+    "id": 203,
+    "industry": "NGOs, NonProfit Organisations"
+  },
+  {
+    "id": 204,
+    "industry": "Other NGOs, Development Agencies"
+  },
+  {
+    "id": 205,
+    "industry": "Cargo,Courier Services"
+  },
+  {
+    "id": 206,
+    "industry": "RelocationServices, Movers & Packers"
+  },
+  {
+    "id": 207,
+    "industry": "FreightForwarders, Clearing & Forwarding Agents"
+  },
+  {
+    "id": 208,
+    "industry": "Road Transport/ Surface Transport Services"
+  },
+  {
+    "id": 209,
+    "industry": "Shipping"
+  },
+  {
+    "id": 210,
+    "industry": "Warehousing"
+  },
+  {
+    "id": 211,
+    "industry": "OtherTransportation Services"
+  },
+  {
+    "id": 212,
+    "industry": "AirlineServices"
+  },
+  {
+    "id": 213,
+    "industry": "Bus Services"
+  },
+  {
+    "id": 214,
+    "industry": "Railways/Metro Rail"
+  },
+  {
+    "id": 215,
+    "industry": "Taxi/ Cab/Car Rental Services"
+  },
+  {
+    "id": 216,
+    "industry": "TravelAgencies, Tour Operators"
+  },
+  {
+    "id": 217,
+    "industry": "OtherTravel Services"
+  },
+  {
+    "id": 218,
+    "industry": "Auto Dealers,Service Stations, Gasoline Service Stations"
+  },
+  {
+    "id": 219,
+    "industry": "LPG/ Gas Distribution"
+  },
+  {
+    "id": 220,
+    "industry": "MunicipalBodies, Water & Sanitation"
+  },
+  {
+    "id": 221,
+    "industry": "PowerGeneration, Transmission & Distribution"
+  },
+  {
+    "id": 222,
+    "industry": "TelecomServices - Mobile, Fixed Line, Internet"
+  },
+  {
+    "id": 223,
+    "industry": "Other Utilities"
+  },
+  {
+    "id": 224,
+    "industry": "Government Ministeries/ Service"
+  },
+  {
+    "id": 225,
+    "industry": "Packaging/Bottling"
+  },
+  {
+    "id": 226,
+    "industry": "PhysicalSecurity Services"
+  },
+  {
+    "id": 227,
+    "industry": "Other Services"
+  },
+  {
+    "id": 228,
+    "industry": "Art &Cultural Institutions"
+  },
+  {
+    "id": 229,
+    "industry": "Conglomerate/Diversified Group"
+  },
+  {
+    "id": 230,
+    "industry": "Embassies/High Commisions"
+  },
+  {
+    "id": 231,
+    "industry": "Industry Bodies"
+  },
+  {
+    "id": 232,
+    "industry": "Others"
+  },
+  {
+    "id": 233,
+    "industry": "Electrical"
+  },
+  {
+    "id": 234,
+    "industry": "Switchgear"
+  },
+  {
+    "id": 235,
+    "industry": "Electronics"
+  },
+  {
+    "id": 236,
+    "industry": "Software Products Companies"
+  }
+]

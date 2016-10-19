@@ -1,0 +1,1891 @@
+[{
+"id": "1",
+"name": "Any"
+},
+{
+  "id": "1",
+  "name": "Diploma",
+  "children": [
+   {
+    "id": 1,
+    "branch": "Aeronautical / Avionics / Aerospace"
+  },
+  {
+    "id": 2,
+    "branch": "Agricultural / Irrigation"
+  },
+  {
+    "id": 3,
+    "branch": "Anesthesia (DA)"
+  },
+  {
+    "id": 4,
+    "branch": "Applied Electronics and Instrumentation Engineering"
+  },
+  {
+    "id": 5,
+    "branch": "Architecture and Town Planning"
+  },
+  {
+    "id": 6,
+    "branch": "Automobile"
+  },
+  {
+    "id": 7,
+    "branch": "Bio-Informatics"
+  },
+  {
+    "id": 8,
+    "branch": "Bio-Medical"
+  },
+  {
+    "id": 9,
+    "branch": "Bio-technology"
+  },
+  {
+    "id": 10,
+    "branch": "Ceramic"
+  },
+  {
+    "id": 11,
+    "branch": "Chemical"
+  },
+  {
+    "id": 12,
+    "branch": "Child Health"
+  },
+  {
+    "id": 13,
+    "branch": "Civil"
+  },
+  {
+    "id": 14,
+    "branch": "Clinical Pathology (DCP)"
+  },
+  {
+    "id": 15,
+    "branch": "Commercial Art/Fine Art/Graphics"
+  },
+  {
+    "id": 16,
+    "branch": "Computer Science & Engineering"
+  },
+  {
+    "id": 17,
+    "branch": "Electrical &amp; Electronics"
+  },
+  {
+    "id": 18,
+    "branch": "Electrical Engineering"
+  },
+  {
+    "id": 19,
+    "branch": "Electronics &amp; Communication"
+  },
+  {
+    "id": 20,
+    "branch": "Electronic Media"
+  },
+  {
+    "id": 21,
+    "branch": "Electronics &amp; Instrumentation"
+  },
+  {
+    "id": 22,
+    "branch": "Environmental Engineering &amp; Technology"
+  },
+  {
+    "id": 23,
+    "branch": "Fashion/ Design"
+  },
+  {
+    "id": 24,
+    "branch": "Food / Bakery/ Food &amp; Beverage /"
+  },
+  {
+    "id": 25,
+    "branch": "Front Office"
+  },
+  {
+    "id": 26,
+    "branch": "Geo Informatics"
+  },
+  {
+    "id": 27,
+    "branch": "House Keeping"
+  },
+  {
+    "id": 28,
+    "branch": "Industrial Bio-Technology"
+  },
+  {
+    "id": 29,
+    "branch": "Industrial Engineering"
+  },
+  {
+    "id": 30,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 31,
+    "branch": "Instrumentation &amp; Control System"
+  },
+  {
+    "id": 32,
+    "branch": "Leather Technology"
+  },
+  {
+    "id": 33,
+    "branch": "Manufacturing Engineering"
+  },
+  {
+    "id": 34,
+    "branch": "Marine Engineering"
+  },
+  {
+    "id": 35,
+    "branch": "Material Science and Engineering"
+  },
+  {
+    "id": 36,
+    "branch": "Mechanical Engineering"
+  },
+  {
+    "id": 37,
+    "branch": "Metallurgical Engineering"
+  },
+  {
+    "id": 38,
+    "branch": "Mineral / Mining"
+  },
+  {
+    "id": 39,
+    "branch": "Obstetrics &amp; Gynecology(DGO)"
+  },
+  {
+    "id": 40,
+    "branch": "Ophthalmology (DO)"
+  },
+  {
+    "id": 41,
+    "branch": "Orthopaedics (D.Ortho)"
+  },
+  {
+    "id": 42,
+    "branch": "Otorenolaryngology (DLO)"
+  },
+  {
+    "id": 43,
+    "branch": "Paper &amp; Pulp Technology"
+  },
+  {
+    "id": 44,
+    "branch": "Petroleum / Petrochemical"
+  },
+  {
+    "id": 45,
+    "branch": "Pharmaceutical Technology"
+  },
+  {
+    "id": 46,
+    "branch": "Polymer Science &amp; Engineering"
+  },
+  {
+    "id": 47,
+    "branch": "Printing Technology"
+  },
+  {
+    "id": 48,
+    "branch": "Production cum Plant Engineering"
+  },
+  {
+    "id": 49,
+    "branch": "Production Engineering"
+  },
+  {
+    "id": 50,
+    "branch": "Radiology"
+  },
+  {
+    "id": 51,
+    "branch": "Rubber / Plastic"
+  },
+  {
+    "id": 52,
+    "branch": "Structural"
+  },
+  {
+    "id": 53,
+    "branch": "Sugar Technology"
+  },
+  {
+    "id": 54,
+    "branch": "Textile Technology"
+  },
+  {
+    "id": 55,
+    "branch": "Other"
+  }
+     
+  ]
+},{
+  "id": "2",
+  "name": "BE/B.Tech",
+  "children": [
+    {
+      "id": "6616c598-0a0a-8263-7a56-fb0c0e16225a",
+      "name": "I'm first child",
+      "parent": "28dddab1-4aa7-6e2b-b0b2-7ed9096aa9bc"
+    },
+    {
+      "id": "940e60e4-9497-7c0d-3467-297ff8bb9ef2",
+      "name": "I'm second child",
+      "parent": "28dddab1-4aa7-6e2b-b0b2-7ed9096aa9bc"
+    }
+  ]
+},{
+  "id": "2",
+  "name": "BE/B.Tech",
+  "children": [
+    {
+    "id": 56,
+    "branch": "Aeronautical / Avionics / AerospaceEngineering"
+  },
+  {
+    "id": 57,
+    "branch": "Agricultural / Irrigation Engineering"
+  },
+  {
+    "id": 58,
+    "branch": "Applied Electronics"
+  },
+  {
+    "id": 59,
+    "branch": "Architecture Engineering"
+  },
+  {
+    "id": 60,
+    "branch": "Automobile Engineering"
+  },
+  {
+    "id": 61,
+    "branch": "Bio-Medical /Bio-Technology Engineering"
+  },
+  {
+    "id": 62,
+    "branch": "Ceramics Engineering"
+  },
+  {
+    "id": 63,
+    "branch": "Chemical Engineering"
+  },
+  {
+    "id": 64,
+    "branch": "Civil Engineering"
+  },
+  {
+    "id": 65,
+    "branch": "Computer Science &amp; Engineering (CSE)"
+  },
+  {
+    "id": 66,
+    "branch": "Electrical &amp; Electronics Engineering(EEE)"
+  },
+  {
+    "id": 67,
+    "branch": "Electronics &amp; Communication"
+  },
+  {
+    "id": 68,
+    "branch": "Environmental Engineering Engineering(ECE)"
+  },
+  {
+    "id": 69,
+    "branch": "Fashion / Design Technology"
+  },
+  {
+    "id": 70,
+    "branch": "Food Technology"
+  },
+  {
+    "id": 71,
+    "branch": "Industrial Engineering"
+  },
+  {
+    "id": 72,
+    "branch": "Information Science/Technology (IS/IT)"
+  },
+  {
+    "id": 73,
+    "branch": "Instrumentation &amp; Control Engineering"
+  },
+  {
+    "id": 74,
+    "branch": "Manufacturing /Automation Engineering"
+  },
+  {
+    "id": 75,
+    "branch": "Marine Engineering"
+  },
+  {
+    "id": 76,
+    "branch": "Mechanical Engineering"
+  },
+  {
+    "id": 77,
+    "branch": "Metallurgical /Materials Engineering"
+  },
+  {
+    "id": 78,
+    "branch": "Mineral / Mining Engineering"
+  },
+  {
+    "id": 79,
+    "branch": "Petroleum / Petrochemical Engineering"
+  },
+  {
+    "id": 80,
+    "branch": "Printing /Paper/Pulp Technology"
+  },
+  {
+    "id": 81,
+    "branch": "Production / Plant Engineering"
+  },
+  {
+    "id": 82,
+    "branch": "Rubber /Plastic /Polymer Engineering"
+  },
+  {
+    "id": 83,
+    "branch": "Textile /Leather Technology"
+  },
+  {
+    "id": 84,
+    "branch": "Fire Technology &amp; Safety Engineering"
+  },
+  {
+    "id": 85,
+    "branch": "Electrical Engineering"
+  },
+  {
+    "id": 86,
+    "branch": "Electronics &amp; Instrumentation Engineering"
+  },
+  {
+    "id": 87,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "3",
+  "name": "MBA/PGDM",
+  "children": [
+    {
+    "id": 88,
+    "branch": "Administration"
+  },
+  {
+    "id": 89,
+    "branch": "Advertising / Mass Communication"
+  },
+  {
+    "id": 90,
+    "branch": "Banking &amp; Finance"
+  },
+  {
+    "id": 91,
+    "branch": "Entrepreneurship"
+  },
+  {
+    "id": 92,
+    "branch": "Executive"
+  },
+  {
+    "id": 93,
+    "branch": "General Management"
+  },
+  {
+    "id": 94,
+    "branch": "Healthcare / Hospital Management"
+  },
+  {
+    "id": 95,
+    "branch": "Human Resources"
+  },
+  {
+    "id": 96,
+    "branch": "Industrial Management"
+  },
+  {
+    "id": 97,
+    "branch": "Information Systems"
+  },
+  {
+    "id": 98,
+    "branch": "international business"
+  },
+  {
+    "id": 99,
+    "branch": "International Marketing"
+  },
+  {
+    "id": 100,
+    "branch": "Marketing"
+  },
+  {
+    "id": 101,
+    "branch": "Operations Management"
+  },
+  {
+    "id": 102,
+    "branch": "Personnel Management"
+  },
+  {
+    "id": 103,
+    "branch": "Project Management"
+  },
+  {
+    "id": 104,
+    "branch": "Technology Management"
+  },
+  {
+    "id": 105,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 106,
+    "branch": "Banking &amp; Insurance &amp; Finance"
+  },
+  {
+    "id": 107,
+    "branch": "Human Resource &amp; Marketing"
+  },
+  {
+    "id": 108,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "4",
+  "name": "ME/M.Tech",
+  "children": [
+    
+  {
+    "id": 109,
+    "branch": "Advanced Communication System"
+  },
+  {
+    "id": 110,
+    "branch": "Advanced Computing"
+  },
+  {
+    "id": 111,
+    "branch": "Advanced Manufacturing Technology"
+  },
+  {
+    "id": 112,
+    "branch": "Aeronautical / Avionics / Aerospace Engineering"
+  },
+  {
+    "id": 113,
+    "branch": "Agricultural / Irrigation Engineering"
+  },
+  {
+    "id": 114,
+    "branch": "Applied Electronics"
+  },
+  {
+    "id": 115,
+    "branch": "Architecture Engineering"
+  },
+  {
+    "id": 116,
+    "branch": "Automobile Engineering"
+  },
+  {
+    "id": 117,
+    "branch": "Bio-Informatics/Bio-Chemistry Engineering"
+  },
+  {
+    "id": 118,
+    "branch": "Bio-Medical /Bio-Technology Engineering"
+  },
+  {
+    "id": 119,
+    "branch": "CAD / CAM"
+  },
+  {
+    "id": 120,
+    "branch": "Ceramic Engineering"
+  },
+  {
+    "id": 121,
+    "branch": "Chemical Engineering"
+  },
+  {
+    "id": 122,
+    "branch": "Civil Engineering"
+  },
+  {
+    "id": 123,
+    "branch": "Communication &amp; Networking"
+  },
+  {
+    "id": 124,
+    "branch": "Computer Science &amp; Engineering"
+  },
+  {
+    "id": 125,
+    "branch": "Electrical &amp; Electronics Engineering"
+  },
+  {
+    "id": 126,
+    "branch": "Electrical Engineering"
+  },
+  {
+    "id": 127,
+    "branch": "Electronics &amp; Communication Engineering"
+  },
+  {
+    "id": 128,
+    "branch": "Embedded System Technologies"
+  },
+  {
+    "id": 129,
+    "branch": "Energy Engineering"
+  },
+  {
+    "id": 130,
+    "branch": "Engineering Design"
+  },
+  {
+    "id": 131,
+    "branch": "Environmental Engineering"
+  },
+  {
+    "id": 132,
+    "branch": "Fashion / Design Technology"
+  },
+  {
+    "id": 133,
+    "branch": "Food Technology"
+  },
+  {
+    "id": 134,
+    "branch": "Heat Power Engineering"
+  },
+  {
+    "id": 135,
+    "branch": "High Voltage Engineering"
+  },
+  {
+    "id": 136,
+    "branch": "Industrial Engineering"
+  },
+  {
+    "id": 137,
+    "branch": "Information Science/Technology"
+  },
+  {
+    "id": 138,
+    "branch": "Infrastructure Engineering"
+  },
+  {
+    "id": 139,
+    "branch": "Instrumentation &amp; Control Engineering"
+  },
+  {
+    "id": 140,
+    "branch": "Manufacturing /Automation Engineering"
+  },
+  {
+    "id": 141,
+    "branch": "Marine Engineering"
+  },
+  {
+    "id": 142,
+    "branch": "Mechanical Engineering"
+  },
+  {
+    "id": 143,
+    "branch": "Mechatronics"
+  },
+  {
+    "id": 144,
+    "branch": "Medical Electronics"
+  },
+  {
+    "id": 145,
+    "branch": "Metallurgical /Materials Engineering"
+  },
+  {
+    "id": 146,
+    "branch": "Micro-Electronics"
+  },
+  {
+    "id": 147,
+    "branch": "Mineral / Mining Engineering"
+  },
+  {
+    "id": 148,
+    "branch": "Multimedia Technology"
+  },
+  {
+    "id": 149,
+    "branch": "Network Engineering"
+  },
+  {
+    "id": 150,
+    "branch": "Optical Communication"
+  },
+  {
+    "id": 151,
+    "branch": "Petroleum / Petrochemical Engineering"
+  },
+  {
+    "id": 152,
+    "branch": "Power Systems Engineering"
+  },
+  {
+    "id": 153,
+    "branch": "Printing /Paper/Pulp Technology"
+  },
+  {
+    "id": 154,
+    "branch": "Product Design &amp; Development"
+  },
+  {
+    "id": 155,
+    "branch": "Production / Plant Engineering"
+  },
+  {
+    "id": 156,
+    "branch": "Quality Engineering &amp; Management"
+  },
+  {
+    "id": 157,
+    "branch": "Refrigeration &amp; Air-Conditioning"
+  },
+  {
+    "id": 158,
+    "branch": "Remote Sensing"
+  },
+  {
+    "id": 159,
+    "branch": "Rubber /Plastic /Polymer Engineering"
+  },
+  {
+    "id": 160,
+    "branch": "Software Engineering"
+  },
+  {
+    "id": 161,
+    "branch": "Structural Engineering"
+  },
+  {
+    "id": 162,
+    "branch": "Systems Engineering and Operations Research"
+  },
+  {
+    "id": 163,
+    "branch": "Textile /Leather Technology"
+  },
+  {
+    "id": 164,
+    "branch": "Thermal Engineering"
+  },
+  {
+    "id": 165,
+    "branch": "VLSI Design"
+  },
+  {
+    "id": 166,
+    "branch": "Wireless Technologies"
+  },
+  {
+    "id": 167,
+    "branch": "Instrumentation &amp; EIectronics"
+  },
+  {
+    "id": 168,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "5",
+  "name": "MSc",
+  "children": [
+     {
+    "id": 169,
+    "branch": "Bio-Chemistry"
+  },
+  {
+    "id": 170,
+    "branch": "BioInformatics"
+  },
+  {
+    "id": 171,
+    "branch": "Biology"
+  },
+  {
+    "id": 172,
+    "branch": "Bio-Physics"
+  },
+  {
+    "id": 173,
+    "branch": "Bio-technology"
+  },
+  {
+    "id": 174,
+    "branch": "Botany / Agricultural Botany"
+  },
+  {
+    "id": 175,
+    "branch": "Catering Technology"
+  },
+  {
+    "id": 176,
+    "branch": "Chemistry / Applied Chemistry"
+  },
+  {
+    "id": 177,
+    "branch": "Child Care"
+  },
+  {
+    "id": 178,
+    "branch": "Computer Science"
+  },
+  {
+    "id": 179,
+    "branch": "Electronics / Applied Electronics"
+  },
+  {
+    "id": 180,
+    "branch": "Food Science / Technology"
+  },
+  {
+    "id": 181,
+    "branch": "Geology"
+  },
+  {
+    "id": 182,
+    "branch": "Home Science"
+  },
+  {
+    "id": 183,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 184,
+    "branch": "Library and Information Science"
+  },
+  {
+    "id": 185,
+    "branch": "Mathematics / Applied Mathematics"
+  },
+  {
+    "id": 186,
+    "branch": "Microbiology"
+  },
+  {
+    "id": 187,
+    "branch": "Physics / Applied Physics"
+  },
+  {
+    "id": 188,
+    "branch": "Physiology / Crop Physiology"
+  },
+  {
+    "id": 189,
+    "branch": "Plant Science"
+  },
+  {
+    "id": 190,
+    "branch": "Psychology"
+  },
+  {
+    "id": 191,
+    "branch": "Statistics / Applied Statistics"
+  },
+  {
+    "id": 192,
+    "branch": "Zoology / Applied Zoology"
+  },
+  {
+    "id": 193,
+    "branch": "Nursing"
+  }
+  ]
+},{
+  "id": "6",
+  "name": "BA",
+  "children": [
+    
+  {
+    "id": 194,
+    "branch": "Accountancy"
+  },
+  {
+    "id": 195,
+    "branch": "Arabic"
+  },
+  {
+    "id": 196,
+    "branch": "Bank Management"
+  },
+  {
+    "id": 197,
+    "branch": "Book Keeping and Accountancy"
+  },
+  {
+    "id": 198,
+    "branch": "Business Economics"
+  },
+  {
+    "id": 199,
+    "branch": "Business Management"
+  },
+  {
+    "id": 200,
+    "branch": "Commerce"
+  },
+  {
+    "id": 201,
+    "branch": "Economics"
+  },
+  {
+    "id": 202,
+    "branch": "English"
+  },
+  {
+    "id": 203,
+    "branch": "Folklore Studies"
+  },
+  {
+    "id": 204,
+    "branch": "Geography"
+  },
+  {
+    "id": 205,
+    "branch": "Hindi"
+  },
+  {
+    "id": 206,
+    "branch": "History"
+  },
+  {
+    "id": 207,
+    "branch": "Humanities"
+  },
+  {
+    "id": 208,
+    "branch": "Malayalam"
+  },
+  {
+    "id": 209,
+    "branch": "Philosophy"
+  },
+  {
+    "id": 210,
+    "branch": "Telugu"
+  },
+  {
+    "id": 211,
+    "branch": "Politics"
+  },
+  {
+    "id": 212,
+    "branch": "Bengali"
+  },
+  {
+    "id": 213,
+    "branch": "Tamil"
+  },
+  {
+    "id": 214,
+    "branch": "Kannada"
+  },
+  {
+    "id": 215,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "8",
+  "name": "BE/B.Tech",
+  "children": [
+     {
+    "id": 216,
+    "branch": "Aeronautical / Avionics / Aerospace Engineering"
+  },
+  {
+    "id": 217,
+    "branch": "Agricultural / Irrigation Engineering"
+  },
+  {
+    "id": 218,
+    "branch": "Applied Electronics"
+  },
+  {
+    "id": 219,
+    "branch": "Architecture Engineering"
+  },
+  {
+    "id": 220,
+    "branch": "Automobile Engineering"
+  },
+  {
+    "id": 221,
+    "branch": "Bio-Medical /Bio-Technology Engineering"
+  },
+  {
+    "id": 222,
+    "branch": "Ceramics Engineering"
+  },
+  {
+    "id": 223,
+    "branch": "Chemical Engineering"
+  },
+  {
+    "id": 224,
+    "branch": "Civil Engineering"
+  },
+  {
+    "id": 225,
+    "branch": "Computer Science &amp; Engineering (CSE)"
+  },
+  {
+    "id": 226,
+    "branch": "Electrical &amp; Electronics Engineering(EEE)"
+  },
+  {
+    "id": 227,
+    "branch": "Electronics &amp; Communication Engineering(ECE)"
+  },
+  {
+    "id": 228,
+    "branch": "Environmental Engineering"
+  },
+  {
+    "id": 229,
+    "branch": "Fashion / Design Technology"
+  },
+  {
+    "id": 230,
+    "branch": "Food Technology"
+  },
+  {
+    "id": 231,
+    "branch": "Industrial Engineering"
+  },
+  {
+    "id": 232,
+    "branch": "Information Science/Technology (IS/IT)"
+  },
+  {
+    "id": 233,
+    "branch": "Instrumentation &amp; Control Engineering"
+  },
+  {
+    "id": 234,
+    "branch": "Manufacturing /Automation Engineering"
+  },
+  {
+    "id": 235,
+    "branch": "Marine Engineering"
+  },
+  {
+    "id": 236,
+    "branch": "Mechanical Engineering"
+  },
+  {
+    "id": 237,
+    "branch": "Metallurgical /Materials Engineering"
+  },
+  {
+    "id": 238,
+    "branch": "Mineral / Mining Engineering"
+  },
+  {
+    "id": 239,
+    "branch": "Petroleum / Petrochemical Engineering"
+  },
+  {
+    "id": 240,
+    "branch": "Printing /Paper/Pulp Technology"
+  },
+  {
+    "id": 241,
+    "branch": "Production / Plant Engineering"
+  },
+  {
+    "id": 242,
+    "branch": "Rubber /Plastic /Polymer Engineering"
+  },
+  {
+    "id": 243,
+    "branch": "Textile /Leather Technology"
+  },
+  {
+    "id": 244,
+    "branch": "Fire Technology &amp; Safety Engineering"
+  },
+  {
+    "id": 245,
+    "branch": "Electrical Engineering"
+  },
+  {
+    "id": 246,
+    "branch": "Electronics &amp; Instrumentation Engineering"
+  },
+  {
+    "id": 247,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "9",
+  "name": "BSc",
+  "children": [
+     {
+    "id": 248,
+    "branch": "Bio-Chemistry"
+  },
+  {
+    "id": 249,
+    "branch": "BioInformatics"
+  },
+  {
+    "id": 250,
+    "branch": "Biology"
+  },
+  {
+    "id": 251,
+    "branch": "Bio-Physics"
+  },
+  {
+    "id": 252,
+    "branch": "Bio-technology"
+  },
+  {
+    "id": 253,
+    "branch": "Botany / Agricultural Botany"
+  },
+  {
+    "id": 254,
+    "branch": "Catering Technology"
+  },
+  {
+    "id": 255,
+    "branch": "Chemistry / Applied Chemistry"
+  },
+  {
+    "id": 256,
+    "branch": "Child Care"
+  },
+  {
+    "id": 257,
+    "branch": "Computer Science"
+  },
+  {
+    "id": 258,
+    "branch": "Electronics / Applied Electronics"
+  },
+  {
+    "id": 259,
+    "branch": "Food Science / Technology"
+  },
+  {
+    "id": 260,
+    "branch": "Geology"
+  },
+  {
+    "id": 261,
+    "branch": "Home Science"
+  },
+  {
+    "id": 262,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 263,
+    "branch": "Library and Information Science"
+  },
+  {
+    "id": 264,
+    "branch": "Mathematics / Applied Mathematics"
+  },
+  {
+    "id": 265,
+    "branch": "Microbiology"
+  },
+  {
+    "id": 266,
+    "branch": "Physics / Applied Physics"
+  },
+  {
+    "id": 267,
+    "branch": "Physiology / Crop Physiology"
+  },
+  {
+    "id": 268,
+    "branch": "Plant Science"
+  },
+  {
+    "id": 269,
+    "branch": "Psychology"
+  },
+  {
+    "id": 270,
+    "branch": "Statistics / Applied Statistics"
+  },
+  {
+    "id": 271,
+    "branch": "Zoology / Applied Zoology"
+  },
+  {
+    "id": 272,
+    "branch": "Engineering"
+  },
+  {
+    "id": 273,
+    "branch": "Nursing"
+  },
+  {
+    "id": 274,
+    "branch": "Other"
+  }
+  ]
+},{
+
+  "id": "10",
+  "name": "B.Des",
+  "children": [
+     {
+    "id": 275,
+    "branch": "Fashion Design"
+  },
+  {
+    "id": 276,
+    "branch": "Accessory Design"
+  },
+  {
+    "id": 277,
+    "branch": "Fashion Communication"
+  },
+  {
+    "id": 278,
+    "branch": "Knitwear Design"
+  },
+  {
+    "id": 279,
+    "branch": "Textile Design"
+  },
+  {
+    "id": 280,
+    "branch": "Other"
+  }
+
+  ]
+},{
+
+  "id": "11",
+  "name": "B.FTech",
+  "children": [
+    {
+    "id": 281,
+    "branch": "Apparel Production"
+  },
+  {
+    "id": 282,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "12",
+  "name": "BFA",
+  "children": [
+    
+  {
+    "id": 283,
+    "branch": "Fine Arts"
+  },
+  {
+    "id": 284,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "13",
+  "name": "M Phil / Phd",
+  "children": [
+   
+  {
+    "id": 285,
+    "branch": "Biology"
+  },
+  {
+    "id": 286,
+    "branch": "Biotechnology"
+  },
+  {
+    "id": 287,
+    "branch": "Botany"
+  },
+  {
+    "id": 288,
+    "branch": "Chemistry"
+  },
+  {
+    "id": 289,
+    "branch": "Commerce"
+  },
+  {
+    "id": 290,
+    "branch": "Computer Science"
+  },
+  {
+    "id": 291,
+    "branch": "Economics"
+  },
+  {
+    "id": 292,
+    "branch": "Education"
+  },
+  {
+    "id": 293,
+    "branch": "English"
+  },
+  {
+    "id": 294,
+    "branch": "History"
+  },
+  {
+    "id": 295,
+    "branch": "Management"
+  },
+  {
+    "id": 296,
+    "branch": "Mathematics"
+  },
+  {
+    "id": 297,
+    "branch": "Philosophy"
+  },
+  {
+    "id": 298,
+    "branch": "Physics"
+  },
+  {
+    "id": 299,
+    "branch": "Psychology"
+  },
+  {
+    "id": 300,
+    "branch": "Statistics"
+  },
+  {
+    "id": 301,
+    "branch": "Zoology"
+  },
+  {
+    "id": 302,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "15",
+  "name": "MA",
+  "children": [
+    
+ 
+  {
+    "id": 303,
+    "branch": "Accountancy"
+  },
+  {
+    "id": 304,
+    "branch": "Arabic"
+  },
+  {
+    "id": 305,
+    "branch": "Bank Management"
+  },
+  {
+    "id": 306,
+    "branch": "Book Keeping and Accountancy"
+  },
+  {
+    "id": 307,
+    "branch": "Business Economics"
+  },
+  {
+    "id": 308,
+    "branch": "Business Management"
+  },
+  {
+    "id": 309,
+    "branch": "Commerce"
+  },
+  {
+    "id": 310,
+    "branch": "Economics"
+  },
+  {
+    "id": 311,
+    "branch": "English"
+  },
+  {
+    "id": 312,
+    "branch": "Folklore Studies"
+  },
+  {
+    "id": 313,
+    "branch": "Geography"
+  },
+  {
+    "id": 314,
+    "branch": "Hindi"
+  },
+  {
+    "id": 315,
+    "branch": "History"
+  },
+  {
+    "id": 316,
+    "branch": "Humanities"
+  },
+  {
+    "id": 317,
+    "branch": "Malayalam"
+  },
+  {
+    "id": 318,
+    "branch": "Philosophy"
+  },
+  {
+    "id": 319,
+    "branch": "Telugu"
+  },
+  {
+    "id": 320,
+    "branch": "Politics"
+  },
+  {
+    "id": 321,
+    "branch": "Bengali"
+  },
+  {
+    "id": 322,
+    "branch": "Tamil"
+  },
+  {
+    "id": 323,
+    "branch": "Kannada"
+  },
+  {
+    "id": 324,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "16",
+  "name": "MBA/PGDM",
+  "children": [
+ 
+  {
+    "id": 325,
+    "branch": "Administration"
+  },
+  {
+    "id": 326,
+    "branch": "Advertising / Mass Communication"
+  },
+  {
+    "id": 327,
+    "branch": "Banking &amp; Finance"
+  },
+  {
+    "id": 328,
+    "branch": "Entrepreneurship"
+  },
+  {
+    "id": 329,
+    "branch": "Executive"
+  },
+  {
+    "id": 330,
+    "branch": "General Management"
+  },
+  {
+    "id": 331,
+    "branch": "Healthcare / Hospital Management"
+  },
+  {
+    "id": 332,
+    "branch": "Human Resources"
+  },
+  {
+    "id": 333,
+    "branch": "Industrial Management"
+  },
+  {
+    "id": 334,
+    "branch": "Information Systems"
+  },
+  {
+    "id": 335,
+    "branch": "international business"
+  },
+  {
+    "id": 336,
+    "branch": "International Marketing"
+  },
+  {
+    "id": 337,
+    "branch": "Marketing"
+  },
+  {
+    "id": 338,
+    "branch": "Operations Management"
+  },
+  {
+    "id": 339,
+    "branch": "Personnel Management"
+  },
+  {
+    "id": 340,
+    "branch": "Project Management"
+  },
+  {
+    "id": 341,
+    "branch": "Technology Management"
+  },
+  {
+    "id": 342,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 343,
+    "branch": "Banking &amp; Insurance &amp; Finance"
+  },
+  {
+    "id": 344,
+    "branch": "Human Resource &amp; Marketing"
+  },
+  {
+    "id": 345,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "17",
+  "name": "ME/M.Tech",
+  "children": [
+  
+  {
+    "id": 346,
+    "branch": "Advanced Communication System"
+  },
+  {
+    "id": 347,
+    "branch": "Advanced Computing"
+  },
+  {
+    "id": 348,
+    "branch": "Advanced Manufacturing Technology"
+  },
+  {
+    "id": 349,
+    "branch": "Aeronautical / Avionics / Aerospace Engineering"
+  },
+  {
+    "id": 350,
+    "branch": "Agricultural / Irrigation Engineering"
+  },
+  {
+    "id": 351,
+    "branch": "Applied Electronics"
+  },
+  {
+    "id": 352,
+    "branch": "Architecture Engineering"
+  },
+  {
+    "id": 353,
+    "branch": "Automobile Engineering"
+  },
+  {
+    "id": 354,
+    "branch": "Bio-Informatics/Bio-Chemistry Engineering"
+  },
+  {
+    "id": 355,
+    "branch": "Bio-Medical /Bio-Technology Engineering"
+  },
+  {
+    "id": 356,
+    "branch": "CAD / CAM"
+  },
+  {
+    "id": 357,
+    "branch": "Ceramic Engineering"
+  },
+  {
+    "id": 358,
+    "branch": "Chemical Engineering"
+  },
+  {
+    "id": 359,
+    "branch": "Civil Engineering"
+  },
+  {
+    "id": 360,
+    "branch": "Communication &amp; Networking"
+  },
+  {
+    "id": 361,
+    "branch": "Computer Science &amp; Engineering"
+  },
+  {
+    "id": 362,
+    "branch": "Electrical &amp; Electronics Engineering"
+  },
+  {
+    "id": 363,
+    "branch": "Electrical Engineering"
+  },
+  {
+    "id": 364,
+    "branch": "Electronics &amp; Communication\tEngineering"
+  },
+  {
+    "id": 365,
+    "branch": "Embedded System Technologies"
+  },
+  {
+    "id": 366,
+    "branch": "Energy Engineering"
+  },
+  {
+    "id": 367,
+    "branch": "Engineering Design"
+  },
+  {
+    "id": 368,
+    "branch": "Environmental Engineering"
+  },
+  {
+    "id": 369,
+    "branch": "Fashion / Design Technology"
+  },
+  {
+    "id": 370,
+    "branch": "Food Technology"
+  },
+  {
+    "id": 371,
+    "branch": "Heat Power Engineering"
+  },
+  {
+    "id": 372,
+    "branch": "High Voltage Engineering"
+  },
+  {
+    "id": 373,
+    "branch": "Industrial Engineering"
+  },
+  {
+    "id": 374,
+    "branch": "Information Science/Technology"
+  },
+  {
+    "id": 375,
+    "branch": "Infrastructure Engineering"
+  },
+  {
+    "id": 376,
+    "branch": "Instrumentation &amp; Control Engineering"
+  },
+  {
+    "id": 377,
+    "branch": "Manufacturing /Automation Engineering"
+  },
+  {
+    "id": 378,
+    "branch": "Marine Engineering"
+  },
+  {
+    "id": 379,
+    "branch": "Mechanical Engineering"
+  },
+  {
+    "id": 380,
+    "branch": "Mechatronics"
+  },
+  {
+    "id": 381,
+    "branch": "Medical Electronics"
+  },
+  {
+    "id": 382,
+    "branch": "Metallurgical /Materials Engineering"
+  },
+  {
+    "id": 383,
+    "branch": "Micro-Electronics"
+  },
+  {
+    "id": 384,
+    "branch": "Mineral / Mining Engineering"
+  },
+  {
+    "id": 385,
+    "branch": "Multimedia Technology"
+  },
+  {
+    "id": 386,
+    "branch": "Network Engineering"
+  },
+  {
+    "id": 387,
+    "branch": "Optical Communication"
+  },
+  {
+    "id": 388,
+    "branch": "Petroleum / Petrochemical Engineering"
+  },
+  {
+    "id": 389,
+    "branch": "Power Systems Engineering"
+  },
+  {
+    "id": 390,
+    "branch": "Printing /Paper/Pulp Technology"
+  },
+  {
+    "id": 391,
+    "branch": "Product Design &amp; Development"
+  },
+  {
+    "id": 392,
+    "branch": "Production / Plant Engineering"
+  },
+  {
+    "id": 393,
+    "branch": "Quality Engineering &amp; Management"
+  },
+  {
+    "id": 394,
+    "branch": "Refrigeration &amp; Air-Conditioning"
+  },
+  {
+    "id": 395,
+    "branch": "Remote Sensing"
+  },
+  {
+    "id": 396,
+    "branch": "Rubber /Plastic /Polymer Engineering"
+  },
+  {
+    "id": 397,
+    "branch": "Software Engineering"
+  },
+  {
+    "id": 398,
+    "branch": "Structural Engineering"
+  },
+  {
+    "id": 399,
+    "branch": "Systems Engineering and Operations Research"
+  },
+  {
+    "id": 400,
+    "branch": "Textile /Leather Technology"
+  },
+  {
+    "id": 401,
+    "branch": "Thermal Engineering"
+  },
+  {
+    "id": 402,
+    "branch": "VLSI Design"
+  },
+  {
+    "id": 403,
+    "branch": "Wireless Technologies"
+  },
+  {
+    "id": 404,
+    "branch": "Instrumentation &amp; EIectronics"
+  },
+  {
+    "id": 405,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "18",
+  "name": "MS",
+  "children": [
+   {
+    "id": 406,
+    "branch": "Software Engineering"
+  },
+  {
+    "id": 407,
+    "branch": "Embedded Systems"
+  },
+  {
+    "id": 408,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 409,
+    "branch": "Computer Science"
+  },
+  {
+    "id": 410,
+    "branch": "Other"
+  }
+  ]
+},{
+  "id": "19",
+  "name": "MSc",
+  "children": [
+   {
+    "id": 411,
+    "branch": "Bio-Chemistry"
+  },
+  {
+    "id": 412,
+    "branch": "BioInformatics"
+  },
+  {
+    "id": 413,
+    "branch": "Biology"
+  },
+  {
+    "id": 414,
+    "branch": "Bio-Physics"
+  },
+  {
+    "id": 415,
+    "branch": "Bio-technology"
+  },
+  {
+    "id": 416,
+    "branch": "Botany / Agricultural Botany"
+  },
+  {
+    "id": 417,
+    "branch": "Catering Technology"
+  },
+  {
+    "id": 418,
+    "branch": "Chemistry / Applied Chemistry"
+  },
+  {
+    "id": 419,
+    "branch": "Child Care"
+  },
+  {
+    "id": 420,
+    "branch": "Computer Science"
+  },
+  {
+    "id": 421,
+    "branch": "Electronics / Applied Electronics"
+  },
+  {
+    "id": 422,
+    "branch": "Food Science / Technology"
+  },
+  {
+    "id": 423,
+    "branch": "Geology"
+  },
+  {
+    "id": 424,
+    "branch": "Home Science"
+  },
+  {
+    "id": 425,
+    "branch": "Information Technology"
+  },
+  {
+    "id": 426,
+    "branch": "Library and Information Science"
+  },
+  {
+    "id": 427,
+    "branch": "Mathematics / Applied Mathematics"
+  },
+  {
+    "id": 428,
+    "branch": "Microbiology"
+  },
+  {
+    "id": 429,
+    "branch": "Physics / Applied Physics"
+  },
+  {
+    "id": 430,
+    "branch": "Physiology / Crop Physiology"
+  },
+  {
+    "id": 431,
+    "branch": "Plant Science"
+  },
+  {
+    "id": 432,
+    "branch": "Psychology"
+  },
+  {
+    "id": 433,
+    "branch": "Statistics / Applied Statistics"
+  },
+  {
+    "id": 434,
+    "branch": "Zoology / Applied Zoology"
+  },
+  {
+    "id": 435,
+    "branch": "Nursing"
+  },
+  {
+    "id": 436,
+    "branch": "Other"
+  }
+
+  ]
+},{
+  "id": "20",
+  "name": "MSW",
+  "children": [
+  
+    ]
+},{
+  "id": "21",
+  "name": "PG Diploma",
+  "children": [
+  
+    ]
+},{
+  "id": "22",
+  "name": "MCA",
+  "children": [
+  
+    ]
+},{
+  "id": "23",
+  "name": "MD",
+  "children": [
+  
+    ]
+}]
