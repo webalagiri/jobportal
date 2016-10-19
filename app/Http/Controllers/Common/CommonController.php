@@ -163,14 +163,17 @@ class CommonController extends Controller
         $snappy = App::make('snappy.pdf');
 //To file
         $html = '<h1>Bill</h1><p>You owe me money, dude.</p>';
-        $filename = 'bill-123-'.time().'.pdf';
+        $resumeurl='http://localhost/jobportal/public/resume#/signup';
+        $filename = 'resume-'.time().'.pdf';
         $filefullpath = 'd:/tmp/'.$filename;
-        $snappy->generateFromHtml($html, $filefullpath);
+        //$snappy->generateFromHtml($html, $filefullpath);
         //$snappy->generate('http://www.github.com', 'd:/tmp/github-'.time().'.pdf');
+        $snappy->generate($resumeurl, $filefullpath);
+
         //return $snappy->download($file);
 
 //Or output:
-
+        /*
         return Response(
             $snappy->getOutputFromHtml($html),
             200,
@@ -179,7 +182,17 @@ class CommonController extends Controller
                 'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
             )
         );
+        */
+        return Response()->download($filefullpath);
 
+        return Response(
+            $snappy->generate($resumeurl, $filefullpath),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
+            )
+        );
         /*
          return PDF::loadFile('http://www.getkyr.com')->inline('getkyr-'.time().'.pdf');
         */
