@@ -36,8 +36,10 @@ class CandidateProfileMapper
         $candidateProfileVM->setLastName($profile->lastName);
         $candidateProfileVM->setEmail($profile->email);
         $candidateProfileVM->setPhone(property_exists($profile, 'phone') ? $profile->phone : null);
+        //$candidateProfileVM->setPhone($profile->phone);
         //$candidateProfileVM->setPhone(isset($profile->phone) ? $profile->phone : $value);
-        $candidateProfileVM->setMobile($profile->mobile);
+        //$candidateProfileVM->setMobile($profile->mobile);
+        $candidateProfileVM->setMobile(property_exists($profile, 'mobile') ? $profile->mobile : null);
         $candidateProfileVM->setLocation($profile->location);
         $candidateProfileVM->setAddress($profile->address);
         $candidateProfileVM->setAlternateMobile($profile->alternateMobile);
