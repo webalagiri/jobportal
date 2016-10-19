@@ -1,0 +1,370 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Candidates List</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li class="active">Candidates</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right action-group">
+            <button type="button" class="btn blue no-margin" ng-click="showUpload = !showUpload" ng-class="{ active: showUpload }"><i class="fa fa-cloud-upload"></i> Bulk Upload</button>
+            <button type="button" class="btn blue no-margin" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i class="fa fa-plus"></i> Add Candidate</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid" ng-show="showUpload">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Bulk Upload</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Upload Excel</label>
+                                        <input type="file" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showUpload = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Upload
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" ng-show="showDiv">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Create Candidate</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Candidate Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Upload Photo</label>
+                                        <input type="file" class="form-control" />
+                                        <small>.jpg, .png, .gif - 30kb max. Preferred Photo format - .jpg file</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <textarea class="form-control" rows="2" placeholder="Enter Address"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <input type="text" class="form-control" placeholder="Enter Location">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Telephone</label>
+                                        <input type="text" class="form-control" placeholder="Enter Telephone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Mobile</label>
+                                        <input type="text" class="form-control" placeholder="Enter Mobile">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Job Profile Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Profile Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Experience Details</label>
+                                        <textarea class="form-control" rows="2" placeholder="Enter Experience Details"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Current Company Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Current Company Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Current CTC</label>
+                                        <input type="text" class="form-control" placeholder="Enter Current CTC">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Expected CTC</label>
+                                        <input type="text" class="form-control" placeholder="Enter Expected CTC">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Job Profile Details</label>
+                                        <textarea class="form-control" rows="1" placeholder="Enter Job Profile Details"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Profile Industry</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Profile Industry">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Profile Functional Area</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Profile FunctionalArea">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Job Profile Skills</label>
+                                        <input type="text" class="form-control" placeholder="Enter Job Profile Skills">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Resume Attachment</label>
+                                        <input type="file" class="form-control" />
+                                        <small>doc, docx, rtf, pdf - 300kb max. Preferred CV format - docx file</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Login E-mail</label>
+                                        <input type="text" class="form-control" placeholder="Enter Login E-mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Login Password</label>
+                                        <input type="text" class="form-control" placeholder="Enter Login Password">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="checks cb-form-inline">
+                                        <input type="checkbox" id="checkbox1" class="css-checkbox" />
+                                        <label for="checkbox1">Send Login Details to Candidate Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showDiv = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Save Candidate
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <th>Candidate Details</th>
+                            <th>Profile Details</th>
+                            <th>Email</th>
+                            <th>Join Date</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Suresh Kannan</h4>
+                                    <p>Chennai</p>
+                                    <p>9898989898</p>
+                                </td>
+                                <td>
+                                    <h4>Manufacturing Company</h4>
+                                    <p>10 Years</p>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>skuser@email.com</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Prashanth Ramesh</h4>
+                                    <p>Chennai</p>
+                                    <p>8798989891</p>
+                                </td>
+                                <td>
+                                    <h4>UI Developer</h4>
+                                    <p>3 Years</p>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>prashanth@gmail.com</p>
+                                </td>
+                                <td>
+                                    <p>26-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Prabakar P</h4>
+                                    <p>Chennai</p>
+                                    <p>8564564466</p>
+                                </td>
+                                <td>
+                                    <h4>MySQL Developer</h4>
+                                    <p>10 Years</p>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>prabakar@email.com</p>
+                                </td>
+                                <td>
+                                    <p>26-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Shankar Ram</h4>
+                                    <p>Chennai</p>
+                                    <p>9710187101</p>
+                                </td>
+                                <td>
+                                    <h4>Sr. Manager</h4>
+                                    <p>8 Years</p>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>shankar@email.com</p>
+                                </td>
+                                <td>
+                                    <p>25-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Kumar Kannan</h4>
+                                    <p>Chennai</p>
+                                    <p>8528528528</p>
+                                </td>
+                                <td>
+                                    <h4>Customer Care Executive</h4>
+                                    <p>2 Years</p>
+                                    <p>Chennai</p>
+                                </td>
+                                <td>
+                                    <p>kumar@email.com</p>
+                                </td>
+                                <td>
+                                    <p>24-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="container-fluid pagination-wrap">
+                        <div class="row no-padding">
+                            <div class="col-md-6">
+                                <p class="entry-count">Showing 1 to 5 of 25 entries</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="pagination pull-right">
+                                    <li class="disabled"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#/">1</a></li>
+                                    <li class="waves-effect"><a href="#/">2</a></li>
+                                    <li class="waves-effect"><a href="#/">3</a></li>
+                                    <li class="waves-effect"><a href="#/">4</a></li>
+                                    <li class="waves-effect"><a href="#/">5</a></li>
+                                    <li class="waves-effect"><a href="#/"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

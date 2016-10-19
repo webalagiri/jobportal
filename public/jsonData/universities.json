@@ -1,0 +1,2126 @@
+[
+  {
+    "id": 1,
+    "university": "Dr.B.R.Ambedkar University Agra"
+  },
+  {
+    "id": 2,
+    "university": "AIMA"
+  },
+  {
+    "id": 3,
+    "university": "Amaravati University"
+  },
+  {
+    "id": 4,
+    "university": "Andhra University"
+  },
+  {
+    "id": 5,
+    "university": "Anna University"
+  },
+  {
+    "id": 6,
+    "university": "Annamalai University"
+  },
+  {
+    "id": 7,
+    "university": "Banaras Hindu University"
+  },
+  {
+    "id": 8,
+    "university": "Bangalore University"
+  },
+  {
+    "id": 9,
+    "university": "Barkatullah University"
+  },
+  {
+    "id": 10,
+    "university": "Berhampur University"
+  },
+  {
+    "id": 11,
+    "university": "Bharathiar University"
+  },
+  {
+    "id": 12,
+    "university": "Bharathidasan University"
+  },
+  {
+    "id": 13,
+    "university": "BITS (Mesra)"
+  },
+  {
+    "id": 14,
+    "university": "BITS (Pilani)"
+  },
+  {
+    "id": 15,
+    "university": "Board of Technical Education"
+  },
+  {
+    "id": 16,
+    "university": "Calcutta University"
+  },
+  {
+    "id": 17,
+    "university": "Calicut University"
+  },
+  {
+    "id": 18,
+    "university": "Chennai University"
+  },
+  {
+    "id": 19,
+    "university": "DAVV Indore"
+  },
+  {
+    "id": 20,
+    "university": "Devi Ahilya University"
+  },
+  {
+    "id": 21,
+    "university": "Fergusson College Pune"
+  },
+  {
+    "id": 22,
+    "university": "Goa University"
+  },
+  {
+    "id": 23,
+    "university": "Gujarat University"
+  },
+  {
+    "id": 24,
+    "university": "Gulbarga University"
+  },
+  {
+    "id": 25,
+    "university": "Hindu College Delhi"
+  },
+  {
+    "id": 26,
+    "university": "Hyderabad University"
+  },
+  {
+    "id": 27,
+    "university": "IGNOU"
+  },
+  {
+    "id": 28,
+    "university": "Indian Statistical Institute"
+  },
+  {
+    "id": 29,
+    "university": "Jadavpur University"
+  },
+  {
+    "id": 30,
+    "university": "Jawaharlal Nehru University"
+  },
+  {
+    "id": 31,
+    "university": "Jiwaji University"
+  },
+  {
+    "id": 32,
+    "university": "JNTU Hyderabad"
+  },
+  {
+    "id": 33,
+    "university": "Kakatiya University"
+  },
+  {
+    "id": 34,
+    "university": "Kanpur University"
+  },
+  {
+    "id": 35,
+    "university": "Karanataka University"
+  },
+  {
+    "id": 36,
+    "university": "Kerala University"
+  },
+  {
+    "id": 37,
+    "university": "Kurukshetra University"
+  },
+  {
+    "id": 38,
+    "university": "Kuvempu University"
+  },
+  {
+    "id": 39,
+    "university": "Loyola College Chennai"
+  },
+  {
+    "id": 40,
+    "university": "LSR College Delhi"
+  },
+  {
+    "id": 41,
+    "university": "Lucknow University"
+  },
+  {
+    "id": 42,
+    "university": "Madurai Kamaraj University"
+  },
+  {
+    "id": 43,
+    "university": "Mahatma Gandhi University"
+  },
+  {
+    "id": 44,
+    "university": "Mangalore University"
+  },
+  {
+    "id": 45,
+    "university": "Meerut University"
+  },
+  {
+    "id": 46,
+    "university": "Miranda House Delhi"
+  },
+  {
+    "id": 47,
+    "university": "Mumbai University"
+  },
+  {
+    "id": 48,
+    "university": "Nagarjuna University"
+  },
+  {
+    "id": 49,
+    "university": "Nagpur University"
+  },
+  {
+    "id": 50,
+    "university": "Osmania University"
+  },
+  {
+    "id": 51,
+    "university": "Pondicherry University"
+  },
+  {
+    "id": 52,
+    "university": "Presidency College Chennai"
+  },
+  {
+    "id": 53,
+    "university": "Presidency College Kolkatta"
+  },
+  {
+    "id": 54,
+    "university": "PSG Coimbatore"
+  },
+  {
+    "id": 55,
+    "university": "Pune University"
+  },
+  {
+    "id": 56,
+    "university": "Punjab Technical University"
+  },
+  {
+    "id": 57,
+    "university": "Punjab University"
+  },
+  {
+    "id": 58,
+    "university": "Rajasthan University"
+  },
+  {
+    "id": 59,
+    "university": "Ranchi University"
+  },
+  {
+    "id": 60,
+    "university": "Sambalpur University"
+  },
+  {
+    "id": 61,
+    "university": "Sardar Patel University"
+  },
+  {
+    "id": 62,
+    "university": "Saurashtra University"
+  },
+  {
+    "id": 63,
+    "university": "School Of Planning &amp; Architecture"
+  },
+  {
+    "id": 64,
+    "university": "Shivaji University"
+  },
+  {
+    "id": 65,
+    "university": "South Gujarat University Surat"
+  },
+  {
+    "id": 66,
+    "university": "SP Jain Institute of Management Studies"
+  },
+  {
+    "id": 67,
+    "university": "SRCC Delhi"
+  },
+  {
+    "id": 68,
+    "university": "Sri Venkateshwara College Delhi"
+  },
+  {
+    "id": 69,
+    "university": "Sri Venkateshwara University"
+  },
+  {
+    "id": 70,
+    "university": "St Stephens College Delhi"
+  },
+  {
+    "id": 71,
+    "university": "St.Xaviers College Kolkatta"
+  },
+  {
+    "id": 72,
+    "university": "St.Xaviers College Mumbai"
+  },
+  {
+    "id": 73,
+    "university": "Stella Maris College Chennai"
+  },
+  {
+    "id": 74,
+    "university": "Symbiosis Pune"
+  },
+  {
+    "id": 75,
+    "university": "University of Mysore"
+  },
+  {
+    "id": 76,
+    "university": "Utkal University"
+  },
+  {
+    "id": 77,
+    "university": "Algappa University"
+  },
+  {
+    "id": 78,
+    "university": "Mizoram University"
+  },
+  {
+    "id": 79,
+    "university": "Nagaland University"
+  },
+  {
+    "id": 80,
+    "university": "Patna University"
+  },
+  {
+    "id": 81,
+    "university": "Delhi University"
+  },
+  {
+    "id": 82,
+    "university": "Others"
+  },
+  {
+    "id": 83,
+    "university": "Maharaja Sayajirao University"
+  },
+  {
+    "id": 84,
+    "university": "IIMT STUDIES"
+  },
+  {
+    "id": 85,
+    "university": "Acharya N. G. Ranga Agricultural University"
+  },
+  {
+    "id": 86,
+    "university": "Acharya Nagarjuna University"
+  },
+  {
+    "id": 87,
+    "university": "Adikavi Nannaya University"
+  },
+  {
+    "id": 88,
+    "university": "Ahmedabad University"
+  },
+  {
+    "id": 89,
+    "university": "AISECT University"
+  },
+  {
+    "id": 90,
+    "university": "Alagappa University"
+  },
+  {
+    "id": 91,
+    "university": "Aliah University"
+  },
+  {
+    "id": 92,
+    "university": "Alliance University"
+  },
+  {
+    "id": 93,
+    "university": "AMET University"
+  },
+  {
+    "id": 94,
+    "university": "Amity University"
+  },
+  {
+    "id": 95,
+    "university": "Amrita Vishwa Vidyapeetham"
+  },
+  {
+    "id": 96,
+    "university": "Anand Agricultural University"
+  },
+  {
+    "id": 97,
+    "university": "ndhra Pradesh Open University"
+  },
+  {
+    "id": 98,
+    "university": "Anna University of Technology Tirunelveli"
+  },
+  {
+    "id": 99,
+    "university": "Anna University of Technology, Chennai"
+  },
+  {
+    "id": 100,
+    "university": "Anna University of Technology, Coimbatore"
+  },
+  {
+    "id": 101,
+    "university": "Anna University of Technology, Madurai"
+  },
+  {
+    "id": 102,
+    "university": "Anna University of Technology,Tiruchirappalli"
+  },
+  {
+    "id": 103,
+    "university": "Anna University, Chennai"
+  },
+  {
+    "id": 104,
+    "university": "Apeejay Stya University"
+  },
+  {
+    "id": 105,
+    "university": "Arni University"
+  },
+  {
+    "id": 106,
+    "university": "Aryabhatta Knowledge University"
+  },
+  {
+    "id": 107,
+    "university": "Assam Agricultural University"
+  },
+  {
+    "id": 108,
+    "university": "Assam Don Bosco University"
+  },
+  {
+    "id": 109,
+    "university": "Assam down town University"
+  },
+  {
+    "id": 110,
+    "university": "Assam University"
+  },
+  {
+    "id": 111,
+    "university": "Avinashilingam Institute for Home Science and Higher Education for Women"
+  },
+  {
+    "id": 112,
+    "university": "Awdhesh Pratap Singh University"
+  },
+  {
+    "id": 113,
+    "university": "Ayush and Health Sciences University of Chhattisgarh"
+  },
+  {
+    "id": 114,
+    "university": "Azim Premji University"
+  },
+  {
+    "id": 115,
+    "university": "B. R. Ambedkar Bihar University"
+  },
+  {
+    "id": 116,
+    "university": "B. S. Abdur Rahman University"
+  },
+  {
+    "id": 117,
+    "university": "B.L.D.E. University"
+  },
+  {
+    "id": 118,
+    "university": "Baba Farid University of Health Sciences"
+  },
+  {
+    "id": 119,
+    "university": "Baba Ghulam Shah Badhshah University"
+  },
+  {
+    "id": 120,
+    "university": "Babasaheb Bhimrao Ambedkar University"
+  },
+  {
+    "id": 121,
+    "university": "Babu Banarasi Das University"
+  },
+  {
+    "id": 122,
+    "university": "Baddi University of Emerging Sciences and Technologies"
+  },
+  {
+    "id": 123,
+    "university": "Bahra University"
+  },
+  {
+    "id": 124,
+    "university": "Banasthali Vidyapith"
+  },
+  {
+    "id": 125,
+    "university": "Bastar University"
+  },
+  {
+    "id": 126,
+    "university": "Bengal Engineering and Science University,Shibpur"
+  },
+  {
+    "id": 127,
+    "university": "Bhagat Phool Singh Mahila Vishwavidyalaya"
+  },
+  {
+    "id": 128,
+    "university": "Bhagwant University"
+  },
+  {
+    "id": 129,
+    "university": "Bharat Ratna Dr. B. R. Ambedkar University"
+  },
+  {
+    "id": 130,
+    "university": "Bharath University"
+  },
+  {
+    "id": 131,
+    "university": "Bharati Vidyapeeth"
+  },
+  {
+    "id": 132,
+    "university": "Bhavnagar University"
+  },
+  {
+    "id": 133,
+    "university": "Bhupendra Narayan Mandal University"
+  },
+  {
+    "id": 134,
+    "university": "Bidhan Chandra Krishi Viswavidyalaya"
+  },
+  {
+    "id": 135,
+    "university": "Bihar Yoga Bharati"
+  },
+  {
+    "id": 136,
+    "university": "Birsa Agricultural University"
+  },
+  {
+    "id": 137,
+    "university": "Bundelkhand University"
+  },
+  {
+    "id": 138,
+    "university": "Calrox Teacher's University"
+  },
+  {
+    "id": 139,
+    "university": "Central Agricultural University"
+  },
+  {
+    "id": 140,
+    "university": "Central Institute of Fisheries Education"
+  },
+  {
+    "id": 141,
+    "university": "Central Institute of Higher Tibetan Studies"
+  },
+  {
+    "id": 142,
+    "university": "Central University of Bihar"
+  },
+  {
+    "id": 143,
+    "university": "Central University of Gujarat"
+  },
+  {
+    "id": 144,
+    "university": "Central University of Haryana"
+  },
+  {
+    "id": 145,
+    "university": "Central University of Himachal Pradesh"
+  },
+  {
+    "id": 146,
+    "university": "Central University of Jharkhand"
+  },
+  {
+    "id": 147,
+    "university": "Central University of Karnataka"
+  },
+  {
+    "id": 148,
+    "university": "Central University of Kashmir"
+  },
+  {
+    "id": 149,
+    "university": "Central University of Kerala"
+  },
+  {
+    "id": 150,
+    "university": "Central University of Orissa"
+  },
+  {
+    "id": 151,
+    "university": "Central University of Punjab"
+  },
+  {
+    "id": 152,
+    "university": "Central University of Rajasthan"
+  },
+  {
+    "id": 153,
+    "university": "Central University of Tamil Nadu"
+  },
+  {
+    "id": 154,
+    "university": "Centre for Environmental and Planning Technology University"
+  },
+  {
+    "id": 155,
+    "university": "Centurion University of Technology and"
+  },
+  {
+    "id": 156,
+    "university": "Chandra Shekhar Azad University of Agriculture and Technology"
+  },
+  {
+    "id": 157,
+    "university": "Charotar University of Science and Technology"
+  },
+  {
+    "id": 158,
+    "university": "Chaudhary Charan Singh Haryana"
+  },
+  {
+    "id": 159,
+    "university": "Chaudhary Charan Singh University"
+  },
+  {
+    "id": 160,
+    "university": "Chaudhary Devi Lal University"
+  },
+  {
+    "id": 161,
+    "university": "Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya"
+  },
+  {
+    "id": 162,
+    "university": "Chennai Mathematical Institute"
+  },
+  {
+    "id": 163,
+    "university": "Chettinad University"
+  },
+  {
+    "id": 164,
+    "university": "Chhatrapati Shahu Ji Maharaj University"
+  },
+  {
+    "id": 165,
+    "university": "Chhatrapati Shahuji Maharaj Medical University"
+  },
+  {
+    "id": 166,
+    "university": "Chhattisgarh Swami Vivekanand Technical University"
+  },
+  {
+    "id": 167,
+    "university": "Chitkara University"
+  },
+  {
+    "id": 168,
+    "university": "Christ University"
+  },
+  {
+    "id": 169,
+    "university": "CMJ University"
+  },
+  {
+    "id": 170,
+    "university": "D. Y. Patil Education Society"
+  },
+  {
+    "id": 171,
+    "university": "Davangere University"
+  },
+  {
+    "id": 172,
+    "university": "Dayalbagh Educational Institute"
+  },
+  {
+    "id": 173,
+    "university": "Deccan College Post-Graduate and Research Institute"
+  },
+  {
+    "id": 174,
+    "university": "Deen Dayal Upadhyay Gorakhpur University"
+  },
+  {
+    "id": 175,
+    "university": "Dev Sanskriti Vishwavidyalaya"
+  },
+  {
+    "id": 176,
+    "university": "Dharamsinh Desai University"
+  },
+  {
+    "id": 177,
+    "university": "Dibrugarh University"
+  },
+  {
+    "id": 178,
+    "university": "Doon University"
+  },
+  {
+    "id": 179,
+    "university": "Dr. B. R. Ambedkar University, Agra"
+  },
+  {
+    "id": 180,
+    "university": "Dr. B.R. Ambedkar University, Srikakulam"
+  },
+  {
+    "id": 181,
+    "university": "Dr. Babasaheb Ambedkar Marathwada University"
+  },
+  {
+    "id": 182,
+    "university": "Dr. Babasaheb Ambedkar Open University"
+  },
+  {
+    "id": 183,
+    "university": "Dr. Babasaheb Ambedkar Technological University"
+  },
+  {
+    "id": 184,
+    "university": "Dr. Balasaheb Sawant Konkan Krishi Vidyapeeth"
+  },
+  {
+    "id": 185,
+    "university": "Dr. C. V. Raman University"
+  },
+  {
+    "id": 186,
+    "university": "Dr. D. Y. Patil Vidyapeeth"
+  },
+  {
+    "id": 187,
+    "university": "Dr. Hari Singh Gour University"
+  },
+  {
+    "id": 188,
+    "university": "Dr. K. N. Modi University"
+  },
+  {
+    "id": 189,
+    "university": "Dr. M.G.R. Educational and Research Institute"
+  },
+  {
+    "id": 190,
+    "university": "Dr. Panjabrao Deshmukh Krishi Vidyapeeth"
+  },
+  {
+    "id": 191,
+    "university": "Dr. Ram Manohar Lohia Avadh University"
+  },
+  {
+    "id": 192,
+    "university": "Dr. Shakuntala Misra Rehabilitation University"
+  },
+  {
+    "id": 193,
+    "university": "Dr. Yashwant Singh Parmar University of Horticulture and Forestry"
+  },
+  {
+    "id": 194,
+    "university": "Dravidian University"
+  },
+  {
+    "id": 195,
+    "university": "English and Foreign Languages University"
+  },
+  {
+    "id": 196,
+    "university": "Eternal University"
+  },
+  {
+    "id": 197,
+    "university": "Fakir Mohan University"
+  },
+  {
+    "id": 198,
+    "university": "orest Research Institute"
+  },
+  {
+    "id": 199,
+    "university": "G. B. Pant University of Agriculture and Technology"
+  },
+  {
+    "id": 200,
+    "university": "Galgotias University"
+  },
+  {
+    "id": 201,
+    "university": "Gandhigram Rural Institute"
+  },
+  {
+    "id": 202,
+    "university": "Ganpat University"
+  },
+  {
+    "id": 203,
+    "university": "Gauhati University"
+  },
+  {
+    "id": 204,
+    "university": "Gautam Buddha University"
+  },
+  {
+    "id": 205,
+    "university": "GLA University"
+  },
+  {
+    "id": 206,
+    "university": "Gokhale Institute of Politics and Economics"
+  },
+  {
+    "id": 207,
+    "university": "Graphic Era Parvatiya Vishwavidyalaya"
+  },
+  {
+    "id": 208,
+    "university": "Graphic Era University"
+  },
+  {
+    "id": 209,
+    "university": "Gujarat Ayurved University"
+  },
+  {
+    "id": 210,
+    "university": "Gujarat Forensic Sciences University"
+  },
+  {
+    "id": 211,
+    "university": "Gujarat Technological University"
+  },
+  {
+    "id": 212,
+    "university": "Gujarat Vidyapith"
+  },
+  {
+    "id": 213,
+    "university": "Guru Angad Dev Veterinary and Animal Sciences University"
+  },
+  {
+    "id": 214,
+    "university": "Guru Ghasidas University"
+  },
+  {
+    "id": 215,
+    "university": "Guru Gobind Singh Indraprastha University"
+  },
+  {
+    "id": 216,
+    "university": "Guru Jambheshwar University of Science and Technology"
+  },
+  {
+    "id": 217,
+    "university": "Guru Nanak Dev University"
+  },
+  {
+    "id": 218,
+    "university": "Gurukul Kangri Vishwavidyalaya"
+  },
+  {
+    "id": 219,
+    "university": "Hemchandracharya North Gujarat University"
+  },
+  {
+    "id": 220,
+    "university": "Hemwati Nandan Bahuguna Garhwal University"
+  },
+  {
+    "id": 221,
+    "university": "HIHT University"
+  },
+  {
+    "id": 222,
+    "university": "Himachal Pradesh University"
+  },
+  {
+    "id": 223,
+    "university": "Himgiri Zee University"
+  },
+  {
+    "id": 224,
+    "university": "Hindustan Institute of Technology and Science"
+  },
+  {
+    "id": 225,
+    "university": "Homi Bhabha National Institute"
+  },
+  {
+    "id": 226,
+    "university": "Homoeopathy University"
+  },
+  {
+    "id": 227,
+    "university": "ICFAI Foundation for Higher Education"
+  },
+  {
+    "id": 228,
+    "university": "IFTM University"
+  },
+  {
+    "id": 229,
+    "university": "IIS University"
+  },
+  {
+    "id": 230,
+    "university": "Indian Agricultural Research Institute"
+  },
+  {
+    "id": 231,
+    "university": "Indian Maritime University"
+  },
+  {
+    "id": 232,
+    "university": "Indian School of Mines University"
+  },
+  {
+    "id": 233,
+    "university": "Indian Veterinary Research Institute"
+  },
+  {
+    "id": 234,
+    "university": "Indira Gandhi Agricultural University"
+  },
+  {
+    "id": 235,
+    "university": "Indira Gandhi Institute of Development  Research"
+  },
+  {
+    "id": 236,
+    "university": "Indira Gandhi National Open University"
+  },
+  {
+    "id": 237,
+    "university": "Indira Gandhi National Tribal University"
+  },
+  {
+    "id": 238,
+    "university": "Indira Kala Sangeet University"
+  },
+  {
+    "id": 239,
+    "university": "Indus International University"
+  },
+  {
+    "id": 240,
+    "university": "Institute of Advanced Studies in Education"
+  },
+  {
+    "id": 241,
+    "university": "Institute of Chemical Technology"
+  },
+  {
+    "id": 242,
+    "university": "Integral University"
+  },
+  {
+    "id": 243,
+    "university": "International Institute for Population Sciences"
+  },
+  {
+    "id": 244,
+    "university": "Invertis University"
+  },
+  {
+    "id": 245,
+    "university": "ITM University"
+  },
+  {
+    "id": 246,
+    "university": "Jagadguru Ramanadacharya Rajasthan Sanskrit University"
+  },
+  {
+    "id": 247,
+    "university": "Jagadguru Rambhadracharya Handicapped University"
+  },
+  {
+    "id": 248,
+    "university": "Jagadguru Sri Shivarathreeshwara University"
+  },
+  {
+    "id": 249,
+    "university": "Jagannath University"
+  },
+  {
+    "id": 250,
+    "university": "Jagdishprasad Jhabarmal Tibrewala University"
+  },
+  {
+    "id": 251,
+    "university": "Jai Narain Vyas University"
+  },
+  {
+    "id": 252,
+    "university": "Jai Prakash University"
+  },
+  {
+    "id": 253,
+    "university": "Jain University"
+  },
+  {
+    "id": 254,
+    "university": "Jain Vishva Bharati University"
+  },
+  {
+    "id": 255,
+    "university": "Jaipur National University"
+  },
+  {
+    "id": 256,
+    "university": "Jamia Hamdard"
+  },
+  {
+    "id": 257,
+    "university": "Janardan Rai Nagar Rajasthan Vidyapeeth University"
+  },
+  {
+    "id": 258,
+    "university": "Jawaharlal Nehru Agricultural University"
+  },
+  {
+    "id": 259,
+    "university": "Jawaharlal Nehru Architecture and Fine Arts University"
+  },
+  {
+    "id": 260,
+    "university": "Jawaharlal Nehru Centre for Advanced Scientific Research"
+  },
+  {
+    "id": 261,
+    "university": "Jayoti Vidyapeeth Women's University"
+  },
+  {
+    "id": 262,
+    "university": "JK Lakshmipat University"
+  },
+  {
+    "id": 263,
+    "university": "Jodhpur National University"
+  },
+  {
+    "id": 264,
+    "university": "K L University"
+  },
+  {
+    "id": 265,
+    "university": "K.L.E. Academy of Higher Education and Research"
+  },
+  {
+    "id": 266,
+    "university": "Kadi Sarva Vishwavidyalaya"
+  },
+  {
+    "id": 267,
+    "university": "Kalasalingam University"
+  },
+  {
+    "id": 268,
+    "university": "Kameshwar Singh Darbhanga Sanskrit University"
+  },
+  {
+    "id": 269,
+    "university": "Kannada University"
+  },
+  {
+    "id": 270,
+    "university": "Kannur University"
+  },
+  {
+    "id": 271,
+    "university": "Karnatak University"
+  },
+  {
+    "id": 272,
+    "university": "Karnataka Samskrit University"
+  },
+  {
+    "id": 273,
+    "university": "Karnataka State Open University"
+  },
+  {
+    "id": 274,
+    "university": "Karnataka State Women's University"
+  },
+  {
+    "id": 275,
+    "university": "Karnataka Veterinary, Animal and Fisheries Sciences University"
+  },
+  {
+    "id": 276,
+    "university": "Karpagam Academy of Higher Education"
+  },
+  {
+    "id": 277,
+    "university": "Karunya University"
+  },
+  {
+    "id": 278,
+    "university": "Kavi Kulguru Kalidas Sanskrit Vishwavidyalaya"
+  },
+  {
+    "id": 279,
+    "university": "Kerala Agricultural University"
+  },
+  {
+    "id": 280,
+    "university": "Kerala Kalamandalam"
+  },
+  {
+    "id": 281,
+    "university": "Kerala University of Fisheries and Ocean Studies"
+  },
+  {
+    "id": 282,
+    "university": "Kerala University of Health Sciences"
+  },
+  {
+    "id": 283,
+    "university": "Kerala Veterinary and Animal Sciences University"
+  },
+  {
+    "id": 284,
+    "university": "KIIT University"
+  },
+  {
+    "id": 285,
+    "university": "Kolhan University"
+  },
+  {
+    "id": 286,
+    "university": "Krantiguru Shyamji Krishna Verma Kachchh University"
+  },
+  {
+    "id": 287,
+    "university": "Krishna University"
+  },
+  {
+    "id": 288,
+    "university": "KSGH Music and Performing Arts University"
+  },
+  {
+    "id": 289,
+    "university": "Kumaun University"
+  },
+  {
+    "id": 290,
+    "university": "Kushabhau Thakre Patrakarita Avam Jansanchar University"
+  },
+  {
+    "id": 291,
+    "university": "Lakshmibai National University of Physical Education"
+  },
+  {
+    "id": 292,
+    "university": "Lala Lajpat Rai University of Veterinary and Animal Sciences"
+  },
+  {
+    "id": 293,
+    "university": "Lalit Narayan Mithila University"
+  },
+  {
+    "id": 294,
+    "university": "Lingaya's University"
+  },
+  {
+    "id": 295,
+    "university": "Lovely Professional University"
+  },
+  {
+    "id": 296,
+    "university": "M. J. P. Rohilkhand University"
+  },
+  {
+    "id": 297,
+    "university": "Madhya Pradesh Bhoj Open University"
+  },
+  {
+    "id": 298,
+    "university": "Madhya Pradesh Pashu-Chikitsa Vigyan Vishwavidyalaya"
+  },
+  {
+    "id": 299,
+    "university": "Magadh University"
+  },
+  {
+    "id": 300,
+    "university": "Maharaja Ganga Singh University"
+  },
+  {
+    "id": 301,
+    "university": "Maharaja Sayajirao University of Baroda"
+  },
+  {
+    "id": 302,
+    "university": "Maharana Pratap University of Agriculture and Technology"
+  },
+  {
+    "id": 303,
+    "university": "Maharashtra Animal and Fishery Sciences University"
+  },
+  {
+    "id": 304,
+    "university": "Maharishi Dayanand University"
+  },
+  {
+    "id": 305,
+    "university": "Maharishi Mahesh Yogi Vedic Vishwavidyalaya"
+  },
+  {
+    "id": 306,
+    "university": "Maharishi Markandeshwar University Solan"
+  },
+  {
+    "id": 307,
+    "university": "Maharishi Markandeshwar University, Ambala"
+  },
+  {
+    "id": 308,
+    "university": "Maharishi Markandeshwar University,Mullana"
+  },
+  {
+    "id": 309,
+    "university": "Maharshi Dayanand Saraswati University"
+  },
+  {
+    "id": 310,
+    "university": "Maharshi Panini Sanskrit University"
+  },
+  {
+    "id": 311,
+    "university": "Mahatma Gandhi Antarrashtriya Hindi Vishwavidyalaya"
+  },
+  {
+    "id": 312,
+    "university": "Mahatma Gandhi Chitrakoot Gramoday University"
+  },
+  {
+    "id": 313,
+    "university": "Mahatma Gandhi Kashi Vidyapeeth"
+  },
+  {
+    "id": 314,
+    "university": "Mahatma Gandhi University, Nalgonda"
+  },
+  {
+    "id": 315,
+    "university": "Mahatma Jyoti Rao Phoole University"
+  },
+  {
+    "id": 316,
+    "university": "Mahatma Phule Krishi Vidyapeeth"
+  },
+  {
+    "id": 317,
+    "university": "Makhanlal Chaturvedi National University0f Journalism"
+  },
+  {
+    "id": 318,
+    "university": "Manav Bharti University"
+  },
+  {
+    "id": 319,
+    "university": "Manav Rachna International University"
+  },
+  {
+    "id": 320,
+    "university": "Mangalayatan University"
+  },
+  {
+    "id": 321,
+    "university": "Manipal University"
+  },
+  {
+    "id": 322,
+    "university": "Manipal University, Jaipur"
+  },
+  {
+    "id": 323,
+    "university": "Manipur University"
+  },
+  {
+    "id": 324,
+    "university": "Manonmaniam Sundaranar University"
+  },
+  {
+    "id": 325,
+    "university": "Manyavar Sri Kanshi Ram Ji Urdu,Arabi~Farsi University"
+  },
+  {
+    "id": 326,
+    "university": "Marathwada Agricultural University"
+  },
+  {
+    "id": 327,
+    "university": "Martin Luther Christian University"
+  },
+  {
+    "id": 328,
+    "university": "MATS University"
+  },
+  {
+    "id": 329,
+    "university": "Maulana Azad National Urdu University"
+  },
+  {
+    "id": 330,
+    "university": "Maulana Mazharul Haque Arabic and Persian University"
+  },
+  {
+    "id": 331,
+    "university": "Meenakshi Academy of Higher Education and Research"
+  },
+  {
+    "id": 332,
+    "university": "Mewar University"
+  },
+  {
+    "id": 333,
+    "university": "MGM Institute of Health Sciences"
+  },
+  {
+    "id": 334,
+    "university": "Mohammad Ali Jauhar University"
+  },
+  {
+    "id": 335,
+    "university": "Mohanlal Sukhadia University"
+  },
+  {
+    "id": 336,
+    "university": "Mother Teresa Women's University"
+  },
+  {
+    "id": 337,
+    "university": "Nalanda Open University"
+  },
+  {
+    "id": 338,
+    "university": "Narendra Dev University of Agriculture and Technology"
+  },
+  {
+    "id": 339,
+    "university": "National Dairy Research Institute"
+  },
+  {
+    "id": 340,
+    "university": "National Museum Institute of History of"
+  },
+  {
+    "id": 341,
+    "university": "Art, Conservation and Musicology"
+  },
+  {
+    "id": 342,
+    "university": "National University of Educational"
+  },
+  {
+    "id": 343,
+    "university": "Planning and Administration"
+  },
+  {
+    "id": 344,
+    "university": "Nava Nalanda Mahavihara"
+  },
+  {
+    "id": 345,
+    "university": "Navrachna University"
+  },
+  {
+    "id": 346,
+    "university": "Nehru Gram Bharti University"
+  },
+  {
+    "id": 347,
+    "university": "Netaji Subhas Open University"
+  },
+  {
+    "id": 348,
+    "university": "Nilamber-Pitamber University"
+  },
+  {
+    "id": 349,
+    "university": "NIMS University, Jaipur"
+  },
+  {
+    "id": 350,
+    "university": "Nitte University"
+  },
+  {
+    "id": 351,
+    "university": "Noida International University"
+  },
+  {
+    "id": 352,
+    "university": "Noorul Islam University"
+  },
+  {
+    "id": 353,
+    "university": "North Eastern Hill University"
+  },
+  {
+    "id": 354,
+    "university": "North Orissa University"
+  },
+  {
+    "id": 355,
+    "university": "O. P. Jindal Global University"
+  },
+  {
+    "id": 356,
+    "university": "Oriental University"
+  },
+  {
+    "id": 357,
+    "university": "Orissa University of Agriculture and Technology"
+  },
+  {
+    "id": 358,
+    "university": "Pacific University"
+  },
+  {
+    "id": 359,
+    "university": "Padmashree Dr. D. Y. Patil Vidyapeeth"
+  },
+  {
+    "id": 360,
+    "university": "Palamuru University"
+  },
+  {
+    "id": 361,
+    "university": "Pandit Deendayal Petroleum University"
+  },
+  {
+    "id": 362,
+    "university": "Pandit Ravishankar Shukla University"
+  },
+  {
+    "id": 363,
+    "university": "Pandit Sundarlal Sharma (Open) University"
+  },
+  {
+    "id": 364,
+    "university": "Panjab University, Chandigarh"
+  },
+  {
+    "id": 365,
+    "university": "People's University"
+  },
+  {
+    "id": 366,
+    "university": "Periyar Maniammai University"
+  },
+  {
+    "id": 367,
+    "university": "Periyar University"
+  },
+  {
+    "id": 368,
+    "university": "Potti Sreeramulu Telugu University"
+  },
+  {
+    "id": 369,
+    "university": "Pratap University"
+  },
+  {
+    "id": 370,
+    "university": "residency University, Kolkata"
+  },
+  {
+    "id": 371,
+    "university": "Punjab Agricultural University"
+  },
+  {
+    "id": 372,
+    "university": "Punjabi University"
+  },
+  {
+    "id": 373,
+    "university": "Rabindra Bharati University"
+  },
+  {
+    "id": 374,
+    "university": "Raffles University"
+  },
+  {
+    "id": 375,
+    "university": "Rajasthan Agricultural University"
+  },
+  {
+    "id": 376,
+    "university": "Rajasthan Ayurved University"
+  },
+  {
+    "id": 377,
+    "university": "Rajasthan Technical University"
+  },
+  {
+    "id": 378,
+    "university": "Rajendra Agricultural University"
+  },
+  {
+    "id": 379,
+    "university": "Rajiv Gandhi National Institute of Youth Development"
+  },
+  {
+    "id": 380,
+    "university": "Rajiv Gandhi Technical University"
+  },
+  {
+    "id": 381,
+    "university": "Rajiv Gandhi University"
+  },
+  {
+    "id": 382,
+    "university": "Ramakrishna Mission Vivekananda University"
+  },
+  {
+    "id": 383,
+    "university": "Rani Channamma University"
+  },
+  {
+    "id": 384,
+    "university": "Rani Durgavati University"
+  },
+  {
+    "id": 385,
+    "university": "Rashtrasant Tukadoji Maharaj Nagpur University"
+  },
+  {
+    "id": 386,
+    "university": "Rashtriya Sanskrit Sansthan"
+  },
+  {
+    "id": 387,
+    "university": "Rashtriya Sanskrit Vidyapeeth"
+  },
+  {
+    "id": 388,
+    "university": "Ravenshaw University"
+  },
+  {
+    "id": 389,
+    "university": "Rayalaseema University"
+  },
+  {
+    "id": 390,
+    "university": "Sam Higginbottom Institute of Agriculture,Technology and Sciences"
+  },
+  {
+    "id": 391,
+    "university": "Sampurnanand Sanskrit University"
+  },
+  {
+    "id": 392,
+    "university": "Sant Gadge Baba Amravati University"
+  },
+  {
+    "id": 393,
+    "university": "Sant Longowal Institute of Engineering and Technology"
+  },
+  {
+    "id": 394,
+    "university": "Santosh University"
+  },
+  {
+    "id": 395,
+    "university": "Sardar Vallabhbhai Patel University of Agriculture and Technology"
+  },
+  {
+    "id": 396,
+    "university": "Sardarkrushinagar Dantiwada Agricultural University"
+  },
+  {
+    "id": 397,
+    "university": "Sarguja University"
+  },
+  {
+    "id": 398,
+    "university": "Satavahana University"
+  },
+  {
+    "id": 399,
+    "university": "Sathyabama University"
+  },
+  {
+    "id": 400,
+    "university": "Saveetha University"
+  },
+  {
+    "id": 401,
+    "university": "Shanmugha Arts, Science, Technology &amp;Research Academy"
+  },
+  {
+    "id": 402,
+    "university": "Sharda University"
+  },
+  {
+    "id": 403,
+    "university": "Sher-e-Kashmir University of Agricultural Sciences and Technology of Kashmir"
+  },
+  {
+    "id": 404,
+    "university": "Shiv Nadar University"
+  },
+  {
+    "id": 405,
+    "university": "Shobhit University"
+  },
+  {
+    "id": 406,
+    "university": "Shree Somnath Sanskrit University"
+  },
+  {
+    "id": 407,
+    "university": "Shreemati Nathibai Damodar Thackersey Women's University"
+  },
+  {
+    "id": 408,
+    "university": "Shri Jagannath Sanskrit Vishvavidyalaya"
+  },
+  {
+    "id": 409,
+    "university": "Shri Lal Bahadur Shastri Rashtriya Sanskrit Vidyapith"
+  },
+  {
+    "id": 410,
+    "university": "Shri Mata Vaishno Devi University"
+  },
+  {
+    "id": 411,
+    "university": "Shri Venkateshwara University"
+  },
+  {
+    "id": 412,
+    "university": "Shridhar University"
+  },
+  {
+    "id": 413,
+    "university": "Sidho Kanho Birsha University"
+  },
+  {
+    "id": 414,
+    "university": "Sido Kanhu University"
+  },
+  {
+    "id": 415,
+    "university": "Sikkim Manipal University"
+  },
+  {
+    "id": 416,
+    "university": "Sikkim University"
+  },
+  {
+    "id": 417,
+    "university": "Siksha 'O' Anusandhan"
+  },
+  {
+    "id": 418,
+    "university": "Singhania University"
+  },
+  {
+    "id": 419,
+    "university": "Sir Padampat Singhania University"
+  },
+  {
+    "id": 420,
+    "university": "Solapur University"
+  },
+  {
+    "id": 421,
+    "university": "South Asian University"
+  },
+  {
+    "id": 422,
+    "university": "Sree Sankaracharya University of Sanskrit"
+  },
+  {
+    "id": 423,
+    "university": "Sri Balaji Vidyapeeth University"
+  },
+  {
+    "id": 424,
+    "university": "Sri Chandrasekharendra Saraswathi Viswa Mahavidyalaya"
+  },
+  {
+    "id": 425,
+    "university": "Sri Devaraj Urs Academy of Higher Education and Research"
+  },
+  {
+    "id": 426,
+    "university": "Sri Guru Granth Sahib World University"
+  },
+  {
+    "id": 427,
+    "university": "Sri Krishnadevaraya University"
+  },
+  {
+    "id": 428,
+    "university": "Sri Padmavati Mahila Visvavidyalayam"
+  },
+  {
+    "id": 429,
+    "university": "Sri Sai University"
+  },
+  {
+    "id": 430,
+    "university": "Sri Sathya Sai University"
+  },
+  {
+    "id": 431,
+    "university": "Sri Siddhartha Academy of Higher Education"
+  },
+  {
+    "id": 432,
+    "university": "Sri Venkateswara University"
+  },
+  {
+    "id": 433,
+    "university": "Sri Venkateswara Vedic University"
+  },
+  {
+    "id": 434,
+    "university": "Sri Venkateswara Veterinary University"
+  },
+  {
+    "id": 435,
+    "university": "SRM University"
+  },
+  {
+    "id": 436,
+    "university": "St. Peter's University"
+  },
+  {
+    "id": 437,
+    "university": "Sumandeep University"
+  },
+  {
+    "id": 438,
+    "university": "Sunrise University"
+  },
+  {
+    "id": 439,
+    "university": "Suresh Gyan Vihar University"
+  },
+  {
+    "id": 440,
+    "university": "Swami Ramanand Teerth Marathwada University"
+  },
+  {
+    "id": 441,
+    "university": "Swami Vivekanand Subharti University"
+  },
+  {
+    "id": 442,
+    "university": "Swami Vivekananda Yoga Anusandhana Samsthana"
+  },
+  {
+    "id": 443,
+    "university": "Symbiosis International University"
+  },
+  {
+    "id": 444,
+    "university": "Tamil Nadu Agricultural University"
+  },
+  {
+    "id": 445,
+    "university": "Tamil Nadu Open University"
+  },
+  {
+    "id": 446,
+    "university": "Tamil Nadu Physical Education and Sports University"
+  },
+  {
+    "id": 447,
+    "university": "Tamil Nadu Teacher Education University"
+  },
+  {
+    "id": 448,
+    "university": "Tamil Nadu Veterinary and Animal Sciences University"
+  },
+  {
+    "id": 449,
+    "university": "Tamil University"
+  },
+  {
+    "id": 450,
+    "university": "Tata Institute of Fundamental Research"
+  },
+  {
+    "id": 451,
+    "university": "Techno Global University"
+  },
+  {
+    "id": 452,
+    "university": "Teerthanker Mahaveer University"
+  },
+  {
+    "id": 453,
+    "university": "Telangana University"
+  },
+  {
+    "id": 454,
+    "university": "TERI University"
+  },
+  {
+    "id": 455,
+    "university": "Tezpur University"
+  },
+  {
+    "id": 456,
+    "university": "Thapar University"
+  },
+  {
+    "id": 457,
+    "university": "The Global Open University Nagaland"
+  },
+  {
+    "id": 458,
+    "university": "Thiruvalluvar University"
+  },
+  {
+    "id": 459,
+    "university": "Tilak Maharashtra University"
+  },
+  {
+    "id": 460,
+    "university": "Tilka Manjhi Bhagalpur University"
+  },
+  {
+    "id": 461,
+    "university": "Tripura University"
+  },
+  {
+    "id": 462,
+    "university": "Tumkur University"
+  },
+  {
+    "id": 463,
+    "university": "University of Agricultural Sciences,Bangalore"
+  },
+  {
+    "id": 464,
+    "university": "University of Agricultural Sciences, Dharwad"
+  },
+  {
+    "id": 465,
+    "university": "University of Burdwan"
+  },
+  {
+    "id": 466,
+    "university": "University of Calcutta"
+  },
+  {
+    "id": 467,
+    "university": "University of Gour Banga"
+  },
+  {
+    "id": 468,
+    "university": "University of Jammu"
+  },
+  {
+    "id": 469,
+    "university": "University of Kalyani"
+  },
+  {
+    "id": 470,
+    "university": "University of Kashmir"
+  },
+  {
+    "id": 471,
+    "university": "University of Kerala"
+  },
+  {
+    "id": 472,
+    "university": "University of Kota"
+  },
+  {
+    "id": 473,
+    "university": "University of Lucknow"
+  },
+  {
+    "id": 474,
+    "university": "University of Madras"
+  },
+  {
+    "id": 475,
+    "university": "University of Mumbai"
+  },
+  {
+    "id": 476,
+    "university": "University of North Bengal"
+  },
+  {
+    "id": 477,
+    "university": "University of Patanjali"
+  },
+  {
+    "id": 478,
+    "university": "University of Petroleum and Energy Studies"
+  },
+  {
+    "id": 479,
+    "university": "University of Rajasthan"
+  },
+  {
+    "id": 480,
+    "university": "Utkal University of Culture"
+  },
+  {
+    "id": 481,
+    "university": "Uttar Banga Krishi Vishwavidyalaya"
+  },
+  {
+    "id": 482,
+    "university": "Uttar Pradesh Rajarshi Tandon Open University"
+  },
+  {
+    "id": 483,
+    "university": "Uttarakhand Open University"
+  },
+  {
+    "id": 484,
+    "university": "ttarakhand Technical University"
+  },
+  {
+    "id": 485,
+    "university": "Uttaranchal Sanskrit University"
+  },
+  {
+    "id": 486,
+    "university": "Vardhaman Mahaveer Open University"
+  },
+  {
+    "id": 487,
+    "university": "Veer Bahadur Singh Purvanchal University"
+  },
+  {
+    "id": 488,
+    "university": "Veer Kunwar Singh University"
+  },
+  {
+    "id": 489,
+    "university": "Veer Narmad South Gujarat University"
+  },
+  {
+    "id": 490,
+    "university": "Vels University"
+  },
+  {
+    "id": 491,
+    "university": "Vidyasagar University"
+  },
+  {
+    "id": 492,
+    "university": "Vignan University"
+  },
+  {
+    "id": 493,
+    "university": "Vijayanagara Sri Krishnadevaraya University"
+  },
+  {
+    "id": 494,
+    "university": "Vikram University"
+  },
+  {
+    "id": 495,
+    "university": "Vikrama Simhapuri University"
+  },
+  {
+    "id": 496,
+    "university": "Vinayaka Missions Sikkim University"
+  },
+  {
+    "id": 497,
+    "university": "Vinayaka Missions University"
+  },
+  {
+    "id": 498,
+    "university": "Vinoba Bhave University"
+  },
+  {
+    "id": 499,
+    "university": "Visva-Bharati University"
+  },
+  {
+    "id": 500,
+    "university": "VIT University"
+  },
+  {
+    "id": 501,
+    "university": "West Bengal National University of Juridical Sciences"
+  },
+  {
+    "id": 502,
+    "university": "West Bengal State University"
+  },
+  {
+    "id": 503,
+    "university": "West Bengal University of Animal and Fishery Sciences"
+  },
+  {
+    "id": 504,
+    "university": "Yashwantrao Chavan Maharashtra Open University"
+  },
+  {
+    "id": 505,
+    "university": "Yenepoya University"
+  },
+  {
+    "id": 506,
+    "university": "Yogi Vemana University"
+  },
+  {
+    "id": 507,
+    "university": "University Of Brighton, United Kingdom"
+  },
+  {
+    "id": 508,
+    "university": "Mahatma Gandhi university, Meghalaya"
+  },
+  {
+    "id": 509,
+    "university": "Jorhat Engineering College, Assam"
+  },
+  {
+    "id": 510,
+    "university": "Niigata University, Japan"
+  },
+  {
+    "id": 511,
+    "university": "Aligarh Muslim University"
+  },
+  {
+    "id": 512,
+    "university": "Biju Patnayak University of Technology(BPUT)"
+  },
+  {
+    "id": 513,
+    "university": "Institute of Management Technology (IMT),Nagpur"
+  },
+  {
+    "id": 514,
+    "university": "North Maharashtra University"
+  },
+  {
+    "id": 515,
+    "university": "Oxford College of Engineering"
+  },
+  {
+    "id": 516,
+    "university": "GITAM University, Visakhapatnam"
+  },
+  {
+    "id": 517,
+    "university": "Birla Institute of Technology, Mesra,Ranchi"
+  },
+  {
+    "id": 518,
+    "university": "National Institute of Securities Market(NISM), Mumbai"
+  },
+  {
+    "id": 519,
+    "university": "Andhra Pradesh Open University"
+  },
+  {
+    "id": 520,
+    "university": "Zaddi University of Emerging Sciences and Technologies"
+  },
+  {
+    "id": 521,
+    "university": "Centurion University of Technology and Management"
+  },
+  {
+    "id": 522,
+    "university": "Chaudhary Charan Singh Haryana Agricultural University"
+  },
+  {
+    "id": 523,
+    "university": "Dr. Balasaheb Sawant Konkan Krishi  Vidyapeeth"
+  },
+  {
+    "id": 524,
+    "university": "Dr. Shakuntala Misra RehabilitationUniversity"
+  },
+  {
+    "id": 525,
+    "university": "Indira Gandhi Institute of Development Research"
+  },
+  {
+    "id": 526,
+    "university": "Jawaharlal Nehru Architecture and FineArts University"
+  },
+  {
+    "id": 527,
+    "university": "K.L.E. Academy of Higher Education  and Research"
+  },
+  {
+    "id": 528,
+    "university": "Kavi Kulguru Kalidas Sanskrit  Vishwavidyalaya"
+  },
+  {
+    "id": 529,
+    "university": "akhanlal Chaturvedi National University of Journalism"
+  },
+  {
+    "id": 530,
+    "university": "National Museum Institute of History of Art, Conservation and Musicology"
+  },
+  {
+    "id": 531,
+    "university": "National University of Educational Planning and Administration"
+  }
+]

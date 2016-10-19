@@ -1,0 +1,1221 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Advanced Resume Search</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li><a href="#/profileList">Search Resume</i></a> /</li>
+                <li class="active">Advanced Resume Search</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="button" class="btn blue no-margin" ng-click="openModal('md')">Recent/Saved Searches</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 advanced-search">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Atleast One of these</label>
+                                    <chips ng-model="atleastOneThese">
+                                        <chip-tmpl>
+                                            <div class="default-chip">
+                                                {{chip}}
+                                                <span class="fa fa-times" remove-chip></span>
+                                            </div>
+                                        </chip-tmpl>
+                                        <input chip-control></input>
+                                    </chips>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>All of these</label>
+                                    <chips ng-model="allofThese">
+                                        <chip-tmpl>
+                                            <div class="default-chip">
+                                                {{chip}}
+                                                <span class="fa fa-times" remove-chip></span>
+                                            </div>
+                                        </chip-tmpl>
+                                        <input chip-control></input>
+                                    </chips>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>None of these</label>
+                                    <chips ng-model="noneofThese">
+                                        <chip-tmpl>
+                                            <div class="default-chip">
+                                                {{chip}}
+                                                <span class="fa fa-times" remove-chip></span>
+                                            </div>
+                                        </chip-tmpl>
+                                        <input chip-control></input>
+                                    </chips>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Search Keywords in</label>
+                                    <div class="control-group radio-inline">
+                                        <label class="control control--radio">Full Resume
+                                            <input type="radio" name="searchKeywords" checked="checked" value="Full Resume" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio">Resume Title + Key Skills
+                                            <input type="radio" name="searchKeywords" value="Resume Title + Key Skills" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio">Key Skills
+                                            <input type="radio" name="searchKeywords" value="Key Skills" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio">Resume Title
+                                            <input type="radio" name="searchKeywords" value="Resume Title" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Candidate's Location</label>
+                                        <select class="form-control">
+                                            <option value="-1">Select</option>
+                                            <optgroup class="optGrp" label="------Top Metropolitan Cities------"></optgroup>
+                                            <option value="2">Ahmedabad</option>
+                                            <option value="3">Bengaluru / Bangalore</option>
+                                            <option value="4">Chandigarh</option>
+                                            <option value="5">Chennai</option>
+                                            <option value="6">Delhi</option>
+                                            <option value="7">Gurgaon</option>
+                                            <option value="8">Hyderabad / Secunderabad
+                                            </option>
+                                            <option value="9">Kolkata</option>
+                                            <option value="10">Mumbai</option>
+                                            <option value="11">Noida</option>
+                                            <option value="12">Pune</option>
+                                            <optgroup class="optGrp" label="------Andhra Pradesh------"></optgroup>
+                                            <option value="14">Anantapur</option>
+                                            <option value="362">Chitoor</option>
+                                            <option value="360">Eluru</option>
+                                            <option value="359">Gannavaram</option>
+                                            <option value="15">Guntakal</option>
+                                            <option value="16">Guntur</option>
+                                            <option value="265">Kadapa/Cuddapah</option>
+                                            <option value="18">Kakinada</option>
+                                            <option value="19">Kurnool</option>
+                                            <option value="358">Machilipatnam</option>
+                                            <option value="363">Nandyal</option>
+                                            <option value="20">Nellore</option>
+                                            <option value="364">Ongole</option>
+                                            <option value="22">Rajahmundry</option>
+                                            <option value="365">Tada</option>
+                                            <option value="24">Tirupati</option>
+                                            <option value="25">Vijayawada</option>
+                                            <option value="26">Visakhapatnam</option>
+                                            <option value="361">Vizianagaram</option>
+                                            <option value="28">Andhra Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Arunachal Pradesh------"></optgroup>
+                                            <option value="30">Itanagar</option>
+                                            <option value="31">Arunachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Assam------"></optgroup>
+                                            <option value="331">Dibrugarh</option>
+                                            <option value="33">Guwahati</option>
+                                            <option value="34">Silchar</option>
+                                            <option value="35">Assam - Other</option>
+                                            <optgroup class="optGrp" label="------Bihar------"></optgroup>
+                                            <option value="37">Bhagalpur</option>
+                                            <option value="38">Patna</option>
+                                            <option value="39">Bihar - Other</option>
+                                            <optgroup class="optGrp" label="------Chhattisgarh------"></optgroup>
+                                            <option value="41">Bhillai</option>
+                                            <option value="42">Bilaspur</option>
+                                            <option value="334">Korba</option>
+                                            <option value="43">Raipur</option>
+                                            <option value="247">Raigarh</option>
+                                            <option value="44">Chhattisgarh - Other</option>
+                                            <optgroup class="optGrp" label="------Goa------"></optgroup>
+                                            <option value="46">Panjim / Panaji</option>
+                                            <option value="48">Vasco Da Gama</option>
+                                            <option value="49">Goa - Other</option>
+                                            <optgroup class="optGrp" label="------Gujarat------"></optgroup>
+                                            <option value="51">Ahmedabad</option>
+                                            <option value="52">Anand</option>
+                                            <option value="53">Ankleshwar</option>
+                                            <option value="55">Bharuch</option>
+                                            <option value="56">Bhavnagar</option>
+                                            <option value="57">Bhuj</option>
+                                            <option value="330">Dahej</option>
+                                            <option value="332">Gandhidham</option>
+                                            <option value="58">Gandhinagar</option>
+                                            <option value="59">Gir</option>
+                                            <option value="60">Jamnagar</option>
+                                            <option value="61">Kandla</option>
+                                            <option value="62">Porbandar</option>
+                                            <option value="342">Mehsana</option>
+                                            <option value="63">Rajkot</option>
+                                            <option value="64">Surat</option>
+                                            <option value="65">Vadodara / Baroda</option>
+                                            <option value="66">Valsad</option>
+                                            <option value="67">Vapi</option>
+                                            <option value="68">Gujarat - Other</option>
+                                            <optgroup class="optGrp" label="------Haryana------"></optgroup>
+                                            <option value="70">Ambala</option>
+                                            <option value="71">Chandigarh</option>
+                                            <option value="72">Faridabad</option>
+                                            <option value="73">Gurgaon</option>
+                                            <option value="74">Hisar</option>
+                                            <option value="75">Karnal</option>
+                                            <option value="76">Kurukshetra</option>
+                                            <option value="77">Panipat</option>
+                                            <option value="78">Rohtak</option>
+                                            <option value="79">Haryana - Other</option>
+                                            <optgroup class="optGrp" label="------Himachal Pradesh------"></optgroup>
+                                            <option value="239">Baddi</option>
+                                            <option value="81">Dalhousie</option>
+                                            <option value="82">Dharmasala</option>
+                                            <option value="83">Kulu/Manali</option>
+                                            <option value="84">Shimla</option>
+                                            <option value="85">Himachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Jammu &amp; Kashmir------"></optgroup>
+                                            <option value="87">Jammu</option>
+                                            <option value="88">Srinagar</option>
+                                            <option value="89">Jammu and Kashmir - Other</option>
+                                            <optgroup class="optGrp" label="------Jharkhand------"></optgroup>
+                                            <option value="91">Bokaro</option>
+                                            <option value="92">Dhanbad</option>
+                                            <option value="93">Jamshedpur</option>
+                                            <option value="94">Ranchi</option>
+                                            <option value="95">Jharkhand - Other</option>
+                                            <optgroup class="optGrp" label="------Karnataka------"></optgroup>
+                                            <option value="97">Bengaluru / Bangalore</option>
+                                            <option value="98">Belgaum</option>
+                                            <option value="99">Bellary</option>
+                                            <option value="100">Bidar</option>
+                                            <option value="348">Davangere</option>
+                                            <option value="101">Dharwad</option>
+                                            <option value="102">Gulbarga</option>
+                                            <option value="103">Hubli</option>
+                                            <option value="104">Kolar</option>
+                                            <option value="105">Mangalore</option>
+                                            <option value="106">Mysoru / Mysore</option>
+                                            <option value="107">Karnataka - Other</option>
+                                            <optgroup class="optGrp" label="------Kerala------"></optgroup>
+                                            <option value="109">Calicut</option>
+                                            <option value="110">Cochin</option>
+                                            <option value="111">Ernakulam</option>
+                                            <option value="241">Idukki</option>
+                                            <option value="112">Kannur</option>
+                                            <option value="242">Kasargode</option>
+                                            <option value="113">Kochi</option>
+                                            <option value="114">Kollam</option>
+                                            <option value="115">Kottayam</option>
+                                            <option value="116">Kozhikode</option>
+                                            <option value="244">Malappuram</option>
+                                            <option value="117">Palakkad</option>
+                                            <option value="118">Palghat</option>
+                                            <option value="245">Pathanamthitta</option>
+                                            <option value="119">Thrissur</option>
+                                            <option value="120">Trivandrum</option>
+                                            <option value="248">Wayanad</option>
+                                            <option value="121">Kerala - Other</option>
+                                            <optgroup class="optGrp" label="------Madhya Pradesh------"></optgroup>
+                                            <option value="123">Bhopal</option>
+                                            <option value="124">Gwalior</option>
+                                            <option value="125">Indore</option>
+                                            <option value="126">Jabalpur</option>
+                                            <option value="335">Katni</option>
+                                            <option value="127">Ujjain</option>
+                                            <option value="128">Madhya Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Maharashtra------"></optgroup>
+                                            <option value="130">Ahmednagar</option>
+                                            <option value="131">Aurangabad</option>
+                                            <option value="341">Chandrapur</option>
+                                            <option value="132">Jalgaon</option>
+                                            <option value="133">Kolhapur</option>
+                                            <option value="349">Khopoli</option>
+                                            <option value="134">Mumbai</option>
+                                            <option value="135">Mumbai Suburbs</option>
+                                            <option value="136">Nagpur</option>
+                                            <option value="137">Nasik</option>
+                                            <option value="138">Navi Mumbai</option>
+                                            <option value="139">Pune</option>
+                                            <option value="346">Ratnagiri</option>
+                                            <option value="140">Solapur</option>
+                                            <option value="344">Vasai</option>
+                                            <option value="141">Maharashtra - Other</option>
+                                            <optgroup class="optGrp" label="------Manipur------"></optgroup>
+                                            <option value="143">Imphal</option>
+                                            <option value="144">Manipur - Other</option>
+                                            <optgroup class="optGrp" label="------Meghalaya------"></optgroup>
+                                            <option value="146">Shillong</option>
+                                            <option value="147">Meghalaya - Other</option>
+                                            <optgroup class="optGrp" label="------Mizoram------"></optgroup>
+                                            <option value="149">Aizawl</option>
+                                            <option value="150">Mizoram - Other</option>
+                                            <optgroup class="optGrp" label="------Nagaland------"></optgroup>
+                                            <option value="152">Dimapur</option>
+                                            <option value="153">Nagaland - Other</option>
+                                            <optgroup class="optGrp" label="------Orissa------"></optgroup>
+                                            <option value="155">Bhubaneshwar</option>
+                                            <option value="156">Cuttack</option>
+                                            <option value="338">Jharsuguda</option>
+                                            <option value="157">Paradeep</option>
+                                            <option value="158">Puri</option>
+                                            <option value="159">Rourkela</option>
+                                            <option value="337">Sambalpur</option>
+                                            <option value="160">Orissa - Other</option>
+                                            <optgroup class="optGrp" label="------Punjab------"></optgroup>
+                                            <option value="162">Amritsar</option>
+                                            <option value="163">Bathinda</option>
+                                            <option value="164">Chandigarh</option>
+                                            <option value="165">Jalandhar</option>
+                                            <option value="166">Ludhiana</option>
+                                            <option value="167">Mohali</option>
+                                            <option value="168">Pathankot</option>
+                                            <option value="169">Patiala</option>
+                                            <option value="170">Punjab - Other</option>
+                                            <optgroup class="optGrp" label="------Rajasthan------"></optgroup>
+                                            <option value="172">Ajmer</option>
+                                            <option value="345">Barmer</option>
+                                            <option value="240">Bhilwara</option>
+                                            <option value="173">Jaipur</option>
+                                            <option value="174">Jaisalmer</option>
+                                            <option value="175">Jodhpur</option>
+                                            <option value="176">Kota</option>
+                                            <option value="339">Neemrana</option>
+                                            <option value="177">Udaipur</option>
+                                            <option value="178">Rajasthan - Other</option>
+                                            <optgroup class="optGrp" label="------Sikkim------"></optgroup>
+                                            <option value="180">Gangtok</option>
+                                            <option value="181">Sikkim - Other</option>
+                                            <optgroup class="optGrp" label="------Tamil Nadu------"></optgroup>
+                                            <option value="183">Chennai</option>
+                                            <option value="184">Coimbatore</option>
+                                            <option value="185">Cuddalore</option>
+                                            <option value="186">Erode</option>
+                                            <option value="187">Hosur</option>
+                                            <option value="188">Madurai</option>
+                                            <option value="189">Nagercoil</option>
+                                            <option value="190">Ooty</option>
+                                            <option value="191">Salem</option>
+                                            <option value="192">Thanjavur</option>
+                                            <option value="193">Tirunelveli</option>
+                                            <option value="194">Trichy</option>
+                                            <option value="195">Tuticorin</option>
+                                            <option value="196">Vellore</option>
+                                            <option value="197">Tamil Nadu - Other</option>
+                                            <optgroup class="optGrp" label="------Telangana------"></optgroup>
+                                            <option value="249">Adilabad</option>
+                                            <option value="368">Bhadrachalam</option>
+                                            <option value="369">Godavarikhani</option>
+                                            <option value="370">Hanumakonda</option>
+                                            <option value="17">Hyderabad / Secunderabad</option>
+                                            <option value="286">Karimnagar</option>
+                                            <option value="288">Khammam</option>
+                                            <option value="371">Kodad</option>
+                                            <option value="372">Kothagudem</option>
+                                            <option value="373">Mahaboobnagar/Mahabubnagar</option>
+                                            <option value="374">Mancherial</option>
+                                            <option value="353">Medak</option>
+                                            <option value="355">Nalgonda</option>
+                                            <option value="21">Nizamabad</option>
+                                            <option value="354">Rangareddy</option>
+                                            <option value="357">Razole</option>
+                                            <option value="375">Sangareddy</option>
+                                            <option value="376">Siddipet</option>
+                                            <option value="377">Suryapet</option>
+                                            <option value="356">Tuni</option>
+                                            <option value="27">Warangal</option>
+                                            <option value="366">Telangana - Other</option>
+                                            <optgroup class="optGrp" label="------Tripura------"></optgroup>
+                                            <option value="199">Agartala</option>
+                                            <option value="200">Tripura - Other</option>
+                                            <optgroup class="optGrp" label="------Union Territories------"></optgroup>
+                                            <option value="202">Chandigarh</option>
+                                            <option value="203">Dadra &amp; Nagar Haveli - Silvassa
+                                            </option>
+                                            <option value="204">Daman &amp; Diu</option>
+                                            <option value="205">Delhi</option>
+                                            <option value="243">Lakshadweep</option>
+                                            <option value="206">Pondicherry</option>
+                                            <optgroup class="optGrp" label="------Uttar Pradesh------"></optgroup>
+                                            <option value="208">Agra</option>
+                                            <option value="209">Aligarh</option>
+                                            <option value="210">Allahabad</option>
+                                            <option value="211">Bareilly</option>
+                                            <option value="340">Bijnor</option>
+                                            <option value="212">Faizabad</option>
+                                            <option value="213">Ghaziabad</option>
+                                            <option value="214">Gorakhpur</option>
+                                            <option value="350">Greater Noida</option>
+                                            <option value="215">Kanpur</option>
+                                            <option value="216">Lucknow</option>
+                                            <option value="217">Mathura</option>
+                                            <option value="218">Meerut</option>
+                                            <option value="219">Moradabad</option>
+                                            <option value="220">Noida</option>
+                                            <option value="333">Saharanpur</option>
+                                            <option value="221">Varanasi / Banaras</option>
+                                            <option value="222">Uttar Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Uttaranchal------"></optgroup>
+                                            <option value="224">Dehradun</option>
+                                            <option value="336">Haldwani</option>
+                                            <option value="343">Kashipur</option>
+                                            <option value="225">Roorkee</option>
+                                            <option value="226">Uttaranchal - Other</option>
+                                            <optgroup class="optGrp" label="------West Bengal------"></optgroup>
+                                            <option value="228">Asansol</option>
+                                            <option value="347">Burdwan</option>
+                                            <option value="229">Durgapur</option>
+                                            <option value="230">Haldia</option>
+                                            <option value="231">Kharagpur</option>
+                                            <option value="232">Kolkata</option>
+                                            <option value="233">Siliguri</option>
+                                            <option value="234">West Bengal - Other</option>
+                                            <optgroup class="optGrp" label="------Other------"></optgroup>
+                                            <option value="9999">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Add Candidates within</label>
+                                        <div class="control-group radio-inline mj_toppadder10">
+                                            <label class="control control--radio">Exact
+                                                <input type="radio" name="candidateLocRadius" checked="checked" value="Exact" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                            <label class="control control--radio">50 KM
+                                                <input type="radio" name="candidateLocRadius" value="50" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                            <label class="control control--radio">100 KM
+                                                <input type="radio" name="candidateLocRadius" value="100" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                            <label class="control control--radio">150 KM
+                                                <input type="radio" name="candidateLocRadius" value="150" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                            <label class="control control--radio">200 KM
+                                                <input type="radio" name="candidateLocRadius" value="200" />
+                                                <div class="control__indicator"></div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="control-group radio-inline mj_bottompadder15">
+                                        <label class="control control--radio">AND
+                                            <input type="radio" name="locAndOr" checked="checked" value="AND" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio">OR
+                                            <input type="radio" name="locAndOr" value="OR" />
+                                            <div class="control__indicator"></div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Candidate's Preferred Location</label>
+                                        <select class="form-control">
+                                            <option value="-1">Select</option>
+                                            <optgroup class="optGrp" label="------Top Metropolitan Cities------"></optgroup>
+                                            <option value="2">Ahmedabad</option>
+                                            <option value="3">Bengaluru / Bangalore</option>
+                                            <option value="4">Chandigarh</option>
+                                            <option value="5">Chennai</option>
+                                            <option value="6">Delhi</option>
+                                            <option value="7">Gurgaon</option>
+                                            <option value="8">Hyderabad / Secunderabad
+                                            </option>
+                                            <option value="9">Kolkata</option>
+                                            <option value="10">Mumbai</option>
+                                            <option value="11">Noida</option>
+                                            <option value="12">Pune</option>
+                                            <optgroup class="optGrp" label="------Andhra Pradesh------"></optgroup>
+                                            <option value="14">Anantapur</option>
+                                            <option value="362">Chitoor</option>
+                                            <option value="360">Eluru</option>
+                                            <option value="359">Gannavaram</option>
+                                            <option value="15">Guntakal</option>
+                                            <option value="16">Guntur</option>
+                                            <option value="265">Kadapa/Cuddapah</option>
+                                            <option value="18">Kakinada</option>
+                                            <option value="19">Kurnool</option>
+                                            <option value="358">Machilipatnam</option>
+                                            <option value="363">Nandyal</option>
+                                            <option value="20">Nellore</option>
+                                            <option value="364">Ongole</option>
+                                            <option value="22">Rajahmundry</option>
+                                            <option value="365">Tada</option>
+                                            <option value="24">Tirupati</option>
+                                            <option value="25">Vijayawada</option>
+                                            <option value="26">Visakhapatnam</option>
+                                            <option value="361">Vizianagaram</option>
+                                            <option value="28">Andhra Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Arunachal Pradesh------"></optgroup>
+                                            <option value="30">Itanagar</option>
+                                            <option value="31">Arunachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Assam------"></optgroup>
+                                            <option value="331">Dibrugarh</option>
+                                            <option value="33">Guwahati</option>
+                                            <option value="34">Silchar</option>
+                                            <option value="35">Assam - Other</option>
+                                            <optgroup class="optGrp" label="------Bihar------"></optgroup>
+                                            <option value="37">Bhagalpur</option>
+                                            <option value="38">Patna</option>
+                                            <option value="39">Bihar - Other</option>
+                                            <optgroup class="optGrp" label="------Chhattisgarh------"></optgroup>
+                                            <option value="41">Bhillai</option>
+                                            <option value="42">Bilaspur</option>
+                                            <option value="334">Korba</option>
+                                            <option value="43">Raipur</option>
+                                            <option value="247">Raigarh</option>
+                                            <option value="44">Chhattisgarh - Other</option>
+                                            <optgroup class="optGrp" label="------Goa------"></optgroup>
+                                            <option value="46">Panjim / Panaji</option>
+                                            <option value="48">Vasco Da Gama</option>
+                                            <option value="49">Goa - Other</option>
+                                            <optgroup class="optGrp" label="------Gujarat------"></optgroup>
+                                            <option value="51">Ahmedabad</option>
+                                            <option value="52">Anand</option>
+                                            <option value="53">Ankleshwar</option>
+                                            <option value="55">Bharuch</option>
+                                            <option value="56">Bhavnagar</option>
+                                            <option value="57">Bhuj</option>
+                                            <option value="330">Dahej</option>
+                                            <option value="332">Gandhidham</option>
+                                            <option value="58">Gandhinagar</option>
+                                            <option value="59">Gir</option>
+                                            <option value="60">Jamnagar</option>
+                                            <option value="61">Kandla</option>
+                                            <option value="62">Porbandar</option>
+                                            <option value="342">Mehsana</option>
+                                            <option value="63">Rajkot</option>
+                                            <option value="64">Surat</option>
+                                            <option value="65">Vadodara / Baroda</option>
+                                            <option value="66">Valsad</option>
+                                            <option value="67">Vapi</option>
+                                            <option value="68">Gujarat - Other</option>
+                                            <optgroup class="optGrp" label="------Haryana------"></optgroup>
+                                            <option value="70">Ambala</option>
+                                            <option value="71">Chandigarh</option>
+                                            <option value="72">Faridabad</option>
+                                            <option value="73">Gurgaon</option>
+                                            <option value="74">Hisar</option>
+                                            <option value="75">Karnal</option>
+                                            <option value="76">Kurukshetra</option>
+                                            <option value="77">Panipat</option>
+                                            <option value="78">Rohtak</option>
+                                            <option value="79">Haryana - Other</option>
+                                            <optgroup class="optGrp" label="------Himachal Pradesh------"></optgroup>
+                                            <option value="239">Baddi</option>
+                                            <option value="81">Dalhousie</option>
+                                            <option value="82">Dharmasala</option>
+                                            <option value="83">Kulu/Manali</option>
+                                            <option value="84">Shimla</option>
+                                            <option value="85">Himachal Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Jammu &amp; Kashmir------"></optgroup>
+                                            <option value="87">Jammu</option>
+                                            <option value="88">Srinagar</option>
+                                            <option value="89">Jammu and Kashmir - Other</option>
+                                            <optgroup class="optGrp" label="------Jharkhand------"></optgroup>
+                                            <option value="91">Bokaro</option>
+                                            <option value="92">Dhanbad</option>
+                                            <option value="93">Jamshedpur</option>
+                                            <option value="94">Ranchi</option>
+                                            <option value="95">Jharkhand - Other</option>
+                                            <optgroup class="optGrp" label="------Karnataka------"></optgroup>
+                                            <option value="97">Bengaluru / Bangalore</option>
+                                            <option value="98">Belgaum</option>
+                                            <option value="99">Bellary</option>
+                                            <option value="100">Bidar</option>
+                                            <option value="348">Davangere</option>
+                                            <option value="101">Dharwad</option>
+                                            <option value="102">Gulbarga</option>
+                                            <option value="103">Hubli</option>
+                                            <option value="104">Kolar</option>
+                                            <option value="105">Mangalore</option>
+                                            <option value="106">Mysoru / Mysore</option>
+                                            <option value="107">Karnataka - Other</option>
+                                            <optgroup class="optGrp" label="------Kerala------"></optgroup>
+                                            <option value="109">Calicut</option>
+                                            <option value="110">Cochin</option>
+                                            <option value="111">Ernakulam</option>
+                                            <option value="241">Idukki</option>
+                                            <option value="112">Kannur</option>
+                                            <option value="242">Kasargode</option>
+                                            <option value="113">Kochi</option>
+                                            <option value="114">Kollam</option>
+                                            <option value="115">Kottayam</option>
+                                            <option value="116">Kozhikode</option>
+                                            <option value="244">Malappuram</option>
+                                            <option value="117">Palakkad</option>
+                                            <option value="118">Palghat</option>
+                                            <option value="245">Pathanamthitta</option>
+                                            <option value="119">Thrissur</option>
+                                            <option value="120">Trivandrum</option>
+                                            <option value="248">Wayanad</option>
+                                            <option value="121">Kerala - Other</option>
+                                            <optgroup class="optGrp" label="------Madhya Pradesh------"></optgroup>
+                                            <option value="123">Bhopal</option>
+                                            <option value="124">Gwalior</option>
+                                            <option value="125">Indore</option>
+                                            <option value="126">Jabalpur</option>
+                                            <option value="335">Katni</option>
+                                            <option value="127">Ujjain</option>
+                                            <option value="128">Madhya Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Maharashtra------"></optgroup>
+                                            <option value="130">Ahmednagar</option>
+                                            <option value="131">Aurangabad</option>
+                                            <option value="341">Chandrapur</option>
+                                            <option value="132">Jalgaon</option>
+                                            <option value="133">Kolhapur</option>
+                                            <option value="349">Khopoli</option>
+                                            <option value="134">Mumbai</option>
+                                            <option value="135">Mumbai Suburbs</option>
+                                            <option value="136">Nagpur</option>
+                                            <option value="137">Nasik</option>
+                                            <option value="138">Navi Mumbai</option>
+                                            <option value="139">Pune</option>
+                                            <option value="346">Ratnagiri</option>
+                                            <option value="140">Solapur</option>
+                                            <option value="344">Vasai</option>
+                                            <option value="141">Maharashtra - Other</option>
+                                            <optgroup class="optGrp" label="------Manipur------"></optgroup>
+                                            <option value="143">Imphal</option>
+                                            <option value="144">Manipur - Other</option>
+                                            <optgroup class="optGrp" label="------Meghalaya------"></optgroup>
+                                            <option value="146">Shillong</option>
+                                            <option value="147">Meghalaya - Other</option>
+                                            <optgroup class="optGrp" label="------Mizoram------"></optgroup>
+                                            <option value="149">Aizawl</option>
+                                            <option value="150">Mizoram - Other</option>
+                                            <optgroup class="optGrp" label="------Nagaland------"></optgroup>
+                                            <option value="152">Dimapur</option>
+                                            <option value="153">Nagaland - Other</option>
+                                            <optgroup class="optGrp" label="------Orissa------"></optgroup>
+                                            <option value="155">Bhubaneshwar</option>
+                                            <option value="156">Cuttack</option>
+                                            <option value="338">Jharsuguda</option>
+                                            <option value="157">Paradeep</option>
+                                            <option value="158">Puri</option>
+                                            <option value="159">Rourkela</option>
+                                            <option value="337">Sambalpur</option>
+                                            <option value="160">Orissa - Other</option>
+                                            <optgroup class="optGrp" label="------Punjab------"></optgroup>
+                                            <option value="162">Amritsar</option>
+                                            <option value="163">Bathinda</option>
+                                            <option value="164">Chandigarh</option>
+                                            <option value="165">Jalandhar</option>
+                                            <option value="166">Ludhiana</option>
+                                            <option value="167">Mohali</option>
+                                            <option value="168">Pathankot</option>
+                                            <option value="169">Patiala</option>
+                                            <option value="170">Punjab - Other</option>
+                                            <optgroup class="optGrp" label="------Rajasthan------"></optgroup>
+                                            <option value="172">Ajmer</option>
+                                            <option value="345">Barmer</option>
+                                            <option value="240">Bhilwara</option>
+                                            <option value="173">Jaipur</option>
+                                            <option value="174">Jaisalmer</option>
+                                            <option value="175">Jodhpur</option>
+                                            <option value="176">Kota</option>
+                                            <option value="339">Neemrana</option>
+                                            <option value="177">Udaipur</option>
+                                            <option value="178">Rajasthan - Other</option>
+                                            <optgroup class="optGrp" label="------Sikkim------"></optgroup>
+                                            <option value="180">Gangtok</option>
+                                            <option value="181">Sikkim - Other</option>
+                                            <optgroup class="optGrp" label="------Tamil Nadu------"></optgroup>
+                                            <option value="183">Chennai</option>
+                                            <option value="184">Coimbatore</option>
+                                            <option value="185">Cuddalore</option>
+                                            <option value="186">Erode</option>
+                                            <option value="187">Hosur</option>
+                                            <option value="188">Madurai</option>
+                                            <option value="189">Nagercoil</option>
+                                            <option value="190">Ooty</option>
+                                            <option value="191">Salem</option>
+                                            <option value="192">Thanjavur</option>
+                                            <option value="193">Tirunelveli</option>
+                                            <option value="194">Trichy</option>
+                                            <option value="195">Tuticorin</option>
+                                            <option value="196">Vellore</option>
+                                            <option value="197">Tamil Nadu - Other</option>
+                                            <optgroup class="optGrp" label="------Telangana------"></optgroup>
+                                            <option value="249">Adilabad</option>
+                                            <option value="368">Bhadrachalam</option>
+                                            <option value="369">Godavarikhani</option>
+                                            <option value="370">Hanumakonda</option>
+                                            <option value="17">Hyderabad / Secunderabad</option>
+                                            <option value="286">Karimnagar</option>
+                                            <option value="288">Khammam</option>
+                                            <option value="371">Kodad</option>
+                                            <option value="372">Kothagudem</option>
+                                            <option value="373">Mahaboobnagar/Mahabubnagar</option>
+                                            <option value="374">Mancherial</option>
+                                            <option value="353">Medak</option>
+                                            <option value="355">Nalgonda</option>
+                                            <option value="21">Nizamabad</option>
+                                            <option value="354">Rangareddy</option>
+                                            <option value="357">Razole</option>
+                                            <option value="375">Sangareddy</option>
+                                            <option value="376">Siddipet</option>
+                                            <option value="377">Suryapet</option>
+                                            <option value="356">Tuni</option>
+                                            <option value="27">Warangal</option>
+                                            <option value="366">Telangana - Other</option>
+                                            <optgroup class="optGrp" label="------Tripura------"></optgroup>
+                                            <option value="199">Agartala</option>
+                                            <option value="200">Tripura - Other</option>
+                                            <optgroup class="optGrp" label="------Union Territories------"></optgroup>
+                                            <option value="202">Chandigarh</option>
+                                            <option value="203">Dadra &amp; Nagar Haveli - Silvassa
+                                            </option>
+                                            <option value="204">Daman &amp; Diu</option>
+                                            <option value="205">Delhi</option>
+                                            <option value="243">Lakshadweep</option>
+                                            <option value="206">Pondicherry</option>
+                                            <optgroup class="optGrp" label="------Uttar Pradesh------"></optgroup>
+                                            <option value="208">Agra</option>
+                                            <option value="209">Aligarh</option>
+                                            <option value="210">Allahabad</option>
+                                            <option value="211">Bareilly</option>
+                                            <option value="340">Bijnor</option>
+                                            <option value="212">Faizabad</option>
+                                            <option value="213">Ghaziabad</option>
+                                            <option value="214">Gorakhpur</option>
+                                            <option value="350">Greater Noida</option>
+                                            <option value="215">Kanpur</option>
+                                            <option value="216">Lucknow</option>
+                                            <option value="217">Mathura</option>
+                                            <option value="218">Meerut</option>
+                                            <option value="219">Moradabad</option>
+                                            <option value="220">Noida</option>
+                                            <option value="333">Saharanpur</option>
+                                            <option value="221">Varanasi / Banaras</option>
+                                            <option value="222">Uttar Pradesh - Other</option>
+                                            <optgroup class="optGrp" label="------Uttaranchal------"></optgroup>
+                                            <option value="224">Dehradun</option>
+                                            <option value="336">Haldwani</option>
+                                            <option value="343">Kashipur</option>
+                                            <option value="225">Roorkee</option>
+                                            <option value="226">Uttaranchal - Other</option>
+                                            <optgroup class="optGrp" label="------West Bengal------"></optgroup>
+                                            <option value="228">Asansol</option>
+                                            <option value="347">Burdwan</option>
+                                            <option value="229">Durgapur</option>
+                                            <option value="230">Haldia</option>
+                                            <option value="231">Kharagpur</option>
+                                            <option value="232">Kolkata</option>
+                                            <option value="233">Siliguri</option>
+                                            <option value="234">West Bengal - Other</option>
+                                            <optgroup class="optGrp" label="------Other------"></optgroup>
+                                            <option value="9999">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Experience Range</label>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Years</span>
+                                                    <select class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 to-after">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Months</span>
+                                                    <select class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Years</span>
+                                                    <select class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">Months</span>
+                                                    <select class="form-control">
+                                                        <option value="">Select</option>
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Annual Salary <span>Rs.<span ng-bind="salary.minValue">1.5</span> Lakhs - Rs.<span ng-bind="salary.maxValue">5.5</span> Lakhs</span>
+                                    </label>
+                                    <rzslider rz-slider-model="salary.minValue" rz-slider-high="salary.maxValue" rz-slider-options="salary.options"></rzslider>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group mj_toppadder30">
+                                    <label class="control control--checkbox">Include Confidenial
+                                        <input type="checkbox" checked="checked" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label>Functional Category</label>
+                                <div class="control-group radio-inline">
+                                    <label class="control control--checkbox">IT
+                                        <input type="checkbox" name="IT" value="IT">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--checkbox">IT
+                                        <input type="checkbox" name="ITES" value="ites">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--checkbox">NON IT
+                                        <input type="checkbox" ng-model="NON_IT" name="NON IT" value="nonit">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Function</label>
+                                    <select id="country" class="form-control" ng-model="statessource" ng-disabled="!NON_IT" ng-options="country for (country, states) in jobfunctions" ng-change="GetSelectedCountry()">
+                                        <option value=''>Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Job Function/Job Category</label>
+                                    <select id="state" class="form-control" ng-disabled="!statessource" ng-model="citiessource" ng-options="state for (state,city) in statessource" ng-change="GetSelectedState()">
+                                        <option value=''>Select</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Role</label>
+                                    <select id="city" class="form-control" ng-disabled="!citiessource || !statessource" ng-model="city">
+                                        <option value=''>Select</option>
+                                        <option ng-repeat="city in citiessource" value='{{city}}'>{{city}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Area of Specialization</label>
+                                    <select id="jobspec" ng-model="selectedJobSPec" ng-disabled="!citiessource || !statessource" ng-model="selectedState" class="form-control" ng-options="state.id as state.spec for state in ((functionalarea | filter:{'name':strState})[0].areaofspecialization) track by state.id">
+                                        <option value="">Choose</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Industry</label>
+                                    <select id="country" ng-model="selectedIndustry" class="form-control" ng-options="industry.id as industry.industry for industry  in industries track by industry.id">
+                                        <option value="">Choose</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employer Details</label>
+                                    <oi-select oi-options="key as value for (key, value) in employers" ng-model="employer" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group radio-inline mj_toppadder30">
+                                    <label class="control control--radio">Current
+                                        <input type="radio" name="employerRadio" value="Current">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Previous
+                                        <input type="radio" name="employerRadio" value="Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Current + Previous
+                                        <input type="radio" name="employerRadio" value="Current + Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Exclude Employer</label>
+                                    <oi-select oi-options="key as value for (key, value) in employers" ng-model="employerExclude" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group radio-inline mj_toppadder30">
+                                    <label class="control control--radio">Current
+                                        <input type="radio" name="employerRadio1" value="Current">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Previous
+                                        <input type="radio" name="employerRadio1" value="Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Current + Previous
+                                        <input type="radio" name="employerRadio1" value="Current + Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Designation Details</label>
+                                    <oi-select oi-options="key as value for (key, value) in designation" ng-model="designationDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="control-group radio-inline mj_toppadder30">
+                                    <label class="control control--radio">Current
+                                        <input type="radio" name="employerRadio2" value="Current">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Previous
+                                        <input type="radio" name="employerRadio2" value="Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">Current + Previous
+                                        <input type="radio" name="employerRadio2" value="Current + Previous">
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Education Details</label>
+                                    <oi-select oi-options="item.name for item in educationData" ng-model="educationDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Institution</label>
+                                    <oi-select oi-options="item.FIELD3 for item in insitutionData" ng-model="insitutionDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Year of Passing</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <oi-select oi-options="item for (key, item) in years" ng-model="yeasPassMin" placeholder="MINIMUM"></oi-select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <oi-select oi-options="item for (key, item) in years" ng-model="yeasPassMax" placeholder="MAXIMUM"></oi-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="control-group radio-inline mj_bottompadder15">
+                                    <label class="control control--radio">AND
+                                        <input type="radio" name="educationAndOr" checked="checked" value="AND" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <label class="control control--radio">OR
+                                        <input type="radio" name="educationAndOr" value="OR" />
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Post Graduation and Doctorate</label>
+                                    <oi-select oi-options="item.name for item in postgrad" ng-model="pgDetails" multiple placeholder="Select Courses"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Institution</label>
+                                    <oi-select oi-options="item.FIELD3 for item in insitutionData" ng-model="pgInsitutionDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Year of Passing</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <oi-select oi-options="item for (key, item) in years" ng-model="pgYeasPassMin" placeholder="MINIMUM"></oi-select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <oi-select oi-options="item for (key, item) in years" ng-model="pgYeasPassMax" placeholder="MAXIMUM"></oi-select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder20 form-panel">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Resume Freshness</label>
+                                    <oi-select oi-options="item for (key, item) in resumeFreshness" ng-model="resumeFreshDetails" placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Sort By</label>
+                                    <oi-select oi-options="item for (key, item) in sortBy" ng-model="sortByDetails" placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Notice Period</label>
+                                    <oi-select oi-options="item for (key, item) in noticePeriod" ng-model="noticePeriodDetails" placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input class="form-control" placeholder="From" type="text">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-control" placeholder="To" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Work Permit</label>
+                                    <oi-select oi-options="item.name for item in countryData" ng-model="permitDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Employment Status</label>
+                                    <oi-select oi-options="item for (key, item) in empStatus" ng-model="empStatusDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Show Candidate with</label>
+                                    <oi-select oi-options="item for (key, item) in showCandidate" ng-model="showCandidateDetails" multiple placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Gender</label>
+                                    <oi-select oi-options="item for (key, item) in gender" ng-model="genderDetails" placeholder="Select"></oi-select>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<button type="button" class="btn red floating-btn"><i class="fa fa-search"></i> Search Resume</button>
+
+<script type="text/ng-template" id="savedSearch.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Searches</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <uib-tabset active="active">
+            <uib-tab index="0" heading="Recent Searches">
+                <ul class="search-list">
+                    <li>
+                        <p>Keywords : fuse esb (Full Resume) | Location : Chennai | Experience : 2yrs to 5yrs | Resume Freshness : 6 months old</p>
+                        <p><i class="fa fa-clock-o"></i> 01-Oct-2016, 04:54 PM</p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Keywords : dell esb (Full Resume) | Location : Chennai | Experience : 4yrs to 5yrs | Resume Freshness : 3 months old</p>
+                        <p><i class="fa fa-clock-o"></i> 02-Oct-2016, 05:15 PM</p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Keywords : hp esb (Full Resume) | Location : Chennai | Experience : 5yrs to 7yrs | Resume Freshness : 2 months old</p>
+                        <p><i class="fa fa-clock-o"></i> 03-Oct-2016, 02:33 PM</p>
+                        <a href="#">Run</a>
+                    </li>
+                </ul>
+            </uib-tab>
+            <uib-tab index="1" heading="Saved Searchs">
+                <ul class="search-list">
+                    <li>
+                        <p>Search Criteria : <span>Accounts Executive for Media</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Search Criteria : <span>B.Com</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Search Criteria : <span>SAP FICO</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Search Criteria : <span>House Keeping</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Search Criteria : <span>Accounts Asst</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                    <li>
+                        <p>Search Criteria : <span>Deo</span></p>
+                        <a href="#">Run</a>
+                    </li>
+                </ul>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <div class="modal-footer">
+        <button class="btn red" type="button" ng-click="closeModal()">Discard</button>
+    </div>
+</script>

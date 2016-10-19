@@ -1,0 +1,310 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Company</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li class="active">Company</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right action-group">
+            <button type="button" class="btn blue no-margin" ng-click="showUpload = !showUpload" ng-class="{ active: showUpload }"><i class="fa fa-cloud-upload"></i> Bulk Upload</button>
+            <button type="button" class="btn blue no-margin" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i class="fa fa-plus"></i> Add Company</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid" ng-show="showUpload">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Bulk Upload</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Upload Excel</label>
+                                        <input type="file" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showUpload = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Upload
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" ng-show="showDiv">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Create Company Profile</h3>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Company Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Upload Logo</label>
+                                        <input type="file" class="form-control" />
+                                        <small>.jpg, .png, .gif - 30kb max. Preferred Logo format - .jpg file</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Details</label>
+                                        <input type="text" class="form-control" placeholder="Enter Details">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <select class="form-control">
+                                            <option value="">Select</option>
+                                            <option value="1">Public Limited</option>
+                                            <option value="2">Private Limited</option>
+                                            <option value="3">Small Limited</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Location</label>
+                                        <input type="text" class="form-control" placeholder="Enter Location">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" class="form-control" placeholder="Enter Address">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Telephone</label>
+                                        <input type="text" class="form-control" placeholder="Enter Telephone">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Contact Person Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Contact Person Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Contact Person Mobile</label>
+                                        <input type="text" class="form-control" placeholder="Enter Contact Person Mobile">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Login E-mail</label>
+                                        <input type="text" class="form-control" placeholder="Enter Login E-mail">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Login Password</label>
+                                        <input type="text" class="form-control" placeholder="Enter Login Password">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="checks cb-form-inline">
+                                        <input type="checkbox" id="checkbox1" class="css-checkbox" />
+                                        <label for="checkbox1">Send Login Details to Company Email Id</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showDiv = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Save Company
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <th>Company Details</th>
+                            <th>Contact Details</th>
+                            <th>Email</th>
+                            <th>Join Date</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>ALTEN Calsoft Labs</h4>
+                                    <p>Bengaluru</p>
+                                </td>
+                                <td>
+                                    <h4>Suresh Venkateswaran</h4>
+                                    <p>8212404900</p>
+                                </td>
+                                <td>
+                                    <p>career@alten.com</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>eInfochips</h4>
+                                    <p>Ahmedabad</p>
+                                </td>
+                                <td>
+                                    <h4>Parag Mehta</h4>
+                                    <p>79-26463335</p>
+                                </td>
+                                <td>
+                                    <p>career@eInfochips.com</p>
+                                </td>
+                                <td>
+                                    <p>27-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Polaris</h4>
+                                    <p>MNC</p>
+                                </td>
+                                <td>
+                                    <h4>Carmon GAbriel</h4>
+                                    <p>44-39874000</p>
+                                </td>
+                                <td>
+                                    <p>career@polaris.com</p>
+                                </td>
+                                <td>
+                                    <p>25-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>ADTRAN</h4>
+                                    <p>MNC</p>
+                                </td>
+                                <td>
+                                    <h4>Prashanth Goel</h4>
+                                    <p>40-30114800</p>
+                                </td>
+                                <td>
+                                    <p>career.india@adtran.com</p>
+                                </td>
+                                <td>
+                                    <p>25-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Huawei</h4>
+                                    <p>MNC</p>
+                                </td>
+                                <td>
+                                    <h4>Suresh Kannan</h4>
+                                    <p>9898989898</p>
+                                </td>
+                                <td>
+                                    <p>career@huawei.com</p>
+                                </td>
+                                <td>
+                                    <p>22-Sep-2016</p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="container-fluid pagination-wrap">
+                        <div class="row no-padding">
+                            <div class="col-md-6">
+                                <p class="entry-count">Showing 1 to 5 of 25 entries</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="pagination pull-right">
+                                    <li class="disabled"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#/">1</a></li>
+                                    <li class="waves-effect"><a href="#/">2</a></li>
+                                    <li class="waves-effect"><a href="#/">3</a></li>
+                                    <li class="waves-effect"><a href="#/">4</a></li>
+                                    <li class="waves-effect"><a href="#/">5</a></li>
+                                    <li class="waves-effect"><a href="#/"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

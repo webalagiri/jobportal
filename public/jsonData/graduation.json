@@ -1,0 +1,1024 @@
+[
+  {
+    "id": "1",
+    "name": "12th & Not Pursuing Graduation",
+    "children": [
+      {
+        "id": 1,
+        "branch": "Science"
+      },
+      {
+        "id": 2,
+        "branch": "Arts/Humanities/Social Sciences"
+      },
+      {
+        "id": 3,
+        "branch": "Commerce"
+      },
+      {
+        "id": 4,
+        "branch": "Other 12th"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "B.Arch. (Architecture)",
+    "children": [
+      {
+        "id": 5,
+        "branch": "Architecture"
+      },
+      {
+        "id": 6,
+        "branch": "Other B.Arch"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "B.Com. (Commerce)",
+    "children": [
+      {
+        "id": 7,
+        "branch": "Commerce Pass"
+      },
+      {
+        "id": 8,
+        "branch": " Commerce Honours"
+      },
+      {
+        "id": 9,
+        "branch": " Other B.Com"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "B.Ed.(Education)",
+    "children": [
+      {
+        "id": 10,
+        "branch": "Education"
+      },
+      {
+        "id": 11,
+        "branch": "other B.Ed"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "B.El.Ed.(Elementary Education)",
+    "children": [
+      {
+        "id": 12,
+        "branch": "Education"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "B.Lib.Sc. (Library Sciences)",
+    "children": [
+      {
+        "id": 13,
+        "branch": "Library Sciences"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "B.P.Ed. (Physical Education)",
+    "children": [
+      {
+        "id": 14,
+        "branch": "Physical Education"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "B.Pharm. (Pharmacy)",
+    "children": [
+      {
+        "id": 15,
+        "branch": "Pharmacy"
+      },
+      {
+        "id": 16,
+        "branch": "other  B.Pharm. "
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "B.Plan. (Planning)",
+    "children": [
+      {
+        "id": 17,
+        "branch": "Planning"
+      },
+      {
+        "id": 18,
+        "branch": "other  B.Plan."
+      }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "B.Sc. (Science)",
+    "children": [
+      {
+        "id": 19,
+        "branch": "Agriculture"
+      },
+      {
+        "id": 20,
+        "branch": "Biochemistry"
+      },
+      {
+        "id": 21,
+        "branch": "Computer Science"
+      },
+      {
+        "id": 22,
+        "branch": "Dairy Technology"
+      },
+      {
+        "id": 23,
+        "branch": "Food Technology"
+      },
+      {
+        "id": 24,
+        "branch": "Physics"
+      },
+      {
+        "id": 25,
+        "branch": "Maths"
+      },
+      {
+        "id": 26,
+        "branch": "Chemistry"
+      },
+      {
+        "id": 27,
+        "branch": "Biology"
+      },
+      {
+        "id": 28,
+        "branch": "Statistics"
+      },
+      {
+        "id": 29,
+        "branch": "Other B.Sc."
+      },
+      {
+        "id": 30,
+        "branch": "Botany"
+      },
+      {
+        "id": 31,
+        "branch": "Economics"
+      },
+      {
+        "id": 32,
+        "branch": "Electronics/ Telecommunications"
+      },
+      {
+        "id": 33,
+        "branch": "Environmental Science"
+      },
+      {
+        "id": 34,
+        "branch": "Geology"
+      },
+      {
+        "id": 35,
+        "branch": "Geography"
+      },
+      {
+        "id": 36,
+        "branch": "Home Science"
+      },
+      {
+        "id": 37,
+        "branch": "Microbiology"
+      },
+      {
+        "id": 38,
+        "branch": "Nursing"
+      },
+      {
+        "id": 39,
+        "branch": "Zoology"
+      },
+      {
+        "id": 40,
+        "branch": "General"
+      },
+      {
+        "id": 41,
+        "branch": "Anthropology"
+      },
+      {
+        "id": 42,
+        "branch": "Bioinformatics"
+      },
+      {
+        "id": 43,
+        "branch": "Biomedical Sciences"
+      },
+      {
+        "id": 44,
+        "branch": "Biotechnology"
+      },
+      {
+        "id": 45,
+        "branch": "Food &amp; Nutrition"
+      },
+      {
+        "id": 46,
+        "branch": "Life Sciences"
+      },
+      {
+        "id": 47,
+        "branch": "Medical Lab Technology"
+      },
+      {
+        "id": 48,
+        "branch": "Psychology"
+      }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "B.V.Sc. (Veterinary Science)",
+    "children": [
+      {
+        "id": 49,
+        "branch": "Veterinary Science"
+      },
+      {
+        "id": 50,
+        "branch": "other B.V.Sc. "
+      }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "BA (Arts)",
+    "children": [
+      {
+        "id": 52,
+        "branch": "Arts/Humanities/Social Sciences"
+      },
+      {
+        "id": 53,
+        "branch": "Communication"
+      },
+      {
+        "id": 54,
+        "branch": "Economics"
+      },
+      {
+        "id": 53,
+        "branch": "Language- English"
+      },
+      {
+        "id": 54,
+        "branch": "Film Studies"
+      },
+      {
+        "id": 55,
+        "branch": "Language- Hindi"
+      },
+      {
+        "id": 56,
+        "branch": "History"
+      },
+      {
+        "id": 57,
+        "branch": "Journalism"
+      },
+      {
+        "id": 58,
+        "branch": "Maths"
+      },
+      {
+        "id": 59,
+        "branch": "Political Science"
+      },
+      {
+        "id": 60,
+        "branch": "PR/ Advertising"
+      },
+      {
+        "id": 61,
+        "branch": "Psychology"
+      },
+      {
+        "id": 62,
+        "branch": "Language- Sanskrit"
+      },
+      {
+        "id": 63,
+        "branch": "Sociology"
+      },
+      {
+        "id": 64,
+        "branch": "Statistics"
+      },
+      {
+        "id": 65,
+        "branch": "Vocational Course"
+      },
+      {
+        "id": 66,
+        "branch": "Other BA"
+      },
+      {
+        "id": 67,
+        "branch": "Fine/Applied Arts"
+      },
+      {
+        "id": 68,
+        "branch": "Geography"
+      },
+      {
+        "id": 69,
+        "branch": "Pass Course/Programme"
+      },
+      {
+        "id": 70,
+        "branch": "Philosophy"
+      },
+      {
+        "id": 71,
+        "branch": "Music"
+      },
+      {
+        "id": 72,
+        "branch": "Other Indian Languages"
+      },
+      {
+        "id": 73,
+        "branch": "Other International Languages"
+      },
+      {
+        "id": 74,
+        "branch": "Language- German"
+      },
+      {
+        "id": 75,
+        "branch": "Language- Russian"
+      },
+      {
+        "id": 76,
+        "branch": "Language- Spanish"
+      },
+      {
+        "id": 77,
+        "branch": "Language- Urdu"
+      },
+      {
+        "id": 78,
+        "branch": "Mass Communications"
+      },
+      {
+        "id": 79,
+        "branch": "Language- French"
+      },
+      {
+        "id": 80,
+        "branch": "Language- Arabic"
+      },
+      {
+        "id": 81,
+        "branch": "Social Work"
+      }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "BBA/ BBM/ BBS",
+    "children": [
+      {
+        "id": 82,
+        "branch": "Administration"
+      },
+      {
+        "id": 83,
+        "branch": "Other BBA/ BBM/ BBS"
+      },
+      {
+        "id": 84,
+        "branch": "Finance"
+      },
+      {
+        "id": 85,
+        "branch": "HR/ Industrial Relation"
+      }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "BCA (Computer Application)",
+    "children": [
+      {
+        "id": 87,
+        "branch": "Computer science"
+      },
+      {
+        "id": 88,
+        "branch": "other BCA"
+      }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "BDS (Dental Surgery)",
+    "children": [
+      {
+        "id": 89,
+        "branch": "Dentistry"
+      },
+      {
+        "id": 90,
+        "branch": "other  BDS"
+      }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "BE/ B.Tech(Engineering)",
+    "children": [
+      {
+        "id": 91,
+        "branch": "Aviation/ Aeronautical"
+      },
+      {
+        "id": 92,
+        "branch": "Chemical"
+      },
+      {
+        "id": 93,
+        "branch": "Civil"
+      },
+      {
+        "id": 94,
+        "branch": "Computer Science"
+      },
+      {
+        "id": 95,
+        "branch": "Ceramics"
+      },
+      {
+        "id": 96,
+        "branch": "Electrical"
+      },
+      {
+        "id": 97,
+        "branch": "Electronics/ Telecommunication"
+      },
+      {
+        "id": 98,
+        "branch": "Environmental"
+      },
+      {
+        "id": 99,
+        "branch": "Instrumentation"
+      },
+      {
+        "id": 100,
+        "branch": "Mechanical"
+      },
+      {
+        "id": 101,
+        "branch": "Mining"
+      },
+      {
+        "id": 102,
+        "branch": "Petroleum"
+      },
+      {
+        "id": 103,
+        "branch": "Paint/Oil"
+      },
+      {
+        "id": 104,
+        "branch": "Plastics"
+      },
+      {
+        "id": 105,
+        "branch": "Production/ Industrial"
+      },
+      {
+        "id": 106,
+        "branch": "Bio-Chemistry/Bio-Technology"
+      },
+      {
+        "id": 107,
+        "branch": "Metallurgy/ Material Technology"
+      },
+      {
+        "id": 108,
+        "branch": "Textile Technology"
+      },
+      {
+        "id": 109,
+        "branch": "Agriculture"
+      },
+      {
+        "id": 110,
+        "branch": "Other BE/B.Tech"
+      },
+      {
+        "id": 111,
+        "branch": "Automobile"
+      },
+      {
+        "id": 112,
+        "branch": "Biomedical"
+      },
+      {
+        "id": 113,
+        "branch": "Energy"
+      },
+      {
+        "id": 114,
+        "branch": "Marine"
+      },
+      {
+        "id": 115,
+        "branch": "Metallurgy"
+      },
+      {
+        "id": 116,
+        "branch": "Mineral"
+      },
+      {
+        "id": 117,
+        "branch": "Nuclear"
+      },
+      {
+        "id": 118,
+        "branch": "Oceanography/ Ocean"
+      },
+      {
+        "id": 119,
+        "branch": "Leather Technology"
+      },
+      {
+        "id": 120,
+        "branch": "Biochemical"
+      },
+      {
+        "id": 121,
+        "branch": "Bioinformatics"
+      },
+      {
+        "id": 122,
+        "branch": "Biotechnology"
+      },
+      {
+        "id": 123,
+        "branch": "Information Technology"
+      },
+      {
+        "id": 124,
+        "branch": "Physics"
+      }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "BFA (Fine Arts)",
+    "children": [
+      {
+        "id": 125,
+        "branch": "Fine/Applied Arts"
+      },
+      {
+        "id": 126,
+        "branch": " BFA Animation"
+      },
+      {
+        "id": 127,
+        "branch": " other  BFA"
+      }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "BGL",
+    "children": [
+      {
+        "id": 128,
+        "branch": "LAW"
+      },
+      {
+        "id": 129,
+        "branch": "other BGL"
+      }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "BHM (Hotel Management)",
+    "children": [
+      {
+        "id": 130,
+        "branch": "Hotel Management"
+      },
+      {
+        "id": 131,
+        "branch": "other BHM"
+      }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "BHMS (Homeopathy)",
+    "children": [
+      {
+        "id": 132,
+        "branch": "Homeopathy"
+      }
+    ]
+  },
+  {
+    "id": "21",
+    "name": "BL/LLB",
+    "children": [
+      {
+        "id": 133,
+        "branch": "LAW"
+      },
+      {
+        "id": 134,
+        "branch": "other BL/LLB"
+      }
+    ]
+  },
+  {
+    "id": "22",
+    "name": "BPT (Physiotherapy)",
+    "children": [
+      {
+        "id": 135,
+        "branch": "Physiotherapy"
+      }
+    ]
+  },
+  {
+    "id": "23",
+    "name": "BSW (Social Work)",
+    "children": [
+      {
+        "id": 136,
+        "branch": "Social Work"
+      }
+    ]
+  },
+  {
+    "id": "24",
+    "name": "Bachelor of Fashion Technology",
+    "children": [
+      {
+        "id": 137,
+        "branch": "Apparel production"
+      },
+      {
+        "id": 138,
+        "branch": "design"
+      },
+      {
+        "id": 139,
+        "branch": " other   Fashion Technology"
+      }
+    ]
+  },
+  {
+    "id": "25",
+    "name": "Diploma-Arts/ Graphic Designing",
+    "children": [
+      {
+        "id": 140,
+        "branch": "Graphics/WebDesigning"
+      },
+      {
+        "id": 141,
+        "branch": "Visual Arts"
+      },
+      {
+        "id": 142,
+        "branch": "other Arts/Graphics  Designing"
+      }
+    ]
+  },
+  {
+    "id": "26",
+    "name": "Diploma-Engineering",
+    "children": [
+      {
+        "id": 143,
+        "branch": "Aircraft Maintenance Engg"
+      },
+      {
+        "id": 144,
+        "branch": "Automobile"
+      },
+      {
+        "id": 145,
+        "branch": "Biotechnology"
+      },
+      {
+        "id": 146,
+        "branch": "Chemical"
+      },
+      {
+        "id": 147,
+        "branch": "Civil"
+      },
+      {
+        "id": 148,
+        "branch": "Computer Science"
+      },
+      {
+        "id": 149,
+        "branch": "Electrical"
+      },
+      {
+        "id": 150,
+        "branch": "Electronics/ Telecommunications"
+      },
+      {
+        "id": 151,
+        "branch": "Mechanical"
+      },
+      {
+        "id": 152,
+        "branch": "Mining &amp; Mine Surveying"
+      },
+      {
+        "id": 153,
+        "branch": "Other Engineering"
+      }
+    ]
+  },
+  {
+    "id": "27",
+    "name": "Diploma-Engineering",
+    "children": [
+      {
+        "id": 143,
+        "branch": "Aircraft Maintenance Engg"
+      },
+      {
+        "id": 144,
+        "branch": "Automobile"
+      },
+      {
+        "id": 145,
+        "branch": "Biotechnology"
+      },
+      {
+        "id": 146,
+        "branch": "Chemical"
+      },
+      {
+        "id": 147,
+        "branch": "Civil"
+      },
+      {
+        "id": 148,
+        "branch": "Computer Science"
+      },
+      {
+        "id": 149,
+        "branch": "Electrical"
+      },
+      {
+        "id": 150,
+        "branch": "Electronics/ Telecommunications"
+      },
+      {
+        "id": 151,
+        "branch": "Mechanical"
+      },
+      {
+        "id": 152,
+        "branch": "Mining &amp; Mine Surveying"
+      },
+      {
+        "id": 153,
+        "branch": "Other Engineering"
+      }
+    ]
+  },
+  {
+    "id": "28",
+    "name": "Diploma-Fashion/ Design",
+    "children": [
+      {
+        "id": 154,
+        "branch": " Fashion  Designing"
+      },
+      {
+        "id": 155,
+        "branch": "Apparel  Manufacturing Designing"
+      },
+      {
+        "id": 156,
+        "branch": "Gemology /Jwellary Designing"
+      },
+      {
+        "id": 157,
+        "branch": "other    Fashion / Designing"
+      }
+    ]
+  },
+  {
+    "id": "29",
+    "name": "Diploma-Languages",
+    "children": [
+      {
+        "id": 158,
+        "branch": "Arabic"
+      },
+      {
+        "id": 159,
+        "branch": "English"
+      },
+      {
+        "id": 160,
+        "branch": "French"
+      },
+      {
+        "id": 161,
+        "branch": "German"
+      },
+      {
+        "id": 162,
+        "branch": "Hindi"
+      },
+      {
+        "id": 163,
+        "branch": "Russian"
+      },
+      {
+        "id": 164,
+        "branch": "Sanskrit"
+      },
+      {
+        "id": 165,
+        "branch": "Spanish"
+      },
+      {
+        "id": 166,
+        "branch": "Urdu"
+      },
+      {
+        "id": 167,
+        "branch": "Other Indian Languages"
+      },
+      {
+        "id": 168,
+        "branch": "Other International Languages"
+      }
+    ]
+  },
+  {
+    "id": "30",
+    "name": "MBBS ",
+    "children": [
+      {
+        "id": 169,
+        "branch": "Medicine"
+      },
+      {
+        "id": 170,
+        "branch": "Other MBBS"
+      }
+    ]
+  },
+  {
+    "id": "31",
+    "name": "Pilot Licenses",
+    "children": [
+      {
+        "id": 171,
+        "branch": "ALTP (Airline Transport Pilot License)"
+      },
+      {
+        "id": 172,
+        "branch": "CPL (Commercial Pilot License)"
+      },
+      {
+        "id": 173,
+        "branch": "PPL (Private Pilot License)"
+      },
+      {
+        "id": 174,
+        "branch": "Other Aviation"
+      }
+    ]
+  },
+  {
+    "id": "32",
+    "name": "Diploma-Other Diploma",
+    "children": [
+      {
+        "id": 175,
+        "branch": "Architecture"
+      },
+      {
+        "id": 176,
+        "branch": "Chemical"
+      },
+      {
+        "id": 177,
+        "branch": "Civil"
+      },
+      {
+        "id": 178,
+        "branch": "Computers"
+      },
+      {
+        "id": 179,
+        "branch": "Electrical"
+      },
+      {
+        "id": 180,
+        "branch": "Electronics/Telecommunication"
+      },
+      {
+        "id": 181,
+        "branch": "Engineering"
+      },
+      {
+        "id": 182,
+        "branch": "Mechanical"
+      },
+      {
+        "id": 183,
+        "branch": "Fashion Designing/Other Designing"
+      },
+      {
+        "id": 184,
+        "branch": "Graphic/ Web Designing"
+      },
+      {
+        "id": 185,
+        "branch": "Hotel Management"
+      },
+      {
+        "id": 186,
+        "branch": "Other Diploma"
+      },
+      {
+        "id": 187,
+        "branch": "Visual Arts"
+      },
+      {
+        "id": 188,
+        "branch": "Vocational Course"
+      },
+      {
+        "id": 189,
+        "branch": "Others"
+      },
+      {
+        "id": 190,
+        "branch": "Export/Import"
+      },
+      {
+        "id": 191,
+        "branch": "Insurance"
+      },
+      {
+        "id": 192,
+        "branch": "Management"
+      },
+      {
+        "id": 193,
+        "branch": "Tourism"
+      },
+      {
+        "id": 194,
+        "branch": "Dairy/Farming"
+      }
+    ]
+  },
+  {
+    "id": "33",
+    "name": "Other School/ Graduation",
+    "children": [
+      {
+        "id": 195,
+        "branch": "Others"
+      }
+    ]
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "displayName": "Accounting/Tax/Company Secretary/Audit",
+    "parentId": 1
+  },
+  {
+    "id": 2,
+    "displayName": "Finance and Insurance",
+    "parentId": 1
+  },
+  {
+    "id": 3,
+    "displayName": "Online &Offline Marketing / MR / Media Planning",
+    "parentId": 2
+  },
+  {
+    "id": 4,
+    "displayName": "Sales/Business Development",
+    "parentId": 2
+  },
+  {
+    "id": 5,
+    "displayName": "Advertising / Public Relation / Events",
+    "parentId": 2
+  },
+  {
+    "id": 6,
+    "displayName": "Front Office Staff/Secretarial/Computer Operator",
+    "parentId": 3
+  },
+  {
+    "id": 7,
+    "displayName": "Adminstration /Operations",
+    "parentId": 3
+  },
+  {
+    "id": 8,
+    "displayName": "Human Resource / IR /Training & Development",
+    "parentId": 3
+  },
+  {
+    "id": 9,
+    "displayName": "Production/Maintenance/ Manufacturing/ Packaging",
+    "parentId": 4
+  },
+  {
+    "id": 10,
+    "displayName": "Quality/Process Control",
+    "parentId": 4
+  },
+  {
+    "id": 11,
+    "displayName": "Food & Beverages",
+    "parentId": 5
+  },
+  {
+    "id": 12,
+    "displayName": "House Keeping",
+    "parentId": 5
+  },
+  {
+    "id": 13,
+    "displayName": "Front Desk/ Customer Care",
+    "parentId": 5
+  },
+  {
+    "id": 14,
+    "displayName": "Spas/ Health Club",
+    "parentId": 5
+  },
+  {
+    "id": 15,
+    "displayName": "Architecture/ Interior Desiging",
+    "parentId": 6
+  },
+  {
+    "id": 16,
+    "displayName": "Data Management/ Analysis",
+    "parentId": 6
+  },
+  {
+    "id": 17,
+    "displayName": "R&D",
+    "parentId": 6
+  },
+  {
+    "id": 18,
+    "displayName": "Top Management",
+    "parentId": 6
+  },
+  {
+    "id": 19,
+    "displayName": "Freelancing",
+    "parentId": 7
+  },
+  {
+    "id": 20,
+    "displayName": "Consulting",
+    "parentId": 7
+  },
+  {
+    "id": 21,
+    "displayName": "Content Development",
+    "parentId": 8
+  },
+  {
+    "id": 22,
+    "displayName": "Editor",
+    "parentId": 8
+  },
+  {
+    "id": 23,
+    "displayName": "Corporate Planning/ Strategic Management",
+    "parentId": 9
+  },
+  {
+    "id": 24,
+    "displayName": "Doctor/ Physician",
+    "parentId": 10
+  },
+  {
+    "id": 25,
+    "displayName": "Lab Staff",
+    "parentId": 10
+  },
+  {
+    "id": 26,
+    "displayName": "Alternative Medicine",
+    "parentId": 10
+  },
+  {
+    "id": 27,
+    "displayName": "Medical Support",
+    "parentId": 10
+  },
+  {
+    "id": 28,
+    "displayName": "Design Engineer",
+    "parentId": 12
+  },
+  {
+    "id": 29,
+    "displayName": "Draftsman/ Draughtsman",
+    "parentId": 12
+  },
+  {
+    "id": 30,
+    "displayName": "QM Engineer",
+    "parentId": 12
+  },
+  {
+    "id": 31,
+    "displayName": "Quality Engineer",
+    "parentId": 12
+  },
+  {
+    "id": 32,
+    "displayName": "Site/ Field Engineer",
+    "parentId": 12
+  },
+  {
+    "id": 33,
+    "displayName": "Project Manager/ Chief Engineer",
+    "parentId": 12
+  },
+  {
+    "id": 34,
+    "displayName": "Export/Import",
+    "parentId": 13
+  },
+  {
+    "id": 35,
+    "displayName": "Legal/ Law",
+    "parentId": 14
+  },
+  {
+    "id": 36,
+    "displayName": "Logistics",
+    "parentId": 15
+  },
+  {
+    "id": 37,
+    "displayName": "Purchase/ Material Management",
+    "parentId": 15
+  },
+  {
+    "id": 38,
+    "displayName": "Education/ Teaching",
+    "parentId": 17
+  },
+  {
+    "id": 39,
+    "displayName": "Academic Research",
+    "parentId": 17
+  },
+  {
+    "id": 40,
+    "displayName": "Travel/ Ticketing",
+    "parentId": 18
+  },
+  {
+    "id": 41,
+    "displayName": "Aviation",
+    "parentId": 18
+  },
+  {
+    "id": 42,
+    "displayName": "TV/ Films/ Production",
+    "parentId": 20
+  },
+  {
+    "id": 43,
+    "displayName": "Journalism",
+    "parentId": 20
+  },
+  {
+    "id": 43,
+    "displayName": "Store Management",
+    "parentId": 21
+  },
+  {
+    "id": 43,
+    "displayName": "Mall Management",
+    "parentId": 20
+  },
+  {
+    "id": 43,
+    "displayName": "Logistics/ Purchase/ Supply Chain Management",
+    "parentId": 20
+  }
+]

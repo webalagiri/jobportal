@@ -1,0 +1,1696 @@
+[
+	{
+		"id": "1",
+		"name": "CA (Chartered Accountant)",
+		"children": [
+			{
+				"id": 1,
+				"Specialisation": "CA(Final)"
+			},
+			{
+				"id": 2,
+				"Specialisation": "Other CA"
+			},
+			{
+				"id": 3,
+				"Specialisation": "CPT (CA-Foundation)"
+			},
+			{
+				"id": 4,
+				"Specialisation": "PCC CA-Inter"
+			},
+			{
+				"id": 5,
+				"Specialisation": "Chartered Financial Analyst"
+			}
+		]
+	},
+	{
+		"id": "2",
+		"name": "CFA (Chartered Financial Analyst)",
+		"children": [
+			{
+				"id": 5,
+				"Specialisation": "Chartered Financial Analyst"
+			}
+		]
+	},
+	{
+		"id": "3",
+		"name": "CS (Company Secretary)",
+		"children": [
+			{
+				"id": 6,
+				"Specialisation": "Company Secretary"
+			},
+			{
+				"id": 7,
+				"Specialisation": "other CS"
+			}
+		]
+	},
+	{
+		"id": "4",
+		"name": "ICWA",
+		"children": [
+			{
+				"id": 8,
+				"Specialisation": "ICWA"
+			},
+			{
+				"id": 9,
+				"Specialisation": "Other ICWA"
+			}
+		]
+	},
+	{
+		"id": "5",
+		"name": "Integrated PG Course",
+		"children": [
+			{
+				"id": 10,
+				"Specialisation": "Journalism"
+			},
+			{
+				"id": 11,
+				"Specialisation": "English"
+			},
+			{
+				"id": 12,
+				"Specialisation": "French"
+			},
+			{
+				"id": 13,
+				"Specialisation": "German"
+			},
+			{
+				"id": 14,
+				"Specialisation": "Hindi/ Sanskrit"
+			},
+			{
+				"id": 15,
+				"Specialisation": "Russian"
+			},
+			{
+				"id": 16,
+				"Specialisation": "Urdu"
+			},
+			{
+				"id": 17,
+				"Specialisation": "Other Indian Languages"
+			},
+			{
+				"id": 18,
+				"Specialisation": "Other International Languages"
+			},
+			{
+				"id": 19,
+				"Specialisation": "Management"
+			},
+			{
+				"id": 20,
+				"Specialisation": "Mass Communication"
+			},
+			{
+				"id": 21,
+				"Specialisation": "PR/Advertising"
+			},
+			{
+				"id": 22,
+				"Specialisation": "Tourism"
+			},
+			{
+				"id": 23,
+				"Specialisation": "Other Integrated PG Course"
+			}
+		]
+	},
+	{
+		"id": "6",
+		"name": "M.Arch. (Architecture)",
+		"children": [
+			{
+				"id": 24,
+				"Specialisation": "Architecture"
+			},
+			{
+				"id": 25,
+				"Specialisation": "Building ENGG &Management"
+			},
+			{
+				"id": 26,
+				"Specialisation": "Planning"
+			},
+			{
+				"id": 27,
+				"Specialisation": "Landscape Architecture"
+			},
+			{
+				"id": 28,
+				"Specialisation": "other M.Arch"
+			}
+		]
+	},
+	{
+		"id": "7",
+		"name": "M.Com. (Commerce)",
+		"children": [
+			{
+				"id": 29,
+				"Specialisation": "Commerce"
+			},
+			{
+				"id": 30,
+				"Specialisation": "other M.Com."
+			},
+			{
+				"id": 31,
+				"Specialisation": "Accounting& Finance"
+			},
+			{
+				"id": 32,
+				"Specialisation": "Business studies"
+			},
+			{
+				"id": 33,
+				"Specialisation": "International Banking"
+			},
+			{
+				"id": 34,
+				"Specialisation": "Finanacial Service"
+			}
+		]
+	},
+	{
+		"id": "8",
+		"name": "M.Ed. (Education)",
+		"children": [
+			{
+				"id": 35,
+				"Specialisation": "Education"
+			},
+			{
+				"id": 36,
+				"Specialisation": "Other M.Ed"
+			}
+		]
+	},
+	{
+		"id": "9",
+		"name": "M.Lib.Sc. (Library Sciences)",
+		"children": [
+			{
+				"id": 37,
+				"Specialisation": "Library Sciences"
+			}
+		]
+	},
+	{
+		"id": "10",
+		"name": "M.Pharm. (Pharmacy)",
+		"children": [
+			{
+				"id": 38,
+				"Specialisation": "Pharmacy"
+			},
+			{
+				"id": 39,
+				"Specialisation": "OtherM.Pharm"
+			},
+			{
+				"id": 40,
+				"Specialisation": "Pharmaceutics"
+			},
+			{
+				"id": 41,
+				"Specialisation": "Pharmaceutical Biotechnology"
+			},
+			{
+				"id": 42,
+				"Specialisation": "Pharmaceutical Chemistry"
+			},
+			{
+				"id": 43,
+				"Specialisation": "Pharmacognosy "
+			},
+			{
+				"id": 44,
+				"Specialisation": "Pharmacology"
+			}
+		]
+	},
+	{
+		"id": "11",
+		"name": "M.Phil. (Philosophy)",
+		"children": [
+			{
+				"id": 45,
+				"Specialisation": "Other M.Phil."
+			},
+			{
+				"id": 46,
+				"Specialisation": "Agriculture"
+			},
+			{
+				"id": 47,
+				"Specialisation": "Architecture"
+			},
+			{
+				"id": 48,
+				"Specialisation": "Arts/Humanities/Social Sciences"
+			},
+			{
+				"id": 49,
+				"Specialisation": "Aviation/Aeronautical"
+			},
+			{
+				"id": 50,
+				"Specialisation": "Biochemistry"
+			},
+			{
+				"id": 51,
+				"Specialisation": "Biotechnology"
+			},
+			{
+				"id": 52,
+				"Specialisation": "Chemical"
+			},
+			{
+				"id": 53,
+				"Specialisation": "Chemistry"
+			},
+			{
+				"id": 54,
+				"Specialisation": "Civil"
+			},
+			{
+				"id": 55,
+				"Specialisation": "Commerce"
+			},
+			{
+				"id": 56,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 57,
+				"Specialisation": "Dairy Technology"
+			},
+			{
+				"id": 58,
+				"Specialisation": "Economics"
+			},
+			{
+				"id": 59,
+				"Specialisation": "Electrical"
+			},
+			{
+				"id": 60,
+				"Specialisation": "Electronics/Telecommunications"
+			},
+			{
+				"id": 61,
+				"Specialisation": "Fashion Designing/Other Designing"
+			},
+			{
+				"id": 62,
+				"Specialisation": "Finance"
+			},
+			{
+				"id": 63,
+				"Specialisation": "Food Technology"
+			},
+			{
+				"id": 64,
+				"Specialisation": "Geography"
+			},
+			{
+				"id": 65,
+				"Specialisation": "HR/Industrial Relations"
+			},
+			{
+				"id": 66,
+				"Specialisation": "History"
+			},
+			{
+				"id": 67,
+				"Specialisation": "Instrumentation Design"
+			},
+			{
+				"id": 68,
+				"Specialisation": "Journalism"
+			},
+			{
+				"id": 69,
+				"Specialisation": "Law"
+			},
+			{
+				"id": 70,
+				"Specialisation": "Literature"
+			},
+			{
+				"id": 71,
+				"Specialisation": "Management Studies"
+			},
+			{
+				"id": 72,
+				"Specialisation": "Marketing"
+			},
+			{
+				"id": 73,
+				"Specialisation": "Materials Science"
+			},
+			{
+				"id": 74,
+				"Specialisation": "Mathematics/Statistics"
+			},
+			{
+				"id": 75,
+				"Specialisation": "Mechanical"
+			},
+			{
+				"id": 76,
+				"Specialisation": "Medicine"
+			},
+			{
+				"id": 77,
+				"Specialisation": "Metallurgy"
+			},
+			{
+				"id": 78,
+				"Specialisation": "Mining"
+			},
+			{
+				"id": 79,
+				"Specialisation": "Pharmacy"
+			},
+			{
+				"id": 80,
+				"Specialisation": "Philosophy"
+			},
+			{
+				"id": 81,
+				"Specialisation": "Physics"
+			},
+			{
+				"id": 82,
+				"Specialisation": "Political Science"
+			},
+			{
+				"id": 83,
+				"Specialisation": "Production/Industrial"
+			},
+			{
+				"id": 84,
+				"Specialisation": "Psychology"
+			},
+			{
+				"id": 85,
+				"Specialisation": "Systems"
+			},
+			{
+				"id": 86,
+				"Specialisation": "Fine Arts/ Visual Arts"
+			},
+			{
+				"id": 87,
+				"Specialisation": "Other Arts"
+			},
+			{
+				"id": 88,
+				"Specialisation": "Other Engineering"
+			},
+			{
+				"id": 89,
+				"Specialisation": "Other Management"
+			},
+			{
+				"id": 90,
+				"Specialisation": "Other Sciences"
+			}
+		]
+	},
+	{
+		"id": "12",
+		"name": "M.Plan. (Planning)",
+		"children": [
+			{
+				"id": 91,
+				"Specialisation": "Environment Planning"
+			},
+			{
+				"id": 92,
+				"Specialisation": "Housing  "
+			},
+			{
+				"id": 93,
+				"Specialisation": "Regional   Planning"
+			},
+			{
+				"id": 94,
+				"Specialisation": "Transport   Planning"
+			},
+			{
+				"id": 95,
+				"Specialisation": "Urban   Planning"
+			},
+			{
+				"id": 96,
+				"Specialisation": "other  M.Plan."
+			}
+		]
+	},
+	{
+		"id": "13",
+		"name": "M.Sc. (Science)",
+		"children": [
+			{
+				"id": 97,
+				"Specialisation": "Agriculture"
+			},
+			{
+				"id": 98,
+				"Specialisation": "Biology"
+			},
+			{
+				"id": 99,
+				"Specialisation": "Biochemistry"
+			},
+			{
+				"id": 100,
+				"Specialisation": "Chemistry"
+			},
+			{
+				"id": 101,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 102,
+				"Specialisation": "Dairy Technology"
+			},
+			{
+				"id": 103,
+				"Specialisation": "Food Technology"
+			},
+			{
+				"id": 104,
+				"Specialisation": "Maths"
+			},
+			{
+				"id": 105,
+				"Specialisation": "Physics"
+			},
+			{
+				"id": 106,
+				"Specialisation": "Statistics"
+			},
+			{
+				"id": 107,
+				"Specialisation": "Other M.Sc."
+			},
+			{
+				"id": 108,
+				"Specialisation": "Botany"
+			},
+			{
+				"id": 109,
+				"Specialisation": "Electronics/ Telecommunications"
+			},
+			{
+				"id": 110,
+				"Specialisation": "Environmental Science"
+			},
+			{
+				"id": 111,
+				"Specialisation": "Geology"
+			},
+			{
+				"id": 112,
+				"Specialisation": "Home Science"
+			},
+			{
+				"id": 113,
+				"Specialisation": "Microbiology"
+			},
+			{
+				"id": 114,
+				"Specialisation": "Nursing"
+			},
+			{
+				"id": 115,
+				"Specialisation": "Zoology"
+			},
+			{
+				"id": 116,
+				"Specialisation": "Information Technology"
+			},
+			{
+				"id": 117,
+				"Specialisation": "Anthropology"
+			},
+			{
+				"id": 118,
+				"Specialisation": "Bioinformatics"
+			},
+			{
+				"id": 119,
+				"Specialisation": "iomedical Sciences"
+			},
+			{
+				"id": 120,
+				"Specialisation": "Biotechnology"
+			},
+			{
+				"id": 121,
+				"Specialisation": "Clinical Research"
+			},
+			{
+				"id": 122,
+				"Specialisation": "Food &; Nutrition"
+			},
+			{
+				"id": 123,
+				"Specialisation": "Life Sciences"
+			},
+			{
+				"id": 124,
+				"Specialisation": "Oceanography/Ocean"
+			},
+			{
+				"id": 125,
+				"Specialisation": "Systems and Devices"
+			},
+			{
+				"id": 126,
+				"Specialisation": "Yoga"
+			},
+			{
+				"id": 127,
+				"Specialisation": "Psychology"
+			}
+		]
+	},
+	{
+		"id": "14",
+		"name": "M.V.Sc. (Veterinary Science)",
+		"children": [
+			{
+				"id": 128,
+				"Specialisation": "Animal Genetice &Breeding"
+			},
+			{
+				"id": 129,
+				"Specialisation": "Animal Nutrition"
+			},
+			{
+				"id": 130,
+				"Specialisation": "LiveStock Production &Management"
+			},
+			{
+				"id": 131,
+				"Specialisation": "Poultry Science"
+			},
+			{
+				"id": 132,
+				"Specialisation": "Veterinary Anatomy "
+			},
+			{
+				"id": 133,
+				"Specialisation": "Veterinary Medicine"
+			},
+			{
+				"id": 134,
+				"Specialisation": "Veterinary Microbiology"
+			},
+			{
+				"id": 135,
+				"Specialisation": "Veterinary Path0logy"
+			},
+			{
+				"id": 136,
+				"Specialisation": "Veterinary Pharmacology &Toxicology"
+			},
+			{
+				"id": 137,
+				"Specialisation": "Veterinary Public Health"
+			},
+			{
+				"id": 138,
+				"Specialisation": "other  M.V.Sc."
+			}
+		]
+	},
+	{
+		"id": "15",
+		"name": "MA(Arts)",
+		"children": [
+			{
+				"id": 139,
+				"Specialisation": "Arts/Humanities/Social Sciences"
+			},
+			{
+				"id": 140,
+				"Specialisation": "Anthropology"
+			},
+			{
+				"id": 141,
+				"Specialisation": "Communication"
+			},
+			{
+				"id": 142,
+				"Specialisation": "Economics"
+			},
+			{
+				"id": 143,
+				"Specialisation": "English"
+			},
+			{
+				"id": 144,
+				"Specialisation": "Film Studies"
+			},
+			{
+				"id": 145,
+				"Specialisation": "Hindi"
+			},
+			{
+				"id": 146,
+				"Specialisation": "History"
+			},
+			{
+				"id": 147,
+				"Specialisation": "Maths"
+			},
+			{
+				"id": 148,
+				"Specialisation": "Political Science"
+			},
+			{
+				"id": 149,
+				"Specialisation": "Psychology"
+			},
+			{
+				"id": 150,
+				"Specialisation": "PR/ Advertising"
+			},
+			{
+				"id": 151,
+				"Specialisation": "Sociology"
+			},
+			{
+				"id": 152,
+				"Specialisation": "Statistics"
+			},
+			{
+				"id": 153,
+				"Specialisation": "Sanskrit"
+			},
+			{
+				"id": 154,
+				"Specialisation": "Other MA"
+			},
+			{
+				"id": 155,
+				"Specialisation": "Fine Arts/Applied Arts"
+			},
+			{
+				"id": 156,
+				"Specialisation": "Geography"
+			},
+			{
+				"id": 157,
+				"Specialisation": "Philosophy"
+			},
+			{
+				"id": 158,
+				"Specialisation": "Music"
+			},
+			{
+				"id": 159,
+				"Specialisation": "Other Indian Languages"
+			},
+			{
+				"id": 160,
+				"Specialisation": "Other International Languages"
+			},
+			{
+				"id": 161,
+				"Specialisation": "Human Resource Management"
+			},
+			{
+				"id": 162,
+				"Specialisation": "Journalism"
+			},
+			{
+				"id": 163,
+				"Specialisation": "French"
+			},
+			{
+				"id": 164,
+				"Specialisation": "German"
+			},
+			{
+				"id": 165,
+				"Specialisation": "Russian"
+			},
+			{
+				"id": 166,
+				"Specialisation": "Spanish"
+			},
+			{
+				"id": 167,
+				"Specialisation": "Urdu"
+			},
+			{
+				"id": 168,
+				"Specialisation": "Mass Communications"
+			}
+		]
+	},
+	{
+		"id": "16",
+		"name": "MBA/ PGDM",
+		"children": [
+			{
+				"id": 169,
+				"Specialisation": "Advertising/Mass Communication"
+			},
+			{
+				"id": 170,
+				"Specialisation": "Finance"
+			},
+			{
+				"id": 171,
+				"Specialisation": "HR/Industrial Relations"
+			},
+			{
+				"id": 172,
+				"Specialisation": "Marketing"
+			},
+			{
+				"id": 173,
+				"Specialisation": "Information Technology"
+			},
+			{
+				"id": 174,
+				"Specialisation": "International Business"
+			},
+			{
+				"id": 175,
+				"Specialisation": "Systems"
+			},
+			{
+				"id": 176,
+				"Specialisation": "Other Management"
+			},
+			{
+				"id": 177,
+				"Specialisation": "Other MBA/PGDM"
+			},
+			{
+				"id": 178,
+				"Specialisation": "Agri Business"
+			},
+			{
+				"id": 179,
+				"Specialisation": "Aviation Management"
+			},
+			{
+				"id": 180,
+				"Specialisation": "Communications Management"
+			},
+			{
+				"id": 181,
+				"Specialisation": "Production &; Operations"
+			},
+			{
+				"id": 182,
+				"Specialisation": "Rural Management/Development"
+			},
+			{
+				"id": 183,
+				"Specialisation": "Strategy Management"
+			},
+			{
+				"id": 184,
+				"Specialisation": "Telecommunications Management"
+			},
+			{
+				"id": 185,
+				"Specialisation": "Tourism &; Hospitality"
+			}
+		]
+	},
+	{
+		"id": "17",
+		"name": "MCA/ PGDCA",
+		"children": [
+			{
+				"id": 186,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 187,
+				"Specialisation": "Other MCA"
+			}
+		]
+	},
+	{
+		"id": "18",
+		"name": "MD/ MS (Medicine)",
+		"children": [
+			{
+				"id": 188,
+				"Specialisation": "Cardiology"
+			},
+			{
+				"id": 189,
+				"Specialisation": "Dermatology"
+			},
+			{
+				"id": 190,
+				"Specialisation": "General Physician"
+			},
+			{
+				"id": 191,
+				"Specialisation": "Gyneocology"
+			},
+			{
+				"id": 192,
+				"Specialisation": "Hepatology"
+			},
+			{
+				"id": 193,
+				"Specialisation": "Nephrology"
+			},
+			{
+				"id": 194,
+				"Specialisation": "Neurology"
+			},
+			{
+				"id": 195,
+				"Specialisation": "Opthalmology"
+			},
+			{
+				"id": 196,
+				"Specialisation": "Orthopaedic"
+			},
+			{
+				"id": 197,
+				"Specialisation": "Pediatrics"
+			},
+			{
+				"id": 198,
+				"Specialisation": "Other MD/MS (Medicine)"
+			},
+			{
+				"id": 199,
+				"Specialisation": "Anesthesiology"
+			},
+			{
+				"id": 200,
+				"Specialisation": "Biochemistry"
+			},
+			{
+				"id": 201,
+				"Specialisation": "ENT"
+			},
+			{
+				"id": 202,
+				"Specialisation": "Emergency Medicine"
+			},
+			{
+				"id": 203,
+				"Specialisation": "Gastroenterology"
+			},
+			{
+				"id": 204,
+				"Specialisation": "Genetic Medicine"
+			},
+			{
+				"id": 205,
+				"Specialisation": "Internal Medicine"
+			},
+			{
+				"id": 206,
+				"Specialisation": "Microbiology"
+			},
+			{
+				"id": 207,
+				"Specialisation": "Nuclear Medicine"
+			},
+			{
+				"id": 208,
+				"Specialisation": "Oncology"
+			},
+			{
+				"id": 209,
+				"Specialisation": "Pathology"
+			},
+			{
+				"id": 210,
+				"Specialisation": "Physiotherapy"
+			},
+			{
+				"id": 211,
+				"Specialisation": "Preventive and Social Medicine"
+			},
+			{
+				"id": 212,
+				"Specialisation": "Psychiatry"
+			},
+			{
+				"id": 213,
+				"Specialisation": "Radiology"
+			},
+			{
+				"id": 214,
+				"Specialisation": "Reproductive Medicine"
+			},
+			{
+				"id": 215,
+				"Specialisation": "Rehabilitation Medicine"
+			},
+			{
+				"id": 216,
+				"Specialisation": "Surgery"
+			},
+			{
+				"id": 217,
+				"Specialisation": "Urology"
+			},
+			{
+				"id": 218,
+				"Specialisation": "Immunology"
+			},
+			{
+				"id": 219,
+				"Specialisation": "Neonatal"
+			},
+			{
+				"id": 220,
+				"Specialisation": "Obstetrics"
+			},
+			{
+				"id": 221,
+				"Specialisation": "Pharmacology"
+			},
+			{
+				"id": 222,
+				"Specialisation": "Rheumatology"
+			}
+		]
+	},
+	{
+		"id": "19",
+		"name": "ME/ M.Tech./ MS (Engg/ Sciences)",
+		"children": [
+			{
+				"id": 223,
+				"Specialisation": "Agriculture"
+			},
+			{
+				"id": 224,
+				"Specialisation": "Aviation/Aeronautical"
+			},
+			{
+				"id": 225,
+				"Specialisation": "Biochemical"
+			},
+			{
+				"id": 226,
+				"Specialisation": "Ceramics"
+			},
+			{
+				"id": 227,
+				"Specialisation": "Chemical"
+			},
+			{
+				"id": 228,
+				"Specialisation": "Civil"
+			},
+			{
+				"id": 229,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 230,
+				"Specialisation": "Electrical"
+			},
+			{
+				"id": 231,
+				"Specialisation": "Electronics/Telecommunication"
+			},
+			{
+				"id": 232,
+				"Specialisation": "Environmental"
+			},
+			{
+				"id": 233,
+				"Specialisation": "Instrumentation"
+			},
+			{
+				"id": 234,
+				"Specialisation": "Mechanical"
+			},
+			{
+				"id": 235,
+				"Specialisation": "Metallurgy"
+			},
+			{
+				"id": 236,
+				"Specialisation": "Mining"
+			},
+			{
+				"id": 237,
+				"Specialisation": "Petroleum"
+			},
+			{
+				"id": 238,
+				"Specialisation": "Plastics"
+			},
+			{
+				"id": 239,
+				"Specialisation": "Production/Industrial"
+			},
+			{
+				"id": 240,
+				"Specialisation": "Textile Technology"
+			},
+			{
+				"id": 241,
+				"Specialisation": "Other Engineering"
+			},
+			{
+				"id": 242,
+				"Specialisation": "Other ME/M.Tech./MS"
+			},
+			{
+				"id": 243,
+				"Specialisation": "Automobile"
+			},
+			{
+				"id": 244,
+				"Specialisation": "Biomedical"
+			},
+			{
+				"id": 245,
+				"Specialisation": "Energy"
+			},
+			{
+				"id": 246,
+				"Specialisation": "Marine"
+			},
+			{
+				"id": 247,
+				"Specialisation": "Mineral"
+			},
+			{
+				"id": 248,
+				"Specialisation": "Nuclear"
+			},
+			{
+				"id": 249,
+				"Specialisation": "Paint/Oil"
+			},
+			{
+				"id": 250,
+				"Specialisation": "Oceanography/Ocean"
+			},
+			{
+				"id": 251,
+				"Specialisation": "Leather Technology"
+			},
+			{
+				"id": 252,
+				"Specialisation": "Others"
+			},
+			{
+				"id": 253,
+				"Specialisation": "Applied Mechanics"
+			},
+			{
+				"id": 254,
+				"Specialisation": "Bioinformatics"
+			},
+			{
+				"id": 255,
+				"Specialisation": "Biotechnology"
+			},
+			{
+				"id": 256,
+				"Specialisation": "Earth Sciences"
+			},
+			{
+				"id": 257,
+				"Specialisation": "Arts/ Humanities/Social Sciences"
+			},
+			{
+				"id": 258,
+				"Specialisation": "Mathematics"
+			},
+			{
+				"id": 259,
+				"Specialisation": "Microbiology"
+			},
+			{
+				"id": 260,
+				"Specialisation": "Physics"
+			},
+			{
+				"id": 261,
+				"Specialisation": "Solid State Technology"
+			}
+		]
+	},
+	{
+		"id": "20",
+		"name": "MFA (Fine Arts)",
+		"children": [
+			{
+				"id": 262,
+				"Specialisation": "Fine Arts"
+			}
+		]
+	},
+	{
+		"id": "21",
+		"name": "ML/ LLM (Law)",
+		"children": [
+			{
+				"id": 263,
+				"Specialisation": "Law"
+			},
+			{
+				"id": 264,
+				"Specialisation": "other  ML/ LLM "
+			}
+		]
+	},
+	{
+		"id": "22",
+		"name": "MPT (Physiotherapy)",
+		"children": [
+			{
+				"id": 265,
+				"Specialisation": "Orthopaedics"
+			},
+			{
+				"id": 266,
+				"Specialisation": "Neurology"
+			},
+			{
+				"id": 267,
+				"Specialisation": "Cardio Respiratory"
+			},
+			{
+				"id": 268,
+				"Specialisation": "Sports"
+			},
+			{
+				"id": 269,
+				"Specialisation": "Paediatric Neurology"
+			},
+			{
+				"id": 270,
+				"Specialisation": "Hand Rehabilitation"
+			},
+			{
+				"id": 271,
+				"Specialisation": "Obstetric &; Gynecology"
+			},
+			{
+				"id": 272,
+				"Specialisation": "Community Physiotherapy"
+			},
+			{
+				"id": 273,
+				"Specialisation": "Other MPT"
+			}
+		]
+	},
+	{
+		"id": "23",
+		"name": "MSW (Social Work)",
+		"children": [
+			{
+				"id": 274,
+				"Specialisation": "Human Resource Management"
+			},
+			{
+				"id": 275,
+				"Specialisation": "IR & PM"
+			},
+			{
+				"id": 276,
+				"Specialisation": " other MSW "
+			}
+		]
+	},
+	{
+		"id": "24",
+		"name": "Master of Dental Surgery (MDS)",
+		"children": [
+			{
+				"id": 277,
+				"Specialisation": "Dentistry"
+			},
+			{
+				"id": 278,
+				"Specialisation": "Other MDS"
+			},
+			{
+				"id": 279,
+				"Specialisation": "Conservative Dentistry"
+			},
+			{
+				"id": 280,
+				"Specialisation": "Oral &; Maxillofacial Surgery"
+			},
+			{
+				"id": 281,
+				"Specialisation": "Oral Medicine &; Radiology"
+			},
+			{
+				"id": 282,
+				"Specialisation": "Oral Pathology &; Microbiology"
+			},
+			{
+				"id": 283,
+				"Specialisation": "Orthodontics"
+			},
+			{
+				"id": 284,
+				"Specialisation": "Paedodontics"
+			},
+			{
+				"id": 285,
+				"Specialisation": "Periodontics"
+			},
+			{
+				"id": 286,
+				"Specialisation": "Prosthodontics"
+			}
+		]
+	},
+	{
+		"id": "25",
+		"name": "Master of Fashion Technology",
+		"children": [
+			{
+				"id": 287,
+				"Specialisation": "Fashion Technology"
+			}
+		]
+	},
+	{
+		"id": "26",
+		"name": "Master of Health Administration",
+		"children": [
+			{
+				"id": 288,
+				"Specialisation": " Health Administration"
+			}
+		]
+	},
+	{
+		"id": "27",
+		"name": "Master of Hospital Administration",
+		"children": [
+			{
+				"id": 289,
+				"Specialisation": " Hospital Administration"
+			}
+		]
+	},
+	{
+		"id": "28",
+		"name": "PG Diploma",
+		"children": [
+			{
+				"id": 290,
+				"Specialisation": "Architecture"
+			},
+			{
+				"id": 291,
+				"Specialisation": "Clinical Data Management"
+			},
+			{
+				"id": 292,
+				"Specialisation": "Clinical Research"
+			},
+			{
+				"id": 293,
+				"Specialisation": "Dietics"
+			},
+			{
+				"id": 294,
+				"Specialisation": "Automobile"
+			},
+			{
+				"id": 295,
+				"Specialisation": "Bioinformatics"
+			},
+			{
+				"id": 296,
+				"Specialisation": "Chemical"
+			},
+			{
+				"id": 297,
+				"Specialisation": "Civil"
+			},
+			{
+				"id": 298,
+				"Specialisation": "Engineering - Computer Science"
+			},
+			{
+				"id": 299,
+				"Specialisation": "Electrical"
+			},
+			{
+				"id": 300,
+				"Specialisation": "Electronics/Telecommunications"
+			},
+			{
+				"id": 301,
+				"Specialisation": "Mining &; Mine Surveying"
+			},
+			{
+				"id": 302,
+				"Specialisation": "Mechanical"
+			},
+			{
+				"id": 303,
+				"Specialisation": "Other Engineering PG Diploma"
+			},
+			{
+				"id": 304,
+				"Specialisation": "Export/Import"
+			},
+			{
+				"id": 305,
+				"Specialisation": "Fashion Designing/Other Designing"
+			},
+			{
+				"id": 306,
+				"Specialisation": "Fashion Marketing"
+			},
+			{
+				"id": 307,
+				"Specialisation": "Fashion Merchandising"
+			},
+			{
+				"id": 308,
+				"Specialisation": "Fashion Retail"
+			},
+			{
+				"id": 309,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 310,
+				"Specialisation": "Film/ TV Studies"
+			},
+			{
+				"id": 311,
+				"Specialisation": "Hardware/ Networking"
+			},
+			{
+				"id": 312,
+				"Specialisation": "Hotel Management"
+			},
+			{
+				"id": 313,
+				"Specialisation": "Insurance"
+			},
+			{
+				"id": 314,
+				"Specialisation": "Journalism"
+			},
+			{
+				"id": 315,
+				"Specialisation": "Mass Communication"
+			},
+			{
+				"id": 316,
+				"Specialisation": "Medical Transcription"
+			},
+			{
+				"id": 317,
+				"Specialisation": "IR &; PM"
+			},
+			{
+				"id": 318,
+				"Specialisation": "PR/Advertising"
+			},
+			{
+				"id": 319,
+				"Specialisation": "Retail Management"
+			},
+			{
+				"id": 320,
+				"Specialisation": "Social Work"
+			},
+			{
+				"id": 321,
+				"Specialisation": "Yoga"
+			},
+			{
+				"id": 322,
+				"Specialisation": "Other PG Diploma"
+			}
+		]
+	},
+	{
+		"id": "29",
+		"name": "Ph.D. (Doctorate)",
+		"children": [
+			{
+				"id": 324,
+				"Specialisation": "Agriculture"
+			},
+			{
+				"id": 325,
+				"Specialisation": "Applied Mechanics"
+			},
+			{
+				"id": 326,
+				"Specialisation": "Architecture"
+			},
+			{
+				"id": 327,
+				"Specialisation": "Arts/Humanities/Social Sciences"
+			},
+			{
+				"id": 328,
+				"Specialisation": "Aviation/Aeronautical"
+			},
+			{
+				"id": 329,
+				"Specialisation": "Biochemistry"
+			},
+			{
+				"id": 330,
+				"Specialisation": "Bioinformatics"
+			},
+			{
+				"id": 331,
+				"Specialisation": "Biology"
+			},
+			{
+				"id": 332,
+				"Specialisation": "Biomedical Sciences"
+			},
+			{
+				"id": 333,
+				"Specialisation": "Biotechnology"
+			},
+			{
+				"id": 334,
+				"Specialisation": "Botany"
+			},
+			{
+				"id": 335,
+				"Specialisation": "Chemical"
+			},
+			{
+				"id": 336,
+				"Specialisation": "Chemistry"
+			},
+			{
+				"id": 337,
+				"Specialisation": "Civil"
+			},
+			{
+				"id": 338,
+				"Specialisation": "Commerce"
+			},
+			{
+				"id": 339,
+				"Specialisation": "Computer Science"
+			},
+			{
+				"id": 340,
+				"Specialisation": "Dairy Technology"
+			},
+			{
+				"id": 341,
+				"Specialisation": "Economics"
+			},
+			{
+				"id": 342,
+				"Specialisation": "Electrical"
+			},
+			{
+				"id": 343,
+				"Specialisation": "Electronics/Telecommunications"
+			},
+			{
+				"id": 344,
+				"Specialisation": "Environmental Sciences"
+			},
+			{
+				"id": 345,
+				"Specialisation": "Fashion Designing/Other Designing"
+			},
+			{
+				"id": 346,
+				"Specialisation": "Finance"
+			},
+			{
+				"id": 347,
+				"Specialisation": "Food Technology"
+			},
+			{
+				"id": 348,
+				"Specialisation": "HR/Industrial Relations"
+			},
+			{
+				"id": 349,
+				"Specialisation": "Instrumentation Design"
+			},
+			{
+				"id": 350,
+				"Specialisation": "Journalism"
+			},
+			{
+				"id": 351,
+				"Specialisation": "Law"
+			},
+			{
+				"id": 352,
+				"Specialisation": "Life Sciences"
+			},
+			{
+				"id": 353,
+				"Specialisation": "Literature"
+			},
+			{
+				"id": 354,
+				"Specialisation": "Management Studies"
+			},
+			{
+				"id": 355,
+				"Specialisation": "Marketing"
+			},
+			{
+				"id": 356,
+				"Specialisation": "Materials Science"
+			},
+			{
+				"id": 357,
+				"Specialisation": "Mathematics/Statistics"
+			},
+			{
+				"id": 358,
+				"Specialisation": "Mechanical"
+			},
+			{
+				"id": 359,
+				"Specialisation": "Medicine"
+			},
+			{
+				"id": 360,
+				"Specialisation": "Metallurgy"
+			},
+			{
+				"id": 361,
+				"Specialisation": "Microbiology"
+			},
+			{
+				"id": 362,
+				"Specialisation": "Mining"
+			},
+			{
+				"id": 363,
+				"Specialisation": "Pharmacy"
+			},
+			{
+				"id": 364,
+				"Specialisation": "Physics"
+			},
+			{
+				"id": 365,
+				"Specialisation": "Production/Industrial"
+			},
+			{
+				"id": 366,
+				"Specialisation": "Psychology"
+			},
+			{
+				"id": 367,
+				"Specialisation": "Rural Management/Development"
+			},
+			{
+				"id": 368,
+				"Specialisation": "Systems"
+			},
+			{
+				"id": 369,
+				"Specialisation": "Textile Technology"
+			},
+			{
+				"id": 370,
+				"Specialisation": "Fine Arts/ Visual Arts"
+			},
+			{
+				"id": 371,
+				"Specialisation": "Zoology"
+			},
+			{
+				"id": 372,
+				"Specialisation": "Other Arts"
+			},
+			{
+				"id": 373,
+				"Specialisation": "Other Engineering"
+			},
+			{
+				"id": 374,
+				"Specialisation": "Other Management"
+			},
+			{
+				"id": 375,
+				"Specialisation": "Other Sciences"
+			}
+		]
+	},
+	{
+		"id": "30",
+		"name": "Other Doctorate",
+		"children": [
+			{
+				"id": 376,
+				"Specialisation": "others"
+			}
+		]
+	},
+	{
+		"id": "31",
+		"name": "Other Post Graduation",
+		"children": [
+			{
+				"id": 377,
+				"Specialisation": "others"
+			}
+		]
+	}
+]

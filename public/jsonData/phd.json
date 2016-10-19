@@ -1,0 +1,319 @@
+[{
+  "id": "1",
+  "spec": "PHD",
+  "children": [
+   {
+    "id": 1,
+    "spec": "Aeronautical / Avionics / Aerospace"
+  },
+  {
+    "id": 2,
+    "spec": "Agricultural / Irrigation"
+  },
+  {
+    "id": 3,
+    "spec": "Anesthesia (DA)"
+  },
+  {
+    "id": 4,
+    "spec": "Applied Electronics and Instrumentation Engineering"
+  },
+  {
+    "id": 5,
+    "spec": "Architecture and Town Planning"
+  },
+  {
+    "id": 6,
+    "spec": "Automobile"
+  },
+  {
+    "id": 7,
+    "spec": "Bio-Informatics"
+  },
+  {
+    "id": 8,
+    "spec": "Bio-Medical"
+  },
+  {
+    "id": 9,
+    "spec": "Bio-technology"
+  },
+  {
+    "id": 10,
+    "spec": "Ceramic"
+  },
+  {
+    "id": 11,
+    "spec": "Chemical"
+  },
+  {
+    "id": 12,
+    "spec": "Child Health"
+  },
+  {
+    "id": 13,
+    "spec": "Civil"
+  },
+  {
+    "id": 14,
+    "spec": "Clinical Pathology (DCP)"
+  },
+  {
+    "id": 15,
+    "spec": "Commercial Art/Fine Art/Graphics"
+  },
+  {
+    "id": 16,
+    "spec": "Computer Science & Engineering"
+  },
+  {
+    "id": 17,
+    "spec": "Electrical &amp; Electronics"
+  },
+  {
+    "id": 18,
+    "spec": "Electrical Engineering"
+  },
+  {
+    "id": 19,
+    "spec": "Electronics &amp; Communication"
+  },
+  {
+    "id": 20,
+    "spec": "Electronic Media"
+  },
+  {
+    "id": 21,
+    "spec": "Electronics &amp; Instrumentation"
+  },
+  {
+    "id": 22,
+    "spec": "Environmental Engineering &amp; Technology"
+  },
+  {
+    "id": 23,
+    "spec": "Fashion/ Design"
+  },
+  {
+    "id": 24,
+    "spec": "Food / Bakery/ Food &amp; Beverage /"
+  },
+  {
+    "id": 25,
+    "spec": "Front Office"
+  },
+  {
+    "id": 26,
+    "spec": "Geo Informatics"
+  },
+  {
+    "id": 27,
+    "spec": "House Keeping"
+  },
+  {
+    "id": 28,
+    "spec": "Industrial Bio-Technology"
+  },
+  {
+    "id": 29,
+    "spec": "Industrial Engineering"
+  },
+  {
+    "id": 30,
+    "spec": "Information Technology"
+  },
+  {
+    "id": 31,
+    "spec": "Instrumentation &amp; Control System"
+  },
+  {
+    "id": 32,
+    "spec": "Leather Technology"
+  },
+  {
+    "id": 33,
+    "spec": "Manufacturing Engineering"
+  },
+  {
+    "id": 34,
+    "spec": "Marine Engineering"
+  },
+  {
+    "id": 35,
+    "spec": "Material Science and Engineering"
+  },
+  {
+    "id": 36,
+    "spec": "Mechanical Engineering"
+  },
+  {
+    "id": 37,
+    "spec": "Metallurgical Engineering"
+  },
+  {
+    "id": 38,
+    "spec": "Mineral / Mining"
+  },
+  {
+    "id": 39,
+    "spec": "Obstetrics &amp; Gynecology(DGO)"
+  },
+  {
+    "id": 40,
+    "spec": "Ophthalmology (DO)"
+  },
+  {
+    "id": 41,
+    "spec": "Orthopaedics (D.Ortho)"
+  },
+  {
+    "id": 42,
+    "spec": "Otorenolaryngology (DLO)"
+  },
+  {
+    "id": 43,
+    "spec": "Paper &amp; Pulp Technology"
+  },
+  {
+    "id": 44,
+    "spec": "Petroleum / Petrochemical"
+  },
+  {
+    "id": 45,
+    "spec": "Pharmaceutical Technology"
+  },
+  {
+    "id": 46,
+    "spec": "Polymer Science &amp; Engineering"
+  },
+  {
+    "id": 47,
+    "spec": "Printing Technology"
+  },
+  {
+    "id": 48,
+    "spec": "Production cum Plant Engineering"
+  },
+  {
+    "id": 49,
+    "spec": "Production Engineering"
+  },
+  {
+    "id": 50,
+    "spec": "Radiology"
+  },
+  {
+    "id": 51,
+    "spec": "Rubber / Plastic"
+  },
+  {
+    "id": 52,
+    "spec": "Structural"
+  },
+  {
+    "id": 53,
+    "spec": "Sugar Technology"
+  },
+  {
+    "id": 54,
+    "spec": "Textile Technology"
+  },
+  {
+    "id": 55,
+    "spec": "Other"
+  }
+     
+  ]
+},{
+  "id": "2",
+  "spec": "MPHIL",
+  "children": [{"id":1,"spec":"Advertising/Mass Communication"},
+{"id":2,"spec":"Agriculture"},
+{"id":3,"spec":"Anthropology"},
+{"id":4,"spec":"Architecture"},
+{"id":5,"spec":"Arts &amp; Humanities"},
+{"id":6,"spec":"Automobile"},
+{"id":7,"spec":"Aviation"},
+{"id":8,"spec":"Bio-Chemistry/Bio-Technology"},
+{"id":9,"spec":"Biomedical"},
+{"id":10,"spec":"Biotechnology"},
+{"id":11,"spec":"Ceramics"},
+{"id":12,"spec":"Chemical"},
+{"id":13,"spec":"Chemistry"},
+{"id":14,"spec":"Civil"},
+{"id":15,"spec":"Commerce"},
+{"id":16,"spec":"Communication"},
+{"id":17,"spec":"Computers"},
+{"id":18,"spec":"Dairy Technology"},
+{"id":19,"spec":"Dermatology"},
+{"id":20,"spec":"Economics"},
+{"id":21,"spec":"Electrical"},
+{"id":22,"spec":"Electronics/Telecommunication"},
+{"id":23,"spec":"Energy"},
+{"id":24,"spec":"ENT"},
+{"id":25,"spec":"Environmental"},
+{"id":26,"spec":"Fashion Designing/Other Designing"},
+{"id":27,"spec":"Film"},
+{"id":28,"spec":"Finance"},
+{"id":29,"spec":"Fine arts"},
+{"id":30,"spec":"Food Technology"},
+{"id":31,"spec":"Hotel Management"},
+{"id":32,"spec":"History"},
+{"id":33,"spec":"HR/Industrial Relations"},
+{"id":34,"spec":"Immunology"},
+{"id":35,"spec":"International Business"},
+{"id":36,"spec":"Instrumentation"},
+{"id":37,"spec":"Journalism"},
+{"id":38,"spec":"Law"},
+{"id":39,"spec":"Literature"},
+{"id":40,"spec":"Marine"},
+{"id":41,"spec":"Marketing"},
+{"id":42,"spec":"Maths"},
+{"id":43,"spec":"Mechanical"},
+{"id":44,"spec":"Medicine"},
+{"id":45,"spec":"Metallurgy"},
+{"id":46,"spec":"Microbiology"},
+{"id":47,"spec":"Mineral"},
+{"id":48,"spec":"Mining"},
+{"id":49,"spec":"Neonatal"},
+{"id":50,"spec":"Nuclear"},
+{"id":51,"spec":"Obstetrics"},
+{"id":52,"spec":"Paint/Oil"},
+{"id":53,"spec":"Pathology"},
+{"id":54,"spec":"Petroleum"},
+{"id":55,"spec":"Pediatrics"},
+{"id":56,"spec":"Pharmacy"},
+{"id":57,"spec":"Physics"},
+{"id":58,"spec":"Plastics"},
+{"id":59,"spec":"Production/Industrial"},
+{"id":60,"spec":"Psychiatry"},
+{"id":61,"spec":"Psychology"},
+{"id":62,"spec":"Radiology"},
+{"id":63,"spec":"Rheumatology"},
+{"id":64,"spec":"Sanskrit"},
+{"id":65,"spec":"Sociology"},
+{"id":66,"spec":"Statistics"},
+{"id":67,"spec":"Systems"},
+{"id":68,"spec":"Textile"},
+{"id":69,"spec":"Vocational Courses"},
+{"id":70,"spec":"Other Arts"},
+{"id":71,"spec":"Other Doctorate"},
+{"id":72,"spec":"Other Engineering"},
+{"id":73,"spec":"Other Management"},
+{"id":74,"spec":"Other Science"},
+{"id":75,"spec":"Nursing"},
+{"id":76,"spec":"Linguistics"},
+{"id":77,"spec":"Political Science"},
+{"id":78,"spec":"Home Science"},
+{"id":79,"spec":"Special Education"},
+{"id":80,"spec":"Education"},
+{"id":81,"spec":"Music"},
+{"id":82,"spec":"Botany"},
+{"id":83,"spec":"Philosophy"},
+{"id":84,"spec":"Zoology"},
+{"id":85,"spec":"Physical Education"},
+{"id":86,"spec":"Genetics"},
+{"id":87,"spec":"Astrophysics"},
+{"id":88,"spec":"Biophysics"},
+{"id":89,"spec":"Other"}]
+}]

@@ -1,0 +1,259 @@
+<div class="page-title">
+    <div class="row no-padding">
+        <div class="col-md-6">
+            <h1>Functional Area List</h1>
+            <ul>
+                <li><a href="#/"><i class="fa fa-home"></i></a> /</li>
+                <li class="active">Functional Area List</li>
+            </ul>
+        </div>
+        <div class="col-md-6 text-right">
+            <button type="button" class="btn blue no-margin" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i class="fa fa-plus"></i> Add Functional Area</button>
+        </div>
+    </div>
+</div>
+<div class="page-content-container">
+    <div class="container-fluid" ng-show="showDiv">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mj_postdiv mj_shadow_blue mj_postpage mj_toppadder30 form-panel">
+                    <div class="container-fluid">
+                        <form>
+                            <h3 class="form-title">Add Functional Area</h3>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Functional Area Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter Functional Area Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Functional Area Details</label>
+                                        <input type="text" class="form-control" placeholder="Enter Functional Area Details">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <div class="form-group action-group">
+                                        <button type="submit" class="btn gray job-search-btn" ng-click="showDiv = false">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" class="btn blue job-search-btn">
+                                            Save Functional Area
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card table-responsive">
+                    <table class="table table-striped custom-table">
+                        <thead>
+                            <th>Functional Area Name</th>
+                            <th>Functional Area Details</th>
+                            <th>Actions</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h4>Medical</h4>
+                                </td>
+                                <td>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy </p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Banking</h4>
+                                </td>
+                                <td>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy </p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Admin</h4>
+                                </td>
+                                <td>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy </p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Call Center</h4>
+                                </td>
+                                <td>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy </p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Travel</h4>
+                                </td>
+                                <td>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy </p>
+                                </td>
+                                <td>
+                                    <a class="btn btn-small blue btn-circle" href="#" ng-click="openModal('lg')"><i aria-hidden="true" class="fa fa-eye"></i></a>
+                                    <a class="btn btn-small yellow btn-circle" href="#" ng-click="showDiv = !showDiv" ng-class="{ active: showDiv }"><i aria-hidden="true" class="fa fa-pencil"></i></a>
+                                    <a class="btn btn-small red btn-circle" href="#"><i aria-hidden="true" class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="container-fluid pagination-wrap">
+                        <div class="row no-padding">
+                            <div class="col-md-6">
+                                <p class="entry-count">Showing 1 to 5 of 25 entries</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="pagination pull-right">
+                                    <li class="disabled"><a href="#!"><i class="fa fa-angle-left"></i></a></li>
+                                    <li class="active"><a href="#/">1</a></li>
+                                    <li class="waves-effect"><a href="#/">2</a></li>
+                                    <li class="waves-effect"><a href="#/">3</a></li>
+                                    <li class="waves-effect"><a href="#/">4</a></li>
+                                    <li class="waves-effect"><a href="#/">5</a></li>
+                                    <li class="waves-effect"><a href="#/"><i class="fa fa-angle-right"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="jobView.html">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Job Details</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Company Name</label>
+                    <p>SK Group Company</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Name</label>
+                    <p>Angular Js Developer</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Details</label>
+                    <p>We need angular js developer with 5 year experience. </p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Type</label>
+                    <p>Full Time</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Experience</label>
+                    <p>5 Years</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Salary</label>
+                    <p>6 LPA</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Industry</label>
+                    <p>Software</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Functional Area</label>
+                    <p>Development</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Skills</label>
+                    <p>Java, Javascipr, Angular Js</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Number of Vacancy</label>
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Active From Date</label>
+                    <p>19-Sep-2016</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Active End Date</label>
+                    <p>31-Sep-2016</p>
+                </div>
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Job Status</label>
+                    <p>Active</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn red no-margin" type="button" ng-click="closeModal()">Discard</button>
+    </div>
+</script>

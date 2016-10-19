@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/resume', function () {
+    return view('resume');
+});
 
 /*
 Route::get('/pdf', function () {
