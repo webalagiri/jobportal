@@ -29,6 +29,7 @@ Route::group(['prefix' => 'common'], function()
       Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
       Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
       Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
+      Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
    });
 });
 

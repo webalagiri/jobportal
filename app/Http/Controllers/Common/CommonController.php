@@ -17,6 +17,8 @@ use Exception;
 use Log;
 use App;
 use Response;
+use Excel;
+
 class CommonController extends Controller
 {
     protected $commonService;
@@ -182,5 +184,40 @@ class CommonController extends Controller
          return PDF::loadFile('http://www.getkyr.com')->inline('getkyr-'.time().'.pdf');
         */
     }
+
+    public function importEXCEL()
+    {
+
+        Excel::load('excel/company.xls', function($reader) {
+
+            /*
+            // Getting all results
+            $results = $reader->get();
+            dd($results);
+            */
+
+            /*
+            // ->all() is a wrapper for ->get() and will work the same
+            $results = $reader->all();
+            dd($results);
+            */
+
+            $results = $reader->toArray();
+            dd($results[0]);
+
+            foreach($reader as $sheet)
+            {
+                // get sheet title
+                //$sheetTitle = $sheet->getTitle();
+                $sheetData = $sheet->getTitle();
+                dd($sheetData);
+            }
+
+        });
+
+    }
+
+
+
 
 }
