@@ -111,7 +111,7 @@ class ResponseJson extends JsonResponse {
     {
         $data = null;
 
-        if(!is_null($this->obj))
+        if(!empty($this->obj))
         {
             $data = array(
                 'isSuccess' => $this->result,

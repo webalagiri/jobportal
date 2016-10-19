@@ -154,13 +154,13 @@ class CandidateController extends Controller
         }
         catch(CandidateException $candidateExc)
         {
-            dd($candidateExc);
+            //dd($candidateExc);
             $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR));
             $jsonResponse->sendErrorResponse($candidateExc);
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $msg = AppendMessage::appendGeneralException($exc);
             Log::error($msg);
         }
@@ -205,5 +205,191 @@ class CandidateController extends Controller
         }
 
         return $jsonResponse;
+    }
+
+    /* Get candidate skills
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateSkills($candidateId)
+    {
+        $candidateSkills = null;
+        $responseJson = null;
+        //dd('Inside candidate details controller');
+
+        try
+        {
+            $candidateSkills = $this->candidateService->getCandidateSkills($candidateId);
+            //dd($listGroups);
+            if(!empty($candidateSkills))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_SKILLS_LIST_SUCCESS));
+
+            }
+            else
+            {
+
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_SKILLS_NOT_FOUND));
+            }
+
+            $responseJson->setObj($candidateSkills);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_SKILLS_LIST_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
+
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get candidate employment details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateEmployment($candidateId)
+    {
+        $candidateEmployment = null;
+        $responseJson = null;
+        //dd('Inside candidate details controller');
+
+        try
+        {
+            $candidateEmployment = $this->candidateService->getCandidateEmployment($candidateId);
+            //dd($listGroups);
+            if(!empty($candidateEmployment))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_EMPLOYMENT_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_EMPLOYMENT_NOT_AVAILABLE));
+            }
+
+            $responseJson->setObj($candidateEmployment);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_EMPLOYMENT_LIST_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
+
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get candidate project details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateProjects($candidateId)
+    {
+        $candidateProjects = null;
+        $responseJson = null;
+        //dd('Inside candidate details controller');
+
+        try
+        {
+            $candidateProjects = $this->candidateService->getCandidateProjects($candidateId);
+            //dd($listGroups);
+            if(!empty($candidateProjects))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_PROJECTS_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_PROJECTS_NOT_AVAILABLE));
+            }
+
+            $responseJson->setObj($candidateProjects);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_PROJECTS_LIST_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
+
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get candidate preferences
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatePreferences($candidateId)
+    {
+        $candidatePreferences = null;
+        $responseJson = null;
+        //dd('Inside candidate details controller');
+
+        try
+        {
+            $candidatePreferences = $this->candidateService->getCandidatePreferences($candidateId);
+            //dd($listGroups);
+            if(!empty($candidatePreferences))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_PREFERENCES_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_PREFERENCES_NOT_AVAILABLE));
+            }
+
+            $responseJson->setObj($candidatePreferences);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_PREFERENCES_LIST_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
+
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
     }
 }
