@@ -9,8 +9,11 @@
 namespace App\jobportal\repositories\repoimpl;
 
 
+use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\jobportal\model\entities\CandidateJobProfile;
 use App\jobportal\model\entities\CandidatePersonalProfile;
+use App\jobportal\model\entities\CandidateSkills;
 use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\CandidateException;
@@ -130,33 +133,18 @@ class CandidateImpl implements CandidateInterface
                 //$user = $this->processCandidateUser($candidateProfileVM);
                 $this->attachCompanyRole($user);
                 $candidate = new CandidatePersonalProfile();
+                $jobProfile = new CandidateJobProfile();
                 $this->addOrUpdatePersonalProfile($candidate, $candidateProfileVM, $user);
+                $this->addOrUpdateJobProfile($jobProfile, $candidateProfileVM, $user);
             }
             else
             {
                 $candidate = CandidatePersonalProfile::where('candidate_id', '=', $candidateId)->first();
+                $jobProfile = CandidateJobProfile::where('candidate_id', '=', $candidateId)->first();
                 $this->addOrUpdatePersonalProfile($candidate, $candidateProfileVM, $user);
+                $this->addOrUpdateJobProfile($jobProfile, $candidateProfileVM, $user);
             }
 
-            /*$company->company_name = $companyProfileVM->getCompanyName();
-            $company->description = $companyProfileVM->getDescription();
-            $company->company_type = $companyProfileVM->getCompanyType();
-            $company->email = $companyProfileVM->getEmail();
-            $company->phone = $companyProfileVM->getPhone();
-            $company->location = $companyProfileVM->getLocation();
-            $company->address = $companyProfileVM->getAddress();
-            $company->city = $companyProfileVM->getCity();
-            $company->country = $companyProfileVM->getCountry();
-            $company->pincode = $companyProfileVM->getPincode();
-            $company->company_logo = $companyProfileVM->getCompanyLogo();
-            $company->contact_person = $companyProfileVM->getContactPerson();
-            $company->contact_person_mobile = $companyProfileVM->getContactPersonMobile();
-            $company->created_by = $companyProfileVM->getCreatedBy();
-            $company->created_at = $companyProfileVM->getCreatedAt();
-            $company->updated_by = $companyProfileVM->getUpdatedBy();
-            $company->updated_at = $companyProfileVM->getUpdatedAt();
-
-            $user->company()->save($company);*/
         }
         catch(QueryException $queryExc)
         {
@@ -238,6 +226,18 @@ class CandidateImpl implements CandidateInterface
         $user->candidatepersonalprofile()->save($personalProfile);
 
         //return $personalProfile;
+    }
+
+    private function addOrUpdateJobProfile(CandidateJobProfile $jobProfile, CandidateViewModel $candidateProfileVM, User $user)
+    {
+        $jobProfile->total_experience_years = $candidateProfileVM->getTotalYearsExperience();
+        $jobProfile->total_experience_months = $candidateProfileVM->getTotalMonthsExperience();
+        $jobProfile->current_location = $candidateProfileVM->getCurrentLocation();
+        $jobProfile->preferred_lcoation = $candidateProfileVM->getPreferredLocation();
+        $jobProfile->job_title = $candidateProfileVM->getJobTitle();
+        $jobProfile->skills = $candidateProfileVM->getSkills();
+
+        $user->candidatejobprofile()->save($jobProfile);
     }
 
     /* Delete a candidate
@@ -420,5 +420,57 @@ class CandidateImpl implements CandidateInterface
         }
 
         return $candidatePreferences;
+    }
+
+    /* Save candidate skills
+     * @params $candidateSkillsVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateSkills(CandidateSkillsViewModel $candidateSkillsVM)
+    {
+        $status = true;
+        $user = null;
+
+        try
+        {
+            $user = User::find($candidateSkillsVM->getCandidateId());
+
+            if(!is_null($user))
+            {
+                foreach($candidateSkillsVM->getCandidateSkills() as $skill)
+                {
+                    //dd($skill['skillName']);
+                    //dd($skill);
+                    $candidateSkills = new CandidateSkills();
+                    $candidateSkills->skill_name = $skill->skillName;
+                    $candidateSkills->skill_version = $skill->skillVersion;
+                    $candidateSkills->last_used = $skill->lastUsed;
+                    $candidateSkills->experience_years = $skill->experienceYears;
+                    $candidateSkills->experience_months = $skill->experienceMonths;
+                    $candidateSkills->created_by = $candidateSkillsVM->getCreatedBy();
+                    $candidateSkills->updated_by = $candidateSkillsVM->getUpdatedBy();
+                    $candidateSkills->created_at = $candidateSkillsVM->getCreatedAt();
+                    $candidateSkills->updated_at = $candidateSkillsVM->getUpdatedAt();
+
+                    $user->candidateskills()->save($candidateSkills);
+                    //$candidateSkillsVM->setCandidateSkills($skill);
+                }
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $exc);
+        }
+
+        return $status;
     }
 }

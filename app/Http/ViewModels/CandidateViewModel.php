@@ -9,6 +9,8 @@
 namespace App\Http\ViewModels;
 
 
+use PhpParser\Node\Expr\Cast\Array_;
+
 class CandidateViewModel
 {
     private $candidateId;

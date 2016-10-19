@@ -8,6 +8,7 @@
 
 namespace App\jobportal\mapper;
 
+use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
 use Illuminate\Http\Request;
 
@@ -58,5 +59,31 @@ class CandidateProfileMapper
         $candidateProfileVM->setUpdatedAt(date("Y-m-d H:i:s"));
 
         return $candidateProfileVM;
+    }
+
+    public static function setCandidateSkills(Request $candidateRequest)
+    {
+        $candidateSkillsVM = new CandidateSkillsViewModel();
+        $candidateSkills = (object) $candidateRequest->all();
+        $value = 'NULL';
+
+        $userName = 'Admin';
+
+        $candidateSkillsVM->setCandidateId($candidateSkills->candidateId);
+        $skillsList = $candidateSkills->skills;
+        //dd($skillsList);
+
+        foreach($skillsList as $skill)
+        {
+            $candidateSkillsVM->setCandidateSkills($skill);
+        }
+
+        $candidateSkillsVM->setCreatedBy($userName);
+        $candidateSkillsVM->setUpdatedBy($userName);
+        $candidateSkillsVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $candidateSkillsVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $candidateSkillsVM;
+
     }
 }

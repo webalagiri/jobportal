@@ -63,6 +63,8 @@ Route::group(['prefix' => 'candidate'], function()
         Route::get('rest/api/{candidateId}/employment', array('as' => 'candidate.employment', 'uses' => 'CandidateController@getCandidateEmployment'));
         Route::get('rest/api/{candidateId}/projects', array('as' => 'candidate.projects', 'uses' => 'CandidateController@getCandidateProjects'));
         Route::get('rest/api/{candidateId}/preferences', array('as' => 'candidate.preferences', 'uses' => 'CandidateController@getCandidatePreferences'));
+
+        Route::post('rest/api/candidateskills', array('as' => 'candidate.saveskills', 'uses' => 'CandidateController@saveCandidateSkills'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/

@@ -251,4 +251,37 @@ class CandidateService
 
         return $candidatePreferences;
     }
+
+    /* Save candidate skills
+     * @params $candidateSkillsVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateSkills($candidateSkillsVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateSkillsVM, &$status)
+            {
+                $status = $this->candidateRepo->saveCandidateSkills($candidateSkillsVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
 }
