@@ -15,7 +15,8 @@ use App\Http\Controllers\Controller;
 
 use Exception;
 use Log;
-
+use App;
+use Response;
 class CommonController extends Controller
 {
     protected $commonService;
@@ -146,6 +147,40 @@ class CommonController extends Controller
         }
 
         return $responseJson;
+    }
+
+
+    public function generatePDF()
+    {
+    /*
+        $pdf = App::make('snappy.pdf');
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->inline();
+    */
+
+        $snappy = App::make('snappy.pdf');
+//To file
+        $html = '<h1>Bill</h1><p>You owe me money, dude.</p>';
+        $filename = 'bill-123-'.time().'.pdf';
+        $filefullpath = 'd:/tmp/'.$filename;
+        $snappy->generateFromHtml($html, $filefullpath);
+        //$snappy->generate('http://www.github.com', 'd:/tmp/github-'.time().'.pdf');
+        //return $snappy->download($file);
+
+//Or output:
+
+        return Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
+            )
+        );
+
+        /*
+         return PDF::loadFile('http://www.getkyr.com')->inline('getkyr-'.time().'.pdf');
+        */
     }
 
 }

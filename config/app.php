@@ -160,6 +160,10 @@ return [
 
         App\jobportal\serviceproviders\reposerviceprovider\PortalRepoServiceProvider::class,
 
+        Barryvdh\Snappy\ServiceProvider::class,
+
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
     ],
 
     /*
@@ -208,6 +212,10 @@ return [
 
         'Entrust' => Zizaco\Entrust\EntrustFacade::class,
 
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
