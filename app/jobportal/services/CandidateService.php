@@ -144,4 +144,111 @@ class CandidateService
         return $status;
     }
 
+    /* Get candidate skills
+     * @params $candidateId
+     * @throws $candidateException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function getCandidateSkills($candidateId)
+    {
+        $candidateSkills = null;
+
+        try
+        {
+            $candidateSkills = $this->candidateRepo->getCandidateSkills($candidateId);
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_LIST_ERROR, $exc);
+        }
+
+        return $candidateSkills;
+    }
+
+    /* Get candidate employment details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateEmployment($candidateId)
+    {
+        $candidateEmployment = null;
+
+        try
+        {
+            $candidateEmployment = $this->candidateRepo->getCandidateEmployment($candidateId);
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_LIST_ERROR, $exc);
+        }
+
+        return $candidateEmployment;
+    }
+
+    /* Get candidate project details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateProjects($candidateId)
+    {
+        $candidateProjects = null;
+
+        try
+        {
+            $candidateProjects = $this->candidateRepo->getCandidateProjects($candidateId);
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_LIST_ERROR, $exc);
+        }
+
+        return $candidateProjects;
+    }
+
+    /* Get candidate preferences
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatePreferences($candidateId)
+    {
+        $candidatePreferences = null;
+
+        try
+        {
+            $candidatePreferences = $this->candidateRepo->getCandidatePreferences($candidateId);
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_LIST_ERROR, $exc);
+        }
+
+        return $candidatePreferences;
+    }
 }

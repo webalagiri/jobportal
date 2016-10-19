@@ -44,5 +44,17 @@
         "208" => "Successfully deleted candidate profile",
         "209" => "Unable to save candidate profile",
         "210" => "Successfully saved candidate profile",
+        "211" => "Unable to retrieve candidate skills list",
+        "212" => "Successfully retrieved candidate skills list",
+        "213" => "Candidates skills not found",
+        "214" => "Unable to retrieve candidate employment details",
+        "215" => "Successfully retrieved candidate employment details",
+        "216" => "Candidate employment details not available",
+        "217" => "Unable to retrieve candidate project details",
+        "218" => "Successfully retrieved candidate project details",
+        "219" => "Candidate project details not available",
+        "220" => "Unable to retrieve candidate preferences details",
+        "221" => "Successfully retrieved candidate preferences details",
+        "222" => "Candidate preferences details not available",
 
     ];

@@ -17,4 +17,8 @@ interface CandidateInterface
     public function getCandidateDetails($candidateId);
     public function saveCandidateProfile(CandidateViewModel $candidateVM);
     public function deleteCandidate($candidateId);
+    public function getCandidateSkills($candidateId);
+    public function getCandidateEmployment($candidateId);
+    public function getCandidateProjects($candidateId);
+    public function getCandidatePreferences($candidateId);
 }

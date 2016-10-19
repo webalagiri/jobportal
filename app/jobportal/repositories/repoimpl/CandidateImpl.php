@@ -160,14 +160,14 @@ class CandidateImpl implements CandidateInterface
         }
         catch(QueryException $queryExc)
         {
-            dd($queryExc);
+            //dd($queryExc);
             $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR, $queryExc);
 
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_PROFILE_SAVE_ERROR, $exc);
         }
@@ -240,8 +240,6 @@ class CandidateImpl implements CandidateInterface
         //return $personalProfile;
     }
 
-
-
     /* Delete a candidate
      * @params $candidateId
      * @throws $candidateException
@@ -274,5 +272,153 @@ class CandidateImpl implements CandidateInterface
         }
 
         return $status;
+    }
+
+    /* Get candidate skills
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateSkills($candidateId)
+    {
+        $candidateSkills = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_skills as rcs')->join('users as usr', 'usr.id', '=', 'rcs.candidate_id');
+            $query->where('rcs.candidate_id', '=', $candidateId);
+            $query->where('usr.delete_status', '=', 1);
+            $query->select('rcs.id as Id', 'rcs.candidateId as candidateId',
+                'rcs.skill_name as skillName', 'rcs.skill_version as skillVersion',
+                'rcs.last_used as lastUsed', 'rcs.experience_years as experienceYears',
+                'rcs.experience_months as experienceMonths');
+
+            $candidateSkills = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_LIST_ERROR, $exc);
+        }
+
+        return $candidateSkills;
+    }
+
+    /* Get candidate employment details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateEmployment($candidateId)
+    {
+        $candidateEmployment = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_employment as rce')->join('users as usr', 'usr.id', '=', 'rce.candidate_id');
+            $query->where('rce.candidate_id', '=', $candidateId);
+            $query->where('usr.delete_status', '=', 1);
+            $query->select('rce.id as Id', 'rce.candidate_id as candidateId',
+                'rce.company_name as companyName', 'rce.designation as designation',
+                'rce.experience_years as experienceYears', 'rce.experience_months as experienceMonths',
+                'rce.employment_status as experienceStatus', 'rce.duration_from_years as durationFromYears',
+                'rce.duration_from_months as durationFromMonths', 'rce.duration_to_years as durationToYears',
+                'rce.duration_to_months as durationToMonths', 'rce.annual_salary as annualSalary',
+                'rce.notice_period as noticePeriod');
+
+            $candidateEmployment = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_LIST_ERROR, $exc);
+        }
+
+        return $candidateEmployment;
+    }
+
+    /* Get candidate project details
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidateProjects($candidateId)
+    {
+        $candidateProjects = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_projects as rcp')->join('users as usr', 'usr.id', '=', 'rcp.candidate_id');
+            $query->where('rcp.candidate_id', '=', $candidateId);
+            $query->where('usr.delete_status', '=', 1);
+            $query->select('rcp.id as Id', 'rcp.candidate_id as candidateId',
+                'rcp.client as client', 'rcp.project_title as projectTitle',
+                'rcp.duration_years_from as durationYearsFrom',
+                'rcp.duration_months_from as durationMonthsFrom', 'rcp.duration_years_to as durationYearsTo',
+                'rcp.duration_months_to as durationMonthsTo', 'rcp.project_location as projectLocation',
+                'rcp.employment_status as employmentStatus', 'rcp.project_details as projectDetails',
+                'rcp.skills as skills', 'rcp.role_description as roleDescription', 'rcp.role', 'rcp.team_size as teamSize');
+
+            $candidateProjects = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_LIST_ERROR, $exc);
+        }
+
+        return $candidateProjects;
+    }
+
+    /* Get candidate preferences
+     * @params $candidateId
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatePreferences($candidateId)
+    {
+        $candidatePreferences = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_preferences as rcp')->join('users as usr', 'usr.id', '=', 'rcp.candidate_id');
+            $query->where('rcp.candidate_id', '=', $candidateId);
+            $query->where('usr.delete_status', '=', 1);
+            $query->select('rcp.id as Id', 'rcp.candidate_id as candidateId',
+                'rcp.job_type as jobType', 'rcp.employment_type as employmentType',
+                'rcp.industry as industry',
+                'rcp.recommended_companies as recommendedCompanies', 'rcp.dream_companies as dreamCompanies',
+                'rcp.preferred_skills as preferredSkills', 'rcp.companies_interviewed_with as companiesInterviewedWith',
+                'rcp.preferred_roles as preferredRoles');
+
+            $candidatePreferences = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_LIST_ERROR, $exc);
+        }
+
+        return $candidatePreferences;
     }
 }
