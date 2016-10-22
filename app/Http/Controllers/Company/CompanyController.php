@@ -115,6 +115,7 @@ class CompanyController extends Controller
 
     public function saveCompanyProfile(Request $companyRequest)
     {
+
         $companyProfileVM = null;
         $status = true;
         $jsonResponse = null;
@@ -122,6 +123,7 @@ class CompanyController extends Controller
         try
         {
             $companyProfileVM = CompanyProfileMapper::setCompanyProfile($companyRequest);
+
             $status = $this->companyService->saveCompanyProfile($companyProfileVM);
 
             if($status)
