@@ -67,8 +67,14 @@ Route::group(['prefix' => 'candidate'], function()
         Route::get('rest/api/{candidateId}/projects', array('as' => 'candidate.projects', 'uses' => 'CandidateController@getCandidateProjects'));
         Route::get('rest/api/{candidateId}/preferences', array('as' => 'candidate.preferences', 'uses' => 'CandidateController@getCandidatePreferences'));
 
-        Route::post('rest/api/candidateskills', array('as' => 'candidate.saveskills', 'uses' => 'CandidateController@saveCandidateSkills'));
-        Route::post('rest/api/employment', array('as' => 'candidate.employment', 'uses' => 'CandidateController@saveCandidateEmployment'));
+        Route::post('rest/api/skills', array('as' => 'candidate.saveskills', 'uses' => 'CandidateController@saveCandidateSkills'));
+        Route::post('rest/api/employment', array('as' => 'candidate.saveemployment', 'uses' => 'CandidateController@saveCandidateEmployment'));
+        Route::put('rest/api/employment', array('as' => 'candidate.editemployment', 'uses' => 'CandidateController@saveCandidateEmployment'));
+        Route::post('rest/api/projects', array('as' => 'candidate.saveprojects', 'uses' => 'CandidateController@saveCandidateProjects'));
+        Route::put('rest/api/projects', array('as' => 'candidate.editprojects', 'uses' => 'CandidateController@saveCandidateProjects'));
+
+        Route::post('rest/api/preferences', array('as' => 'candidate.savepreferences', 'uses' => 'CandidateController@saveCandidatePreferences'));
+        Route::put('rest/api/preferences', array('as' => 'candidate.editpreferences', 'uses' => 'CandidateController@saveCandidatePreferences'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/

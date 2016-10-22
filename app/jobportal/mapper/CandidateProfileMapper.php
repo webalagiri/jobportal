@@ -9,6 +9,8 @@
 namespace App\jobportal\mapper;
 
 use App\Http\ViewModels\CandidateEmploymentViewModel;
+use App\Http\ViewModels\CandidatePreferencesViewModel;
+use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
 use Illuminate\Http\Request;
@@ -36,23 +38,24 @@ class CandidateProfileMapper
         $candidateProfileVM->setCandidateId($profile->candidateId);
         $candidateProfileVM->setFirstName($profile->firstName);
         $candidateProfileVM->setLastName($profile->lastName);
-        $candidateProfileVM->setEmail($profile->email);
+        //$candidateProfileVM->setEmail($profile->email);
+        $candidateProfileVM->setEmail(property_exists($profile, 'email') ? $profile->email : null);
         $candidateProfileVM->setPhone(property_exists($profile, 'phone') ? $profile->phone : null);
         //$candidateProfileVM->setPhone($profile->phone);
         //$candidateProfileVM->setPhone(isset($profile->phone) ? $profile->phone : $value);
         //$candidateProfileVM->setMobile($profile->mobile);
         $candidateProfileVM->setMobile(property_exists($profile, 'mobile') ? $profile->mobile : null);
-        $candidateProfileVM->setLocation($profile->location);
+        $candidateProfileVM->setLocation(property_exists($profile, 'location') ? $profile->location : null);
         $candidateProfileVM->setAddress($profile->address);
-        $candidateProfileVM->setAlternateMobile($profile->alternateMobile);
+        $candidateProfileVM->setAlternateMobile(property_exists($profile, 'alternateMobile') ? $profile->alternateMobile : null);
         $candidateProfileVM->setCity($profile->city);
         $candidateProfileVM->setCountry($profile->country);
         $candidateProfileVM->setPincode($profile->pincode);
         $candidateProfileVM->setGender($profile->gender);
         $candidateProfileVM->setDateOfBirth($profile->dateOfBirth);
         $candidateProfileVM->setMaritalStatus($profile->maritalStatus);
-        $candidateProfileVM->setPhysicallyChallenged($profile->physicallyChallenged);
-        $candidateProfileVM->setPhoto($profile->photo);
+        $candidateProfileVM->setPhysicallyChallenged(property_exists($profile, 'physicallyChallenged') ? $profile->physicallyChallenged : null);
+        $candidateProfileVM->setPhoto(property_exists($profile, 'photo') ? $profile->photo : null);
 
         $candidateProfileVM->setCreatedBy($userName);
         $candidateProfileVM->setUpdatedBy($userName);
@@ -103,24 +106,62 @@ class CandidateProfileMapper
             $candidateEmpVM->setCandidateEmp($employment);
         }
 
-        /*$candidateEmpVM->setCompanyName($candidateEmp->companyName);
-        $candidateEmpVM->setDesignation($candidateEmp->designation);
-        $candidateEmpVM->setExperienceYears(property_exists($candidateEmp,'experienceYears') ? $candidateEmp->experienceYears : null);
-        $candidateEmpVM->setExperienceMonths(property_exists($candidateEmp,'experienceMonths') ? $candidateEmp->experienceMonths : null);
-        $candidateEmpVM->setEmploymentStatus(property_exists($candidateEmp,'employmentStatus') ? $candidateEmp->employmentStatus : null);
-        $candidateEmpVM->setDurationFromYears(property_exists($candidateEmp,'durationFromYears') ? $candidateEmp->durationFromYears : null);
-        $candidateEmpVM->setDurationFromMonths(property_exists($candidateEmp,'durationFromMonths') ? $candidateEmp->durationFromMonths : null);
-        $candidateEmpVM->setDurationToYears(property_exists($candidateEmp,'durationToYears') ? $candidateEmp->durationToYears : null);
-        $candidateEmpVM->setDurationToMonths(property_exists($candidateEmp,'durationToMonths') ? $candidateEmp->durationToMonths : null);
-        $candidateEmpVM->setAnnualSalary(property_exists($candidateEmp,'annualSalary') ? $candidateEmp->annualSalary : null);
-        $candidateEmpVM->setNoticePeriod(property_exists($candidateEmp,'noticePeriod') ? $candidateEmp->noticePeriod : null);
-        //$candidateProfileVM->setMobile(property_exists($profile, 'mobile') ? $profile->mobile : null);*/
         $candidateEmpVM->setCreatedBy($userName);
         $candidateEmpVM->setUpdatedBy($userName);
         $candidateEmpVM->setCreatedAt(date("Y-m-d H:i:s"));
         $candidateEmpVM->setUpdatedAt(date("Y-m-d H:i:s"));
 
         return $candidateEmpVM;
+
+    }
+
+    public static function setCandidateProjectDetails(Request $candidateRequest)
+    {
+        $candidateProjectVM = new CandidateProjectViewModel();
+        $candidateProjects = (object) $candidateRequest->all();
+        //dd($candidateEmp);
+        $userName = 'Admin';
+
+        $candidateProjectVM->setCandidateId($candidateProjects->candidateId);
+        $projects = $candidateProjects->projects;
+        //dd($candidateEmployments);
+
+        foreach($projects as $project)
+        {
+            $candidateProjectVM->setCandidateProjects($project);
+        }
+
+        $candidateProjectVM->setCreatedBy($userName);
+        $candidateProjectVM->setUpdatedBy($userName);
+        $candidateProjectVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $candidateProjectVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $candidateProjectVM;
+
+    }
+
+    public static function setCandidatePreferences(Request $candidateRequest)
+    {
+        $candidatePreferenceVM = new CandidatePreferencesViewModel();
+        $candidatePreferences = (object) $candidateRequest->all();
+        //dd($candidateEmp);
+        $userName = 'Admin';
+
+        $candidatePreferenceVM->setCandidateId($candidatePreferences->candidateId);
+        $preferences = $candidatePreferences->preferences;
+        //dd($candidateEmployments);
+
+        foreach($preferences as $preference)
+        {
+            $candidatePreferenceVM->setCandidatePreferences($preference);
+        }
+
+        $candidatePreferenceVM->setCreatedBy($userName);
+        $candidatePreferenceVM->setUpdatedBy($userName);
+        $candidatePreferenceVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $candidatePreferenceVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $candidatePreferenceVM;
 
     }
 }

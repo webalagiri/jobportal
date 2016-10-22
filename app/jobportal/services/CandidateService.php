@@ -317,4 +317,70 @@ class CandidateService
 
         return $status;
     }
+
+    /* Save candidate project details
+     * @params $candidateProjectsVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateProjects($candidateProjectsVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateProjectsVM, &$status)
+            {
+                $status = $this->candidateRepo->saveCandidateProjects($candidateProjectsVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
+    /* Save candidate preference details
+     * @params $candidatePreferencesVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidatePreferences($candidatePreferencesVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidatePreferencesVM, &$status)
+            {
+                $status = $this->candidateRepo->saveCandidatePreferences($candidatePreferencesVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
 }

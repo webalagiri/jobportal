@@ -12,6 +12,8 @@ namespace App\Http\ViewModels;
 class CandidateEmploymentViewModel
 {
     private $candidateId;
+
+    private $candidateEmpId;
     private $companyName;
     private $designation;
     private $experienceYears;
@@ -49,6 +51,22 @@ class CandidateEmploymentViewModel
     public function setCandidateId($candidateId)
     {
         $this->candidateId = $candidateId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCandidateEmpId()
+    {
+        return $this->candidateEmpId;
+    }
+
+    /**
+     * @param mixed $candidateEmpId
+     */
+    public function setCandidateEmpId($candidateEmpId)
+    {
+        $this->candidateEmpId = $candidateEmpId;
     }
 
     /**

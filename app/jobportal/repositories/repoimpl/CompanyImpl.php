@@ -156,14 +156,14 @@ class CompanyImpl implements CompanyInterface
         }
         catch(QueryException $queryExc)
         {
-            dd($queryExc);
+            //dd($queryExc);
             $status = false;
             throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_SAVE_ERROR, $queryExc);
 
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $status = false;
             throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_SAVE_ERROR, $exc);
         }

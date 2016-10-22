@@ -60,6 +60,9 @@
         "224" => "Successfully saved candidate skill details",
         "225" => "Unable to save candidate employment details",
         "226" => "Successfully saved candidate employment details",
-
+        "227" => "Unable to save candidate project details",
+        "228" => "Successfully saved candidate project details",
+        "229" => "Unable to save candidate preference details",
+        "230" => "Successfully saved candidate preference details",
 
     ];

@@ -10,11 +10,15 @@ namespace App\jobportal\repositories\repoimpl;
 
 
 use App\Http\ViewModels\CandidateEmploymentViewModel;
+use App\Http\ViewModels\CandidatePreferencesViewModel;
+use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
 use App\jobportal\model\entities\CandidateEmployment;
 use App\jobportal\model\entities\CandidateJobProfile;
 use App\jobportal\model\entities\CandidatePersonalProfile;
+use App\jobportal\model\entities\CandidatePreferences;
+use App\jobportal\model\entities\CandidateProjects;
 use App\jobportal\model\entities\CandidateSkills;
 use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
@@ -464,12 +468,12 @@ class CandidateImpl implements CandidateInterface
         }
         catch(QueryException $queryExc)
         {
-            //dd($queryExc);
+            $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $queryExc);
         }
         catch(Exception $exc)
         {
-            //dd($exc);
+            $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $exc);
         }
 
@@ -498,14 +502,15 @@ class CandidateImpl implements CandidateInterface
 
                 foreach($candidateEmpVM->getCandidateEmp() as $employment)
                 {
-
-                    /*$candidateEmployment = CandidateEmployment::where('candidate_id', '=', $candidateEmpVM->getCandidateId());
-                    //dd($candidateEmployment);
-                    if(!is_null($candidateEmployment))
+                    $candidateEmployment = CandidateEmployment::where('id', '=', $employment->candidateEmpId)->first();
+                    //dd($candidateEmployment->id);
+                    if(is_null($candidateEmployment))
                     {
-                        dd("True");
-                    }*/
-                    $candidateEmployment = new CandidateEmployment();
+                        //dd("True");
+                        $candidateEmployment = new CandidateEmployment();
+                    }
+
+                    //$candidateEmployment = new CandidateEmployment();
 
                     $candidateEmployment->company_name = $employment->companyName;
                     $candidateEmployment->designation = $employment->designation;
@@ -530,13 +535,151 @@ class CandidateImpl implements CandidateInterface
         }
         catch(QueryException $queryExc)
         {
-            //dd($queryExc);
+            $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR, $queryExc);
         }
         catch(Exception $exc)
         {
-            //dd($exc);
+            $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    /* Save candidate project details
+     * @params $candidateProjectsVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateProjects(CandidateProjectViewModel $candidateProjectsVM)
+    {
+        $status = true;
+        $user = null;
+        $candidateProject = null;
+
+        try
+        {
+            $user = User::find($candidateProjectsVM->getCandidateId());
+
+            if(!is_null($user))
+            {
+
+                foreach($candidateProjectsVM->getCandidateProjects() as $project)
+                {
+                    //dd($project);
+                    $candidateProject = CandidateProjects::where('id', '=', $project->candidateProjectId)->first();
+                    //dd($candidateProject);
+                    if(is_null($candidateProject))
+                    {
+                        //dd("True");
+                        $candidateProject = new CandidateProjects();
+                    }
+
+                    //$candidateEmployment = new CandidateEmployment();
+
+                    $candidateProject->client = $project->client;
+                    $candidateProject->project_title = $project->projectTitle;
+                    $candidateProject->duration_years_from = $project->durationYearsFrom;
+                    $candidateProject->duration_months_from = $project->durationMonthsFrom;
+                    $candidateProject->duration_years_to = $project->durationYearsTo;
+                    $candidateProject->duration_months_to = $project->durationMonthsTo;
+                    $candidateProject->project_location = $project->projectLocation;
+                    $candidateProject->employment_status = $project->employmentStatus;
+                    $candidateProject->project_details = $project->projectDetails;
+                    $candidateProject->skills = $project->skills;
+                    $candidateProject->role_description = $project->roleDescription;
+                    $candidateProject->role = $project->role;
+                    $candidateProject->team_size = $project->teamSize;
+                    //$candidateProject->notice_period = $project->noticePeriod;
+
+                    $candidateProject->created_by = $candidateProjectsVM->getCreatedBy();
+                    $candidateProject->updated_by = $candidateProjectsVM->getUpdatedBy();
+                    $candidateProject->created_at = $candidateProjectsVM->getCreatedAt();
+                    $candidateProject->updated_at = $candidateProjectsVM->getUpdatedAt();
+
+                    $user->candidateprojects()->save($candidateProject);
+                }
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_SAVE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PROJECTS_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    /* Save candidate preference details
+     * @params $candidatePreferencesVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidatePreferences(CandidatePreferencesViewModel $candidatePreferencesVM)
+    {
+        $status = true;
+        $user = null;
+        $candidatePreference = null;
+
+        try
+        {
+            $user = User::find($candidatePreferencesVM->getCandidateId());
+
+            if(!is_null($user))
+            {
+
+                foreach($candidatePreferencesVM->getCandidatePreferences() as $preference)
+                {
+                    //dd($project);
+                    $candidatePreference = CandidatePreferences::where('id', '=', $preference->candidatePreferenceId)->first();
+                    //dd($candidateProject);
+                    if(is_null($candidatePreference))
+                    {
+                        //dd("True");
+                        $candidatePreference = new CandidatePreferences();
+                    }
+
+                    //$candidateEmployment = new CandidateEmployment();
+
+                    $candidatePreference->job_type = $preference->jobType;
+                    $candidatePreference->employment_type = $preference->employmentType;
+                    $candidatePreference->industry = $preference->industry;
+                    $candidatePreference->recommended_companies = $preference->recommendedCompanies;
+                    $candidatePreference->dream_companies = $preference->dreamCompanies;
+                    $candidatePreference->preferred_skills = $preference->preferredSkills;
+                    $candidatePreference->companies_interviewed_with = $preference->companiesInterviewedWith;
+                    $candidatePreference->preferred_roles = $preference->preferredRoles;
+
+                    $candidatePreference->created_by = $candidatePreferencesVM->getCreatedBy();
+                    $candidatePreference->updated_by = $candidatePreferencesVM->getUpdatedBy();
+                    $candidatePreference->created_at = $candidatePreferencesVM->getCreatedAt();
+                    $candidatePreference->updated_at = $candidatePreferencesVM->getUpdatedAt();
+
+                    $user->candidatepreferences()->save($candidatePreference);
+                }
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_SAVE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            dd($exc);
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_SAVE_ERROR, $exc);
         }
 
         return $status;
