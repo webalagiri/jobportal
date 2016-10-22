@@ -9,8 +9,10 @@
 namespace App\jobportal\repositories\repoimpl;
 
 
+use App\Http\ViewModels\CandidateEmploymentViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\jobportal\model\entities\CandidateEmployment;
 use App\jobportal\model\entities\CandidateJobProfile;
 use App\jobportal\model\entities\CandidatePersonalProfile;
 use App\jobportal\model\entities\CandidateSkills;
@@ -469,6 +471,72 @@ class CandidateImpl implements CandidateInterface
         {
             //dd($exc);
             throw new CandidateException(null, ErrorEnum::CANDIDATE_SKILLS_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    /* Save candidate employment details
+     * @params $candidateEmpVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateEmployment(CandidateEmploymentViewModel $candidateEmpVM)
+    {
+        $status = true;
+        $user = null;
+        $candidateEmployment = null;
+
+        try
+        {
+            $user = User::find($candidateEmpVM->getCandidateId());
+
+            if(!is_null($user))
+            {
+
+                foreach($candidateEmpVM->getCandidateEmp() as $employment)
+                {
+
+                    /*$candidateEmployment = CandidateEmployment::where('candidate_id', '=', $candidateEmpVM->getCandidateId());
+                    //dd($candidateEmployment);
+                    if(!is_null($candidateEmployment))
+                    {
+                        dd("True");
+                    }*/
+                    $candidateEmployment = new CandidateEmployment();
+
+                    $candidateEmployment->company_name = $employment->companyName;
+                    $candidateEmployment->designation = $employment->designation;
+                    $candidateEmployment->experience_years = $employment->experienceYears;
+                    $candidateEmployment->experience_months = $employment->experienceMonths;
+                    $candidateEmployment->employment_status = $employment->employmentStatus;
+                    $candidateEmployment->duration_from_years = $employment->durationFromYears;
+                    $candidateEmployment->duration_from_months = $employment->durationFromMonths;
+                    $candidateEmployment->duration_to_years = $employment->durationToYears;
+                    $candidateEmployment->duration_to_months = $employment->durationToMonths;
+                    $candidateEmployment->annual_salary = $employment->annualSalary;
+                    $candidateEmployment->notice_period = $employment->noticePeriod;
+
+                    $candidateEmployment->created_by = $candidateEmpVM->getCreatedBy();
+                    $candidateEmployment->updated_by = $candidateEmpVM->getUpdatedBy();
+                    $candidateEmployment->created_at = $candidateEmpVM->getCreatedAt();
+                    $candidateEmployment->updated_at = $candidateEmpVM->getUpdatedAt();
+
+                    $user->candidateemployment()->save($candidateEmployment);
+                }
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR, $exc);
         }
 
         return $status;

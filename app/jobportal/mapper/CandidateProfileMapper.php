@@ -8,6 +8,7 @@
 
 namespace App\jobportal\mapper;
 
+use App\Http\ViewModels\CandidateEmploymentViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
 use Illuminate\Http\Request;
@@ -65,7 +66,7 @@ class CandidateProfileMapper
     {
         $candidateSkillsVM = new CandidateSkillsViewModel();
         $candidateSkills = (object) $candidateRequest->all();
-        $value = 'NULL';
+        //$value = 'NULL';
 
         $userName = 'Admin';
 
@@ -84,6 +85,42 @@ class CandidateProfileMapper
         $candidateSkillsVM->setUpdatedAt(date("Y-m-d H:i:s"));
 
         return $candidateSkillsVM;
+    }
+
+    public static function setCandidateEmploymentDetails(Request $candidateRequest)
+    {
+        $candidateEmpVM = new CandidateEmploymentViewModel();
+        $candidateEmp = (object) $candidateRequest->all();
+        //dd($candidateEmp);
+        $userName = 'Admin';
+
+        $candidateEmpVM->setCandidateId($candidateEmp->candidateId);
+        $candidateEmployments = $candidateEmp->employments;
+        //dd($candidateEmployments);
+
+        foreach($candidateEmployments as $employment)
+        {
+            $candidateEmpVM->setCandidateEmp($employment);
+        }
+
+        /*$candidateEmpVM->setCompanyName($candidateEmp->companyName);
+        $candidateEmpVM->setDesignation($candidateEmp->designation);
+        $candidateEmpVM->setExperienceYears(property_exists($candidateEmp,'experienceYears') ? $candidateEmp->experienceYears : null);
+        $candidateEmpVM->setExperienceMonths(property_exists($candidateEmp,'experienceMonths') ? $candidateEmp->experienceMonths : null);
+        $candidateEmpVM->setEmploymentStatus(property_exists($candidateEmp,'employmentStatus') ? $candidateEmp->employmentStatus : null);
+        $candidateEmpVM->setDurationFromYears(property_exists($candidateEmp,'durationFromYears') ? $candidateEmp->durationFromYears : null);
+        $candidateEmpVM->setDurationFromMonths(property_exists($candidateEmp,'durationFromMonths') ? $candidateEmp->durationFromMonths : null);
+        $candidateEmpVM->setDurationToYears(property_exists($candidateEmp,'durationToYears') ? $candidateEmp->durationToYears : null);
+        $candidateEmpVM->setDurationToMonths(property_exists($candidateEmp,'durationToMonths') ? $candidateEmp->durationToMonths : null);
+        $candidateEmpVM->setAnnualSalary(property_exists($candidateEmp,'annualSalary') ? $candidateEmp->annualSalary : null);
+        $candidateEmpVM->setNoticePeriod(property_exists($candidateEmp,'noticePeriod') ? $candidateEmp->noticePeriod : null);
+        //$candidateProfileVM->setMobile(property_exists($profile, 'mobile') ? $profile->mobile : null);*/
+        $candidateEmpVM->setCreatedBy($userName);
+        $candidateEmpVM->setUpdatedBy($userName);
+        $candidateEmpVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $candidateEmpVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $candidateEmpVM;
 
     }
 }

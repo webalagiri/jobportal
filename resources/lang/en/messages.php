@@ -58,5 +58,8 @@
         "222" => "Candidate preferences details not available",
         "223" => "Unable to save candidate skill details",
         "224" => "Successfully saved candidate skill details",
+        "225" => "Unable to save candidate employment details",
+        "226" => "Successfully saved candidate employment details",
+
 
     ];

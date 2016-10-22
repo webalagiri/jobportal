@@ -211,6 +211,47 @@ class CandidateController extends Controller
         return $jsonResponse;
     }
 
+    /* Save candidate employment details
+     * @params $candidateRequest
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateEmployment(Request $candidateRequest)
+    {
+        $candidatesEmpVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            //dd($candidateRequest->all());
+            $candidatesEmpVM = CandidateProfileMapper::setCandidateEmploymentDetails($candidateRequest);
+            $status = $this->candidateService->saveCandidateEmployment($candidatesEmpVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($candidateExc);
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR));
+            $jsonResponse->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
     /* Delete a candidate
      * @params $candidateId
      * @throws $candidateException

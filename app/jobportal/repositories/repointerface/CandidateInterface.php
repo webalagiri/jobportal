@@ -9,6 +9,7 @@
 namespace App\jobportal\repositories\repointerface;
 
 
+use App\Http\ViewModels\CandidateEmploymentViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
 
@@ -23,4 +24,5 @@ interface CandidateInterface
     public function getCandidateProjects($candidateId);
     public function getCandidatePreferences($candidateId);
     public function saveCandidateSkills(CandidateSkillsViewModel $candidateSkillsVM);
+    public function saveCandidateEmployment(CandidateEmploymentViewModel $candidateEmpVM);
 }

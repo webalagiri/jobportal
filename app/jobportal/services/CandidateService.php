@@ -284,4 +284,37 @@ class CandidateService
 
         return $status;
     }
+
+    /* Save candidate employment details
+     * @params $candidateEmpVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateEmployment($candidateEmpVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateEmpVM, &$status)
+            {
+                $status = $this->candidateRepo->saveCandidateEmployment($candidateEmpVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_EMPLOYMENT_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
 }
