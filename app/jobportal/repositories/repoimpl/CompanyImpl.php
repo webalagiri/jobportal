@@ -111,9 +111,12 @@ class CompanyImpl implements CompanyInterface
         $companyId = null;
         $user = null;
 
+
+
         try
         {
             $companyId = $companyProfileVM->getCompanyId();
+
             if($companyId == 0)
             {
                 $user = $this->processCompanyUser($companyProfileVM);
@@ -149,17 +152,18 @@ class CompanyImpl implements CompanyInterface
             $company->updated_at = $companyProfileVM->getUpdatedAt();
 
             $user->company()->save($company);
+            //dd("OK");
         }
         catch(QueryException $queryExc)
         {
-            //dd($queryExc);
+            dd($queryExc);
             $status = false;
             throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_SAVE_ERROR, $queryExc);
 
         }
         catch(Exception $exc)
         {
-            //dd($exc);
+            dd($exc);
             $status = false;
             throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_SAVE_ERROR, $exc);
         }
@@ -176,6 +180,7 @@ class CompanyImpl implements CompanyInterface
         if($companyId == 0)
         {
             $user = new User();
+
         }
         else
         {

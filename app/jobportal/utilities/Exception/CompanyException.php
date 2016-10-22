@@ -6,7 +6,7 @@
  * Time: 9:57 PM
  */
 
-namespace app\jobportal\utilities\Exception;
+namespace App\jobportal\utilities\Exception;
 
 
 class CompanyException extends BaseException
