@@ -25,6 +25,10 @@ Route::get('/pdf', function () {
 });
 */
 
+Route::controllers([
+    'password' => 'Auth\PasswordController',
+]);
+
 Route::group(['prefix' => 'common'], function()
 {
    Route::group(['namespace' => 'Common'], function(){
@@ -39,6 +43,10 @@ Route::group(['prefix' => 'common'], function()
 Route::group(['prefix' => 'company'], function()
 {
     Route::group(['namespace' => 'Company'], function(){
+
+        Route::post('rest/api/login', array('as' => 'company.login', 'uses' => 'CompanyController@CompanyLogin'));
+        Route::post('rest/api/forgotlogin', array('as' => 'company.forgotlogin', 'uses' => 'CompanyController@CompanyForgotLogin'));
+
         Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
         Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
@@ -58,6 +66,7 @@ Route::group(['prefix' => 'candidate'], function()
     Route::group(['namespace' => 'Candidate'], function(){
 
         Route::post('rest/api/login', array('as' => 'candidate.login', 'uses' => 'CandidateController@CandidateLogin'));
+        Route::post('rest/api/forgotlogin', array('as' => 'candidate.forgotlogin', 'uses' => 'CandidateController@CandidateForgotLogin'));
 
         Route::get('rest/api/candidates', array('as' => 'candidate.candidates', 'uses' => 'CandidateController@getCandidates'));
         Route::get('rest/api/{candidateId}/details', array('as' => 'candidate.candidatedetails', 'uses' => 'CandidateController@getCandidateDetails'));

@@ -12,8 +12,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\jobportal\common\UserSession;
+use App\jobportal\utilities\UserType;
 use Exception;
 use Log;
+use App\User;
+
+use Illuminate\Support\Facades\Auth;
 
 class CompanyController extends Controller
 {
@@ -185,5 +190,154 @@ class CompanyController extends Controller
         }
 
         return $jsonResponse;
+    }
+
+
+    /**
+     * Web Login using Email, password and hospital
+     * @param $loginRequest
+     * @throws $companyException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function CompanyLogin(Request $loginRequest)
+    {
+        //return $loginRequest->password;
+        //$loginInfo = $loginRequest->all();
+        //$loginInfo = $loginRequest;
+        //return  $loginRequest->get('email');
+        //dd($loginInfo);
+        $userSession = null;
+        //$candidateRequest->get('candidateId');
+
+        try
+        {
+
+
+            if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
+            {
+                $userSession=Auth::user();
+                // return $userSession;
+                /*
+                $userSession = new UserSession();
+                $userSession->setLoginUserId(Auth::user()->id);
+
+                $userSession->setDisplayName(ucfirst(Auth::user()->name));
+                $userSession->setLoginUserType(UserType::USERTYPE_CANDIDATE);
+                $userSession->setAuthDisplayName(ucfirst(Auth::user()->name));
+
+                return $userSession;
+                */
+                /*
+                //dd(Auth::user());
+                Session::put('loggedUser', $userSession);
+                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
+                $LoginUserId=Session::put('LoginUserId', Auth::user()->id);
+                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
+                $AuthDisplayName=Session::put('AuthDisplayName', ucfirst(Auth::user()->name));
+                $AuthDisplayPhoto=Session::put('AuthDisplayPhoto', "no-image.jpg");
+                */
+
+                // if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {}
+
+                if( (Auth::user()->delete_status==1) )
+                {
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
+                }
+                else
+                {
+                    Auth::logout();
+                    Session::flush();
+
+                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
+                }
+
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $companyExc)
+        {
+            // dd($candidateExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
+            $responseJson->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            // dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
+    }
+
+
+    /**
+    * Web Login using Email, password and hospital
+    * @param $loginRequest
+    * @throws $companyException
+    * @return array | null
+    * @author Vimal
+    */
+
+    public function CompanyForgotLogin(Request $forgotloginRequest)
+    {
+        //return $forgotloginRequest->email;
+        //$loginInfo = $loginRequest->all();
+        $loginInfo = $forgotloginRequest;
+        //return  $loginRequest->get('email');
+        //dd($loginInfo);
+        $userSession = null;
+        //$candidateRequest->get('candidateId');
+
+        try
+        {
+
+            $userSession = User::where('email', '=', $forgotloginRequest->email)->first();
+
+            if($userSession)
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_SUCCESS));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $companyExc)
+        {
+            // dd($candidateExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_ERROR));
+            $responseJson->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            // dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
     }
 }

@@ -16,6 +16,7 @@ use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\UserType;
 use Exception;
 use Log;
+use App\User;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -646,6 +647,62 @@ class CandidateController extends Controller
         catch(Exception $exc)
         {
            // dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
+    }
+
+
+    /**
+     * Web Login using Email, password and hospital
+     * @param $loginRequest
+     * @throws $companyException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function CandidateForgotLogin(Request $forgotloginRequest)
+    {
+        //return $forgotloginRequest->email;
+        //$loginInfo = $loginRequest->all();
+        $loginInfo = $forgotloginRequest;
+        //return  $loginRequest->get('email');
+        //dd($loginInfo);
+        $userSession = null;
+        //$candidateRequest->get('candidateId');
+
+        try
+        {
+
+            $userSession = User::where('email', '=', $forgotloginRequest->email)->first();
+
+            if($userSession)
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_SUCCESS));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $companyExc)
+        {
+            // dd($candidateExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+            $responseJson->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            // dd($exc);
             $msg = AppendMessage::appendGeneralException($exc);
             Log::error($msg);
 

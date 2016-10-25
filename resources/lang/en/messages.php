@@ -22,6 +22,12 @@
         "137" => "Unable to delete company",
         "138" => "Successfully deleted the company",
 
+        "139" => "Unable to login check company login details",
+        "140" => "Successfully logged company login details",
+
+        "141" => "Unable to sent mail invalid company email details",
+        "142" => "Successfully sent mail valid company email details",
+
 
         "176" => "Unable to retrieve job list",
         "177" => "Successfully retrieved job list",
@@ -67,4 +73,7 @@
 
         "231" => "Unable to login check candidate login details",
         "232" => "Successfully logged candidate login details",
+
+        "233" => "Unable to sent mail invalid candidate email details",
+        "234" => "Successfully sent mail valid candidate email details",
     ];
