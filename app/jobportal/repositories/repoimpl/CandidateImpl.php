@@ -296,12 +296,13 @@ class CandidateImpl implements CandidateInterface
             $query = DB::table('ri_candidate_skills as rcs')->join('users as usr', 'usr.id', '=', 'rcs.candidate_id');
             $query->where('rcs.candidate_id', '=', $candidateId);
             $query->where('usr.delete_status', '=', 1);
-            $query->select('rcs.id as Id', 'rcs.candidateId as candidateId',
+            $query->select('rcs.id as Id', 'rcs.candidate_id as candidateId',
                 'rcs.skill_name as skillName', 'rcs.skill_version as skillVersion',
                 'rcs.last_used as lastUsed', 'rcs.experience_years as experienceYears',
                 'rcs.experience_months as experienceMonths');
 
             $candidateSkills = $query->get();
+            dd($candidateSkills);
         }
         catch(QueryException $queryExc)
         {
