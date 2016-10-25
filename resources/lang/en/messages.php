@@ -65,4 +65,6 @@
         "229" => "Unable to save candidate preference details",
         "230" => "Successfully saved candidate preference details",
 
+        "231" => "Unable to login check candidate login details",
+        "232" => "Successfully logged candidate login details",
     ];
