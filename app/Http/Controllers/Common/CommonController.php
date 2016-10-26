@@ -19,6 +19,8 @@ use App;
 use Response;
 use Excel;
 
+use Illuminate\Support\Facades\Auth;
+
 class CommonController extends Controller
 {
     protected $commonService;
@@ -227,6 +229,177 @@ class CommonController extends Controller
             }
 
         });
+
+    }
+
+
+
+
+    /**
+     * Web Login using Email, password and hospital
+     * @param $loginRequest
+     * @throws $candidateException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function Login(Request $loginRequest)
+    {
+        //return $loginRequest->password;
+        //$loginInfo = $loginRequest->all();
+        //$loginInfo = $loginRequest;
+        //return  $loginRequest->get('email');
+        //dd($loginInfo);
+        $userSession = null;
+        $responseJson = null;
+        //$candidateRequest->get('candidateId');
+
+        try
+        {
+
+
+            if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
+            {
+                $userSession=Auth::user();
+                // return $userSession;
+                /*
+                $userSession = new UserSession();
+                $userSession->setLoginUserId(Auth::user()->id);
+
+                $userSession->setDisplayName(ucfirst(Auth::user()->name));
+                $userSession->setLoginUserType(UserType::USERTYPE_CANDIDATE);
+                $userSession->setAuthDisplayName(ucfirst(Auth::user()->name));
+
+                return $userSession;
+                */
+                /*
+                //dd(Auth::user());
+                Session::put('loggedUser', $userSession);
+                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
+                $LoginUserId=Session::put('LoginUserId', Auth::user()->id);
+                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
+                $AuthDisplayName=Session::put('AuthDisplayName', ucfirst(Auth::user()->name));
+                $AuthDisplayPhoto=Session::put('AuthDisplayPhoto', "no-image.jpg");
+                */
+
+                if((Auth::user()->hasRole('Admin')) &&  (Auth::user()->delete_status==1) ) {
+
+                    //return Auth::user()->name;
+                    //dd("OK");
+                    $userSession->role="Admin";
+                }
+                else if((Auth::user()->hasRole('Client')) &&  (Auth::user()->delete_status==1) ) {
+
+                    //return Auth::user()->name;
+                    //dd("OK");
+                    $userSession->role="Client";
+                }
+                else if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {
+
+                    //return Auth::user()->name;
+                    //dd("OK");
+                    $userSession->role="Candidate";
+                }
+
+                if( (Auth::user()->delete_status==1) )
+                {
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::USER_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
+                }
+                else
+                {
+                    Auth::logout();
+                    Session::flush();
+
+                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::USER_LOGIN_ERROR));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
+                }
+
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $commonExc)
+        {
+             dd($commonExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
+            $responseJson->sendErrorResponse($commonExc);
+        }
+        catch(Exception $exc)
+        {
+             dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
+    }
+
+
+    /**
+     * Web Login using Email, password and hospital
+     * @param $loginRequest
+     * @throws $commonException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function ForgotLogin(Request $forgotloginRequest)
+    {
+        //return $forgotloginRequest->email;
+        //$loginInfo = $loginRequest->all();
+        $loginInfo = $forgotloginRequest;
+        //return  $loginRequest->get('email');
+        //dd($loginInfo);
+        $email = null;
+        $userSession = null;
+        //$candidateRequest->get('candidateId');
+
+        try
+        {
+
+            $email = $forgotloginRequest->email;
+            $userSession = $this->commonService->ForgotLogin($email);
+
+            if($userSession)
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_SUCCESS));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $commonExc)
+        {
+            // dd($candidateExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+            $responseJson->sendErrorResponse($commonExc);
+        }
+        catch(Exception $exc)
+        {
+            // dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
 
     }
 

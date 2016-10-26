@@ -18,6 +18,10 @@ class ErrorEnum extends Enum{
     const LIST_GROUP_SUCCESS = 104;
 
     const LIST_ENTITY_SUCCESS = 105;
+    const USER_LOGIN_ERROR = 106;
+    const USER_LOGIN_SUCCESS = 107;
+    const FORGOT_LOGIN_ERROR = 108;
+    const FORGOT_LOGIN_SUCCESS = 109;
 
     //Company constants 131 to 175
     const COMPANY_LIST_ERROR = 131;

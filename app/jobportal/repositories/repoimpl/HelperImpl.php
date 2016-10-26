@@ -16,6 +16,7 @@ use App\jobportal\utilities\Exception\HelperException;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
 use Exception;
+use App\User;
 
 class HelperImpl implements HelperInterface
 {
@@ -111,6 +112,34 @@ class HelperImpl implements HelperInterface
         }
 
         return $listEntities;
+    }
+
+
+    /* Forgot Login
+     * @params $email
+     * @throws HelperException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function ForgotLogin($email)
+    {
+        $userSession = null;
+        try
+        {
+            $userSession = User::where('email', '=', $email)->first();
+            return $userSession;
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new HelperException(null, ErrorEnum::LIST_ENTITY_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::LIST_ENTITY_ERROR, $exc);
+        }
+
+        return $userSession;
     }
 
 

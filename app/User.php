@@ -23,6 +23,7 @@ class User extends Model implements AuthenticatableContract,
     //use Authorizable;
     use CanResetPassword;
     use EntrustUserTrait;
+    //use HasRoles;
     //use Authenticatable, Authorizable, CanResetPassword, HasRoles;
     /**
      * The attributes that are mass assignable.

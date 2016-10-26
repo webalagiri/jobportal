@@ -12,6 +12,10 @@
         "103" => "Unable to retrieve list groups",
         "104" => "Successfully retrieved the list groups",
         "105" => "Successfully retrieved list entities",
+        "106" => "Unable to login ",
+        "107" => "Successfully login ",
+        "108" => "Unable to send forgot login email",
+        "109" => "Successfully send forgot login email",
 
         "131" => "Unable to retrieve companies list",
         "132" => "Successfully retrieved the companies list",

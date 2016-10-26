@@ -14,4 +14,5 @@ interface HelperInterface {
     public function getListEntityByGroupId($groupId);
     public function getListGroups();
     public function getListEntities();
+    public function ForgotLogin($email);
 }

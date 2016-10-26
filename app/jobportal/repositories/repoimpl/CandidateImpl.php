@@ -198,12 +198,18 @@ class CandidateImpl implements CandidateInterface
 
     private function attachCompanyRole(User $user)
     {
-        $role = Role::find(UserType::USERTYPE_CANDIDATE);
 
+        //$user->assignRole(UserType::USERTYPE_CANDIDATE);
+
+
+        $role = Role::find(UserType::USERTYPE_CANDIDATE);
         if (!is_null($role))
         {
+
             $user->attachRole($role);
+            //$user->assignRole($role->name);
         }
+
     }
 
     private function addOrUpdatePersonalProfile(CandidatePersonalProfile $personalProfile, CandidateViewModel $candidateProfileVM, User $user)
@@ -239,7 +245,7 @@ class CandidateImpl implements CandidateInterface
         $jobProfile->total_experience_years = $candidateProfileVM->getTotalYearsExperience();
         $jobProfile->total_experience_months = $candidateProfileVM->getTotalMonthsExperience();
         $jobProfile->current_location = $candidateProfileVM->getCurrentLocation();
-        $jobProfile->preferred_lcoation = $candidateProfileVM->getPreferredLocation();
+        $jobProfile->preferred_location = $candidateProfileVM->getPreferredLocation();
         $jobProfile->job_title = $candidateProfileVM->getJobTitle();
         $jobProfile->skills = $candidateProfileVM->getSkills();
 

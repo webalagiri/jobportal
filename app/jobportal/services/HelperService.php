@@ -103,4 +103,24 @@ class HelperService
 
         return $listEntities;
     }
+
+
+    public function ForgotLogin($email)
+    {
+
+        try
+        {
+            $userSession = $this->helperRepo->ForgotLogin($email);
+        }
+        catch(HelperException $helperExc)
+        {
+            throw $helperExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::FORGOT_LOGIN_ERROR, $exc);
+        }
+
+        return $userSession;
+    }
 }
