@@ -107,6 +107,7 @@ class HelperService
 
     public function ForgotLogin($email)
     {
+        $userSession=null;
 
         try
         {
@@ -119,6 +120,27 @@ class HelperService
         catch(Exception $exc)
         {
             throw new HelperException(null, ErrorEnum::FORGOT_LOGIN_ERROR, $exc);
+        }
+
+        return $userSession;
+    }
+
+
+    public function ChangePassword($passwordRequest)
+    {
+        $userSession=null;
+
+        try
+        {
+            $userSession = $this->helperRepo->ChangePassword($passwordRequest);
+        }
+        catch(HelperException $helperExc)
+        {
+            throw $helperExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::CHANGE_PASSWORD_ERROR, $exc);
         }
 
         return $userSession;

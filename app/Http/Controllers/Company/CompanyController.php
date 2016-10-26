@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Company;
 use App\jobportal\common\ResponseJson;
 use App\jobportal\mapper\CompanyProfileMapper;
 use App\jobportal\services\CompanyService;
+use App\jobportal\services\HelperService;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\CompanyException;
 use App\jobportal\utilities\Exception\AppendMessage;
@@ -193,6 +194,47 @@ class CompanyController extends Controller
     }
 
 
+    /* Register company
+     * @params $companyRequest
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function CompanyRegister(Request $companyRequest)
+    {
+
+        $companyProfileVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            $companyProfileVM = CompanyProfileMapper::setCompanyProfile($companyRequest);
+
+            $status = $this->companyService->saveCompanyProfile($companyProfileVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_PROFILE_SAVE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(CompanyException $companyExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_PROFILE_SAVE_ERROR));
+            $jsonResponse->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
     /**
      * Web Login using Email, password and hospital
      * @param $loginRequest
@@ -203,13 +245,8 @@ class CompanyController extends Controller
 
     public function CompanyLogin(Request $loginRequest)
     {
-        //return $loginRequest->password;
-        //$loginInfo = $loginRequest->all();
-        //$loginInfo = $loginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
         $userSession = null;
-        //$candidateRequest->get('candidateId');
+        $responseJson = null;
 
         try
         {
@@ -218,42 +255,19 @@ class CompanyController extends Controller
             if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
             {
                 $userSession=Auth::user();
-                // return $userSession;
-                /*
-                $userSession = new UserSession();
-                $userSession->setLoginUserId(Auth::user()->id);
 
-                $userSession->setDisplayName(ucfirst(Auth::user()->name));
-                $userSession->setLoginUserType(UserType::USERTYPE_CANDIDATE);
-                $userSession->setAuthDisplayName(ucfirst(Auth::user()->name));
+                if((Auth::user()->hasRole('Client')) &&  (Auth::user()->delete_status==1) ) {
 
-                return $userSession;
-                */
-                /*
-                //dd(Auth::user());
-                Session::put('loggedUser', $userSession);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $LoginUserId=Session::put('LoginUserId', Auth::user()->id);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayName=Session::put('AuthDisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayPhoto=Session::put('AuthDisplayPhoto', "no-image.jpg");
-                */
-
-                // if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {}
-
-                if( (Auth::user()->delete_status==1) )
-                {
-
-                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LOGIN_SUCCESS));
-                    $responseJson->setObj($userSession);
-                    $responseJson->sendSuccessResponse();
+                    //return Auth::user()->name;
+                    //dd("OK");
+                    $userSession->role="Client";
                 }
                 else
                 {
                     Auth::logout();
                     Session::flush();
 
-                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
+                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::USER_LOGIN_ERROR));
                     $responseJson->setObj($userSession);
                     $responseJson->sendSuccessResponse();
                 }
@@ -261,7 +275,7 @@ class CompanyController extends Controller
             }
             else
             {
-                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
                 $responseJson->setObj($userSession);
                 $responseJson->sendSuccessResponse();
             }
@@ -294,30 +308,26 @@ class CompanyController extends Controller
     * @author Vimal
     */
 
-    public function CompanyForgotLogin(Request $forgotloginRequest)
+    public function CompanyForgotLogin(HelperService $helperService, Request $forgotloginRequest)
     {
-        //return $forgotloginRequest->email;
-        //$loginInfo = $loginRequest->all();
-        $loginInfo = $forgotloginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
+        $email = null;
         $userSession = null;
-        //$candidateRequest->get('candidateId');
 
         try
         {
 
-            $userSession = User::where('email', '=', $forgotloginRequest->email)->first();
+            $email = $forgotloginRequest->email;
+            $userSession = $helperService->ForgotLogin($email);
 
             if($userSession)
             {
-                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_SUCCESS));
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_SUCCESS));
                 $responseJson->setObj($userSession);
                 $responseJson->sendSuccessResponse();
             }
             else
             {
-                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_ERROR));
+                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
                 $responseJson->setObj($userSession);
                 $responseJson->sendSuccessResponse();
             }

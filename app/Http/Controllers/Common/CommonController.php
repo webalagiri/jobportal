@@ -245,14 +245,8 @@ class CommonController extends Controller
 
     public function Login(Request $loginRequest)
     {
-        //return $loginRequest->password;
-        //$loginInfo = $loginRequest->all();
-        //$loginInfo = $loginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
         $userSession = null;
         $responseJson = null;
-        //$candidateRequest->get('candidateId');
 
         try
         {
@@ -261,26 +255,6 @@ class CommonController extends Controller
             if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
             {
                 $userSession=Auth::user();
-                // return $userSession;
-                /*
-                $userSession = new UserSession();
-                $userSession->setLoginUserId(Auth::user()->id);
-
-                $userSession->setDisplayName(ucfirst(Auth::user()->name));
-                $userSession->setLoginUserType(UserType::USERTYPE_CANDIDATE);
-                $userSession->setAuthDisplayName(ucfirst(Auth::user()->name));
-
-                return $userSession;
-                */
-                /*
-                //dd(Auth::user());
-                Session::put('loggedUser', $userSession);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $LoginUserId=Session::put('LoginUserId', Auth::user()->id);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayName=Session::put('AuthDisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayPhoto=Session::put('AuthDisplayPhoto', "no-image.jpg");
-                */
 
                 if((Auth::user()->hasRole('Admin')) &&  (Auth::user()->delete_status==1) ) {
 
@@ -299,14 +273,6 @@ class CommonController extends Controller
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Candidate";
-                }
-
-                if( (Auth::user()->delete_status==1) )
-                {
-
-                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::USER_LOGIN_SUCCESS));
-                    $responseJson->setObj($userSession);
-                    $responseJson->sendSuccessResponse();
                 }
                 else
                 {
@@ -356,14 +322,8 @@ class CommonController extends Controller
 
     public function ForgotLogin(Request $forgotloginRequest)
     {
-        //return $forgotloginRequest->email;
-        //$loginInfo = $loginRequest->all();
-        $loginInfo = $forgotloginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
         $email = null;
         $userSession = null;
-        //$candidateRequest->get('candidateId');
 
         try
         {
@@ -380,6 +340,65 @@ class CommonController extends Controller
             else
             {
                 $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+
+        }
+        catch(HospitalException $commonExc)
+        {
+            // dd($candidateExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
+            $responseJson->sendErrorResponse($commonExc);
+        }
+        catch(Exception $exc)
+        {
+            // dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
+    }
+
+    /**
+     * ChangePassword
+     * @param $passwordRequest
+     * @throws $commonException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function ChangePassword(Request $passwordRequest)
+    {
+
+        $userSession = null;
+
+        try
+        {
+
+            $userId = $passwordRequest->user_id;
+            $oldPassword = $passwordRequest->old_password;
+            $newPassword = $passwordRequest->new_password;
+            $confirmPassword = $passwordRequest->confirm_password;
+
+            if($newPassword==$confirmPassword)
+            {
+                $userSession = $this->commonService->ChangePassword($passwordRequest);
+            }
+
+
+            if($userSession)
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CHANGE_PASSWORD_SUCCESS));
+                $responseJson->setObj($userSession);
+                $responseJson->sendSuccessResponse();
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CHANGE_PASSWORD_ERROR));
                 $responseJson->setObj($userSession);
                 $responseJson->sendSuccessResponse();
             }

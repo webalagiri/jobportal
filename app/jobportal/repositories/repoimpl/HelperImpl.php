@@ -18,6 +18,9 @@ use Illuminate\Database\QueryException;
 use Exception;
 use App\User;
 
+use Auth;
+use Hash;
+
 class HelperImpl implements HelperInterface
 {
     /* Get list entity by group Id
@@ -128,7 +131,6 @@ class HelperImpl implements HelperInterface
         try
         {
             $userSession = User::where('email', '=', $email)->first();
-            return $userSession;
         }
         catch(QueryException $queryExc)
         {
@@ -140,6 +142,53 @@ class HelperImpl implements HelperInterface
         }
 
         return $userSession;
+    }
+
+
+    /* ChangePassword
+     * @params $email
+     * @throws HelperException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function ChangePassword($passwordRequest)
+    {
+        $userInfo = null;
+        $userInfoStatus = false;
+
+        try
+        {
+
+            $userId = $passwordRequest->user_id;
+
+            $user = User::where('id',$userId) -> first();
+
+            if(Hash::check($passwordRequest->old_password, $user->password))
+            {
+
+                if($passwordRequest->old_password != $passwordRequest->new_password) {
+                    $userInfoStatus = true;
+                    $new_password = Hash::make($passwordRequest->new_password);
+                    $user->password = $new_password;
+                    $user->save();
+                    $userInfo=$user;
+                    //Auth::logout();
+                    //Session::flush();
+                }
+            }
+
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new HelperException(null, ErrorEnum::CHANGE_PASSWORD_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new HelperException(null, ErrorEnum::CHANGE_PASSWORD_ERROR, $exc);
+        }
+
+        return $userInfo;
     }
 
 

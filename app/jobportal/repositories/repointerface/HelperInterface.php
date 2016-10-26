@@ -15,4 +15,5 @@ interface HelperInterface {
     public function getListGroups();
     public function getListEntities();
     public function ForgotLogin($email);
+    public function ChangePassword($passwordRequest);
 }

@@ -35,6 +35,7 @@ Route::group(['prefix' => 'common'], function()
 
         Route::post('rest/api/login', array('as' => 'common.login', 'uses' => 'CommonController@Login'));
         Route::post('rest/api/forgotlogin', array('as' => 'common.forgotlogin', 'uses' => 'CommonController@ForgotLogin'));
+       Route::post('rest/api/changepassword', array('as' => 'common.changepassword', 'uses' => 'CommonController@ChangePassword'));
 
         Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
         Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
@@ -48,8 +49,10 @@ Route::group(['prefix' => 'company'], function()
 {
     Route::group(['namespace' => 'Company'], function(){
 
+        Route::post('rest/api/register', array('as' => 'company.register', 'uses' => 'CompanyController@CompanyRegister'));
         Route::post('rest/api/login', array('as' => 'company.login', 'uses' => 'CompanyController@CompanyLogin'));
         Route::post('rest/api/forgotlogin', array('as' => 'company.forgotlogin', 'uses' => 'CompanyController@CompanyForgotLogin'));
+        //Route::post('rest/api/changelogin', array('as' => 'company.changelogin', 'uses' => 'CompanyController@CompanyForgotLogin'));
 
         Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
         Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));

@@ -16,6 +16,10 @@
         "107" => "Successfully login ",
         "108" => "Unable to send forgot login email",
         "109" => "Successfully send forgot login email",
+        "110" => "Unable to change password",
+        "111" => "Successfully password changed",
+
+
 
         "131" => "Unable to retrieve companies list",
         "132" => "Successfully retrieved the companies list",

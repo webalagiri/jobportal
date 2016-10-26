@@ -574,13 +574,8 @@ class CandidateController extends Controller
 
     public function CandidateLogin(Request $loginRequest)
     {
-        //return $loginRequest->password;
-        //$loginInfo = $loginRequest->all();
-        //$loginInfo = $loginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
         $userSession = null;
-        //$candidateRequest->get('candidateId');
+        $responseJson = null;
 
         try
         {
@@ -589,42 +584,19 @@ class CandidateController extends Controller
             if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
             {
                 $userSession=Auth::user();
-               // return $userSession;
-                /*
-                $userSession = new UserSession();
-                $userSession->setLoginUserId(Auth::user()->id);
 
-                $userSession->setDisplayName(ucfirst(Auth::user()->name));
-                $userSession->setLoginUserType(UserType::USERTYPE_CANDIDATE);
-                $userSession->setAuthDisplayName(ucfirst(Auth::user()->name));
+                if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {
 
-                return $userSession;
-                */
-                /*
-                //dd(Auth::user());
-                Session::put('loggedUser', $userSession);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $LoginUserId=Session::put('LoginUserId', Auth::user()->id);
-                $DisplayName=Session::put('DisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayName=Session::put('AuthDisplayName', ucfirst(Auth::user()->name));
-                $AuthDisplayPhoto=Session::put('AuthDisplayPhoto', "no-image.jpg");
-                */
-
-               // if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {}
-
-                if( (Auth::user()->delete_status==1) )
-                {
-
-                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
-                    $responseJson->setObj($userSession);
-                    $responseJson->sendSuccessResponse();
+                    //return Auth::user()->name;
+                    //dd("OK");
+                    $userSession->role="Candidate";
                 }
                 else
                 {
                     Auth::logout();
                     Session::flush();
 
-                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
+                    $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::USER_LOGIN_ERROR));
                     $responseJson->setObj($userSession);
                     $responseJson->sendSuccessResponse();
                 }
@@ -667,18 +639,14 @@ class CandidateController extends Controller
 
     public function CandidateForgotLogin(Request $forgotloginRequest)
     {
-        //return $forgotloginRequest->email;
-        //$loginInfo = $loginRequest->all();
-        $loginInfo = $forgotloginRequest;
-        //return  $loginRequest->get('email');
-        //dd($loginInfo);
+        $email = null;
         $userSession = null;
-        //$candidateRequest->get('candidateId');
 
         try
         {
 
-            $userSession = User::where('email', '=', $forgotloginRequest->email)->first();
+            $email = $forgotloginRequest->email;
+            $userSession = $this->commonService->ForgotLogin($email);
 
             if($userSession)
             {
