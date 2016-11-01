@@ -66,6 +66,131 @@ class JobController extends Controller
         return $responseJson;
     }
 
+
+    /* Get list of jobs by search
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByQuickSearch(Request $searchJob)
+    {
+        $jobs = null;
+        $responseJson = null;
+        //dd('Inside jobs list controller');
+
+        try
+        {
+            $jobs = $this->jobService->getJobList();
+            //dd($listGroups);
+            if(!empty($jobs))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+                $responseJson->setObj($jobs);
+                $responseJson->sendSuccessResponse();
+            }
+        }
+        catch(JobException $jobExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $jobExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($jobExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get list of jobs by search
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByBasicSearch(Request $searchJob)
+    {
+        $jobs = null;
+        $responseJson = null;
+        //dd('Inside jobs list controller');
+
+        try
+        {
+            $jobs = $this->jobService->getJobList();
+            //dd($listGroups);
+            if(!empty($jobs))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+                $responseJson->setObj($jobs);
+                $responseJson->sendSuccessResponse();
+            }
+        }
+        catch(JobException $jobExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $jobExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($jobExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+
+    /* Get list of jobs by search
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByAdvanceSearch(Request $searchJob)
+    {
+        $jobs = null;
+        $responseJson = null;
+        //dd('Inside jobs list controller');
+
+        try
+        {
+            $jobs = $this->jobService->getJobList();
+            //dd($listGroups);
+            if(!empty($jobs))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+                $responseJson->setObj($jobs);
+                $responseJson->sendSuccessResponse();
+            }
+        }
+        catch(JobException $jobExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $jobExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($jobExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
     /* Get job details
      * @params none
      * @throws $jobException

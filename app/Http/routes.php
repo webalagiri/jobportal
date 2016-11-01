@@ -104,3 +104,17 @@ Route::group(['prefix' => 'candidate'], function()
 });
 
 
+
+Route::group(['prefix' => 'job'], function()
+{
+    Route::group(['namespace' => 'Company'], function(){
+
+        Route::get('rest/api/jobs', array('as' => 'jobs.list', 'uses' => 'JobController@getJobList'));
+        Route::post('rest/api/jobs/quicksearch', array('as' => 'jobs.quicksearch', 'uses' => 'JobController@getJobListByQuickSearch'));
+        Route::post('rest/api/jobs/basicsearch', array('as' => 'jobs.basicsearch', 'uses' => 'JobController@getJobListByBasicSearch'));
+        Route::post('rest/api/jobs/advancesearch', array('as' => 'jobs.advancesearch', 'uses' => 'JobController@getJobListByAdvanceSearch'));
+        Route::get('rest/api/jobs/{jobId}/details', array('as' => 'jobs.details', 'uses' => 'JobController@getJobDetails'));
+
+    });
+});
+
