@@ -124,6 +124,16 @@ class JobImpl implements JobInterface
             $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
             $query->where('usr.delete_status', '=', 1);
             $query->where('rj.job_status', '=', 1);
+            if(!empty($searchJob->title))
+            {
+
+            }
+
+            if(!empty($searchJob->location))
+            {
+
+            }
+
             $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
                 'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
                 'rj.job_experience as experience', 'rj.job_skills as skills',
