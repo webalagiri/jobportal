@@ -82,7 +82,7 @@ class JobController extends Controller
 
         try
         {
-            $jobs = $this->jobService->getJobList();
+            $jobs = $this->jobService->getJobListByQuickSearch($searchJob);
             //dd($listGroups);
             if(!empty($jobs))
             {
@@ -123,7 +123,7 @@ class JobController extends Controller
 
         try
         {
-            $jobs = $this->jobService->getJobList();
+            $jobs = $this->jobService->getJobListByBasicSearch($searchJob);
             //dd($listGroups);
             if(!empty($jobs))
             {
@@ -165,7 +165,7 @@ class JobController extends Controller
 
         try
         {
-            $jobs = $this->jobService->getJobList();
+            $jobs = $this->jobService->getJobListByAdvanceSearch($searchJob);
             //dd($listGroups);
             if(!empty($jobs))
             {

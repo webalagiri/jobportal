@@ -52,6 +52,88 @@ class JobService
         return $jobs;
     }
 
+
+    /* Get list of jobs
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByQuickSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $jobs = $this->jobRepo->getJobListByQuickSearch($searchJob);
+        }
+        catch(JobException $jobExc)
+        {
+            throw $jobExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
+    /* Get list of jobs BasicSearch
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByBasicSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $jobs = $this->jobRepo->getJobListByBasicSearch($searchJob);
+        }
+        catch(JobException $jobExc)
+        {
+            throw $jobExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
+    /* Get list of jobs AdvanceSearch
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByAdvanceSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $jobs = $this->jobRepo->getJobListByAdvanceSearch($searchJob);
+        }
+        catch(JobException $jobExc)
+        {
+            throw $jobExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
     /* Get job details
      * @params none
      * @throws $jobException
