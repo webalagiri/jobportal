@@ -107,6 +107,7 @@ Route::group(['prefix' => 'candidate'], function()
 
 Route::group(['prefix' => 'job'], function()
 {
+
     Route::group(['namespace' => 'Company'], function(){
 
         Route::get('rest/api/jobs', array('as' => 'jobs.list', 'uses' => 'JobController@getJobList'));
@@ -116,5 +117,6 @@ Route::group(['prefix' => 'job'], function()
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'jobs.details', 'uses' => 'JobController@getJobDetails'));
 
     });
+
 });
 
