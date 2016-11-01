@@ -63,6 +63,131 @@ class JobImpl implements JobInterface
         return $jobs;
     }
 
+
+    /* Get list of jobs QuickSearch
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByQuickSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
+            $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->where('usr.delete_status', '=', 1);
+            $query->where('rj.job_status', '=', 1);
+            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
+                'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
+                'rj.job_experience as experience', 'rj.job_skills as skills',
+                'rle1.list_entity_name as industryArea',
+                'rle2.list_entity_name as functionalArea',
+                'rj.job_active_from as activeFrom', 'rj.job_active_to as activeTo');
+            $query->orderBy('rj.job_active_from', 'ASC');
+
+            $jobs = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
+    /* Get list of jobs BasicSearch
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByBasicSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
+            $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->where('usr.delete_status', '=', 1);
+            $query->where('rj.job_status', '=', 1);
+            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
+                'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
+                'rj.job_experience as experience', 'rj.job_skills as skills',
+                'rle1.list_entity_name as industryArea',
+                'rle2.list_entity_name as functionalArea',
+                'rj.job_active_from as activeFrom', 'rj.job_active_to as activeTo');
+            $query->orderBy('rj.job_active_from', 'ASC');
+
+            $jobs = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
+
+    /* Get list of jobs AdvanceSearch
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function getJobListByAdvanceSearch($searchJob)
+    {
+        $jobs = null;
+
+        try
+        {
+            $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
+            $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->where('usr.delete_status', '=', 1);
+            $query->where('rj.job_status', '=', 1);
+            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
+                'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
+                'rj.job_experience as experience', 'rj.job_skills as skills',
+                'rle1.list_entity_name as industryArea',
+                'rle2.list_entity_name as functionalArea',
+                'rj.job_active_from as activeFrom', 'rj.job_active_to as activeTo');
+            $query->orderBy('rj.job_active_from', 'ASC');
+
+            $jobs = $query->get();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
     /* Get job details
      * @params none
      * @throws $jobException

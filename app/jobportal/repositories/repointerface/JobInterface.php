@@ -14,6 +14,9 @@ use App\Http\ViewModels\JobViewModel;
 interface JobInterface
 {
     public function getJobList();
+    public function getJobListByQuickSearch($searchJob);
+    public function getJobListByBasicSearch($searchJob);
+    public function getJobListByAdvanceSearch($searchJob);
     public function getJobDetails($jobId);
     public function saveJobProfile(JobViewModel $jobVM);
     public function deleteJob($jobId);
