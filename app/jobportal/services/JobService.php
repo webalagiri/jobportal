@@ -32,13 +32,13 @@ class JobService
      * @author Baskar
      */
 
-    public function getJobList()
+    public function getJobList($searchKey = null)
     {
         $jobs = null;
 
         try
         {
-            $jobs = $this->jobRepo->getJobList();
+            $jobs = $this->jobRepo->getJobList($searchKey);
         }
         catch(JobException $jobExc)
         {
@@ -159,6 +159,60 @@ class JobService
         }
 
         return $jobDetails;
+    }
+
+    /* Get count of jobs
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getJobCount()
+    {
+        $jobCount = null;
+
+        try
+        {
+            $jobCount = $this->jobRepo->getJobCount();
+        }
+        catch(JobException $jobExc)
+        {
+            throw $jobExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_COUNT_ERROR, $exc);
+        }
+
+        return $jobCount;
+    }
+
+    /* Get latest job applications
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getLatestJobApplications()
+    {
+        $jobApplications = null;
+
+        try
+        {
+            $jobApplications = $this->jobRepo->getLatestJobApplications();
+        }
+        catch(JobException $jobExc)
+        {
+            throw $jobExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_APPLICATION_LIST_ERROR, $exc);
+        }
+
+        return $jobApplications;
     }
 
     /* Create new job

@@ -16,8 +16,10 @@ class CreateRiListEntitiesTable extends Migration
             Schema::create('ri_list_entities', function (Blueprint $table) {
                 $table->increments('id')->unsigned();
                 $table->string('list_entity_name', 255);
+                $table->text('entity_description')->nullable();
                 $table->string('code', 255)->nullable();
                 $table->integer('list_group_id')->unsigned();
+                $table->integer('parent_id')->unsigned()->nullable();
                 $table->smallInteger('sequence_no')->nullable();
                 $table->tinyInteger('delete_status')->default(1);
                 $table->string('created_by', 255)->default('RI_Admin');

@@ -9,11 +9,13 @@
 namespace App\jobportal\repositories\repoimpl;
 
 
+use App\Http\ViewModels\ApplyJobViewModel;
 use App\Http\ViewModels\CandidateEmploymentViewModel;
 use App\Http\ViewModels\CandidatePreferencesViewModel;
 use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\jobportal\model\entities\CandidateApplyJob;
 use App\jobportal\model\entities\CandidateEmployment;
 use App\jobportal\model\entities\CandidateJobProfile;
 use App\jobportal\model\entities\CandidatePersonalProfile;
@@ -61,7 +63,8 @@ class CandidateImpl implements CandidateInterface
 
             //dd($query->toSql());
 
-            $candidates = $query->get();
+            //$candidates = $query->get();
+            $candidates = $query->paginate();
         }
         catch(QueryException $queryExc)
         {
@@ -100,7 +103,6 @@ class CandidateImpl implements CandidateInterface
                 'rcpp.gender as gender',
                 'rcjp.profile_name as profileName', 'rcjp.profile_details as profileDetails',
                 'rcjp.skills as skills', 'rcjp.total_experience_years as totalExperience');
-
 
             $candidateDetails = $query->get();
         }
@@ -198,6 +200,7 @@ class CandidateImpl implements CandidateInterface
 
     private function attachCompanyRole(User $user)
     {
+        $role = Role::find(UserType::USERTYPE_CANDIDATE);
 
         //$user->assignRole(UserType::USERTYPE_CANDIDATE);
 
@@ -205,11 +208,8 @@ class CandidateImpl implements CandidateInterface
         $role = Role::find(UserType::USERTYPE_CANDIDATE);
         if (!is_null($role))
         {
-
             $user->attachRole($role);
-            //$user->assignRole($role->name);
         }
-
     }
 
     private function addOrUpdatePersonalProfile(CandidatePersonalProfile $personalProfile, CandidateViewModel $candidateProfileVM, User $user)
@@ -308,7 +308,6 @@ class CandidateImpl implements CandidateInterface
                 'rcs.experience_months as experienceMonths');
 
             $candidateSkills = $query->get();
-            dd($candidateSkills);
         }
         catch(QueryException $queryExc)
         {
@@ -433,6 +432,38 @@ class CandidateImpl implements CandidateInterface
         }
 
         return $candidatePreferences;
+    }
+
+    /* Get count of candidates
+     * @params none
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatesCount()
+    {
+        $candidateCount = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_personal_profile as rcpp')->join('users as usr', 'usr.id', '=', 'rcpp.candidate_id');
+            $query->where('usr.delete_status', '=', 1);
+
+            $candidateCount = $query->count();
+
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_COUNT_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_COUNT_ERROR, $exc);
+        }
+
+        return $candidateCount;
     }
 
     /* Save candidate skills
@@ -684,9 +715,54 @@ class CandidateImpl implements CandidateInterface
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $status = false;
             throw new CandidateException(null, ErrorEnum::CANDIDATE_PREFERENCES_SAVE_ERROR, $exc);
+        }
+
+        return $status;
+    }
+
+    /* Apply for a new job
+     * @params $applyJobVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function applyForJob(ApplyJobViewModel $applyJobVM)
+    {
+        $status = true;
+        $user = null;
+        $candidateApplyJob = null;
+
+        try
+        {
+            $user = User::find($applyJobVM->getCandidateId());
+
+            if(!is_null($user))
+            {
+                $candidateApplyJob = new CandidateApplyJob();
+                $candidateApplyJob->company_id = $applyJobVM->getCompanyId();
+                $candidateApplyJob->job_id = $applyJobVM->getJobId();
+                $candidateApplyJob->created_by = $applyJobVM->getCreatedBy();
+                $candidateApplyJob->updated_by = $applyJobVM->getUpdatedBy();
+                $candidateApplyJob->created_at = $applyJobVM->getCreatedAt();
+                $candidateApplyJob->updated_at = $applyJobVM->getUpdatedAt();
+
+                $user->candidateapplyjobs()->save($candidateApplyJob);
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_APPLY_JOB_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_APPLY_JOB_ERROR, $exc);
         }
 
         return $status;

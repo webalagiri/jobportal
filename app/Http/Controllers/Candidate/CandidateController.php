@@ -131,6 +131,94 @@ class CandidateController extends Controller
         return $responseJson;
     }
 
+    public function applyForJob(Request $applyJobRequest)
+    {
+        $applyJobVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            $applyJobVM = CandidateProfileMapper::setApplyJobDetails($applyJobRequest);
+            //return $candidateProfileVM;
+            $status = $this->candidateService->applyForJob($applyJobVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_APPLY_JOB_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+            else
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_APPLY_JOB_ERROR));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($candidateExc);
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_APPLY_JOB_ERROR));
+            $jsonResponse->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
+    /* Get count of candidates
+     * @params none
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatesCount()
+    {
+        $candidateCount = null;
+        $responseJson = null;
+        //dd('Inside jobs details controller');
+
+        try
+        {
+            $candidateCount = $this->candidateService->getCandidatesCount();
+
+            if(!empty($candidateCount))
+            {
+                //dd('Inside if');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_COUNT_SUCCESS));
+            }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_CANDIDATE_COUNT_FOUND));
+            }
+
+            $responseJson->setObj($candidateCount);
+            $responseJson->sendSuccessResponse();
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $candidateExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($candidateExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
     /* Save candidate personal and job profile
      * @params $candidateRequest
      * @throws $candidateExc
@@ -397,11 +485,9 @@ class CandidateController extends Controller
             if(!empty($candidateSkills))
             {
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_SKILLS_LIST_SUCCESS));
-
             }
             else
             {
-
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_SKILLS_NOT_FOUND));
             }
 

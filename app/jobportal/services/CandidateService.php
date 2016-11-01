@@ -78,6 +78,65 @@ class CandidateService
         return $candidateDetails;
     }
 
+    /* Apply for a new job
+     * @params $applyJobVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function applyForJob($applyJobVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($applyJobVM, &$status)
+            {
+                $status = $this->candidateRepo->applyForJob($applyJobVM);
+            });
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_APPLY_JOB_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
+    /* Get count of candidates
+     * @params none
+     * @throws $candidateException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getCandidatesCount()
+    {
+        $candidateCount = null;
+
+        try
+        {
+            $candidateCount = $this->candidateRepo->getCandidatesCount();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_COUNT_ERROR, $exc);
+        }
+
+        return $candidateCount;
+    }
+
     /* Save candidate profile
      * @params $candidateProfileVM
      * @throws $candidateExc

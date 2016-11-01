@@ -19,6 +19,7 @@ class CreateJobsTable extends Migration
                 $table->integer('company_id')->unsigned();
                 $table->string('job_post_name', 255);
                 $table->string('job_description', 255)->nullable();
+                $table->integer('location')->unsigned()->nullable();
                 $table->integer('job_post_type')->unsigned();
                 $table->integer('job_post_vacancy')->unsigned()->nullable();
                 $table->text('job_experience')->nullable();
@@ -41,6 +42,7 @@ class CreateJobsTable extends Migration
 
         Schema::table('ri_jobs', function (Blueprint $table) {
             $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('location')->references('id')->on('ri_list_entities')->onDelete('cascade');
             $table->foreign('job_post_type')->references('id')->on('ri_list_entities')->onDelete('cascade');
             $table->foreign('job_industry_area')->references('id')->on('ri_list_entities')->onDelete('cascade');
             $table->foreign('job_functional_area')->references('id')->on('ri_list_entities')->onDelete('cascade');

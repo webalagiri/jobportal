@@ -32,17 +32,33 @@ Route::controllers([
 Route::group(['prefix' => 'common'], function()
 {
    Route::group(['namespace' => 'Common'], function(){
+      Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
+      Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
+      Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
+      Route::get('rest/api/cities', array('as' => 'common.cities', 'uses' => 'CommonController@getCities'));
+      Route::get('rest/api/countries', array('as' => 'common.countries', 'uses' => 'CommonController@getCountries'));
 
-        Route::post('rest/api/login', array('as' => 'common.login', 'uses' => 'CommonController@Login'));
-        Route::post('rest/api/forgotlogin', array('as' => 'common.forgotlogin', 'uses' => 'CommonController@ForgotLogin'));
-       Route::post('rest/api/changepassword', array('as' => 'common.changepassword', 'uses' => 'CommonController@ChangePassword'));
 
-        Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
-        Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
-        Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
-        Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
-        Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
+      Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
+      Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
+
+      Route::post('rest/api/login', array('as' => 'common.login', 'uses' => 'CommonController@Login'));
+      Route::post('rest/api/forgotlogin', array('as' => 'common.forgotlogin', 'uses' => 'CommonController@ForgotLogin'));
+      Route::post('rest/api/changepassword', array('as' => 'common.changepassword', 'uses' => 'CommonController@ChangePassword'));
+
+      Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
+      Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
+      Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
+      Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
+      Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
    });
+});
+
+Route::group(['prefix' => 'api'], function(){
+    Route::post('token', 'AuthenticateController@authenticateUser');
+    /*Route::group(['middleware' => 'jwt-auth'], function () {
+        Route::post('getuserdetails', 'AuthenticateController@getUserDetails');
+    });*/
 });
 
 Route::group(['prefix' => 'company'], function()
@@ -65,6 +81,28 @@ Route::group(['prefix' => 'company'], function()
         Route::post('rest/api/jobprofile', array('as' => 'company.jobprofile', 'uses' => 'JobController@saveJobProfile'));
         Route::put('rest/api/jobprofile', array('as' => 'company.jobprofile', 'uses' => 'JobController@saveJobProfile'));
         Route::delete('rest/api/job', array('as' => 'company.deletejob', 'uses' => 'JobController@deleteJob'));
+
+        Route::get('rest/api/companycount', array('as' => 'company.companycount', 'uses' => 'CompanyController@getCompanyCount'));
+        Route::get('rest/api/jobcount', array('as' => 'company.jobcount', 'uses' => 'JobController@getJobCount'));
+
+        Route::get('rest/api/industries', array('as' => 'company.industries', 'uses' => 'CompanyController@getIndustries'));
+    });
+});
+
+Route::group(['prefix' => 'admin'], function()
+{
+    Route::group(['namespace' => 'Company'], function(){
+        Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
+        Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
+        Route::get('rest/api/latestapplications', array('as' => 'company.latestapplications', 'uses' => 'JobController@getLatestJobApplications'));
+        Route::get('rest/api/listgroup', array('as' => 'admin.listgroup', 'uses' => 'CommonController@saveListGroups'));
+
+    });
+
+    Route::group(['namespace' => 'Common'], function(){
+        Route::post('rest/api/listgroup', array('as' => 'admin.listgroup', 'uses' => 'CommonController@saveListGroups'));
+        Route::post('rest/api/listentity', array('as' => 'admin.listentity', 'uses' => 'CommonController@saveListEntity'));
+        Route::delete('rest/api/{listGroupId}/listgroup', array('as' => 'admin.deletelistgroup', 'uses' => 'CommonController@deleteListGroup'));
     });
 });
 
@@ -94,12 +132,12 @@ Route::group(['prefix' => 'candidate'], function()
 
         Route::post('rest/api/preferences', array('as' => 'candidate.savepreferences', 'uses' => 'CandidateController@saveCandidatePreferences'));
         Route::put('rest/api/preferences', array('as' => 'candidate.editpreferences', 'uses' => 'CandidateController@saveCandidatePreferences'));
+
+        Route::get('rest/api/candidatecount', array('as' => 'candidate.candidatecount', 'uses' => 'CandidateController@getCandidatesCount'));
+        Route::post('rest/api/applyjob', array('as' => 'candidate.applyjob', 'uses' => 'CandidateController@applyForJob'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/
-
-
-
     });
 });
 

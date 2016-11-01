@@ -37,22 +37,41 @@ class CompanyController extends Controller
      * @author Baskar
      */
 
-    public function getCompanyList()
+    public function getCompanyList(Request $jobRequest)
     {
         $companies = null;
         $responseJson = null;
+        $sortBy = null;
         //dd('Inside companies list controller');
 
         try
         {
-            $companies = $this->companyService->getCompanyList();
+            if($jobRequest->has('sortBy'))
+            {
+                $sortBy = $jobRequest->get('sortBy');
+            }
+
+            $companies = $this->companyService->getCompanyList($sortBy);
             //dd($listGroups);
-            if(!is_null($companies) && count($companies > 0))
+            /*if(!is_null($companies) && count($companies > 0))
             {
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LIST_SUCCESS));
                 $responseJson->setObj($companies);
                 $responseJson->sendSuccessResponse();
+            }*/
+
+            if(!empty($companies))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_LIST_SUCCESS));
+
             }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_COMPANY_LIST_FOUND));
+            }
+
+            $responseJson->setObj($companies);
+            $responseJson->sendSuccessResponse();
         }
         catch(CompanyException $companyExc)
         {
@@ -88,12 +107,173 @@ class CompanyController extends Controller
         {
             $companyDetails = $this->companyService->getCompanyDetails($companyId);
             //dd($listGroups);
-            if(!is_null($companyDetails) && count($companyDetails > 0))
+            /*if(!is_null($companyDetails) && count($companyDetails > 0))
             {
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_DETAILS_SUCCESS));
                 $responseJson->setObj($companyDetails);
                 $responseJson->sendSuccessResponse();
+            }*/
+
+            if(!empty($companyDetails))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_DETAILS_SUCCESS));
+
             }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_DETAILS_ERROR));
+            }
+
+            $responseJson->setObj($companyDetails);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $companyExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($companyExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get list of latest jobs
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getLatestJobs()
+    {
+        $latestJobs = null;
+        $responseJson = null;
+        //dd('Inside jobs details controller');
+
+        try
+        {
+            $latestJobs = $this->companyService->getLatestJobs();
+            //dd($latestJobs->items());
+
+            if(!empty($latestJobs->items()))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+            }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
+            }
+
+            $responseJson->setObj($latestJobs);
+            $responseJson->sendSuccessResponse();
+
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $companyExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($companyExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get count of companies
+    * @params none
+    * @throws $companyExc
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getCompanyCount()
+    {
+        $companyCount = null;
+        $responseJson = null;
+        //dd('Inside jobs details controller');
+
+        try
+        {
+            $companyCount = $this->companyService->getCompanyCount();
+            //dd($companyCount->items());
+            //dd($latestJobs->items());
+
+            if(!empty($companyCount))
+            {
+                //dd('Inside if');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_COUNT_SUCCESS));
+            }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_COMPANY_COUNT_FOUND));
+            }
+
+            $responseJson->setObj($companyCount);
+            $responseJson->sendSuccessResponse();
+
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $companyExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($companyExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get list of industries
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getIndustries()
+    {
+        $industries = null;
+        $responseJson = null;
+        //dd('Inside companies list controller');
+
+        try
+        {
+            $industries = $this->companyService->getIndustries();
+            //dd($listGroups);
+
+            if(!empty($industries))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::INDUSTRY_LIST_SUCCESS));
+
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_INDUSTRY_LIST_FOUND));
+            }
+
+            $responseJson->setObj($industries);
+            $responseJson->sendSuccessResponse();
         }
         catch(CompanyException $companyExc)
         {
@@ -121,7 +301,6 @@ class CompanyController extends Controller
 
     public function saveCompanyProfile(Request $companyRequest)
     {
-
         $companyProfileVM = null;
         $status = true;
         $jsonResponse = null;
@@ -281,7 +460,7 @@ class CompanyController extends Controller
             }
 
         }
-        catch(HospitalException $companyExc)
+        catch(CompanyException $companyExc)
         {
             // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_LOGIN_ERROR));
@@ -312,6 +491,7 @@ class CompanyController extends Controller
     {
         $email = null;
         $userSession = null;
+        $responseJson = null;
 
         try
         {
@@ -333,7 +513,7 @@ class CompanyController extends Controller
             }
 
         }
-        catch(HospitalException $companyExc)
+        catch(CompanyException $companyExc)
         {
             // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_FORGOTLOGIN_ERROR));

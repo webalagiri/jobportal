@@ -33,13 +33,13 @@ class CompanyService
      * @author Baskar
      */
 
-    public function getCompanyList()
+    public function getCompanyList($searchKey = null)
     {
         $companies = null;
 
         try
         {
-            $companies = $this->companyRepo->getCompanyList();
+            $companies = $this->companyRepo->getCompanyList($searchKey);
         }
         catch(CompanyException $companyExc)
         {
@@ -78,6 +78,87 @@ class CompanyService
         }
 
         return $companyDetails;
+    }
+
+    /* Get count of companies
+    * @params none
+    * @throws $companyExc
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getCompanyCount()
+    {
+        $companyCount = null;
+
+        try
+        {
+            $companyCount = $this->companyRepo->getCompanyCount();
+        }
+        catch(CompanyException $companyExc)
+        {
+            throw $companyExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::COMPANY_COUNT_ERROR, $exc);
+        }
+
+        return $companyCount;
+    }
+
+    /* Get list of industries
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getIndustries()
+    {
+        $industries = null;
+
+        try
+        {
+            $industries = $this->companyRepo->getIndustries();
+        }
+        catch(CompanyException $companyExc)
+        {
+            throw $companyExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::INDUSTRY_LIST_ERROR, $exc);
+        }
+
+        return $industries;
+    }
+
+    /* Get list of latest jobs
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getLatestJobs()
+    {
+        $latestJobs = null;
+
+        try
+        {
+            $latestJobs = $this->companyRepo->getLatestJobs();
+        }
+        catch(CompanyException $companyExc)
+        {
+            throw $companyExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $latestJobs;
     }
 
     /* Save company profile

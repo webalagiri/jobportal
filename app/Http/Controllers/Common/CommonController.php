@@ -7,6 +7,8 @@ use App\jobportal\services\HelperService;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\HelperException;
 use App\jobportal\utilities\Exception\AppendMessage;
+use App\jobportal\mapper\ListGroupMapper;
+use App\jobportal\mapper\ListEntityMapper;
 
 use Illuminate\Http\Request;
 
@@ -88,12 +90,25 @@ class CommonController extends Controller
         {
             $listEntities = $this->commonService->getListEntities();
             //dd($listGroups);
-            if(!is_null($listEntities) && count($listEntities > 0))
+            /*if(!is_null($listEntities) && count($listEntities > 0))
             {
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::LIST_ENTITY_SUCCESS));
                 $responseJson->setObj($listEntities);
                 $responseJson->sendSuccessResponse();
+            }*/
+
+            if(!empty($listEntities))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::LIST_ENTITY_SUCCESS));
+
             }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_LIST_ENTITY_FOUND));
+            }
+
+            $responseJson->setObj($listEntities);
+            $responseJson->sendSuccessResponse();
         }
         catch(HelperException $helperExc)
         {
@@ -153,6 +168,264 @@ class CommonController extends Controller
         return $responseJson;
     }
 
+    /* Get list entity by parent Id
+     * @params $parentId
+     * @throws HelperException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getListEntityByParentId($parentId)
+    {
+        $listEntities = null;
+        $responseJson = null;
+        //dd($groupId);
+
+        try
+        {
+            $listEntities = $this->commonService->getListEntityByParentId($parentId);
+            //dd($listGroups);
+            //if(!is_null($listEntities) && count($listEntities > 0))
+            if(!empty($listEntities->items()))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::LIST_ENTITY_SUCCESS));
+            }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_LIST_ENTITY_FOUND));
+            }
+
+            $responseJson->setObj($listEntities);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(HelperException $helperExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $helperExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($helperExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Delete list group
+     * @params $deleteGroupRequest
+     * @throws $helperExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function deleteListGroup(Request $deleteGroupRequest)
+    {
+        $listGroupId = null;
+        $jsonResponse = null;
+
+        try
+        {
+            $listGroupId = $deleteGroupRequest->get('groupId');
+            //$status = $this->commonService->deleteListGroup($listGroupId);
+
+            /*if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_PROFILE_DELETE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }*/
+
+        }
+        catch(HelperException $helperExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_PROFILE_DELETE_ERROR));
+            $jsonResponse->sendErrorResponse($helperExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
+    /* Get the list of cities
+    * @params none
+    * @throws HelperException
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getCities()
+    {
+        $cities = null;
+        $responseJson = null;
+        //dd('Inside list entities controller');
+
+        try
+        {
+            $cities = $this->commonService->getCities();
+
+            if(!empty($cities))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CITY_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_CITY_LIST_FOUND));
+            }
+
+            $responseJson->setObj($cities);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(HelperException $helperExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $helperExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($helperExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get the list of countries
+    * @params none
+    * @throws HelperException
+    * @return array | null
+    * @author Baskar
+    */
+
+    public function getCountries()
+    {
+        $countries = null;
+        $responseJson = null;
+        //dd('Inside list entities controller');
+
+        try
+        {
+            $countries = $this->commonService->getCountries();
+
+            if(!empty($countries))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COUNTRY_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_COUNTRY_LIST_FOUND));
+            }
+
+            $responseJson->setObj($countries);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(HelperException $helperExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $helperExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($helperExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Save new list group
+     * @params $listGroupRequest
+     * @throws HelperException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveListGroups(Request $listGroupRequest)
+    {
+        $listGroupVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            $listGroupVM = ListGroupMapper::setListGroup($listGroupRequest);
+
+            $status = $this->commonService->saveListGroups($listGroupVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NEW_LIST_GROUP_SAVE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(HelperException $helperExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::NEW_LIST_GROUP_SAVE_ERROR));
+            $jsonResponse->sendErrorResponse($helperExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
+    /* Save new list entity
+     * @params $listEntityRequest
+     * @throws HelperException
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveListEntity(Request $listEntityRequest)
+    {
+        $listEntityVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            $listEntityVM = ListEntityMapper::setListEntity($listEntityRequest);
+
+            $status = $this->commonService->saveListEntity($listEntityVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NEW_LIST_GROUP_SAVE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(HelperException $helperExc)
+        {
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::NEW_LIST_GROUP_SAVE_ERROR));
+            $jsonResponse->sendErrorResponse($helperExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
 
     public function generatePDF()
     {
@@ -185,7 +458,7 @@ class CommonController extends Controller
             )
         );
         */
-        return Response()->download($filefullpath);
+        //return Response()->download($filefullpath);
 
         return Response(
             $snappy->generate($resumeurl, $filefullpath),

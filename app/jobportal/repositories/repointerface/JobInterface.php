@@ -13,11 +13,16 @@ use App\Http\ViewModels\JobViewModel;
 
 interface JobInterface
 {
-    public function getJobList();
+    //public function getJobList();
     public function getJobListByQuickSearch($searchJob);
     public function getJobListByBasicSearch($searchJob);
     public function getJobListByAdvanceSearch($searchJob);
+    public function getJobList($searchKey = null);
     public function getJobDetails($jobId);
     public function saveJobProfile(JobViewModel $jobVM);
     public function deleteJob($jobId);
+
+    public function getLatestJobApplications();
+
+    public function getJobCount();
 }

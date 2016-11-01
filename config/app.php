@@ -163,6 +163,7 @@ return [
         Barryvdh\Snappy\ServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
 
     ],
 
@@ -216,6 +217,11 @@ return [
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
 
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+        //Dingo
+        //'JWTAuth' => Tymon\JWTAuthF
+        'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class
     ],
 
 ];

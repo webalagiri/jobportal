@@ -8,6 +8,7 @@
 
 namespace App\jobportal\mapper;
 
+use App\Http\ViewModels\ApplyJobViewModel;
 use App\Http\ViewModels\CandidateEmploymentViewModel;
 use App\Http\ViewModels\CandidatePreferencesViewModel;
 use App\Http\ViewModels\CandidateProjectViewModel;
@@ -163,5 +164,23 @@ class CandidateProfileMapper
 
         return $candidatePreferenceVM;
 
+    }
+
+    public static function setApplyJobDetails(Request $applyJobRequest)
+    {
+        $applyJobVM = new ApplyJobViewModel();
+        $applyJob = (object) $applyJobRequest->all();
+        //$userName = Session::get('DisplayName');
+        $userName = 'Admin';
+
+        $applyJobVM->setCandidateId($applyJob->candidateId);
+        $applyJobVM->setCompanyId($applyJob->companyId);
+        $applyJobVM->setJobId($applyJob->jobId);
+        $applyJobVM->setCreatedBy($userName);
+        $applyJobVM->setUpdatedBy($userName);
+        $applyJobVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $applyJobVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $applyJobVM;
     }
 }

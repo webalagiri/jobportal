@@ -82,4 +82,9 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasOne('App\jobportal\model\entities\CandidatePreferences', 'candidate_id');
     }
+
+    public function candidateapplyjobs()
+    {
+        return $this->hasMany('App\jobportal\model\entities\CandidateApplyJob', 'candidate_id');
+    }
 }

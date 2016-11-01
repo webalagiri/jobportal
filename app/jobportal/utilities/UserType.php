@@ -7,3 +7,4 @@ class UserType {
     const USERTYPE_ADMIN = 3;
 
 }
+

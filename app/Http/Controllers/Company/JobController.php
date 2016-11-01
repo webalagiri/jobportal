@@ -32,22 +32,41 @@ class JobController extends Controller
      * @author Baskar
      */
 
-    public function getJobList()
+    public function getJobList(Request $jobRequest)
     {
         $jobs = null;
         $responseJson = null;
+        $sortBy = null;
+
+        if($jobRequest->has('sortBy'))
+        {
+            $sortBy = $jobRequest->get('sortBy');
+        }
+
         //dd('Inside jobs list controller');
 
         try
         {
-            $jobs = $this->jobService->getJobList();
+            $jobs = $this->jobService->getJobList($sortBy);
             //dd($listGroups);
-            if(!empty($jobs))
+           /*if(!empty($jobs))
             {
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
                 $responseJson->setObj($jobs);
                 $responseJson->sendSuccessResponse();
+            }*/
+
+            if(!empty($jobs))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
             }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
+            }
+
+            $responseJson->setObj($jobs);
+            $responseJson->sendSuccessResponse();
         }
         catch(JobException $jobExc)
         {
@@ -224,6 +243,110 @@ class JobController extends Controller
                $responseJson->setObj($jobDetails);
                $responseJson->sendSuccessResponse();
            }
+        }
+        catch(JobException $jobExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $jobExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($jobExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get count of jobs
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getJobCount()
+    {
+        $jobCount = null;
+        $responseJson = null;
+        //dd('Inside jobs details controller');
+
+        try
+        {
+            $jobCount = $this->jobService->getJobCount();
+            //dd($companyCount->items());
+            //dd($latestJobs->items());
+
+            if(!empty($jobCount))
+            {
+                //dd('Inside if');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_COUNT_SUCCESS));
+            }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_COUNT_FOUND));
+            }
+
+            $responseJson->setObj($jobCount);
+            $responseJson->sendSuccessResponse();
+
+        }
+        catch(JobException $jobExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $jobExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($jobExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
+    /* Get latest job applications
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getLatestJobApplications()
+    {
+        $jobApplications = null;
+        $responseJson = null;
+        //dd('Inside jobs list controller');
+
+        try
+        {
+            $jobApplications = $this->jobService->getLatestJobApplications();
+            //dd($listGroups);
+            /*if(!empty($jobs))
+             {
+                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+                 $responseJson->setObj($jobs);
+                 $responseJson->sendSuccessResponse();
+             }*/
+
+            if(!empty($jobApplications->items()))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_APPLICATION_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_APPLICATION_DETAILS_FOUND));
+            }
+
+            $responseJson->setObj($jobApplications);
+            $responseJson->sendSuccessResponse();
         }
         catch(JobException $jobExc)
         {

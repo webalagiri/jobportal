@@ -13,9 +13,17 @@ use App\Http\ViewModels\CompanyViewModel;
 
 interface CompanyInterface {
 
-    public function getCompanyList();
+    public function getCompanyList($searchKey = null);
     public function getCompanyDetails($companyId);
     public function saveCompanyProfile(CompanyViewModel $companyProfileVM);
     public function deleteCompany($companyId);
 
+    public function getLatestJobs();
+    //public function getLatestJobApplications();
+    public function getJobInterviews($search = null);
+
+    public function getIndustries();
+    public function getFunctionalAreas();
+
+    public function getCompanyCount();
 }

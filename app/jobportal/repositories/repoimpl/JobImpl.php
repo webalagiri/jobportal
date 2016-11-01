@@ -8,10 +8,14 @@
 
 namespace App\jobportal\repositories\repoimpl;
 
+//include ('App\jobportal\common\SortColumns.php');
+
+
 use App\Http\ViewModels\JobViewModel;
 use App\jobportal\model\entities\JobProfile;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\JobException;
+use App\Traits\SortKeyTrait;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
@@ -22,6 +26,8 @@ use App\jobportal\repositories\repointerface\JobInterface;
 class JobImpl implements JobInterface
 {
 
+    use SortKeyTrait;
+
     /* Get list of jobs
      * @params none
      * @throws $jobException
@@ -29,12 +35,15 @@ class JobImpl implements JobInterface
      * @author Baskar
      */
 
-    public function getJobList()
+    public function getJobList($searchKey = null)
     {
         $jobs = null;
-
+        $sort = null;
+        //include dirname(__FILE__) . '../../common/SortColumns.php';
         try
         {
+            //$jobSort = $this->getJobSortValue()
+            //$jobSortKeys['companyName'];
             $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
             $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
@@ -47,9 +56,19 @@ class JobImpl implements JobInterface
                 'rle1.list_entity_name as industryArea',
                 'rle2.list_entity_name as functionalArea',
                 'rj.job_active_from as activeFrom', 'rj.job_active_to as activeTo');
-            $query->orderBy('rj.job_active_from', 'ASC');
 
-            $jobs = $query->get();
+            if($this->checkKeyExists($searchKey))
+            {
+                $sort = $this->getJobSortValue($searchKey);
+                $query->orderBy($sort, 'ASC');
+            }
+            else
+            {
+                $query->orderBy('rj.job_active_from', 'DESC');
+            }
+
+            //$jobs = $query->get();
+            $jobs = $query->paginate();
         }
         catch(QueryException $queryExc)
         {
@@ -61,6 +80,36 @@ class JobImpl implements JobInterface
         }
 
         return $jobs;
+    }
+
+    private function checkKeyExists($searchKey)
+    {
+        $keyExists = true;
+
+        if (!is_null($searchKey))
+        {
+            if(array_key_exists($searchKey, $this->getSortKeyArray()))
+            {
+                //$keyExists = true;
+                $sort = $this->getJobSortValue($searchKey);
+                if(is_null($sort))
+                {
+                    $keyExists = false;
+                }
+            }
+            else
+            {
+                $keyExists = false;
+                //$query->orderBy('rj.job_active_from', 'DESC');
+            }
+
+        }
+        else{
+            $keyExists = false;
+            //$query->orderBy('rj.job_active_from', 'DESC');
+        }
+
+        return $keyExists;
     }
 
 
@@ -240,6 +289,36 @@ class JobImpl implements JobInterface
         return $jobDetails;
     }
 
+    /* Get count of jobs
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getJobCount()
+    {
+        $jobCount = null;
+
+        try
+        {
+            $query = DB::table('ri_jobs as rj')->where('rj.job_status', '=', 1);
+            //dd($query->toSql());
+            $jobCount = $query->count();
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new JobException(null, ErrorEnum::JOB_COUNT_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_COUNT_ERROR, $exc);
+        }
+
+        return $jobCount;
+    }
+
     /* Create new job
      * @params $jobViewModel
      * @throws $jobException
@@ -338,5 +417,46 @@ class JobImpl implements JobInterface
         }
 
         return $status;
+    }
+
+    /* Get latest job applications
+     * @params none
+     * @throws $jobException
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getLatestJobApplications()
+    {
+        $jobApplications = null;
+
+        try
+        {
+            $query = DB::table('ri_job_application as rja')->join('users as usr1', 'usr1.id', '=', 'rja.company_id');
+            $query->join('users as usr2', 'usr2.id', '=', 'rja.candidate_id');
+            $query->join('ri_jobs as rj', 'rja.job_id', '=', 'rj.id');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rja.contract_type');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rja.job_type');
+            $query->join('ri_list_entities as rle3', 'rle3.id', '=', 'rja.preferred_location');
+            $query->where('usr1.delete_status', '=', 1);
+            $query->where('usr2.delete_status', '=', 1);
+            $query->select('rja.id as Id', 'rja.company_id as companyId', 'usr1.name as companyName',
+                'rja.candidate_id as candidateId', 'usr2.name as candidateName',
+                'rle3.list_entity_name as preferredLocation', 'rle1.list_entity_name as contractType',
+                'rle2.list_entity_name as jobType', 'rja.job_applied_date as jobAppliedDate');
+            $query->orderBy('rja.job_applied_date', 'DESC');
+
+            $jobApplications = $query->paginate(15);
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_APPLICATION_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new JobException(null, ErrorEnum::JOB_APPLICATION_LIST_ERROR, $exc);
+        }
+
+        return $jobApplications;
     }
 }
