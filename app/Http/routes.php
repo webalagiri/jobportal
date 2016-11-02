@@ -38,10 +38,6 @@ Route::group(['prefix' => 'common'], function()
       Route::get('rest/api/cities', array('as' => 'common.cities', 'uses' => 'CommonController@getCities'));
       Route::get('rest/api/countries', array('as' => 'common.countries', 'uses' => 'CommonController@getCountries'));
 
-
-      Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
-      Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
-
       Route::post('rest/api/login', array('as' => 'common.login', 'uses' => 'CommonController@Login'));
       Route::post('rest/api/forgotlogin', array('as' => 'common.forgotlogin', 'uses' => 'CommonController@ForgotLogin'));
       Route::post('rest/api/changepassword', array('as' => 'common.changepassword', 'uses' => 'CommonController@ChangePassword'));
@@ -49,9 +45,11 @@ Route::group(['prefix' => 'common'], function()
       Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
       Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
       Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
+
       Route::get('pdf', array('as' => 'common.generatepdf', 'uses' => 'CommonController@generatePDF'));
       Route::get('excel', array('as' => 'common.importexcel', 'uses' => 'CommonController@importEXCEL'));
       Route::get('download', array('as' => 'common.download', 'uses' => 'CommonController@downloadFile'));
+
    });
 });
 
