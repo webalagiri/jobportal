@@ -418,7 +418,7 @@ class CompanyImpl implements CompanyInterface
         try
         {
            //$query->orderBy('rcp.company_name', 'ASC');
-
+        /*
             $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
             $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
@@ -430,6 +430,23 @@ class CompanyImpl implements CompanyInterface
             $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
                 'rj.job_post_name as jobPostName', 'rj.job_description as jobDescription',
                 'rle.list_entity_name as jobPostType', 'rle3.list_entity_name as location',
+                'rj.job_experience as experience', 'rj.job_skills as skills',
+                'rle1.list_entity_name as industryArea',
+                'rle2.list_entity_name as functionalArea',
+                'rj.job_active_from as activeFrom', 'rj.job_active_to as activeTo');
+            $query->orderBy('rj.job_active_from', 'DESC');
+        */
+
+            $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
+            $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->where('usr.delete_status', '=', 1);
+            $query->where('rj.job_status', '=', 1);
+
+            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
+                'rj.job_post_name as jobPostName', 'rj.job_description as jobDescription',
+                'rle.list_entity_name as jobPostType',
                 'rj.job_experience as experience', 'rj.job_skills as skills',
                 'rle1.list_entity_name as industryArea',
                 'rle2.list_entity_name as functionalArea',

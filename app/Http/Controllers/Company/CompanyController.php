@@ -164,7 +164,9 @@ class CompanyController extends Controller
 
             if(!empty($latestJobs->items()))
             {
+                //dd('Inside if');
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
+                $responseJson->setObj($latestJobs);
             }
             else
             {
@@ -172,7 +174,6 @@ class CompanyController extends Controller
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
             }
 
-            $responseJson->setObj($latestJobs);
             $responseJson->sendSuccessResponse();
 
         }

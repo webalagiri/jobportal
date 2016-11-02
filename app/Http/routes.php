@@ -85,6 +85,8 @@ Route::group(['prefix' => 'company'], function()
         Route::get('rest/api/jobcount', array('as' => 'company.jobcount', 'uses' => 'JobController@getJobCount'));
 
         Route::get('rest/api/industries', array('as' => 'company.industries', 'uses' => 'CompanyController@getIndustries'));
+
+        Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
     });
 });
 
