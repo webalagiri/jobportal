@@ -534,18 +534,30 @@ class CommonController extends Controller
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Admin";
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
                 }
                 else if((Auth::user()->hasRole('Client')) &&  (Auth::user()->delete_status==1) ) {
 
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Client";
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
                 }
                 else if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {
 
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Candidate";
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
                 }
                 else
                 {

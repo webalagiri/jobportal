@@ -321,7 +321,7 @@ class CompanyImpl implements CompanyInterface
             throw new CompanyException(null, ErrorEnum::COMPANY_PROFILE_SAVE_ERROR, $exc);
         }
 
-        return $status;
+        return array($status,$company);
     }
 
     private function processCompanyUser(CompanyViewModel $companyProfileVM)

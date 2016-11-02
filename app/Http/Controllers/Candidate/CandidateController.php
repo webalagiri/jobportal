@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Candidate;
 
 use App\jobportal\mapper\CandidateProfileMapper;
 use App\jobportal\services\CandidateService;
+use App\jobportal\services\HelperService;
 use App\jobportal\utilities\Exception\CandidateException;
 use App\jobportal\utilities\Exception\AppendMessage;
 
@@ -671,11 +672,16 @@ class CandidateController extends Controller
             {
                 $userSession=Auth::user();
 
+
                 if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {
 
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Candidate";
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
                 }
                 else
                 {
@@ -696,7 +702,7 @@ class CandidateController extends Controller
             }
 
         }
-        catch(HospitalException $candidateExc)
+        catch(CandidateException $candidateExc)
         {
            // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
@@ -723,16 +729,17 @@ class CandidateController extends Controller
      * @author Vimal
      */
 
-    public function CandidateForgotLogin(Request $forgotloginRequest)
+    public function CandidateForgotLogin(HelperService $helperService, Request $forgotloginRequest)
     {
         $email = null;
         $userSession = null;
-
+        $responseJson = null;
         try
         {
 
             $email = $forgotloginRequest->email;
-            $userSession = $this->commonService->ForgotLogin($email);
+            $userSession = $helperService->ForgotLogin($email);
+
 
             if($userSession)
             {
@@ -748,15 +755,15 @@ class CandidateController extends Controller
             }
 
         }
-        catch(HospitalException $companyExc)
+        catch(CandidateException $candidateExc)
         {
-            // dd($candidateExc);
+             dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
-            $responseJson->sendErrorResponse($companyExc);
+            $responseJson->sendErrorResponse($candidateExc);
         }
         catch(Exception $exc)
         {
-            // dd($exc);
+            dd($exc);
             $msg = AppendMessage::appendGeneralException($exc);
             Log::error($msg);
 

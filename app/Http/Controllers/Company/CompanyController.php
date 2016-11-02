@@ -393,9 +393,10 @@ class CompanyController extends Controller
 
             $status = $this->companyService->saveCompanyProfile($companyProfileVM);
 
-            if($status)
+            if($status[0])
             {
                 $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_PROFILE_SAVE_SUCCESS));
+                $jsonResponse->setObj($status[1]);
                 $jsonResponse->sendSuccessResponse();
             }
         }
@@ -440,6 +441,10 @@ class CompanyController extends Controller
                     //return Auth::user()->name;
                     //dd("OK");
                     $userSession->role="Client";
+
+                    $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+                    $responseJson->setObj($userSession);
+                    $responseJson->sendSuccessResponse();
                 }
                 else
                 {
