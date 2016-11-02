@@ -104,12 +104,21 @@ class JobController extends Controller
         {
             $jobs = $this->jobService->getJobListByQuickSearch($searchJob);
             //dd($listGroups);
-            if(!empty($jobs))
+
+            if(!empty($jobs->items()))
             {
+                //dd('Inside if');
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
                 $responseJson->setObj($jobs);
-                $responseJson->sendSuccessResponse();
             }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
+            }
+
+            $responseJson->sendSuccessResponse();
+
         }
         catch(JobException $jobExc)
         {
@@ -145,12 +154,19 @@ class JobController extends Controller
         {
             $jobs = $this->jobService->getJobListByBasicSearch($searchJob);
             //dd($listGroups);
-            if(!empty($jobs))
+            if(!empty($jobs->items()))
             {
+                //dd('Inside if');
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
                 $responseJson->setObj($jobs);
-                $responseJson->sendSuccessResponse();
             }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
+            }
+
+            $responseJson->sendSuccessResponse();
         }
         catch(JobException $jobExc)
         {
@@ -187,12 +203,19 @@ class JobController extends Controller
         {
             $jobs = $this->jobService->getJobListByAdvanceSearch($searchJob);
             //dd($listGroups);
-            if(!empty($jobs))
+            if(!empty($jobs->items()))
             {
+                //dd('Inside if');
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::JOB_LIST_SUCCESS));
                 $responseJson->setObj($jobs);
-                $responseJson->sendSuccessResponse();
             }
+            else
+            {
+                //dd('Inside else');
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_JOB_LIST_FOUND));
+            }
+
+            $responseJson->sendSuccessResponse();
         }
         catch(JobException $jobExc)
         {
