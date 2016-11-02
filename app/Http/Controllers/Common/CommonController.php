@@ -473,6 +473,29 @@ class CommonController extends Controller
         */
     }
 
+
+    public function downloadFile()
+    {
+        $snappy = App::make('snappy.pdf');
+
+//To file
+
+        $html = '<h1>RESUME</h1><p>RESUME DOWNLOAD.</p>';
+        $filename = 'resume-'.time().'.pdf';
+
+//Or output:
+
+        return Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'attachment; filename="'.$filename.'"'
+            )
+        );
+
+    }
+
     public function importEXCEL()
     {
 
