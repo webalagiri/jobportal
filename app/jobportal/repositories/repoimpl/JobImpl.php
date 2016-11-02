@@ -132,11 +132,10 @@ class JobImpl implements JobInterface
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
             $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
             $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->join('ri_company_profile as rcp', 'rcp.company_id', '=', 'rj.company_id');
             $query->where('usr.delete_status', '=', 1);
             $query->where('rj.job_status', '=', 1);
-
-
-            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
+            $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName','rcp.location as companyLocation',
                 'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
                 'rj.job_experience as experience', 'rj.job_skills as skills',
                 'rle1.list_entity_name as industryArea',
@@ -145,17 +144,24 @@ class JobImpl implements JobInterface
             $query->orderBy('rj.job_active_from', 'ASC');
 
 
-            if(!empty($searchJob->title))
-            {
-                $query->Where('rj.job_post_name', 'LIKE', '%'.$keyword.'%');
-                $query->orWhere('rj.job_description', 'LIKE', '%'.$keyword.'%');
-                $query->orWhere('rj.job_skills', 'LIKE','%'.$keyword.'%');
-            }
-
             if(!empty($searchJob->location))
             {
-                //$query->Where('rj.job_post_name', 'LIKE', '%'.$keyword.'%');
+                $query->Where('rcp.location', 'LIKE', '%'.$location.'%');
             }
+
+            if(!empty($keyword))
+            {
+                $query->where(function($q) use ($keyword) {
+                    $q->Where('rj.job_post_name', 'LIKE', '%'.$keyword.'%');
+                    $q->orWhere('rj.job_description', 'LIKE', '%'.$keyword.'%');
+                    $q->orWhere('rj.job_skills', 'LIKE','%'.$keyword.'%');
+                });
+                /*$query->Where('rj.job_post_name', 'LIKE', '%'.$keyword.'%');
+                $query->orWhere('rj.job_description', 'LIKE', '%'.$keyword.'%');
+                $query->orWhere('rj.job_skills', 'LIKE','%'.$keyword.'%');*/
+            }
+
+
 
             //return $query->toSql();
 
@@ -186,16 +192,16 @@ class JobImpl implements JobInterface
     {
         $jobs = null;
         $keyword=$searchJob->title;
+        $location=$searchJob->location;
         try
         {
             $query = DB::table('ri_jobs as rj')->join('users as usr', 'usr.id', '=', 'rj.company_id');
             $query->join('ri_list_entities as rle', 'rle.id', '=', 'rj.job_post_type');
             $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.job_industry_area');
             $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rj.job_functional_area');
+            $query->join('ri_company_profile as rcp', 'rcp.company_id', '=', 'rj.company_id');
             $query->where('usr.delete_status', '=', 1);
             $query->where('rj.job_status', '=', 1);
-
-
             $query->select('rj.id as Id', 'rj.company_id as companyId', 'usr.name as companyName',
                 'rj.job_post_name as jobPostName', 'rle.list_entity_name as jobPostType',
                 'rj.job_experience as experience', 'rj.job_skills as skills',
@@ -213,7 +219,7 @@ class JobImpl implements JobInterface
 
             if(!empty($searchJob->location))
             {
-                //$query->Where('rj.job_post_name', 'LIKE', '%'.$keyword.'%');
+                $query->Where('rcp.location', 'LIKE', '%'.$location.'%');
             }
 
             //return $query->toSql();
@@ -245,6 +251,8 @@ class JobImpl implements JobInterface
     public function getJobListByAdvanceSearch($searchJob)
     {
         $jobs = null;
+        $keyword=$searchJob->title;
+        $location=$searchJob->location;
 
         try
         {
