@@ -99,6 +99,7 @@ class JobController extends Controller
         $responseJson = null;
         //dd('Inside jobs list controller');
 
+
         try
         {
             $jobs = $this->jobService->getJobListByQuickSearch($searchJob);
