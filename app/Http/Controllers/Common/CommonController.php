@@ -731,6 +731,50 @@ class CommonController extends Controller
     }
 
 
+    /**
+     * Web Login using Email, password and hospital
+     * @param $loginRequest
+     * @throws $candidateException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function Logout(Request $logoutRequest)
+    {
+        $userSession = null;
+        $responseJson = null;
+
+        try
+        {
+
+            Auth::logout();
+            Session::flush();
+
+            $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::USER_LOGOUT_SUCCESS));
+            $responseJson->setObj($userSession);
+            $responseJson->sendSuccessResponse();
+
+
+        }
+        catch(HospitalException $commonExc)
+        {
+            //dd($commonExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::USER_LOGOUT_ERROR));
+            $responseJson->sendErrorResponse($commonExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+
+        }
+
+        return $responseJson;
+
+    }
+
+
 
 
 }

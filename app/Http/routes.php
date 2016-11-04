@@ -41,6 +41,7 @@ Route::group(['prefix' => 'common'], function()
       Route::post('rest/api/login', array('as' => 'common.login', 'uses' => 'CommonController@Login'));
       Route::post('rest/api/forgotlogin', array('as' => 'common.forgotlogin', 'uses' => 'CommonController@ForgotLogin'));
       Route::post('rest/api/changepassword', array('as' => 'common.changepassword', 'uses' => 'CommonController@ChangePassword'));
+       Route::post('rest/api/logout', array('as' => 'common.login', 'uses' => 'CommonController@Logout'));
 
       Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
       Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));

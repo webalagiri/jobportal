@@ -37,6 +37,9 @@ class ErrorEnum extends Enum{
     const FORGOT_LOGIN_SUCCESS = 120;
     const CHANGE_PASSWORD_ERROR = 121;
     const CHANGE_PASSWORD_SUCCESS = 122;
+    const USER_LOGOUT_ERROR = 123;
+    const USER_LOGOUT_SUCCESS = 124;
+
 
 
     //Company constants 131 to 175
