@@ -9,6 +9,7 @@ use App\jobportal\services\HelperService;
 use App\jobportal\utilities\Exception\CandidateException;
 use App\jobportal\utilities\Exception\AppendMessage;
 
+use JWTAuth;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -763,9 +764,11 @@ class CandidateController extends Controller
         {
 
 
-            if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
+            $credentials = $loginRequest->only('email', 'password');
+            if ($token = JWTAuth::attempt($credentials))
             {
-                $userSession=Auth::user();
+                $userSession=JWTAuth::toUser($token);
+                $userSession->token=$token;
 
 
                 if((Auth::user()->hasRole('Candidate')) &&  (Auth::user()->delete_status==1) ) {

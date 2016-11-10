@@ -12,9 +12,9 @@ use App\jobportal\mapper\ListEntityMapper;
 
 use Illuminate\Http\Request;
 
+use JWTAuth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use JWTAuth;
 use Exception;
 use Log;
 use App;
@@ -561,7 +561,6 @@ class CommonController extends Controller
 
 
                     $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
-
                     $responseJson->setObj($userSession);
                     $responseJson->sendSuccessResponse();
                 }

@@ -12,6 +12,7 @@ use App\jobportal\utilities\Exception\CompanyException;
 use App\jobportal\utilities\Exception\AppendMessage;
 use Illuminate\Http\Request;
 
+use JWTAuth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\jobportal\common\UserSession;
@@ -442,9 +443,11 @@ class CompanyController extends Controller
         {
 
 
-            if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
+            $credentials = $loginRequest->only('email', 'password');
+            if ($token = JWTAuth::attempt($credentials))
             {
-                $userSession=Auth::user();
+                $userSession=JWTAuth::toUser($token);
+                $userSession->token=$token;
 
                 if((Auth::user()->hasRole('Client')) &&  (Auth::user()->delete_status==1) ) {
 
