@@ -14,7 +14,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use JWTAuth;
 use Exception;
 use Log;
 use App;
@@ -551,6 +551,11 @@ class CommonController extends Controller
             if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
             {
                 $userSession=Auth::user();
+                $credentials = $loginRequest->only('email', 'password');
+                if (! $token = JWTAuth::attempt($credentials)) {
+                    return response()->json(['error' => 'invalid_credentials'], 401);
+                }
+                $userSession->token=$token;
 
                 if((Auth::user()->hasRole('Admin')) &&  (Auth::user()->delete_status==1) ) {
 
@@ -558,7 +563,9 @@ class CommonController extends Controller
                     //dd("OK");
                     $userSession->role="Admin";
 
+
                     $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_SUCCESS));
+
                     $responseJson->setObj($userSession);
                     $responseJson->sendSuccessResponse();
                 }
