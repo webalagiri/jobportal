@@ -605,15 +605,15 @@ class CommonController extends Controller
             }
 
         }
-        catch(HospitalException $commonExc)
+        catch(HelperException $commonExc)
         {
-             dd($commonExc);
+             //dd($commonExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
             $responseJson->sendErrorResponse($commonExc);
         }
         catch(Exception $exc)
         {
-             dd($exc);
+             //dd($exc);
             $msg = AppendMessage::appendGeneralException($exc);
             Log::error($msg);
 
@@ -636,6 +636,7 @@ class CommonController extends Controller
     {
         $email = null;
         $userSession = null;
+        $responseJson = null;
 
         try
         {
@@ -657,7 +658,7 @@ class CommonController extends Controller
             }
 
         }
-        catch(HospitalException $commonExc)
+        catch(HelperException $commonExc)
         {
             // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
@@ -687,6 +688,7 @@ class CommonController extends Controller
     {
 
         $userSession = null;
+        $responseJson = null;
 
         try
         {
@@ -716,7 +718,7 @@ class CommonController extends Controller
             }
 
         }
-        catch(HospitalException $commonExc)
+        catch(HelperException $commonExc)
         {
             // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
@@ -760,7 +762,7 @@ class CommonController extends Controller
 
 
         }
-        catch(HospitalException $commonExc)
+        catch(HelperException $commonExc)
         {
             //dd($commonExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::USER_LOGOUT_ERROR));

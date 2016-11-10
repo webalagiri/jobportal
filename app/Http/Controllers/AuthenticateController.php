@@ -69,14 +69,14 @@ class AuthenticateController extends Controller
             //return response()->json(compact('token'));
 
         }
-        /*catch (JWTException $e) {
+        catch (JWTException $e) {
             //dd($e);
             // something went wrong
             return response()->json(['error' => 'could_not_create_token'], 500);
-        }*/
+        }
         catch(Exception $ex)
         {
-            //dd($ex);
+            return response()->json(['error' => 'could_not_create_token'], 500);
         }
 
         // if no errors are encountered we can return a JWT

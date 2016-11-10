@@ -20,6 +20,7 @@ class JobPortalUserFromToken extends BaseMiddleware
     public function handle($request, Closure $next)
     {
         //return $next($request);
+        //dd('Inside handle');
 
         if (! $token = $this->auth->setRequest($request)->getToken()) {
             return $this->respond('tymon.jwt.absent', 'token_not_provided', 400);
