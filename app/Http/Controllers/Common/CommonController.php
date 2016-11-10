@@ -547,14 +547,10 @@ class CommonController extends Controller
         try
         {
 
-
-            if (Auth::attempt(['email' => $loginRequest->email, 'password' => $loginRequest->password]))
+            $credentials = $loginRequest->only('email', 'password');
+            if ($token = JWTAuth::attempt($credentials))
             {
-                $userSession=Auth::user();
-                $credentials = $loginRequest->only('email', 'password');
-                if (! $token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['error' => 'invalid_credentials'], 401);
-                }
+                $userSession=JWTAuth::toUser($token);
                 $userSession->token=$token;
 
                 if((Auth::user()->hasRole('Admin')) &&  (Auth::user()->delete_status==1) ) {
@@ -602,6 +598,8 @@ class CommonController extends Controller
             }
             else
             {
+                //return response()->json(['error' => 'invalid_credentials'], 401);
+
                 $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_LOGIN_ERROR));
                 $responseJson->setObj($userSession);
                 $responseJson->sendSuccessResponse();
