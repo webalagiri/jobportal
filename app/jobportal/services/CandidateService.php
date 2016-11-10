@@ -31,13 +31,13 @@ class CandidateService
      * @author Baskar
      */
 
-    public function getCandidates()
+    public function getCandidates($paginate = null)
     {
         $candidates = null;
 
         try
         {
-            $candidates = $this->candidateRepo->getCandidates();
+            $candidates = $this->candidateRepo->getCandidates($paginate);
         }
         catch(CandidateException $candidateExc)
         {
@@ -442,4 +442,65 @@ class CandidateService
 
         return $status;
     }
+
+    /* Save candidate other details
+     * @params $candidateOtherDetailsVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateOtherDetails($candidateOtherDetailsVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($candidateOtherDetailsVM, &$status)
+            {
+                //$status = $this->candidateRepo->saveCandidatePreferences($candidatePreferencesVM);
+            });
+
+        }
+        catch(CandidateException $candidateExc)
+        {
+            $status = false;
+            throw $candidateExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_OTHER_DETAILS_SAVE_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
+    /* Track job status
+     * @params $trackStatusVM
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function trackJobStatus($trackStatusVM, $paginate = null)
+    {
+        $appliedJobs = null;
+
+        try
+        {
+            $appliedJobs = $this->candidateRepo->trackJobStatus($trackStatusVM, $paginate);
+        }
+        catch(CandidateException $candidateExc)
+        {
+            throw $candidateExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_TRACK_JOBSTATUS_ERROR, $exc);
+        }
+
+        return $appliedJobs;
+    }
+
 }

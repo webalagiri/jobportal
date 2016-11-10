@@ -10,10 +10,11 @@ namespace App\jobportal\repositories\repointerface;
 
 
 use App\Http\ViewModels\CompanyViewModel;
+use App\Http\ViewModels\ManageInterviewViewModel;
 
 interface CompanyInterface {
 
-    public function getCompanyList($searchKey = null);
+    public function getCompanyList($paginate = null, $searchKey = null);
     public function getCompanyDetails($companyId);
     public function saveCompanyProfile(CompanyViewModel $companyProfileVM);
     public function deleteCompany($companyId);
@@ -26,4 +27,5 @@ interface CompanyInterface {
     public function getFunctionalAreas();
 
     public function getCompanyCount();
+    public function getInterviewList(ManageInterviewViewModel $interviewVM, $paginate = null);
 }

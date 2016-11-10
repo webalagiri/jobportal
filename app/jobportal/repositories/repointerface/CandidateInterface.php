@@ -15,10 +15,11 @@ use App\Http\ViewModels\CandidatePreferencesViewModel;
 use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\Http\ViewModels\TrackStatusViewModel;
 
 interface CandidateInterface
 {
-    public function getCandidates();
+    public function getCandidates($paginate = null);
     public function getCandidateDetails($candidateId);
     public function saveCandidateProfile(CandidateViewModel $candidateVM);
     public function deleteCandidate($candidateId);
@@ -33,4 +34,5 @@ interface CandidateInterface
 
     public function getCandidatesCount();
     public function applyForJob(ApplyJobViewModel $applyJobVM);
+    public function trackJobStatus(TrackStatusViewModel $trackStatusVM, $paginate = null);
 }

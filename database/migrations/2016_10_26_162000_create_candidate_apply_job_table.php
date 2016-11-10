@@ -19,6 +19,7 @@ class CreateCandidateApplyJobTable extends Migration
                 $table->integer('job_id')->unsigned();
                 $table->integer('company_id')->unsigned();
                 $table->integer('candidate_id')->unsigned();
+                $table->integer('job_status')->unsigned();
                 $table->string('created_by', 255);
                 $table->string('updated_by', 255);
                 $table->timestamps();
@@ -30,6 +31,7 @@ class CreateCandidateApplyJobTable extends Migration
                 $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
                 $table->foreign('job_id')->references('id')->on('ri_jobs')->onDelete('cascade');
+                $table->foreign('job_status')->references('id')->on('ri_list_entities')->onDelete('cascade');
             });
         }
 

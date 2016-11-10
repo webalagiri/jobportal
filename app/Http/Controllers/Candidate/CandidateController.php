@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Candidate;
 
+use App\Http\ViewModels\TrackStatusViewModel;
 use App\jobportal\mapper\CandidateProfileMapper;
 use App\jobportal\services\CandidateService;
 use App\jobportal\services\HelperService;
@@ -37,7 +38,7 @@ class CandidateController extends Controller
      * @author Baskar
      */
 
-    public function getCandidates()
+    public function getCandidates(Request $candidateRequest)
     {
         $candidates = null;
         $responseJson = null;
@@ -45,7 +46,8 @@ class CandidateController extends Controller
 
         try
         {
-            $candidates = $this->candidateService->getCandidates();
+            $paginate = $candidateRequest->get('paginate');
+            $candidates = $this->candidateService->getCandidates($paginate);
             //dd($candidates);
             if(!empty($candidates))
             {
@@ -427,6 +429,47 @@ class CandidateController extends Controller
         return $jsonResponse;
     }
 
+    /* Save candidate other details
+     * @params $candidateRequest
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function saveCandidateOtherDetails(Request $candidateRequest)
+    {
+        $candidateOtherDetailsVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            //dd($candidateRequest->all());
+            $candidateOtherDetailsVM = CandidateProfileMapper::setCandidateOtherDetails($candidateRequest);
+            $status = $this->candidateService->saveCandidateOtherDetails($candidateOtherDetailsVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_OTHER_DETAILS_SAVE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($candidateExc);
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_OTHER_DETAILS_SAVE_ERROR));
+            $jsonResponse->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+    }
+
     /* Delete a candidate
      * @params $candidateId
      * @throws $candidateException
@@ -650,6 +693,58 @@ class CandidateController extends Controller
         return $responseJson;
     }
 
+    /* Track job status
+     * @params $jobStatusRequest
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function trackJobStatus(Request $jobStatusRequest)
+    {
+        $appliedJobs = null;
+        $responseJson = null;
+        $jobStatus = null;
+        $trackStatusVM = null;
+
+        try
+        {
+            $paginate = $jobStatusRequest->get('paginate');
+            $trackStatusVM = new TrackStatusViewModel();
+            $jobStatus = (object) $jobStatusRequest->all();
+            $trackStatusVM->setCandidateId($jobStatus->candidateId);
+            $trackStatusVM->setStatusId($jobStatus->jobStatus);
+
+            $appliedJobs = $this->candidateService->trackJobStatus($trackStatusVM, $paginate);
+            //dd($appliedJobs->items());
+            if(!empty($appliedJobs->items()))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_TRACK_JOBSTATUS_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_CANDIDATE_TRACK_STATUS_FOUND));
+            }
+
+            $responseJson->setObj($appliedJobs);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_TRACK_JOBSTATUS_ERROR));
+            $responseJson->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
 
     /**
      * Web Login using Email, password and hospital
@@ -720,11 +815,10 @@ class CandidateController extends Controller
 
     }
 
-
     /**
      * Web Login using Email, password and hospital
      * @param $loginRequest
-     * @throws $companyException
+     * @throws CandidateException
      * @return array | null
      * @author Vimal
      */
@@ -757,19 +851,62 @@ class CandidateController extends Controller
         }
         catch(CandidateException $candidateExc)
         {
-             dd($candidateExc);
+            // dd($candidateExc);
             $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_FORGOTLOGIN_ERROR));
             $responseJson->sendErrorResponse($candidateExc);
         }
         catch(Exception $exc)
         {
-            dd($exc);
+            //dd($exc);
             $msg = AppendMessage::appendGeneralException($exc);
             Log::error($msg);
 
         }
 
         return $responseJson;
+
+    }
+
+    /**
+     * Schedule interview for the candidates
+     * @param $interviewRequest
+     * @throws $companyException
+     * @return array | null
+     * @author Vimal
+     */
+
+    public function scheduleInterview(Request $interviewRequest)
+    {
+        $scheduleInterviewVM = null;
+        $status = true;
+        $jsonResponse = null;
+
+        try
+        {
+            $candidateOtherDetailsVM = CandidateProfileMapper::setInterviewDetails($interviewRequest);
+            $status = $this->candidateService->saveCandidateOtherDetails($candidateOtherDetailsVM);
+
+            if($status)
+            {
+                $jsonResponse = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::CANDIDATE_INTERVIEW_SCHEDULE_SUCCESS));
+                $jsonResponse->sendSuccessResponse();
+            }
+        }
+        catch(CandidateException $candidateExc)
+        {
+            //dd($candidateExc);
+            $jsonResponse = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::CANDIDATE_INTERVIEW_SCHEDULE_ERROR));
+            $jsonResponse->sendErrorResponse($candidateExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $jsonResponse;
+
 
     }
 

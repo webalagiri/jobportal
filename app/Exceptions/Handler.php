@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
+use Tymon\JWTAuth\Exceptions\TokenExpiredException;
+use Tymon\JWTAuth\Exceptions\TokenInvalidException;
+
 use App\Traits\RestExceptionHandlerTrait;
 use App\Traits\RestTraits;
 
@@ -52,11 +55,20 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         //dd($request->getUri());
-        dd($e);
+        //dd($e);
         if(!$this->isApiCall($request)) {
             $retval = parent::render($request, $e);
         } else {
             $retval = $this->getJsonResponseForException($request, $e);
+        }
+
+        if($e instanceof TokenExpiredException)
+        {
+            return response()->json('Token Expired. Please try to login again', $e->getStatusCode());
+        }
+        else if($e instanceof TokenInvalidException)
+        {
+            return response()->json(['Invalid Token'], $e->getStatusCode());
         }
 
         return $retval;

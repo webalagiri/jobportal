@@ -19,7 +19,7 @@ class CreateJobOfferTable extends Migration
                 $table->integer('job_application_id')->unsigned();
                 $table->integer('candidate_id')->unsigned();
                 $table->integer('company_id')->unsigned();
-                $table->integer('offer_letter_status')->unsigned();
+                //$table->integer('offer_letter_status')->unsigned();
                 $table->date('offer_letter_date');
                 $table->string('created_by', 255);
                 $table->string('updated_by', 255);
@@ -29,7 +29,7 @@ class CreateJobOfferTable extends Migration
         }
 
         Schema::table('ri_job_offer', function (Blueprint $table) {
-            $table->foreign('job_application_id', 'job_offer_job_application_id_foreign')->references('id')->on('ri_job_application')->onDelete('cascade');
+            $table->foreign('job_application_id', 'ri_job_offer_job_application_id_foreign')->references('id')->on('ri_candidate_apply_job')->onDelete('cascade');
             $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('company_id')->references('id')->on('users')->onDelete('cascade');
             //$table->foreign('interview_status_id')->references('id')->on('ri_list_entities')->onDelete('cascade');

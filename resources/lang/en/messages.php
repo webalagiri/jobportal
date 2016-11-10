@@ -52,6 +52,9 @@
         "147" => "Unable to get company count",
         "148" => "Successfully retrieved company count",
         "149" => "Unable to get company count",
+        "150" => "Unable to retrieve company interview list",
+        "151" => "Successfully retrieved company interview list",
+        "152" => "No interview list found",
 
         "176" => "Unable to retrieve job list",
         "177" => "Successfully retrieved job list",
@@ -112,5 +115,11 @@
         "239" => "Unable to get candidate count",
         "240" => "Unable to apply for job",
         "241" => "Successfully applied for job",
-
+        "242" => "Unable to save candidate other details",
+        "243" => "Successfully saved candidate other details",
+        "244" => "Unable to get job status list",
+        "245" => "Successfully retrieved job status list",
+        "246" => "No candidate job status available",
+        "247" => "Unable to schedule interview",
+        "248" => "Successfully scheduled interview",
     ];

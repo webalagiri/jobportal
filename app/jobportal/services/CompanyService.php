@@ -33,13 +33,13 @@ class CompanyService
      * @author Baskar
      */
 
-    public function getCompanyList($searchKey = null)
+    public function getCompanyList($paginate = null, $searchKey = null)
     {
         $companies = null;
 
         try
         {
-            $companies = $this->companyRepo->getCompanyList($searchKey);
+            $companies = $this->companyRepo->getCompanyList($paginate, $searchKey);
         }
         catch(CompanyException $companyExc)
         {
@@ -225,6 +225,32 @@ class CompanyService
         }
 
         return $status;
+    }
+
+    /* Get list of interview list
+    * @params $interviewsVM
+    * @throws $companyExc
+    * @return array | null
+    * @author Baskar
+    */
+    public function getInterviewList($interviewsVM, $paginate = null)
+    {
+        $interviewList = null;
+
+        try
+        {
+            $interviewList = $this->companyRepo->getInterviewList($interviewsVM, $paginate);
+        }
+        catch(CompanyException $oompanyExc)
+        {
+            throw $oompanyExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::COMPANY_INTERVIEW_LIST_ERROR, $exc);
+        }
+
+        return $interviewList;
     }
 
 }

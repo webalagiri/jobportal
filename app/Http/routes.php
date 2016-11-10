@@ -70,9 +70,16 @@ Route::group(['prefix' => 'company'], function()
         Route::post('rest/api/forgotlogin', array('as' => 'company.forgotlogin', 'uses' => 'CompanyController@CompanyForgotLogin'));
         //Route::post('rest/api/changelogin', array('as' => 'company.changelogin', 'uses' => 'CompanyController@CompanyForgotLogin'));
 
-        Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
+        Route::group(['middleware' => 'jobportal.auth'], function () {
+            Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
+            Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
+
+            Route::post('rest/api/interviewlist', array('as' => 'company.interviewlist', 'uses' => 'CompanyController@getInterviewList'));
+        });
+
+
         Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
-        Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
+        //Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
         Route::put('rest/api/profile', array('as' => 'company.editprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
         Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
 
@@ -137,6 +144,12 @@ Route::group(['prefix' => 'candidate'], function()
 
         Route::get('rest/api/candidatecount', array('as' => 'candidate.candidatecount', 'uses' => 'CandidateController@getCandidatesCount'));
         Route::post('rest/api/applyjob', array('as' => 'candidate.applyjob', 'uses' => 'CandidateController@applyForJob'));
+
+        Route::group(['middleware' => 'jwt.auth'], function () {
+            Route::post('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
+        });
+
+        //Route::get('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
         Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
         Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));*/

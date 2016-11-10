@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Company;
 
+use App\Http\ViewModels\ManageInterviewViewModel;
 use App\jobportal\common\ResponseJson;
 use App\jobportal\mapper\CompanyProfileMapper;
 use App\jobportal\services\CompanyService;
@@ -42,6 +43,7 @@ class CompanyController extends Controller
         $companies = null;
         $responseJson = null;
         $sortBy = null;
+        $paginate = null;
         //dd('Inside companies list controller');
 
         try
@@ -51,7 +53,14 @@ class CompanyController extends Controller
                 $sortBy = $jobRequest->get('sortBy');
             }
 
-            $companies = $this->companyService->getCompanyList($sortBy);
+            if($jobRequest->has('paginate'))
+            {
+                $paginate = $jobRequest->get('paginate');
+            }
+
+            //dd($paginate);
+
+            $companies = $this->companyService->getCompanyList($paginate, $sortBy);
             //dd($listGroups);
             /*if(!is_null($companies) && count($companies > 0))
             {
@@ -482,6 +491,58 @@ class CompanyController extends Controller
 
         return $responseJson;
 
+    }
+
+    /* Get list of interview list
+     * @params $interviewVM
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getInterviewList(Request $interviewRequest)
+    {
+        $interviewList = null;
+        $responseJson = null;
+        $interviews = null;
+        $interviewsVM = null;
+
+        try
+        {
+            $paginate = $interviewRequest->get('paginate');
+            $interviewsVM = new ManageInterviewViewModel();
+            $interviews = (object) $interviewRequest->all();
+            $interviewsVM->setJobId($interviews->jobId);
+            $interviewsVM->setFilterId($interviews->jobFilter);
+
+            $interviewList = $this->companyService->getInterviewList($interviewsVM, $paginate);
+
+            if(!empty($interviewList->items()))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::COMPANY_INTERVIEW_LIST_SUCCESS));
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_INTERVIEW_LIST_FOUND));
+            }
+
+            $responseJson->setObj($interviewList);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::COMPANY_INTERVIEW_LIST_ERROR));
+            $responseJson->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
     }
 
 

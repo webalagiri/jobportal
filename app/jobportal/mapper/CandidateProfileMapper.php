@@ -10,10 +10,12 @@ namespace App\jobportal\mapper;
 
 use App\Http\ViewModels\ApplyJobViewModel;
 use App\Http\ViewModels\CandidateEmploymentViewModel;
+use App\Http\ViewModels\CandidateOtherDetailsViewModel;
 use App\Http\ViewModels\CandidatePreferencesViewModel;
 use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\Http\ViewModels\ScheduleInterviewViewModel;
 use Illuminate\Http\Request;
 
 class CandidateProfileMapper
@@ -166,6 +168,42 @@ class CandidateProfileMapper
 
     }
 
+    public static function setCandidateOtherDetails(Request $candidateRequest)
+    {
+        $candidateOtherDetailsVM = new CandidateOtherDetailsViewModel();
+        $candidateOtherDetails = (object) $candidateRequest->all();
+        //dd($candidateEmp);
+        $userName = 'Admin';
+
+        $candidateOtherDetailsVM->setCandidateId($candidateOtherDetails->candidateId);
+        $candidateOtherDetailsVM->setCandidateOtherDetailsId($candidateOtherDetails->candidateOtherDetailsId);
+        $candidateOtherDetailsVM->setPassportAvailability($candidateOtherDetails->passportAvailability);
+        $candidateOtherDetailsVM->setDrivingLicense($candidateOtherDetails->drivingLicense);
+        $candidateOtherDetailsVM->setPassportExpiryYear($candidateOtherDetails->passportExpirtyYear);
+        $candidateOtherDetailsVM->setCandidateCategory($candidateOtherDetails->candidateCategory);
+        $candidateOtherDetailsVM->setPhysicallyChallenged($candidateOtherDetails->physicallyChallenged);
+        $candidateOtherDetailsVM->setProfileName($candidateOtherDetails->profileName);
+        $candidateOtherDetailsVM->setUrl($candidateOtherDetails->url);
+        $candidateOtherDetailsVM->setWorkPermit($candidateOtherDetails->workPermit);
+        $candidateOtherDetailsVM->setOtherCountries($candidateOtherDetails->otherCountries);
+
+        $languages = $candidateOtherDetails->languages;
+        //dd($candidateEmployments);
+
+        foreach($languages as $language)
+        {
+            $candidateOtherDetailsVM->setLanguages($language);
+        }
+
+        $candidateOtherDetailsVM->setCreatedBy($userName);
+        $candidateOtherDetailsVM->setUpdatedBy($userName);
+        $candidateOtherDetailsVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $candidateOtherDetailsVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $candidateOtherDetailsVM;
+
+    }
+
     public static function setApplyJobDetails(Request $applyJobRequest)
     {
         $applyJobVM = new ApplyJobViewModel();
@@ -182,5 +220,28 @@ class CandidateProfileMapper
         $applyJobVM->setUpdatedAt(date("Y-m-d H:i:s"));
 
         return $applyJobVM;
+    }
+
+    public static function setInterviewDetails(Request $interviewRequest)
+    {
+        $scheduleInterviewVM = new ScheduleInterviewViewModel();
+        $interview = (object) $interviewRequest->all();
+
+        //$userName = Session::get('DisplayName');
+        $userName = 'Admin';
+
+        $scheduleInterviewVM->setCandidateId($interview->candidateId);
+        $scheduleInterviewVM->setCompanyId($interview->companyId);
+        $scheduleInterviewVM->setJobApplicationId($interview->jobApplicationId);
+        $scheduleInterviewVM->setInterviewLocation($interview->interviewLocation);
+        $scheduleInterviewVM->setInterviewDate($interview->interviewDate);
+        $scheduleInterviewVM->setInterviewTime($interview->interviewTime);
+
+        $scheduleInterviewVM->setCreatedBy($userName);
+        $scheduleInterviewVM->setUpdatedBy($userName);
+        $scheduleInterviewVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $scheduleInterviewVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+        return $scheduleInterviewVM;
     }
 }

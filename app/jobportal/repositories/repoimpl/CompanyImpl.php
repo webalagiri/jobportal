@@ -9,6 +9,7 @@
 namespace App\jobportal\repositories\repoimpl;
 
 use App\Http\ViewModels\CompanyViewModel;
+use App\Http\ViewModels\ManageInterviewViewModel;
 use App\jobportal\model\entities\Company;
 use App\jobportal\repositories\repointerface\CompanyInterface;
 use App\jobportal\utilities\GroupType;
@@ -34,7 +35,7 @@ class CompanyImpl implements CompanyInterface
      * @author Baskar
      */
 
-    public function getCompanyList($searchKey = null)
+    public function getCompanyList($paginate = null, $searchKey = null)
     {
         $companies = null;
         $sort = null;
@@ -60,7 +61,13 @@ class CompanyImpl implements CompanyInterface
                 $query->orderBy('rcp.company_name', 'DESC');
             }
 
-            $companies = $query->paginate();
+            if(!is_null($paginate))
+            {
+                $companies = $query->paginate($paginate);
+            }
+            else{
+                $companies = $query->paginate();
+            }
         }
         catch(QueryException $queryExc)
         {
@@ -469,6 +476,13 @@ class CompanyImpl implements CompanyInterface
         return $latestJobs;
     }
 
+    /* Get list of job interviews
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
     public function getJobInterviews($search = null)
     {
         $jobInterviews = null;
@@ -510,5 +524,66 @@ class CompanyImpl implements CompanyInterface
         }
 
         return $latestJobs;
+    }
+
+    /* Get list of interview list
+     * @params $interviewVM
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getInterviewList(ManageInterviewViewModel $interviewsVM, $paginate = null)
+    {
+        $interviewList = null;
+        $jobId = $interviewsVM->getJobId();
+        $filterId = array($interviewsVM->getFilterId());
+
+        try
+        {
+            $ids = implode(',', $filterId);
+            //dd($ids);
+
+            $query = DB::table('ri_candidate_apply_job as rcaj')->join('users as usr', 'usr.id', '=', 'rcaj.candidate_id');
+            $query->join('ri_candidate_personal_profile as rcpp', 'rcpp.candidate_id', '=', 'rcaj.candidate_id');
+            $query->join('ri_candidate_job_profile as rcjp', 'rcjp.candidate_id', '=', 'rcaj.candidate_id');
+            $query->join('ri_candidate_employment as rce', 'rce.candidate_id', '=', 'rcaj.candidate_id');
+            $query->where('rcaj.job_id', '=', $jobId);
+            $query->where('usr.delete_status', '=', 1);
+            //$query->whereIn('products.value', explode(',' $values));
+            //$query->whereIn('rcaj.job_status', explode(',',$ids));
+            if(!empty($ids))
+            {
+                $query->whereIn('rcaj.job_status', explode(',',$ids));
+            }
+
+            $query->select('rcaj.id as Id', 'rcaj.candidate_id as candidateId', 'rcpp.first_name as firstName',
+                'rcpp.last_name as lastName', 'rcjp.job_title as jobTitle', 'rce.company_name as companyName',
+                'rcjp.current_location as currentLocation', 'rcjp.skills as skills', 'rcjp.total_experience_years as totalExperience',
+                'rcjp.current_salary as currentSalary');
+
+            //dd($query->toSql());
+
+            if(!is_null($paginate))
+            {
+                $interviewList = $query->paginate($paginate);
+            }
+            else
+            {
+                $interviewList = $query->paginate();
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new CompanyException(null, ErrorEnum::COMPANY_INTERVIEW_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            throw new CompanyException(null, ErrorEnum::COMPANY_INTERVIEW_LIST_ERROR, $exc);
+        }
+
+        return $interviewList;
     }
 }

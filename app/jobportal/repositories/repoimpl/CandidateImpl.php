@@ -15,6 +15,7 @@ use App\Http\ViewModels\CandidatePreferencesViewModel;
 use App\Http\ViewModels\CandidateProjectViewModel;
 use App\Http\ViewModels\CandidateSkillsViewModel;
 use App\Http\ViewModels\CandidateViewModel;
+use App\Http\ViewModels\TrackStatusViewModel;
 use App\jobportal\model\entities\CandidateApplyJob;
 use App\jobportal\model\entities\CandidateEmployment;
 use App\jobportal\model\entities\CandidateJobProfile;
@@ -26,6 +27,7 @@ use App\jobportal\repositories\repointerface\CandidateInterface;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
 use App\jobportal\utilities\Exception\CandidateException;
 
+use App\jobportal\utilities\JobStatus;
 use App\jobportal\utilities\UserType;
 use App\Role;
 use App\User;
@@ -43,7 +45,7 @@ class CandidateImpl implements CandidateInterface
      * @author Baskar
      */
 
-    public function getCandidates()
+    public function getCandidates($paginate = null)
     {
         $candidates = null;
         //dd('Inside candidate impl');
@@ -64,6 +66,11 @@ class CandidateImpl implements CandidateInterface
             //dd($query->toSql());
 
             //$candidates = $query->get();
+            if(!is_null($paginate))
+            {
+                $candidates = $query->paginate($paginate);
+            }
+
             $candidates = $query->paginate();
         }
         catch(QueryException $queryExc)
@@ -739,12 +746,14 @@ class CandidateImpl implements CandidateInterface
         try
         {
             $user = User::find($applyJobVM->getCandidateId());
+            $jobStatus = JobStatus::PENDING;
 
             if(!is_null($user))
             {
                 $candidateApplyJob = new CandidateApplyJob();
                 $candidateApplyJob->company_id = $applyJobVM->getCompanyId();
                 $candidateApplyJob->job_id = $applyJobVM->getJobId();
+                $candidateApplyJob->job_status = $jobStatus;
                 $candidateApplyJob->created_by = $applyJobVM->getCreatedBy();
                 $candidateApplyJob->updated_by = $applyJobVM->getUpdatedBy();
                 $candidateApplyJob->created_at = $applyJobVM->getCreatedAt();
@@ -766,5 +775,64 @@ class CandidateImpl implements CandidateInterface
         }
 
         return $status;
+    }
+
+    /* Track job status
+     * @params $candidateId
+     * @throws $candidateExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function trackJobStatus(TrackStatusViewModel $trackStatusVM, $paginate = null)
+    {
+        $appliedJobs = null;
+        $candidateId = $trackStatusVM->getCandidateId();
+        $statusId = array($trackStatusVM->getStatusId());
+
+        try
+        {
+            $ids = implode(',', $statusId);
+            //dd($ids);
+            $query = DB::table('ri_candidate_apply_job as rcaj')->join('users as usr', 'usr.id', '=', 'rcaj.candidate_id');
+            $query->join('ri_company_profile as rcp', 'rcp.company_id', '=', 'rcaj.company_id');
+            $query->join('ri_jobs as rj', 'rj.id', '=', 'rcaj.job_id');
+            $query->join('ri_list_entities as rle1', 'rle1.id', '=', 'rj.location');
+            $query->join('ri_list_entities as rle2', 'rle2.id', '=', 'rcaj.job_status');
+            $query->where('rcaj.candidate_id', '=', $candidateId);
+            $query->where('usr.delete_status', '=', 1);
+            //$query->whereIn('products.value', explode(',' $values));
+            if(!empty($ids))
+            {
+                $query->whereIn('rcaj.job_status', explode(',',$ids));
+            }
+
+            $query->select('rcaj.id as Id', 'rcaj.candidate_id as candidateId',
+                'rcp.company_name as companyName', 'rj.id as jobId', 'rj.job_post_name as postName',
+                'rle1.list_entity_name as location', 'rle2.list_entity_name as jobStatus');
+
+            //dd($query->toSql());
+
+            if(!is_null($paginate))
+            {
+                $appliedJobs = $query->paginate($paginate);
+            }
+            else
+            {
+                $appliedJobs = $query->paginate();
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_TRACK_JOBSTATUS_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            throw new CandidateException(null, ErrorEnum::CANDIDATE_TRACK_JOBSTATUS_ERROR, $exc);
+        }
+
+        return $appliedJobs;
     }
 }

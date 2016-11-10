@@ -33,6 +33,7 @@ class CreateJobsTable extends Migration
                 $table->date('job_active_from')->nullable();
                 $table->date('job_active_to')->nullable();
                 $table->tinyInteger('job_status');
+                $table->string('job_interview_id', 255)->nullable();
                 $table->string('created_by', 255);
                 $table->string('updated_by', 255);
 
