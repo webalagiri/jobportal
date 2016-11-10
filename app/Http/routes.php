@@ -79,12 +79,12 @@ Route::group(['prefix' => 'company'], function()
         Route::group(['middleware' => 'jobportal.auth'], function () {
             Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
             Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
-
+            Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
             Route::post('rest/api/interviewlist', array('as' => 'company.interviewlist', 'uses' => 'CompanyController@getInterviewList'));
         });
 
 
-        Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));
+
         //Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
         Route::put('rest/api/profile', array('as' => 'company.editprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
         Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
