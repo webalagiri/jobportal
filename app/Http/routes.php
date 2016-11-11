@@ -92,21 +92,10 @@ Route::group(['prefix' => 'company'], function()
             Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
             Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));
             Route::delete('rest/api/job', array('as' => 'company.deletejob', 'uses' => 'JobController@deleteJob'));
+            Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
         });
 
-
-
         //Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
-
-        Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
-
-
-
-
-
-
-
-
 
         Route::get('rest/api/industries', array('as' => 'company.industries', 'uses' => 'CompanyController@getIndustries'));
 
@@ -125,8 +114,6 @@ Route::group(['prefix' => 'admin'], function()
             Route::get('rest/api/latestapplications', array('as' => 'company.latestapplications', 'uses' => 'JobController@getLatestJobApplications'));
             //Route::get('rest/api/listgroup', array('as' => 'admin.listgroup', 'uses' => 'CommonController@saveListGroups'));
         });
-
-
 
     });
 
@@ -156,6 +143,7 @@ Route::group(['prefix' => 'candidate'], function()
             Route::post('rest/api/applyjob', array('as' => 'candidate.applyjob', 'uses' => 'CandidateController@applyForJob'));
 
             Route::post('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
+            Route::delete('rest/api/profile', array('as' => 'candidate.deletecandidate', 'uses' => 'CandidateController@deleteCandidate'));
         });
 
         Route::post('rest/api/login', array('as' => 'candidate.login', 'uses' => 'CandidateController@CandidateLogin'));
@@ -165,7 +153,7 @@ Route::group(['prefix' => 'candidate'], function()
         Route::get('rest/api/{candidateId}/details', array('as' => 'candidate.candidatedetails', 'uses' => 'CandidateController@getCandidateDetails'));
 
 
-        Route::delete('rest/api/profile', array('as' => 'candidate.deletecandidate', 'uses' => 'CandidateController@deleteCandidate'));
+
 
         Route::get('rest/api/{candidateId}/skills', array('as' => 'candidate.skills', 'uses' => 'CandidateController@getCandidateSkills'));
         Route::get('rest/api/{candidateId}/employment', array('as' => 'candidate.employment', 'uses' => 'CandidateController@getCandidateEmployment'));
