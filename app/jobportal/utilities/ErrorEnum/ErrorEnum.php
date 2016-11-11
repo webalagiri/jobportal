@@ -67,6 +67,9 @@ class ErrorEnum extends Enum{
     const COMPANY_INTERVIEW_LIST_ERROR = 150;
     const COMPANY_INTERVIEW_LIST_SUCCESS = 151;
     const NO_INTERVIEW_LIST_FOUND = 152;
+    const FUNCTIONAL_AREAS_LIST_ERROR = 153;
+    const FUNCTIONAL_AREAS_LIST_SUCCESS = 154;
+    const NO_FUNCTIONAL_AREAS_LIST_FOUND = 155;
 
     //Job constants 176 to 200
     const JOB_LIST_ERROR = 176;

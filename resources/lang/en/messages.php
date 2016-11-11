@@ -55,6 +55,9 @@
         "150" => "Unable to retrieve company interview list",
         "151" => "Successfully retrieved company interview list",
         "152" => "No interview list found",
+        "153" => "Unable to retrieve functional area list",
+        "154" => "Successfully retrieved functional area list",
+        "155" => "No functional area list found",
 
         "176" => "Unable to retrieve job list",
         "177" => "Successfully retrieved job list",

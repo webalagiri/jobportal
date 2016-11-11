@@ -303,6 +303,54 @@ class CompanyController extends Controller
         return $responseJson;
     }
 
+    /* Get list of industries
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getFunctionalAreas()
+    {
+        $functionalAreas = null;
+        $responseJson = null;
+        //dd('Inside companies list controller');
+
+        try
+        {
+            $functionalAreas = $this->companyService->getFunctionalAreas();
+            //dd($listGroups);
+
+            if(!empty($functionalAreas))
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::FUNCTIONAL_AREAS_LIST_SUCCESS));
+
+            }
+            else
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::NO_FUNCTIONAL_AREAS_LIST_FOUND));
+            }
+
+            $responseJson->setObj($functionalAreas);
+            $responseJson->sendSuccessResponse();
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $errorMsg = $companyExc->getMessageForCode();
+            $msg = AppendMessage::appendMessage($companyExc);
+            Log::error($msg);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
+    }
+
     /* Save company profile
      * @params $companyRequest
      * @throws $companyExc

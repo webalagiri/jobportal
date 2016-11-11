@@ -203,12 +203,11 @@ class CompanyImpl implements CompanyInterface
             $query->where('rle.list_group_id', '=', $industryId);
             $query->where('rle.delete_status', '=', 1);
             $query->select('rle.id as Id', 'rle.list_entity_name as industryName',
-                'rle.entity_description as customerDetails',
                 'rlg.id as groupId', 'rlg.list_group_name as listGroupName');
-            //$query->orderBy('rcp.company_name', 'ASC');
+            $query->orderBy('rle.list_entity_name', 'ASC');
 
-            //$companies = $query->get();
-            $industries = $query->paginate();
+            $industries = $query->get();
+            //$industries = $query->paginate();
         }
         catch(QueryException $queryExc)
         {
@@ -222,7 +221,7 @@ class CompanyImpl implements CompanyInterface
         return $industries;
     }
 
-    /* Get list of industries
+    /* Get list of functional areas
      * @params none
      * @throws $companyExc
      * @return array | null
@@ -240,20 +239,19 @@ class CompanyImpl implements CompanyInterface
             $query->where('rle.list_group_id', '=', $functionalId);
             $query->where('rle.delete_status', '=', 1);
             $query->select('rle.id as Id', 'rle.list_entity_name as functionalArea',
-                'rle.entity_description as customerDetails',
                 'rlg.id as groupId', 'rlg.list_group_name as listGroupName');
-            //$query->orderBy('rcp.company_name', 'ASC');
+            $query->orderBy('rle.list_entity_name', 'ASC');
 
-            //$companies = $query->get();
-            $functionalAreas = $query->paginate();
+            $functionalAreas = $query->get();
+            //$functionalAreas = $query->paginate();
         }
         catch(QueryException $queryExc)
         {
-            throw new CompanyException(null, ErrorEnum::INDUSTRY_LIST_ERROR, $queryExc);
+            throw new CompanyException(null, ErrorEnum::FUNCTIONAL_AREAS_LIST_ERROR, $queryExc);
         }
         catch(Exception $exc)
         {
-            throw new CompanyException(null, ErrorEnum::INDUSTRY_LIST_ERROR, $exc);
+            throw new CompanyException(null, ErrorEnum::FUNCTIONAL_AREAS_LIST_ERROR, $exc);
         }
 
         return $functionalAreas;

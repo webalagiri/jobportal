@@ -134,6 +134,33 @@ class CompanyService
         return $industries;
     }
 
+    /* Get list of industries
+     * @params none
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function getFunctionalAreas()
+    {
+        $functionalAreas = null;
+
+        try
+        {
+            $functionalAreas = $this->companyRepo->getFunctionalAreas();
+        }
+        catch(CompanyException $companyExc)
+        {
+            throw $companyExc;
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::FUNCTIONAL_AREAS_LIST_ERROR, $exc);
+        }
+
+        return $functionalAreas;
+    }
+
     /* Get list of latest jobs
      * @params none
      * @throws $companyExc
