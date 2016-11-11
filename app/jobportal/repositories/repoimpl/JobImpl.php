@@ -35,7 +35,7 @@ class JobImpl implements JobInterface
      * @author Baskar
      */
 
-    public function getJobList($searchKey = null)
+    public function getJobList($paginate = null, $searchKey = null)
     {
         $jobs = null;
         $sort = null;
@@ -67,8 +67,16 @@ class JobImpl implements JobInterface
                 $query->orderBy('rj.job_active_from', 'DESC');
             }
 
+            if(!is_null($paginate))
+            {
+                $jobs = $query->paginate($paginate);
+            }
+            else{
+                $jobs = $query->paginate();
+            }
+
             //$jobs = $query->get();
-            $jobs = $query->paginate();
+            //$jobs = $query->paginate();
         }
         catch(QueryException $queryExc)
         {

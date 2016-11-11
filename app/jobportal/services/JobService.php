@@ -26,19 +26,19 @@ class JobService
     }
 
     /* Get list of jobs
-     * @params none
+     * @params $paginate, $searchKey
      * @throws $jobException
      * @return array | null
      * @author Baskar
      */
 
-    public function getJobList($searchKey = null)
+    public function getJobList($paginate = null, $searchKey = null)
     {
         $jobs = null;
 
         try
         {
-            $jobs = $this->jobRepo->getJobList($searchKey);
+            $jobs = $this->jobRepo->getJobList($paginate, $searchKey);
         }
         catch(JobException $jobExc)
         {

@@ -37,17 +37,22 @@ class JobController extends Controller
         $jobs = null;
         $responseJson = null;
         $sortBy = null;
+        $paginate = null;
 
         if($jobRequest->has('sortBy'))
         {
             $sortBy = $jobRequest->get('sortBy');
+        }
+        if($jobRequest->has('paginate'))
+        {
+            $paginate = $jobRequest->get('paginate');
         }
 
         //dd('Inside jobs list controller');
 
         try
         {
-            $jobs = $this->jobService->getJobList($sortBy);
+            $jobs = $this->jobService->getJobList($paginate, $sortBy);
             //dd($listGroups);
            /*if(!empty($jobs))
             {

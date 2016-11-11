@@ -35,11 +35,12 @@ Route::group(['prefix' => 'common'], function()
 
        Route::group(['middleware' => 'jobportal.auth'], function () {
            Route::get('rest/api/listgroups', array('as' => 'common.listgroups', 'uses' => 'CommonController@getListGroups'));
+           Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
+           Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
        });
 
 
-      Route::get('rest/api/listentities', array('as' => 'common.listentities', 'uses' => 'CommonController@getListEntities'));
-      Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
+
       Route::get('rest/api/cities', array('as' => 'common.cities', 'uses' => 'CommonController@getCities'));
       Route::get('rest/api/countries', array('as' => 'common.countries', 'uses' => 'CommonController@getCountries'));
 
@@ -87,6 +88,10 @@ Route::group(['prefix' => 'company'], function()
 
             Route::get('rest/api/companycount', array('as' => 'company.companycount', 'uses' => 'CompanyController@getCompanyCount'));
             Route::get('rest/api/jobcount', array('as' => 'company.jobcount', 'uses' => 'JobController@getJobCount'));
+            Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
+            Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
+            Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));
+            Route::delete('rest/api/job', array('as' => 'company.deletejob', 'uses' => 'JobController@deleteJob'));
         });
 
 
@@ -95,27 +100,33 @@ Route::group(['prefix' => 'company'], function()
 
         Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
 
-        Route::get('rest/api/jobs', array('as' => 'company.jobs', 'uses' => 'JobController@getJobList'));
-        Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));
 
 
-        Route::delete('rest/api/job', array('as' => 'company.deletejob', 'uses' => 'JobController@deleteJob'));
+
+
+
 
 
 
         Route::get('rest/api/industries', array('as' => 'company.industries', 'uses' => 'CompanyController@getIndustries'));
 
-        Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
+
     });
 });
 
 Route::group(['prefix' => 'admin'], function()
 {
     Route::group(['namespace' => 'Company'], function(){
-        Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
-        Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
-        Route::get('rest/api/latestapplications', array('as' => 'company.latestapplications', 'uses' => 'JobController@getLatestJobApplications'));
-        Route::get('rest/api/listgroup', array('as' => 'admin.listgroup', 'uses' => 'CommonController@saveListGroups'));
+
+        Route::group(['middleware' => 'jobportal.auth'], function () {
+
+            Route::get('rest/api/companies', array('as' => 'company.companies', 'uses' => 'CompanyController@getCompanyList'));
+            Route::get('rest/api/latestjobs', array('as' => 'company.latestjobs', 'uses' => 'CompanyController@getLatestJobs'));
+            Route::get('rest/api/latestapplications', array('as' => 'company.latestapplications', 'uses' => 'JobController@getLatestJobApplications'));
+            //Route::get('rest/api/listgroup', array('as' => 'admin.listgroup', 'uses' => 'CommonController@saveListGroups'));
+        });
+
+
 
     });
 
@@ -141,12 +152,16 @@ Route::group(['prefix' => 'candidate'], function()
             Route::put('rest/api/preferences', array('as' => 'candidate.editpreferences', 'uses' => 'CandidateController@saveCandidatePreferences'));
 
             Route::get('rest/api/candidatecount', array('as' => 'candidate.candidatecount', 'uses' => 'CandidateController@getCandidatesCount'));
+            Route::get('rest/api/candidates', array('as' => 'candidate.candidates', 'uses' => 'CandidateController@getCandidates'));
+            Route::post('rest/api/applyjob', array('as' => 'candidate.applyjob', 'uses' => 'CandidateController@applyForJob'));
+
+            Route::post('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
         });
 
         Route::post('rest/api/login', array('as' => 'candidate.login', 'uses' => 'CandidateController@CandidateLogin'));
         Route::post('rest/api/forgotlogin', array('as' => 'candidate.forgotlogin', 'uses' => 'CandidateController@CandidateForgotLogin'));
 
-        Route::get('rest/api/candidates', array('as' => 'candidate.candidates', 'uses' => 'CandidateController@getCandidates'));
+
         Route::get('rest/api/{candidateId}/details', array('as' => 'candidate.candidatedetails', 'uses' => 'CandidateController@getCandidateDetails'));
 
 
@@ -160,11 +175,6 @@ Route::group(['prefix' => 'candidate'], function()
         Route::post('rest/api/skills', array('as' => 'candidate.saveskills', 'uses' => 'CandidateController@saveCandidateSkills'));
 
 
-        Route::post('rest/api/applyjob', array('as' => 'candidate.applyjob', 'uses' => 'CandidateController@applyForJob'));
-
-        Route::group(['middleware' => 'jwt.auth'], function () {
-            Route::post('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
-        });
 
         //Route::get('rest/api/appliedjobs', array('as' => 'candidate.appliedjobs', 'uses' => 'CandidateController@trackJobStatus'));
         /*Route::get('rest/api/{companyId}/details', array('as' => 'company.companydetails', 'uses' => 'CompanyController@getCompanyDetails'));

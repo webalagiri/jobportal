@@ -18,7 +18,7 @@ interface JobInterface
     public function getJobListByBasicSearch($searchJob);
     public function getJobListByAdvanceSearch($searchJob);
 
-    public function getJobList($searchKey = null);
+    public function getJobList($paginate = null, $searchKey = null);
     public function getJobDetails($jobId);
     public function saveJobProfile(JobViewModel $jobVM);
     public function deleteJob($jobId);
