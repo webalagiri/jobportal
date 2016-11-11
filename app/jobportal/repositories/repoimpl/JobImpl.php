@@ -437,6 +437,7 @@ class JobImpl implements JobInterface
                 $jobProfile->job_post_name = $jobVM->getJobPostName();
                 $jobProfile->job_description = $jobVM->getJobDescription();
                 $jobProfile->job_post_type = $jobVM->getJobPostType();
+                $jobProfile->location = $jobVM->getLocation();
                 $jobProfile->job_post_vacancy = $jobVM->getJobVacancy();
                 $jobProfile->job_experience = $jobVM->getJobExperience();
                 $jobProfile->job_salary_min = $jobVM->getJobSalaryMin();

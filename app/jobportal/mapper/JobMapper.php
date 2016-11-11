@@ -25,6 +25,7 @@ class JobMapper
         $jobVM->setJobId($job->jobId);
         $jobVM->setCompanyId($job->companyId);
         $jobVM->setJobPostName($job->jobPostName);
+        $jobVM->setLocation(property_exists($job, 'location') ? $job->location : null);
         //$jobVM->setJobDescription($job->jobDescription);
         $jobVM->setJobDescription(property_exists($job, 'jobDescription') ? $job->jobDescription : null);
         $jobVM->setJobPostType($job->jobPostType);

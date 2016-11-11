@@ -16,6 +16,7 @@ class JobViewModel
     private $jobPostName;
     private $jobDescription;
     private $jobPostType;
+    private $location;
     private $jobVacancy;
     private $jobExperience;
     private $jobSalaryMin;
@@ -109,6 +110,22 @@ class JobViewModel
     public function setJobPostType($jobPostType)
     {
         $this->jobPostType = $jobPostType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLocation()
+    {
+        return $this->location;
+    }
+
+    /**
+     * @param mixed $location
+     */
+    public function setLocation($location)
+    {
+        $this->location = $location;
     }
 
     /**
