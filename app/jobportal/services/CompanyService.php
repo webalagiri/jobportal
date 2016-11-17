@@ -221,6 +221,39 @@ class CompanyService
         return $status;
     }
 
+    /* Schedule Interview
+     * @params $interviewScheduleVM
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function scheduleInterview($interviewScheduleVM)
+    {
+        $status = true;
+
+        try
+        {
+            DB::transaction(function() use ($interviewScheduleVM, &$status)
+            {
+                $status = $this->companyRepo->scheduleInterview($interviewScheduleVM);
+            });
+
+        }
+        catch(CompanyException $oompanyExc)
+        {
+            $status = false;
+            throw $oompanyExc;
+        }
+        catch (Exception $ex) {
+
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::INTERVIEW_SCHEDULE_ERROR, $ex);
+        }
+
+        return $status;
+    }
+
     /* Delete a company
      * @params $companyId
      * @throws $companyExc

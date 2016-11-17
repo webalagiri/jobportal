@@ -88,6 +88,8 @@ class ErrorEnum extends Enum{
     const JOB_COUNT_ERROR = 189;
     const JOB_COUNT_SUCCESS = 190;
     const NO_JOB_COUNT_FOUND = 191;
+    const INTERVIEW_SCHEDULE_ERROR = 192;
+    const INTERVIEW_SCHEDULE_SUCCESS = 193;
 
     //Candidate constants 201 to 260
     const CANDIDATE_LIST_ERROR = 201;

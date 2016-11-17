@@ -10,6 +10,7 @@ namespace App\jobportal\mapper;
 
 
 use App\Http\ViewModels\JobViewModel;
+use App\Http\ViewModels\ScheduleInterviewViewModel;
 use Illuminate\Http\Request;
 
 class JobMapper
@@ -45,5 +46,31 @@ class JobMapper
         $jobVM->setUpdatedAt(date("Y-m-d H:i:s"));
 
         return $jobVM;
+    }
+
+    public static function setInterviewSchedule(Request $interviewRequest)
+    {
+        $interviewScheduleVM = new ScheduleInterviewViewModel();
+
+        $interviews = (object) $interviewRequest->all();
+        //$userName = Session::get('DisplayName');
+        $userName = 'Admin';
+
+        //$interviewScheduleVM->setJobApplicationId($interviews->jobApplicationId);
+        //$interviewScheduleVM->setCandidateId($interviews->candidateId);
+        $interviewScheduleVM->setJobId($interviews->jobId);
+        $interviewScheduleVM->setCompanyId($interviews->companyId);
+        $interviewScheduleVM->setInterviewLocation($interviews->interviewLocation);
+        $interviewScheduleVM->setInterviewDate($interviews->interviewDate);
+        $interviewScheduleVM->setInterviewTime($interviews->interviewTime);
+        $interviewScheduleVM->setCandidates($interviews->candidates);
+
+        $interviewScheduleVM->setCreatedBy($userName);
+        $interviewScheduleVM->setUpdatedBy($userName);
+        $interviewScheduleVM->setCreatedAt(date("Y-m-d H:i:s"));
+        $interviewScheduleVM->setUpdatedAt(date("Y-m-d H:i:s"));
+
+
+        return $interviewScheduleVM;
     }
 }

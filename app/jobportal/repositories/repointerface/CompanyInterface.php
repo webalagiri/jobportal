@@ -11,6 +11,7 @@ namespace App\jobportal\repositories\repointerface;
 
 use App\Http\ViewModels\CompanyViewModel;
 use App\Http\ViewModels\ManageInterviewViewModel;
+use App\Http\ViewModels\ScheduleInterviewViewModel;
 
 interface CompanyInterface {
 
@@ -28,4 +29,9 @@ interface CompanyInterface {
 
     public function getCompanyCount();
     public function getInterviewList(ManageInterviewViewModel $interviewVM, $paginate = null);
+
+    public function scheduleInterview(ScheduleInterviewViewModel $interviewScheduleVM);
+    public function searchByInterviewId($interviewId);
+
+    public function searchByJob($jobId, $paginate = null);
 }

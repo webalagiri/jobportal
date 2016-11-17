@@ -12,13 +12,15 @@ namespace App\Http\ViewModels;
 class ScheduleInterviewViewModel
 {
     private $jobInterviewId;
-
+    private $jobId;
     private $candidateId;
     private $jobApplicationId;
     private $companyId;
     private $interviewLocation;
     private $interviewDate;
     private $interviewTime;
+
+    private $candidates;
 
     private $createdBy;
     private $updatedBy;
@@ -39,6 +41,22 @@ class ScheduleInterviewViewModel
     public function setJobInterviewId($jobInterviewId)
     {
         $this->jobInterviewId = $jobInterviewId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJobId()
+    {
+        return $this->jobId;
+    }
+
+    /**
+     * @param mixed $jobId
+     */
+    public function setJobId($jobId)
+    {
+        $this->jobId = $jobId;
     }
 
     /**
@@ -135,6 +153,22 @@ class ScheduleInterviewViewModel
     public function setInterviewTime($interviewTime)
     {
         $this->interviewTime = $interviewTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCandidates()
+    {
+        return $this->candidates;
+    }
+
+    /**
+     * @param mixed $candidates
+     */
+    public function setCandidates($candidates)
+    {
+        $this->candidates = $candidates;
     }
 
     /**

@@ -10,9 +10,14 @@ namespace App\jobportal\repositories\repoimpl;
 
 use App\Http\ViewModels\CompanyViewModel;
 use App\Http\ViewModels\ManageInterviewViewModel;
+use App\Http\ViewModels\ScheduleInterviewViewModel;
+use App\jobportal\model\entities\CandidateApplyJob;
 use App\jobportal\model\entities\Company;
+use App\jobportal\model\entities\JobInterview;
+use App\jobportal\model\entities\Jobs;
 use App\jobportal\repositories\repointerface\CompanyInterface;
 use App\jobportal\utilities\GroupType;
+use App\jobportal\utilities\JobStatus;
 use App\jobportal\utilities\UserType;
 use App\Role;
 
@@ -374,6 +379,154 @@ class CompanyImpl implements CompanyInterface
             $user->attachRole($role);
         }
     }
+
+    /* Schedule Interview
+     * @params $interviewScheduleVM
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+    public function scheduleInterview(ScheduleInterviewViewModel $interviewScheduleVM)
+    {
+        $status = true;
+        $candidateUser = null;
+        $candidateIds = $interviewScheduleVM->getCandidates();
+
+        try
+        {
+            $candidates = explode(",", $candidateIds);
+
+            foreach($candidates as $candidate)
+            {
+                //dd($candidate);
+                $candidateUser = User::find($candidate);
+                //dd($candidateUser->name);
+
+                if (!is_null($candidateUser))
+                {
+                    //dd('Inside candidate user if statement');
+                    $jobInterview = new JobInterview();
+                    //$jobInterview->job_application_id = $interviewScheduleVM->getJobApplicationId();
+                    $jobInterview->job_application_id = 1;
+                    $jobInterview->company_id = $interviewScheduleVM->getCompanyId();
+                    $jobInterview->interview_location = $interviewScheduleVM->getInterviewLocation();
+                    $jobInterview->interview_date = $interviewScheduleVM->getInterviewDate();
+                    $jobInterview->interview_time = $interviewScheduleVM->getInterviewTime();
+
+                    $jobInterview->created_by = $interviewScheduleVM->getCreatedBy();
+                    $jobInterview->updated_by = $interviewScheduleVM->getUpdatedBy();
+                    $jobInterview->created_at = $interviewScheduleVM->getCreatedAt();
+                    $jobInterview->updated_at = $interviewScheduleVM->getUpdatedAt();
+
+                    $candidateUser->interviews()->save($jobInterview);
+                }
+
+                $this->setInterviewScheduleStatus($interviewScheduleVM, $candidate);
+                $this->saveInterviewId($interviewScheduleVM);
+            }
+        }
+        catch(QueryException $queryExc)
+        {
+            //dd($queryExc);
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::INTERVIEW_SCHEDULE_ERROR, $queryExc);
+
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $status = false;
+            throw new CompanyException(null, ErrorEnum::INTERVIEW_SCHEDULE_ERROR, $exc);
+        }
+
+        return $status;
+
+    }
+
+    private function setInterviewScheduleStatus(ScheduleInterviewViewModel $interviewScheduleVM, $candidate)
+    {
+        $candidateApplyJob = null;
+
+        $candidateApplyJob = CandidateApplyJob::where('candidate_id','=', $candidate)
+            ->where('company_id', '=', $interviewScheduleVM->getCompanyId())
+            ->where('job_id', '=', $interviewScheduleVM->getJobId())->first();
+
+        if(!is_null($candidateApplyJob))
+        {
+            $candidateApplyJob->job_status = JobStatus::INTERVIEW_SCHEDULED;
+            $candidateApplyJob->save();
+        }
+    }
+
+    private function saveInterviewId(ScheduleInterviewViewModel $interviewScheduleVM)
+    {
+        $job = null;
+
+        //$job = Jobs::find($interviewScheduleVM->getJobId());
+        $job = Jobs::find($interviewScheduleVM->getJobId());
+
+        if(!is_null($job))
+        {
+            $job->job_interview_id = 'HRC'.crc32(uniqid(rand()));
+            $job->save();
+        }
+    }
+
+    /* Search by Job Id
+     * @params $jobId, $paginate
+     * @throws $companyExc
+     * @return array | null
+     * @author Baskar
+     */
+
+    public function searchByJobId($jobId, $paginate = null)
+    {
+        $jobs = null;
+
+        try
+        {
+            $query = DB::table('ri_candidate_apply_job as rcaj')->join('users as usr', 'usr.id', '=', 'rcaj.candidate_id');
+            $query->join('ri_candidate_personal_profile as rcpp', 'rcpp.candidate_id', '=', 'rcaj.candidate_id');
+            $query->join('ri_candidate_job_profile as rcjp', 'rcjp.candidate_id', '=', 'rcaj.candidate_id');
+            $query->join('ri_company_profile as rcp', 'rcp.id', '=', 'rcaj.company_id');
+            $query->join('ri_jobs as rj', 'rj.id', '=', 'rcaj.job_id');
+            $query->where('rcaj.job_id', '=', $jobId);
+            $query->where('usr.delete_status', '=', 1);
+            $query->select('rle.id as Id', 'rle.list_entity_name as functionalArea',
+                'rlg.id as groupId', 'rlg.list_group_name as listGroupName');
+            $query->orderBy('rle.list_entity_name', 'ASC');
+
+            if(!is_null($paginate))
+            {
+                $candidates = $query->paginate($paginate);
+            }
+
+            $candidates = $query->paginate();
+        }
+        catch(QueryException $queryExc)
+        {
+            throw new CompanyException(null, ErrorEnum::JOB_LIST_ERROR, $queryExc);
+        }
+        catch(Exception $exc)
+        {
+            throw new CompanyException(null, ErrorEnum::JOB_LIST_ERROR, $exc);
+        }
+
+        return $jobs;
+    }
+
+    /* Search by Interview Id
+     * @params $interviewId
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function searchByInterviewId($interviewId)
+    {
+
+    }
+
 
     /* Delete a company
      * @params $companyId

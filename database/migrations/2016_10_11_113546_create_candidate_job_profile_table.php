@@ -25,8 +25,10 @@ class CreateCandidateJobProfileTable extends Migration
                 $table->text('skills')->nullable();
                 $table->integer('total_experience_years')->nullable();
                 $table->integer('total_experience_months')->nullable();
-                $table->string('current_location', 255)->nullable();
-                $table->string('preferred_location', 255)->nullable();
+                //$table->string('current_location', 255)->nullable();
+                //$table->string('preferred_location', 255)->nullable();
+                $table->integer('current_location')->unsigned()->nullable();
+                $table->integer('preferred_location')->unsigned()->nullable();
                 $table->text('resume')->nullable();
                 $table->string('created_by', 255);
                 $table->string('updated_by', 255);
@@ -37,6 +39,8 @@ class CreateCandidateJobProfileTable extends Migration
 
         Schema::table('ri_candidate_job_profile', function (Blueprint $table) {
             $table->foreign('candidate_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('current_location')->references('id')->on('ri_list_entities')->onDelete('cascade');
+            $table->foreign('preferred_location')->references('id')->on('ri_list_entities')->onDelete('cascade');
         });
 
     }

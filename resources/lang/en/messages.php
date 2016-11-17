@@ -75,6 +75,8 @@
         "189" => "Unable to get job count",
         "190" => "Successfully retrieved job count",
         "191" => "Unable to get job count",
+        "192" => "Unable to schedule interview",
+        "193" => "Successfully scheduled interview",
 
         "201" => "Unable to retrieve candidates list",
         "202" => "Successfully retrieved candidates list",

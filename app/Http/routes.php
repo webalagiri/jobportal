@@ -39,8 +39,6 @@ Route::group(['prefix' => 'common'], function()
            Route::get('rest/api/{groupId}/listentities', array('as' => 'common.listentitiesbygroupid', 'uses' => 'CommonController@getListEntityByGroupId'));
        });
 
-
-
       Route::get('rest/api/cities', array('as' => 'common.cities', 'uses' => 'CommonController@getCities'));
       Route::get('rest/api/countries', array('as' => 'common.countries', 'uses' => 'CommonController@getCountries'));
 
@@ -93,7 +91,13 @@ Route::group(['prefix' => 'company'], function()
             Route::get('rest/api/jobs/{jobId}/details', array('as' => 'company.jobdetails', 'uses' => 'JobController@getJobDetails'));
             Route::delete('rest/api/job', array('as' => 'company.deletejob', 'uses' => 'JobController@deleteJob'));
             Route::delete('rest/api/company', array('as' => 'company.deletecompany', 'uses' => 'CompanyController@deleteCompany'));
+
+            Route::post('rest/api/scheduleinterview', array('as' => 'company.scheduleinterview', 'uses' => 'CompanyController@scheduleInterview'));
+
+            //Route
         });
+
+        //Route::post('rest/api/scheduleinterview', array('as' => 'company.scheduleinterview', 'uses' => 'CompanyController@scheduleInterview'));
 
         //Route::post('rest/api/profile', array('as' => 'company.saveprofile', 'uses' => 'CompanyController@saveCompanyProfile'));
 
@@ -161,6 +165,11 @@ Route::group(['prefix' => 'candidate'], function()
         Route::post('rest/api/login', array('as' => 'candidate.login', 'uses' => 'CandidateController@CandidateLogin'));
         Route::post('rest/api/forgotlogin', array('as' => 'candidate.forgotlogin', 'uses' => 'CandidateController@CandidateForgotLogin'));
 
+        Route::post('rest/api/candidates/quicksearch', array('as' => 'candidates.quicksearch', 'uses' => 'CandidateController@getCandidatesByQuickSearch'));
+        Route::post('rest/api/candidates/basicsearch', array('as' => 'candidates.basicsearch', 'uses' => 'CandidateController@getCandidatesByBasicSearch'));
+        Route::post('rest/api/candidates/advancesearch', array('as' => 'candidates.advancesearch', 'uses' => 'CandidateController@getCandidatesByAdvanceSearch'));
+        Route::get('rest/api/candidates/{candidateId}/details', array('as' => 'candidates.details', 'uses' => 'CandidateController@getCandidateDetailsBySearch'));
+
 
 
 
@@ -190,16 +199,13 @@ Route::group(['prefix' => 'job'], function()
 });
 
 
-Route::group(['prefix' => 'candidate'], function()
+/*Route::group(['prefix' => 'candidate'], function()
 {
 
     Route::group(['namespace' => 'Candidate'], function(){
-        Route::post('rest/api/candidates/quicksearch', array('as' => 'candidates.quicksearch', 'uses' => 'CandidateController@getCandidatesByQuickSearch'));
-        Route::post('rest/api/candidates/basicsearch', array('as' => 'candidates.basicsearch', 'uses' => 'CandidateController@getCandidatesByBasicSearch'));
-        Route::post('rest/api/candidates/advancesearch', array('as' => 'candidates.advancesearch', 'uses' => 'CandidateController@getCandidatesByAdvanceSearch'));
-        Route::get('rest/api/candidates/{candidateId}/details', array('as' => 'candidates.details', 'uses' => 'CandidateController@getCandidateDetailsBySearch'));
+
 
     });
 
-});
+});*/
 

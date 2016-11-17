@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Company;
 use App\Http\ViewModels\ManageInterviewViewModel;
 use App\jobportal\common\ResponseJson;
 use App\jobportal\mapper\CompanyProfileMapper;
+use App\jobportal\mapper\JobMapper;
 use App\jobportal\services\CompanyService;
 use App\jobportal\services\HelperService;
 use App\jobportal\utilities\ErrorEnum\ErrorEnum;
@@ -647,5 +648,47 @@ class CompanyController extends Controller
 
         return $responseJson;
 
+    }
+
+    /* Schedule Interview
+     * @params $interviewRequest
+     * @throws $companyExc
+     * @return true | false
+     * @author Baskar
+     */
+
+    public function scheduleInterview(Request $interviewRequest)
+    {
+        $responseJson = null;
+        $status = true;
+        $interviewScheduleVM = null;
+
+        try
+        {
+            $interviewScheduleVM = JobMapper::setInterviewSchedule($interviewRequest);
+
+            $status = $this->companyService->scheduleInterview($interviewScheduleVM);
+            //dd('successfully saved');
+
+            if($status)
+            {
+                $responseJson = new ResponseJson(ErrorEnum::SUCCESS, trans('messages.'.ErrorEnum::INTERVIEW_SCHEDULE_SUCCESS));
+                $responseJson->sendSuccessResponse();
+            }
+        }
+        catch(CompanyException $companyExc)
+        {
+            //dd($helperExc);
+            $responseJson = new ResponseJson(ErrorEnum::FAILURE, trans('messages.'.ErrorEnum::INTERVIEW_SCHEDULE_ERROR));
+            $responseJson->sendErrorResponse($companyExc);
+        }
+        catch(Exception $exc)
+        {
+            //dd($exc);
+            $msg = AppendMessage::appendGeneralException($exc);
+            Log::error($msg);
+        }
+
+        return $responseJson;
     }
 }

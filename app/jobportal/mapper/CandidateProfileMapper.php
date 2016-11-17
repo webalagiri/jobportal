@@ -48,9 +48,18 @@ class CandidateProfileMapper
         //$candidateProfileVM->setPhone(isset($profile->phone) ? $profile->phone : $value);
         //$candidateProfileVM->setMobile($profile->mobile);
         $candidateProfileVM->setMobile(property_exists($profile, 'mobile') ? $profile->mobile : null);
-        $candidateProfileVM->setLocation(property_exists($profile, 'location') ? $profile->location : null);
         $candidateProfileVM->setAddress($profile->address);
         $candidateProfileVM->setAlternateMobile(property_exists($profile, 'alternateMobile') ? $profile->alternateMobile : null);
+
+        $candidateProfileVM->setCurrentSalary(property_exists($profile, 'currentSalary') ? $profile->currentSalary : null);
+        $candidateProfileVM->setExpectedSalary(property_exists($profile, 'expectedSalary') ? $profile->expectedSalary : null);
+        $candidateProfileVM->setSkills(property_exists($profile, 'skills') ? $profile->skills : null);
+        $candidateProfileVM->setJobTitle(property_exists($profile, 'jobTitle') ? $profile->jobTitle : null);
+        $candidateProfileVM->setTotalYearsExperience(property_exists($profile, 'totalExperienceYears') ? $profile->totalExperienceYears : null);
+        $candidateProfileVM->setTotalMonthsExperience(property_exists($profile, 'totalExperienceMonths') ? $profile->totalExperienceMonths : null);
+        $candidateProfileVM->setLocation(property_exists($profile, 'location') ? $profile->location : null);
+        $candidateProfileVM->setPreferredLocation(property_exists($profile, 'preferredLocation') ? $profile->preferredLocation : null);
+
         $candidateProfileVM->setCity($profile->city);
         $candidateProfileVM->setCountry($profile->country);
         $candidateProfileVM->setPincode($profile->pincode);
